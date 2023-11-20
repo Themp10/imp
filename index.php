@@ -106,8 +106,8 @@ include "db_connection.php"; // Include database connection file
 
 <!-- Gestion de l'ajouter de quantité au click sur un toner -->
 <script>
-    function cartridgeClicked(id,currentStock){
-        openModal(id, currentStock) 
+    function cartridgeClicked(id){
+        openModal(id) 
     }
 </script>
 <script>

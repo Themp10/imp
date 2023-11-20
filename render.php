@@ -48,7 +48,7 @@ function generate_cartridge_html($cartridge) {
     if ($cartridge['stock'] > $cartridge['stock_min']) {
         $html .= ' stock-good';
     }
-    $html .= '" onclick="cartridgeClicked(\'' . $cartridge['id'] . '\',\'' . $cartridge['stock'] . '\')">';
+    $html .= '" onclick="cartridgeClicked(\'' . $cartridge['id'] . '\')">';
 
     if ($cartridge['stock'] == 0) {
         $html .= '<div class="overlay-out">En rupture</div>';

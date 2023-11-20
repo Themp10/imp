@@ -99,7 +99,8 @@ body{
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: none;
-    overflow: scroll;
+    overflow: auto;
+    scrollbar-width: thin;
 }
 
 .show {
@@ -301,9 +302,7 @@ body{
     gap: 30px;
     
 }  
-#cartridge-inventory{
-    overflow-y: scroll;
-}
+
 
   .printer-card{
     width: 490px;
@@ -415,6 +414,9 @@ body{
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 413px;
 }
 
 .close {
@@ -426,7 +428,7 @@ body{
   color: #333;
 }
 
-.new-stock-input {
+.modal-input {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;

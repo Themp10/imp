@@ -1,21 +1,18 @@
-<!-- modal.php -->
+
 
 <?php
 
-// Assuming you have a database connection function in your database file
 include "db_connection.php";
 
-// Function to update the stock in the database
-function updateStockInDatabase($model, $newStock)
+// Fontion pour mettre a jour le stock
+function updateStockInDatabase($id, $newStock)
 {
     global $conn;
-
-    // Sanitize input to prevent SQL injection
-    $model = mysqli_real_escape_string($conn, $model);
+    $id = mysqli_real_escape_string($conn, $id);
     $newStock = mysqli_real_escape_string($conn, $newStock);
 
-    // Perform the database update
-    $sql = "UPDATE cartridges SET stock = '$newStock' WHERE id = '$model'";
+    
+    $sql = "UPDATE cartridges SET stock = '$newStock' WHERE id = '$id'";
 
     if ($conn->query($sql) === TRUE) {
         return 'success';
@@ -24,50 +21,141 @@ function updateStockInDatabase($model, $newStock)
     }
 }
 
-// Check if the form is submitted for updating the stock
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $model = $_POST["model"];
-    $newStock = $_POST["newStock"];
+function getCartridgeById($id) {
+    global $conn;
 
-    $updateResult = updateStockInDatabase($model, $newStock);
-    echo $updateResult;
-    exit(); // Terminate further execution after the update
+    // Sanitize input to prevent SQL injection
+    $id = mysqli_real_escape_string($conn, $id);
+
+    // Perform the database query
+    $sql = "SELECT * FROM cartridges WHERE id = '$id'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Fetch the data as an associative array
+        $cartridgeData = $result->fetch_assoc();
+        return $cartridgeData;
+    } else {
+        return null;
+    }
 }
 
+// POST check pour voir si on va lancer l'update car car ce fichier est inclu dans index.php, et vu que c'est un get, rien ne ce passe au niveau du php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST["model"];
+    $newStock = $_POST["newStock"];
+
+    $updateResult = updateStockInDatabase($id, $newStock);
+    echo $updateResult;
+    exit(); 
+}
+// Check if it's a GET request
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    // Ensure the 'id' parameter is set
+    if (isset($_GET["id"])) {
+        $id = $_GET["id"];
+
+        // Perform treatment to get cartridge data
+        $cartridgeData = getCartridgeById($id);
+
+        // If data is found, convert it to JSON and echo it
+        if ($cartridgeData !== null) {
+            $result = json_encode($cartridgeData);
+            echo $result;
+        } else {
+            // If no data is found, echo an error message
+            echo "Cartridge not found.";
+        }
+
+        exit(); // Terminate further execution
+    }
+}
 ?>
-
-<style>
-    /* Add this CSS to your existing stylesheet or create a new stylesheet */
-
-   
-</style>
-
+<!-- html du modal -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalCartridgeName"></h2>
-        <label for="newStock">New Stock:</label>
-        <input type="number" id="newStock" class="new-stock-input" min="0" value="0">
+
+
+        <label for="name">Nom :</label>
+        <input type="text" name="name" id="name" class="modal-input" disabled>
+
+        <label for="model">Modèle :</label>
+        <input type="text" name="model" id="modalCartridgeName" class="modal-input" disabled>
+
+        <label for="color">Couleur :</label>
+        <input type="text" name="color" id="color" class="modal-input" disabled>
+
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" class="modal-input" disabled>
+
+        <label for="stock_min">Stock Sécurité :</label>
+        <input type="number" name="stock_min" id="stock_min" class="modal-input" disabled>
+
+        <label for="users">Utilisateur :</label>
+        <input type="text" name="users" id="users" class="modal-input" disabled>
+
+        <label for="newStock">Cartouche / toner à ajouter :</label>
+        <input type="number" id="newStock" class="modal-input" min="0" value="0">
+
         <button onclick="updateStock()" class="update-button">Update Stock</button>
+
+
     </div>
 </div>
-
+<!-- Js pour gere son comportement -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    function openModal(cartridgeModel, currentStock) {
-        document.getElementById('modalCartridgeName').innerText = cartridgeModel;
-        document.getElementById('newStock').value = currentStock;
-        document.getElementById('myModal').style.display = 'flex';
+    //afficher le modal
+    // function openModal(cartridgeModel, currentStock) {
+    //     document.getElementById('modalCartridgeName').innerText = cartridgeModel;
+    //     document.getElementById('newStock').value = currentStock;
+    //     document.getElementById('myModal').style.display = 'flex';
+    // }
+
+    function openModal(cartridgeId) {
+        // Set the cartridge ID in the modal for later use
+        document.getElementById('myModal').dataset.cartridgeId = cartridgeId;
+
+        // Make a GET request to fetch cartridge data
+        $.ajax({
+            type: 'GET',
+            url: 'modal.php', // Replace with the actual URL for your PHP script
+            data: { id: cartridgeId },
+            success: function(response) {
+                // Parse the JSON response
+                var cartridgeData = JSON.parse(response);
+
+                // Update the modal content
+                document.getElementById('modalCartridgeName').value = cartridgeData.model;
+                document.getElementById('color').value = cartridgeData.color;
+                document.getElementById('name').value = cartridgeData.name;
+                document.getElementById('stock_min').value = cartridgeData.stock_min;
+                document.getElementById('users').value = cartridgeData.users;
+                document.getElementById('stock').value = cartridgeData.stock;
+
+                // Show the modal
+                document.getElementById('myModal').style.display = 'flex';
+            },
+            error: function(xhr, status, error) {
+                // Handle AJAX error
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
     }
 
+
+    //fermer le modal
     function closeModal() {
         document.getElementById('myModal').style.display = 'none';
+        document.getElementById('newStock').value=0
     }
+    // fontion ajax pour mettre a jour le stock dans la base de données
 
     function updateStock() {
         var cartridgeModel = document.getElementById('modalCartridgeName').innerText;
-        var newStock = document.getElementById('newStock').value;
-
+        var newStock = parseInt(document.getElementById('newStock').value)+parseInt(document.getElementById('stock').value);
+        console.log(newStock)
         // Perform the necessary actions to update the stock in the database
         // You need to implement the backend logic to update the stock
         $.ajax({
@@ -79,9 +167,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             },
             success: function(response) {
                 // Check the response from the server and handle accordingly
-                if (response === 'success') {
+                if (response.trim() == 'success') {
                     // Update successful, close the modal
                     closeModal();
+                    //location.reload();
                 } else {
                     // Handle error
                     alert('Error updating stock: ' + response);
