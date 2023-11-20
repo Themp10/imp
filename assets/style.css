@@ -287,3 +287,99 @@ body{
     filter: alpha(opacity=20);
   }
   
+
+
+
+
+
+/* ============================ Stock ============================ */
+.inv-items-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}  
+.inventory-title{
+
+  }
+
+  .printer-card{
+    width: 490px;
+    height: 190px;
+    padding: 10px;
+    border-radius  : 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+
+  .cartridge-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 98%;
+    border-radius  : 5px;
+
+   
+  }
+  .cartridge-item{
+    width: 100px;
+    height: 110px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+
+  .badge-color {
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+  }
+  .black{
+    background-color: black;
+  }
+  .yellow{
+    background-color: rgb(234, 238, 7);
+  }
+  .magenta{
+    background-color: rgb(241, 28, 223);
+  }
+  .cyan{
+    background-color: rgb(28, 241, 223);
+  }
+  .stock-item-data{
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .stock-values{
+    font-size: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .overlay-out{
+    position: absolute;
+    width: 100px;
+    height: 110px;
+    border-radius: 5px;
+    border:2px red solid;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .overlay-out:hover{
+    opacity: 0;
+  }
+  .stock-danger{
+    border:2px rgb(255, 145, 0) solid;
+  }
+/* ============================ Mouvement Stock ============================ */
+
+/* ============================ Entrée Stock ============================ */
+
+/* ============================ Sortie Stock ============================ */

@@ -30,7 +30,48 @@ $result = $conn->query($sql);
     </nav>
 
     <div class="container" id="main-container">
-        <div class="inner-container show" id="cartridge-inventory">Inventaire</div>
+        <div class="inner-container show" id="cartridge-inventory">
+            <h2 class="inventory-title">Etat du stock</h2>
+                <div class="inv-items-container">
+                    <div class="printer-card">
+                        <h3>Utilisateurs : U1 U2 U3</h3>
+                        <div class="cartridge-container">
+                            <div class="cartridge-item">
+                                <div class="overlay-out">En rupture</div>                          
+                                <div class="stock-item-data"><p>HP 207A</p><span class="badge-color black"></span></div>
+                                <p class="stock-values">En stock : <span>2</span></p>
+                                <p class="stock-values">Stock min : <span>1</span></p>
+                            </div>
+                            <div class="cartridge-item">
+                                <div class="stock-item-data"><p>HP 207A</p><span class="badge-color yellow"></span></div>
+                                <p class="stock-values">En stock : <span>2</span></p>
+                                <p class="stock-values">Stock min : <span>1</span></p>
+                            </div>
+                            <div class="cartridge-item">
+                                <div class="stock-item-data"><p>HP 207A</p><span class="badge-color magenta"></span></div>
+                                <p class="stock-values">En stock : <span>2</span></p>
+                                <p class="stock-values">Stock min : <span>1</span></p>
+                            </div>
+                            <div class="cartridge-item stock-danger">
+                                <div class="stock-item-data"><p>HP 207A</p><span class="badge-color cyan"></span></div>
+                                <p class="stock-values">En stock : <span>1</span></p>
+                                <p class="stock-values">Stock min : <span>2</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                </div>
+
+
+        </div>
         <div class="inner-container" id="stock-movements">Mouvements Stock</div>
         <div class="inner-container" id="add-to-stock">
             <form action="add_cartridge.php" method="post">
@@ -74,21 +115,10 @@ $result = $conn->query($sql);
 
                     <li class="column to-do-column">
                     <div class="column-header">
-                        <h4>To Do</h4>
+                        <h4>Stock</h4>
                     </div>
                     <ul class="task-list" id="to-do">
-                        <li class="task">
-                        <p>Analysis</p>
-                        </li>
-                        <li class="task">
-                        <p>Coding</p>
-                        </li>
-                        <li class="task">
-                        <p>Card Sorting</p>
-                        </li>
-                        <li class="task">
-                        <p>Measure</p>
-                        </li>
+
                     </ul>
                     </li>
 
@@ -97,15 +127,7 @@ $result = $conn->query($sql);
                         <h4>Doing</h4>
                     </div>
                     <ul class="task-list" id="doing">
-                        <li class="task">
-                        <p>Hypothesis</p>
-                        </li>
-                        <li class="task">
-                        <p>User Testing</p>
-                        </li>
-                        <li class="task">
-                        <p>Prototype</p>
-                        </li>
+
                     </ul>
                     </li>
 
@@ -114,12 +136,7 @@ $result = $conn->query($sql);
                         <h4>Done</h4>
                     </div>
                     <ul class="task-list" id="done">
-                        <li class="task">
-                        <p>Ideation</p>
-                        </li>
-                        <li class="task">
-                        <p>Sketches</p>
-                        </li>
+   
                     </ul>
                     </li>
 

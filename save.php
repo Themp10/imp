@@ -33,38 +33,5 @@
     <!-- Add this form in the appropriate section of your index.php file -->
     <div id="add-to-stock" class="tab-content">
         <h2>Add Cartridge to Stock</h2>
-        <form action="add_cartridge.php" method="post">
-            <label for="model">Model:</label>
-            <input type="text" name="model" required>
 
-            <label for="color">Color:</label>
-            <input type="text" name="color" required>
-
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="quantity" required>
-
-            <label for="isNewCartridge">Is it a new cartridge?</label>
-            <input type="radio" name="isNewCartridge" value="new" checked> New
-            <input type="radio" name="isNewCartridge" value="existing"> Existing
-
-            <!-- Additional input for existing cartridge selection -->
-            <div id="existingCartridgeSelection" style="display: none;">
-                <label for="existingCartridgeId">Select existing cartridge:</label>
-                <select name="existingCartridgeId">
-                    <?php
-                    // Fetch existing cartridges from the database and populate the dropdown dynamically
-                    $existingCartridgesSql = "SELECT id, model FROM cartridges";
-                    $existingCartridgesResult = $conn->query($existingCartridgesSql);
-
-                    if ($existingCartridgesResult->num_rows > 0) {
-                        while ($row = $existingCartridgesResult->fetch_assoc()) {
-                            echo '<option value="' . $row["id"] . '">' . $row["model"] . '</option>';
-                        }
-                    }
-                    ?>
-                </select>
-            </div>
-
-            <button type="submit">Submit</button>
-        </form>
     </div>
