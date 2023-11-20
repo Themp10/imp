@@ -16,6 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error adding new cartridge: " . $conn->error;
         }
+        header("Location: index.php");
+        exit();
     } else {
         // Increment the quantity of an existing cartridge
         $existingCartridgeId = $_POST["existingCartridgeId"];
@@ -27,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error incrementing cartridge quantity: " . $conn->error;
         }
+        header("Location: index.php");
+        exit();
     }
 }
 
