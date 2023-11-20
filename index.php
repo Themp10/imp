@@ -68,6 +68,24 @@ $result = $conn->query($sql);
                     <div class="printer-card">
 
                     </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
+                    <div class="printer-card">
+
+                    </div>
                 </div>
 
 

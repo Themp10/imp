@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #db7d7d;
+
 }
 
 header {
@@ -15,7 +16,7 @@ header {
 
 nav {
     background-color: #4CAF50;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 60px;
 }
 
@@ -86,18 +87,19 @@ body{
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #F5F7FB;
+    background-color: #bbbfc7;
     
 }
 .inner-container {
     display: flex;
     padding: 20px;
     width: 95%;
-    height: 90%;
-    background-color: #FFFFFF;
+    height: 70vh;
+    background-color: #ffffffc5;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: none;
+    overflow: scroll;
 }
 
 .show {
@@ -297,10 +299,11 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    
 }  
-.inventory-title{
-
-  }
+#cartridge-inventory{
+    overflow-y: scroll;
+}
 
   .printer-card{
     width: 490px;
@@ -316,16 +319,20 @@ body{
     gap: 20px;
     width: 98%;
     border-radius  : 5px;
-
-   
   }
+
   .cartridge-item{
     width: 100px;
     height: 110px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    position: relative;
+    transition: 0.3s ease;
   }
-
+    .cartridge-item:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
   .badge-color {
     
     width: 20px;
