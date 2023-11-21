@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #db7d7d;
+    background-color: #ffffff;
 
 }
 
@@ -388,7 +388,88 @@ body{
     border:1px #23ba2a solid;
   }
 /* ============================ Mouvement Stock ============================ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: none;
 
+}
+
+thead {
+  border-bottom: 1px solid black;
+}
+
+th {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  border: none;
+  
+
+}
+
+td {
+  padding: 0.5rem 3rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid rgb(133, 133, 133);
+  
+}
+tr{
+  cursor: pointer;
+  height: 50px;
+}
+tr:hover{
+  
+  background-color: rgba(255, 253, 253, 0.644);
+}
+tbody tr:nth-child(odd):hover {
+  background-color: rgba(255, 255, 255, 0.644);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ddffde;
+}
+
+.show-page-button {
+  background-color: #70e074;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.show-page-button:hover {
+  background-color: #7ff083;
+}
+.pagination{
+  border:1px solid #15d072;
+  display: flex;
+  background-color: white;
+}
+.page-button{
+  height: 30px;
+  width: 30px;
+  
+  
+  /* border-radius: 30px; 
+  display: inline-block;*/
+   line-height: 28px; 
+  text-align: center;
+  text-decoration: none;
+}
+.active{
+  background-color: #15d072 !important ;
+  border:2px solid #15d072;
+}
+
+.pagination-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 /* ============================ Entrée Stock ============================ */
 
 /* ============================ Sortie Stock ============================ */

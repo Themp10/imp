@@ -32,21 +32,19 @@ include "db_connection.php"; // Include database connection file
         include "modal.php";
     ?>
     <div class="container" id="main-container">
-        <div class="inner-container show" id="cartridge-inventory">
+        <div class="inner-container" id="cartridge-inventory">
             <h2 class="inventory-title">Etat du stock</h2>
-                <div class="inv-items-container">
-                    <?php
-                        include "render.php";
-                    ?>
-                </div>
-
-
+            <div class="inv-items-container">
+                <?php include "render.php"; ?>
+            </div>
         </div>
-        <div class="inner-container" id="stock-movements">Mouvements Stock</div>
+        <div class="inner-container  show" id="stock-movements">
+            <div class="inv-items-container">
+                <?php include "mvt_list.php"; ?>
+            </div>
+        </div>
         <div class="inner-container" id="add-to-stock">
-            <?php
-                include "add_new.php";
-                ?>
+            <?php include "add_new.php"; ?>
         </div>
         <div class="inner-container" id="take-from-stock">
             <div class="main-container">
