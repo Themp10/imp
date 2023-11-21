@@ -3,18 +3,18 @@
 <?php
 
 include "db_connection.php";
-
+include "mvt_stock.php";
 // Fontion pour mettre a jour le stock
-function updateStockInDatabase($id, $newStock)
+function updateStockInDatabase($id, $currentStock, $addedStock)
 {
     global $conn;
     $id = mysqli_real_escape_string($conn, $id);
-    $newStock = mysqli_real_escape_string($conn, $newStock);
-
-    
+    $newStock = $currentStock+ $addedStock;
+    $user="test";
     $sql = "UPDATE cartridges SET stock = '$newStock' WHERE id = '$id'";
-
+   
     if ($conn->query($sql) === TRUE) {
+        entreeStock($id,$user,$addedStock);
         return 'success';
     } else {
         return 'Error updating stock: ' . $conn->error;
@@ -42,10 +42,12 @@ function getCartridgeById($id) {
 
 // POST check pour voir si on va lancer l'update car car ce fichier est inclu dans index.php, et vu que c'est un get, rien ne ce passe au niveau du php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id = $_POST["model"];
-    $newStock = $_POST["newStock"];
 
-    $updateResult = updateStockInDatabase($id, $newStock);
+    $id = $_POST["id"];
+    $currentStock = $_POST["currentStock"];
+    $addedStock = $_POST["addedStock"];
+
+    $updateResult = updateStockInDatabase($id, $currentStock, $addedStock);
     echo $updateResult;
     exit(); 
 }
@@ -153,24 +155,38 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // fontion ajax pour mettre a jour le stock dans la base de données
 
     function updateStock() {
-        var cartridgeModel = document.getElementById('modalCartridgeName').innerText;
-        var newStock = parseInt(document.getElementById('newStock').value)+parseInt(document.getElementById('stock').value);
-        console.log(newStock)
+        var id=document.getElementById('myModal').dataset.cartridgeId 
+        var addedStock=parseInt(document.getElementById('newStock').value)
+
+        if(!addedStock ){
+            alert("Entrez un nomber s'il vous plait !")
+            return
+        }
+        if (addedStock==0){
+            alert("Ca ne sert à rien d'ajouter 0 au stock !")
+            return
+        }
+        if (addedStock<0){
+            alert("Helas ! C'est pas possible d'ajouter du stock négatif ! ")
+            return
+        }
+        var currentStock=parseInt(document.getElementById('stock').value)
         // Perform the necessary actions to update the stock in the database
         // You need to implement the backend logic to update the stock
         $.ajax({
             type: 'POST',
             url: 'modal.php', // This assumes the modal.php file is in the same directory
             data: {
-                model: cartridgeModel,
-                newStock: newStock
+                id: id,
+                addedStock:addedStock,
+                currentStock: currentStock
             },
             success: function(response) {
                 // Check the response from the server and handle accordingly
                 if (response.trim() == 'success') {
                     // Update successful, close the modal
                     closeModal();
-                    //location.reload();
+                    location.reload();
                 } else {
                     // Handle error
                     alert('Error updating stock: ' + response);

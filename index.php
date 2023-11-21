@@ -61,27 +61,11 @@ include "db_connection.php"; // Include database connection file
                     </ul>
                     </li>
 
-                    <li class="column doing-column">
-                    <div class="column-header">
-                        <h4>Doing</h4>
-                    </div>
-                    <ul class="task-list" id="doing">
 
-                    </ul>
-                    </li>
 
                     <li class="column done-column">
                     <div class="column-header">
-                        <h4>Done</h4>
-                    </div>
-                    <ul class="task-list" id="done">
-   
-                    </ul>
-                    </li>
-
-                    <li class="column trash-column">
-                    <div class="column-header">
-                        <h4>Trash</h4>
+                        <h4>Sortie</h4>
                     </div>
                     <ul class="task-list" id="trash">
                         <li class="task">
@@ -93,7 +77,7 @@ include "db_connection.php"; // Include database connection file
 
                     </ul>
                     <div class="column-button">
-                        <button class="button delete-button" onclick="emptyTrash()">Delete</button>
+                        <button class="button delete-button" onclick="emptyTrash()">Valider</button>
                     </div>
                     </li>
 

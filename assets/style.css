@@ -329,7 +329,7 @@ body{
     /* transition: 0.3s ease; */
   }
     .cartridge-item:hover{
-        transform: scale(1.1);
+        transform: scale(1.02);
         cursor: pointer;
     }
   .badge-color {
@@ -406,6 +406,7 @@ body{
   z-index: 2;
   justify-content: center;
   align-items: center;
+
 }
 
 .modal-content {
@@ -417,6 +418,7 @@ body{
   display: flex;
   flex-direction: column;
   width: 413px;
+ 
 }
 
 .close {
