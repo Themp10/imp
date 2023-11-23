@@ -94,10 +94,10 @@ $totalPages = ceil($totalRows / $perPage);
 </div>
 <?php if (is_array($mvtData)): ?>
     <div class="mvt-table-container">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Toner</th>
+        <table class="mvt-table" border="1">
+            <thead class="mvt-table-thead">
+                <tr class="mvt-table-tr">
+                    <th >Toner</th>
                     <th>Utilisateurs</th>
                     <th>Couleur</th>
                     <th>Quantité</th>
@@ -107,9 +107,9 @@ $totalPages = ceil($totalRows / $perPage);
                     <th>Date mouvement</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody  class="mvt-table-tbody">
                 <?php foreach ($mvtData as $row): ?>
-                    <tr>
+                    <tr class="mvt-table-tr">
                         <td><?= $row['name'] ?></td>
                         <td><?= $row['users'] ?></td>
                         <td><?= $row['color'] ?></td>

@@ -208,7 +208,7 @@ body{
     border:1px #23ba2a solid;
   }
 /* ============================ Mouvement Stock ============================ */
-table {
+.mvt-table {
   border-collapse: collapse;
   width: 100%;
   border: none;
@@ -219,7 +219,7 @@ thead {
   border-bottom: 1px solid black;
 }
 
-th {
+.mvt-table-tr th {
   padding: 1rem 3rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -229,26 +229,26 @@ th {
 
 }
 
-td {
+.mvt-table-tr td {
   padding: 0.5rem 3rem;
   font-size: 1rem;
   border: none;
   border-bottom: 1px solid rgb(133, 133, 133);
   
 }
-tr{
+.mvt-table-tr{
   cursor: pointer;
   height: 50px;
 }
-tr:hover{
+.mvt-table-tr:hover{
   
   background-color: rgba(255, 253, 253, 0.644);
 }
-tbody tr:nth-child(odd):hover {
+.mvt-table-tbody tr:nth-child(odd):hover {
   background-color: rgba(255, 255, 255, 0.644);
 }
 
-tbody tr:nth-child(odd) {
+.mvt-table-tbody tr:nth-child(odd) {
   background-color: #ddffde;
 }
 
@@ -301,7 +301,16 @@ tbody tr:nth-child(odd) {
 /* ============================ Sortie Stock ============================ */
 
 
-
+#item-search{
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: 17px;
+}
+.cartridge-users{
+  font-size: 8px;
+}
 
 .add-task-container {
   display: -webkit-box;
@@ -352,7 +361,7 @@ tbody tr:nth-child(odd) {
   text-align: center;
 }
 
-.to-do-column .column-header {
+.stock-set-column .column-header {
   background: #ff872f;
 }
 
@@ -364,7 +373,7 @@ tbody tr:nth-child(odd) {
   background: #15d072;
 }
 
-.trash-column .column-header {
+.cart-column .column-header {
   background: #ff4444;
 }
 
@@ -568,4 +577,149 @@ input{
 input:focus{
   outline: none;
   border-bottom: 2px solid rgb(56, 252, 56);
+}
+
+
+
+
+/* ============================ Modal BS ============================ */
+
+.bs-modal-content {
+  background-color: #fff;
+ 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+
+.A4-format {
+  width: 297mm;
+  height: 210mm;
+  margin: 0 auto;
+  padding: 20mm;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Optional: Add border for visualization */
+  font-family: Calibri;
+  padding: 20mm;
+  display: flex;
+  flex-direction: column;
+  
+}
+.h-info-data{
+  margin: 0;
+}
+.container-header{
+  width: 100%;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+.h-logo{
+  border-right: 1px solid black;
+}
+.h-logo-png{
+  width: 180px;
+  margin-left: 10%;
+}
+.h-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.h-title h1{
+  text-align: center;
+  font-size: 25px;
+  margin: 0;
+  font-weight:500;
+}
+.h-info{
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+.container-date{
+  width: 100%;
+  margin: 30px 0;
+  font-size: 23px;
+
+}
+.container-data{
+  width: 100%;
+  
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%; 
+  border: none;
+}
+
+th {
+border: 1px solid black;
+font-family: Cambria;
+text-align: center;
+width: 25%;    
+
+}
+
+td {
+
+font-size: 1rem;
+border: 1px solid black;
+text-align: center;
+}
+
+.bs-table-data-tr{
+  
+cursor: pointer;
+height: 40px; 
+}
+
+.bs-table-sign-thead {
+  border: 1px solid black;
+  }
+
+.bs-table-sign-th {
+text-align: center;
+font-size: 16px;
+font-family: Calibri;
+width: 50mm;
+
+height: 20px ;
+}
+
+.bs-table-sign-td {
+
+font-size: 1rem;
+border: none;
+border: 1px solid black;
+height: 100px ;
+}
+.bs-table-sign-tr{
+cursor: pointer;
+
+}
+.container-sign{
+  margin-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+
+
+.input-bs-table{
+  border:0;
+  text-align: center;
+  font-size: 1rem;
+}
+.input-bs-table:focus{
+  outline: none;
+  border:0;
 }

@@ -159,10 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         return selectedColors.join(",")
     }
     function openModal(cartridgeId=-1) {
-        // Set the cartridge ID in the modal for later use
         
         document.getElementById('myModal').dataset.cartridgeId = cartridgeId;
-        // Make a GET request to fetch cartridge data
         if(cartridgeId==-1){
 
             let colors=document.querySelectorAll('.input-color')

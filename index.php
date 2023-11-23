@@ -30,6 +30,7 @@ include "db_connection.php"; // Include database connection file
     </nav>
     <?php
         include "modal.php";
+        include "bon_sortie.php";
     ?>
     <div class="container" id="main-container">
         <div class="inner-container" id="cartridge-inventory">
@@ -80,10 +81,8 @@ include "db_connection.php"; // Include database connection file
 <script>
         /* Custom Dragula JS */
     dragula([
-    document.getElementById("to-do"),
-    document.getElementById("doing"),
-    document.getElementById("done"),
-    document.getElementById("trash")
+    document.getElementById("stock-set"),
+    document.getElementById("cart")
     ]);
     removeOnSpill: false
     .on("drag", function(el) {
@@ -99,21 +98,11 @@ include "db_connection.php"; // Include database connection file
         container.className.replace("ex-over", "");
     });
 
-    /* Vanilla JS to add a new task */
-    function addTask() {
-    /* Get task text from input */
-    var inputTask = document.getElementById("taskText").value;
-    /* Add task to the 'To Do' column */
-    document.getElementById("to-do").innerHTML +=
-        "<li class='task'><p>" + inputTask + "</p></li>";
-    /* Clear task text from input after adding task */
-    document.getElementById("taskText").value = "";
-    }
 
-    /* Vanilla JS to delete tasks in 'Trash' column */
-    function emptyTrash() {
-    /* Clear tasks from 'Trash' column */
-    document.getElementById("trash").innerHTML = "";
+    /* Vanilla JS to delete tasks in 'cart' column */
+    function emptycart() {
+    /* Clear tasks from 'cart' column */
+    document.getElementById("cart").innerHTML = "";
     }
 
 </script>

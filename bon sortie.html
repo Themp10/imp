@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4 Format Example</title>
+    <style>
+        .A4-format {
+            width: 297mm;
+            height: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            box-sizing: border-box;
+            border: 1px solid #ccc; /* Optional: Add border for visualization */
+            font-family: Calibri;
+            padding: 20mm;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        p{
+            margin: 0;
+        }
+        .container-header{
+            width: 100%;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 25% 50% 25%;
+        }
+        .h-logo{
+            border-right: 1px solid black;
+        }
+        .h-logo-png{
+            width: 180px;
+            margin-left: 10%;
+        }
+        .h-title{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        .h-title h1{
+            text-align: center;
+            font-size: 25px;
+            margin: 0;
+            font-weight:500;
+        }
+        .h-info{
+            border-left: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10px;
+        }
+        .container-date{
+            width: 100%;
+            margin: 30px 0;
+            font-size: 23px;
+
+        }
+        .container-data{
+            width: 100%;
+            
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%; 
+            border: none;
+        }
+
+        th {
+        border: 1px solid black;
+        font-family: Cambria;
+        text-align: center;
+        width: 25%;    
+
+        }
+
+        td {
+
+        font-size: 1rem;
+        border: 1px solid black;
+        text-align: center;
+        }
+
+        .bs-table-data-tr{
+            
+        cursor: pointer;
+         height: 40px; 
+        }
+
+        .bs-table-sign-thead {
+            border: 1px solid black;
+            }
+
+        .bs-table-sign-th {
+        text-align: center;
+        font-size: 16px;
+        font-family: Calibri;
+        width: 50mm;
+
+        height: 20px ;
+        }
+
+        .bs-table-sign-td {
+
+        font-size: 1rem;
+        border: none;
+        border: 1px solid black;
+        height: 100px ;
+        }
+        .bs-table-sign-tr{
+        cursor: pointer;
+        
+        }
+        .container-sign{
+            margin-top: 50px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 25% 50% 25%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="A4-format">
+    <div class="container-header">
+        <div class="h-logo">
+            <img src="./assets/logo.png" alt="Logo" class="h-logo-png">
+        </div>
+        <div class="h-title">
+            <h1>Bon de Sortie magasin</h1>
+        </div>
+        <div class="h-info">
+            <p class="h-info-data">FR-11 / PS-GSI</p>
+            <p class="h-info-data">Version: 1</p>
+            <p class="h-info-data">Date: 09/02/2023</p>
+        </div>
+    </div>
+    <div class="container-date">
+        Date : <span class="h-date">12/07/2025</span>
+    </div>
+    <div class="container-data">
+        <table class="bs-data-table">
+            <thead>
+                <tr class="bs-table-data-tr">
+                    <th>Demandeur</th>
+                    <th>Référence du toner</th>
+                    <th>Référence imprimante</th>
+                    <th>Nombre du Toner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr tr class="bs-table-data-tr">
+                    <td>Oussama Aboujaafar</td>
+                    <td>HP 207AZ</td>
+                    <td>Gris</td>
+                    <td>2</td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </div>
+    <div class="container-sign">
+        <table class="bs-table-sign-table">
+            <thead class="bs-table-sign-thead">
+                <tr class="bs-table-sign-tr">
+                    <th class="bs-table-sign-th">Signature Demandeur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bs-table-sign-tr">
+                    <td class="bs-table-sign-td"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="lol"></div>
+        <table class="bs-table-sign-table">
+            <thead class="bs-table-sign-thead">
+                <tr class="bs-table-sign-tr">
+                    <th class="bs-table-sign-th">Signature IT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bs-table-sign-tr">
+                    <td class="bs-table-sign-td"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
