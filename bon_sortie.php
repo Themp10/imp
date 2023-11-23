@@ -6,18 +6,27 @@ function getCartridgeByIds($ids) {
 
     // Sanitize input to prevent SQL injection
     $ids = mysqli_real_escape_string($conn, $ids);
-
+    
     // Perform the database query
-    $sql = "SELECT * FROM cartridges WHERE id in('$ids')";
+    
+    if($ids==""){
+        return [];
+    }
+
+    $sql = "SELECT * FROM cartridges WHERE id in ( $ids )";
+    
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        // Fetch the data as an associative array
-        $cartListe = $result->fetch_assoc();
-        return $cartListe;
-    } else {
-        return null;
+    if ($result === false) {
+        die("Error in SQL query: " . $conn->error);
     }
+
+    $cartListe = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $cartListe[] = $row;
+    }
+    return $cartListe;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -31,8 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             echo "Cartridge not found.";
         }
 
-        
+        exit();
     }
+     
 }
 
 ?>
@@ -68,16 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <th>Nombre du Toner</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php foreach ($cartListe as $index => $row): ?>
-                    <tr class="bs-table-data-tr">
-                        <td><input type="text" class="input-bs-table" id="input-bs-table-<?= $index ?>"> </td>
-                        <td><?= $row['name'] ?></td>
-                        <td><?= $row['color'] ?></td>
-                        <td><input type="text" placeholder="max 3" class="input-bs-table" id="quantite-bs-table-<?= $index ?>" stock="<?= $row['stock'] ?>" stock_min="<?= $row['stock_min'] ?>"></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
+            <tbody id="table-body"></tbody>
         </table>
     </div>
     <div class="container-sign">
@@ -125,18 +126,53 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 data: { ids: strIds },
                 success: function(response) {
                     // Parse the JSON response
-                    var cartListe = JSON.parse(response);
-                    // Update the modal content
-                    // document.getElementById('modalCartridgeName').value = cartridgeData.model;
-                    // document.getElementById('color').value = cartridgeData.color;
-                    // document.getElementById('name').value = cartridgeData.name;
-                    // document.getElementById('stock_min').value = cartridgeData.stock_min;
-                    // document.getElementById('users').value = cartridgeData.users;
-                    // document.getElementById('stock').value = cartridgeData.stock;
 
-                    // Show the modal
-                    // document.getElementById('myModal').style.display = 'flex';
+                    var cartListe = JSON.parse(response);
                     console.log(cartListe)
+                    var tableBody = document.getElementById("table-body");
+
+                    if (tableBody.hasChildNodes()) {
+                        while (tableBody.firstChild) {
+                            tableBody.removeChild(tableBody.firstChild);
+                        }
+                    }
+
+                    cartListe.forEach(function (row, index) {
+                        var tr = document.createElement("tr");
+
+                        var demandeurTd = document.createElement("td");
+                        var demandeurInput = document.createElement("input");
+                        demandeurInput.type = "text";
+                        demandeurInput.placeholder = "Demandeur";
+                        demandeurInput.className = "input-bs-table";
+                        demandeurInput.id = "demandeur-bs-table-" + index;
+
+                        demandeurTd.appendChild(demandeurInput);
+                        tr.appendChild(demandeurTd);
+
+                        
+                        var nameTd = document.createElement("td");
+                        nameTd.textContent = row.name;
+                        tr.appendChild(nameTd);
+
+                        var colorTd = document.createElement("td");
+                        colorTd.textContent = row.color;
+                        tr.appendChild(colorTd);
+
+
+                        var quantityTd = document.createElement("td");
+                        var quantityInput = document.createElement("input");
+                        quantityInput.type = "text";
+                        quantityInput.placeholder = "max "+row.stock;
+                        quantityInput.className = "input-bs-table";
+                        quantityInput.id = "quantite-bs-table-" + index;
+                        quantityInput.setAttribute("stock", row.stock);
+                        quantityInput.setAttribute("stock_min", row.stock_min);
+                        quantityTd.appendChild(quantityInput);
+                        tr.appendChild(quantityTd);
+
+                        tableBody.appendChild(tr);
+                    });
                 },
                 error: function(xhr, status, error) {
                     // Handle AJAX error
@@ -149,10 +185,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         
         document.getElementById('bsModal').style.display = 'none';
     }
-    window.onclick = function(event) {
-        var modal = document.getElementById('bsModal');
-        if (event.target === modal) {
-            closeBSModal();
-        }
-    };
+    // window.onclick = function(event) {
+    //     var modalBS = document.getElementById('bsModal');
+    //     if (event.target === modalBS) {
+    //         closeBSModal();
+    //     }
+    // };
 </script>

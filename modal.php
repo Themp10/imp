@@ -345,6 +345,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         var modal = document.getElementById('myModal');
         if (event.target === modal) {
             closeModal();
+            
+        }
+        var modalBS = document.getElementById('bsModal');
+        if (event.target === modalBS) {
+            closeBSModal();
         }
     };
 </script>
