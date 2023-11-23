@@ -25,7 +25,7 @@ include "db_connection.php"; // Include database connection file
     <nav>
     <a href="#" onclick="showContent('cartridge-inventory')">Inventaire</a>
     <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
-    <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a>
+    <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
     <a href="#" onclick="showContent('take-from-stock')">Sortie Stock</a>
     </nav>
     <?php
@@ -33,61 +33,46 @@ include "db_connection.php"; // Include database connection file
     ?>
     <div class="container" id="main-container">
         <div class="inner-container" id="cartridge-inventory">
-            <h2 class="inventory-title">Etat du stock</h2>
+            <div class="invetory-header">
+                <h2 class="inventory-title">Etat du stock</h2>
+                <input type="button" class="show-page-button" value="Nouveau Toner" onClick="addnew()">
+            </div>
+            
             <div class="inv-items-container">
                 <?php include "render.php"; ?>
             </div>
         </div>
-        <div class="inner-container  show" id="stock-movements">
+        <div class="inner-container" id="stock-movements">
             <div class="inv-items-container">
                 <?php include "mvt_list.php"; ?>
             </div>
         </div>
-        <div class="inner-container" id="add-to-stock">
-            <?php include "add_new.php"; ?>
-        </div>
+        <!-- <div class="inner-container" id="add-to-stock">
+            <?php //include "add_new.php"; ?>
+        </div> -->
         <div class="inner-container" id="take-from-stock">
-            <div class="main-container">
-                <ul class="columns">
+            
+        <?php include "sortie_stock.php"; ?>
 
-                    <li class="column to-do-column">
-                    <div class="column-header">
-                        <h4>Stock</h4>
-                    </div>
-                    <ul class="task-list" id="to-do">
-
-                    </ul>
-                    </li>
-
-
-
-                    <li class="column done-column">
-                    <div class="column-header">
-                        <h4>Sortie</h4>
-                    </div>
-                    <ul class="task-list" id="trash">
-                        <li class="task">
-                        <p>Interviews</p>
-                        </li>
-                        <li class="task">
-                        <p>Research</p>
-                        </li>
-
-                    </ul>
-                    <div class="column-button">
-                        <button class="button delete-button" onclick="emptyTrash()">Valider</button>
-                    </div>
-                    </li>
-
-                </ul>
-                </div>
-            </div>
+        </div>
     </div>
 <!-- Scripts for Drag and Drop -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js"></script>
 
 <!-- Gestion de l'ajouter de quantité au click sur un toner -->
 <script>
+    window.onload = (event) => {
+        let screenId=localStorage.getItem("screen");
+        if(screenId){
+            document.getElementById(screenId).classList.add("show");
+        }else{
+            document.getElementById("cartridge-inventory").classList.add("show");
+        }
+
+    };
+    function addnew(){
+        openModal() 
+    }
     function cartridgeClicked(id){
         openModal(id) 
     }
@@ -134,6 +119,7 @@ include "db_connection.php"; // Include database connection file
 </script>
     <script>
     function showContent(id) {
+            localStorage.setItem("screen", id);
         // Hide all containers
             var containers = document.querySelectorAll('.inner-container');
             containers.forEach(function(container) {

@@ -3,8 +3,26 @@
 <?php
 
 include "db_connection.php";
+
+// Fonctions pour mettre a jour le stock
 include "mvt_stock.php";
-// Fontion pour mettre a jour le stock
+
+function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users){
+    global $conn;
+    $colors = explode(",", $selectedColors);
+    $user="admin";
+    foreach ($colors as $color) {
+        $insertQuery = "INSERT INTO cartridges (name, model, color, stock, stock_min, users) VALUES ('$name', '$model', '$color', $stock, $stock_min, '$users')";
+        if ($conn->query($insertQuery) === TRUE) {
+            $id = $conn->insert_id;
+            entreeStock($id,$user,$stock);   
+        } else {
+            return 'Error inserting stock: ' . $conn->error;
+        }
+
+    } 
+    return 'success';
+}
 function updateStockInDatabase($id, $currentStock, $addedStock)
 {
     global $conn;
@@ -44,11 +62,23 @@ function getCartridgeById($id) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = $_POST["id"];
-    $currentStock = $_POST["currentStock"];
-    $addedStock = $_POST["addedStock"];
+    if( $id==-1){
+        $name = $_POST["name"];
+        $model = $_POST["model"];
+        $selectedColors = $_POST["selectedColors"];
+        $stock = $_POST["stock"];
+        $stock_min = $_POST["stock_min"];
+        $users = $_POST["users"];
+        $insertResult = insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users);
+        echo $insertResult;
 
-    $updateResult = updateStockInDatabase($id, $currentStock, $addedStock);
-    echo $updateResult;
+    }else{
+        $currentStock = $_POST["currentStock"];
+        $addedStock = $_POST["addedStock"];
+        $updateResult = updateStockInDatabase($id, $currentStock, $addedStock);
+        echo $updateResult;
+    }
+
     exit(); 
 }
 // Check if it's a GET request
@@ -88,19 +118,27 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <label for="color">Couleur :</label>
         <input type="text" name="color" id="color" class="modal-input" disabled>
 
+        <div class="color-selector" id="color-selector">
+            <input type="checkbox" name="cb-black" id="cb-black" class="input-color Noir">
+            <input type="checkbox" name="cb-yellow" id="cb-yellow" class="input-color Yellow">
+            <input type="checkbox" name="cb-magenta" id="cb-magenta" class="input-color Magenta">
+            <input type="checkbox" name="cb-cyan" id="cb-cyan" class="input-color Cyan">
+        </div>
+
         <label for="stock">Stock:</label>
-        <input type="number" name="stock" id="stock" class="modal-input" disabled>
+        <input type="number" name="stock" id="stock" class="modal-input" min="0" value="0" disabled>
 
         <label for="stock_min">Stock Sécurité :</label>
-        <input type="number" name="stock_min" id="stock_min" class="modal-input" disabled>
+        <input type="number" name="stock_min" id="stock_min" class="modal-input" min="0" value="0" disabled>
 
-        <label for="users">Utilisateur :</label>
+        <label for="users">Utilisateurs :</label>
         <input type="text" name="users" id="users" class="modal-input" disabled>
+        <div id="new-stock">
+            <label for="newStock">Cartouche / toner à ajouter :</label>
+            <input type="number" id="newStock" class="modal-input" min="0" value="0">
+        </div>
 
-        <label for="newStock">Cartouche / toner à ajouter :</label>
-        <input type="number" id="newStock" class="modal-input" min="0" value="0">
-
-        <button onclick="updateStock()" class="update-button">Update Stock</button>
+        <button id="stock-button" onclick="updateStock()" class="update-button">Mettre à jours Tonner</button>
 
 
     </div>
@@ -108,44 +146,93 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <!-- Js pour gere son comportement -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    //afficher le modal
-    // function openModal(cartridgeModel, currentStock) {
-    //     document.getElementById('modalCartridgeName').innerText = cartridgeModel;
-    //     document.getElementById('newStock').value = currentStock;
-    //     document.getElementById('myModal').style.display = 'flex';
-    // }
 
-    function openModal(cartridgeId) {
-        // Set the cartridge ID in the modal for later use
-        document.getElementById('myModal').dataset.cartridgeId = cartridgeId;
-
-        // Make a GET request to fetch cartridge data
-        $.ajax({
-            type: 'GET',
-            url: 'modal.php', // Replace with the actual URL for your PHP script
-            data: { id: cartridgeId },
-            success: function(response) {
-                // Parse the JSON response
-                var cartridgeData = JSON.parse(response);
-
-                // Update the modal content
-                document.getElementById('modalCartridgeName').value = cartridgeData.model;
-                document.getElementById('color').value = cartridgeData.color;
-                document.getElementById('name').value = cartridgeData.name;
-                document.getElementById('stock_min').value = cartridgeData.stock_min;
-                document.getElementById('users').value = cartridgeData.users;
-                document.getElementById('stock').value = cartridgeData.stock;
-
-                // Show the modal
-                document.getElementById('myModal').style.display = 'flex';
-            },
-            error: function(xhr, status, error) {
-                // Handle AJAX error
-                console.error('AJAX Error: ' + status + ' ' + error);
+    function getSelectedColors(){
+        let colors=document.querySelectorAll('.input-color')
+        let selectedColors=[]
+        colors.forEach(element => {
+            if(element.checked){
+                selectedColors.push(element.classList[1])
+               
             }
         });
+        return selectedColors.join(",")
     }
+    function openModal(cartridgeId=-1) {
+        // Set the cartridge ID in the modal for later use
+        
+        document.getElementById('myModal').dataset.cartridgeId = cartridgeId;
+        // Make a GET request to fetch cartridge data
+        if(cartridgeId==-1){
 
+            let colors=document.querySelectorAll('.input-color')
+            colors.forEach(element => {
+                if(element.checked){
+                    element.checked=false
+                }
+            });
+            document.getElementsByClassName('update-button')[0].textContent="Insérer nouveau Tonner"
+
+            document.getElementById('myModal').style.display = 'flex';
+
+            document.getElementById('name').value = "";
+            document.getElementById('name').disabled=false;
+
+            document.getElementById('modalCartridgeName').value = "";
+            document.getElementById('modalCartridgeName').disabled=false;
+
+
+            document.getElementById('color').style.display = "none";
+            
+            document.getElementById('stock_min').value = 0;
+            document.getElementById('stock_min').disabled=false;
+            
+            document.getElementById('users').value = "";
+            document.getElementById('users').disabled=false;
+
+            document.getElementById('stock').value = 0;
+            document.getElementById('stock').disabled=false;
+
+            document.getElementById('new-stock').style.display = "none";
+            document.getElementById('color-selector').style.display = "block";
+
+        }else{
+            document.getElementsByClassName('update-button')[0].textContent="Mettre à jours Tonner"
+
+            document.getElementById('color-selector').style.display = "none";
+            document.getElementById('new-stock').style.display = "block";
+            document.getElementById('name').disabled=true;
+            document.getElementById('modalCartridgeName').disabled=true;
+            document.getElementById('color').disabled=true;
+            document.getElementById('stock_min').disabled=true;
+            document.getElementById('users').disabled=true;
+            document.getElementById('stock').disabled=true;
+            $.ajax({
+                type: 'GET',
+                url: 'modal.php', // Replace with the actual URL for your PHP script
+                data: { id: cartridgeId },
+                success: function(response) {
+                    // Parse the JSON response
+                    var cartridgeData = JSON.parse(response);
+
+                    // Update the modal content
+                    document.getElementById('modalCartridgeName').value = cartridgeData.model;
+                    document.getElementById('color').value = cartridgeData.color;
+                    document.getElementById('name').value = cartridgeData.name;
+                    document.getElementById('stock_min').value = cartridgeData.stock_min;
+                    document.getElementById('users').value = cartridgeData.users;
+                    document.getElementById('stock').value = cartridgeData.stock;
+
+                    // Show the modal
+                    document.getElementById('myModal').style.display = 'flex';
+                },
+                error: function(xhr, status, error) {
+                    // Handle AJAX error
+                    console.error('AJAX Error: ' + status + ' ' + error);
+                }
+            });
+        }
+    }
 
     //fermer le modal
     function closeModal() {
@@ -153,50 +240,106 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         document.getElementById('newStock').value=0
     }
     // fontion ajax pour mettre a jour le stock dans la base de données
-
+    var selectedColorsGlobal=""
     function updateStock() {
+        let data={}
         var id=document.getElementById('myModal').dataset.cartridgeId 
-        var addedStock=parseInt(document.getElementById('newStock').value)
+        if(id==-1){
 
-        if(!addedStock ){
-            alert("Entrez un nomber s'il vous plait !")
-            return
-        }
-        if (addedStock==0){
-            alert("Ca ne sert à rien d'ajouter 0 au stock !")
-            return
-        }
-        if (addedStock<0){
-            alert("Helas ! C'est pas possible d'ajouter du stock négatif ! ")
-            return
-        }
-        var currentStock=parseInt(document.getElementById('stock').value)
-        // Perform the necessary actions to update the stock in the database
-        // You need to implement the backend logic to update the stock
-        $.ajax({
-            type: 'POST',
-            url: 'modal.php', // This assumes the modal.php file is in the same directory
-            data: {
-                id: id,
-                addedStock:addedStock,
-                currentStock: currentStock
-            },
-            success: function(response) {
-                // Check the response from the server and handle accordingly
-                if (response.trim() == 'success') {
-                    // Update successful, close the modal
-                    closeModal();
-                    location.reload();
-                } else {
-                    // Handle error
-                    alert('Error updating stock: ' + response);
-                }
-            },
-            error: function(xhr, status, error) {
-                // Handle AJAX error
-                console.error('AJAX Error: ' + status + ' ' + error);
+            
+
+            let tonerName=document.getElementById('name').value
+            if(tonerName=="" ){
+                alert("Entrez le nom du toner!")
+                return
             }
-        });
+            let tonerModel=document.getElementById('modalCartridgeName').value
+            if(tonerModel=="" ){
+                alert("Entrez le modèle du toner!")
+                return
+            }
+
+            selectedColorsGlobal=getSelectedColors()
+            if(selectedColorsGlobal=="" ){
+                alert("Choisir au moins un couleur")
+                return
+            }
+            let tonerUsers=document.getElementById('users').value
+            if(tonerUsers=="" ){
+                alert("Entrez les utilisateurs de ce toner!")
+                return
+            }
+
+            let stock=parseInt(document.getElementById('stock').value)
+            if(stock <= 0 ){
+                alert("Merci de renseigner le stock initiale ! ")
+                return
+            }
+            let stock_min=parseInt(document.getElementById('stock_min').value)
+            if(stock_min <= 0 ){
+                alert("Merci de renseigner le stock de sécurité ! ")
+                return
+            }
+
+            data={  
+                    id: id,
+                    name:tonerName,
+                    model: tonerModel,
+                    selectedColors: selectedColorsGlobal,
+                    users: tonerUsers,
+                    stock: stock,
+                    stock_min: stock_min
+                }
+
+        }else{
+
+            
+            var addedStock=parseInt(document.getElementById('newStock').value)
+
+            if(!addedStock ){
+                alert("Entrez un nomber s'il vous plait !")
+                return
+            }
+            if (addedStock==0){
+                alert("Ca ne sert à rien d'ajouter 0 au stock !")
+                return
+            }
+            if (addedStock<0){
+                alert("Helas ! C'est pas possible d'ajouter du stock négatif ! ")
+                return
+            }
+            var currentStock=parseInt(document.getElementById('stock').value)
+            data= {
+                    id: id,
+                    addedStock:addedStock,
+                    currentStock: currentStock
+                }
+        }
+
+        // ajax POST pour inserer ou maj le stock
+
+        $.ajax({
+                type: 'POST',
+                url: 'modal.php',
+                data: data,
+                success: function(response) {
+                    // Check the response from the server and handle accordingly
+                    if (response.trim() == 'success') {
+                        // Update successful, close the modal
+                        closeModal();
+                        location.reload();
+                    } else {
+                        // Handle error
+                        alert('Error updating stock: ' + response);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle AJAX error
+                    console.error('AJAX Error: ' + status + ' ' + error);
+                }
+            });
+
+
     }
 
     // Close the modal if the user clicks outside of it

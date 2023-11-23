@@ -109,193 +109,13 @@ body{
 
 
 
-
-
-
-
-.add-task-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 20rem;
-    height: 5.3rem;
-    margin: auto;
-    background: #a8a8a8;
-    border: #000013 0.2rem solid;
-    border-radius: 0.2rem;
-    padding: 0.4rem;
-  }
-  
-  .main-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  
-  .columns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    margin: 1.6rem auto;
-  }
-  
-  .column {
-    width: 8.4rem;
-    margin: 0 0.6rem;
-    background: #a8a8a8;
-    border: #000013 0.2rem solid;
-    border-radius: 0.2rem;
-  }
-  
-  .column-header {
-    padding: 0.1rem;
-    border-bottom: #000013 0.2rem solid;
-  }
-  
-  .column-header h4 {
-    text-align: center;
-  }
-  
-  .to-do-column .column-header {
-    background: #ff872f;
-  }
-  
-  .doing-column .column-header {
-    background: #13a4d9;
-  }
-  
-  .done-column .column-header {
-    background: #15d072;
-  }
-  
-  .trash-column .column-header {
-    background: #ff4444;
-  }
-  
-  .task-list {
-    min-height: 3rem;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    list-style-type: none;
-  }
-  
-  .column-button {
-    text-align: center;
-    padding: 0.1rem;
-  }
-  
-  .button {
-    font-family: "Arimo", sans-serif;
-    font-weight: 700;
-    border: #000013 0.14rem solid;
-    border-radius: 0.2rem;
-    color: #000013;
-    padding: 0.6rem 1rem;
-    margin-bottom: 0.3rem;
-    cursor: pointer;
-  }
-  
-  .delete-button {
-    background-color: #ff4444;
-    margin: 0.1rem auto 0.6rem auto;
-  }
-  
-  .delete-button:hover {
-    background-color: #fa7070;
-  }
-  
-  .add-button {
-    background-color: #ffcb1e;
-    padding: 0 1rem;
-    height: 2.8rem;
-    width: 10rem;
-    margin-top: 0.6rem;
-  }
-  
-  .add-button:hover {
-    background-color: #ffdd6e;
-  }
-  
-  .task {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    vertical-align: middle;
-    list-style-type: none;
-    background: #fff;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    margin: 0.4rem;
-    height: 4rem;
-    border: #000013 0.15rem solid;
-    border-radius: 0.2rem;
-    cursor: move;
-    text-align: center;
-    vertical-align: middle;
-  }
-  
-  #taskText {
-    background: #fff;
-    border: #000013 0.15rem solid;
-    border-radius: 0.2rem;
-    text-align: center;
-    font-family: "Roboto Slab", serif;
-    height: 4rem;
-    width: 7rem;
-    margin: auto 0.8rem auto 0.1rem;
-  }
-  
-  .task p {
-    margin: auto;
-  }
-  
-  /* Dragula CSS Release 3.2.0 from: https://github.com/bevacqua/dragula */
-  
-  .gu-mirror {
-    position: fixed !important;
-    margin: 0 !important;
-    z-index: 9999 !important;
-    opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    filter: alpha(opacity=80);
-  }
-  
-  .gu-hide {
-    display: none !important;
-  }
-  
-  .gu-unselectable {
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-  }
-  
-  .gu-transit {
-    opacity: 0.2;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-    filter: alpha(opacity=20);
-  }
-  
-
-
-
-
-
 /* ============================ Stock ============================ */
+
+.invetory-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .inv-items-container{
     display: flex;
     flex-wrap: wrap;
@@ -342,13 +162,13 @@ body{
     background-color: black;
   }
   .Yellow{
-    background-color: rgb(234, 238, 7);
+    background-color: #eaee07;
   }
   .Magenta{
-    background-color: rgb(241, 28, 223);
+    background-color: #f11cdf;
   }
   .Cyan{
-    background-color: rgb(28, 241, 223);
+    background-color: #1cf1df;
   }
   .stock-item-data{
     font-size: 10px;
@@ -439,6 +259,8 @@ tbody tr:nth-child(odd) {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 17px;
+  /* height: 40px; */
 }
 
 .show-page-button:hover {
@@ -450,13 +272,9 @@ tbody tr:nth-child(odd) {
   background-color: white;
 }
 .page-button{
-  height: 30px;
+  /* height: 30px; */
   width: 30px;
-  
-  
-  /* border-radius: 30px; 
-  display: inline-block;*/
-   line-height: 28px; 
+  line-height: 28px; 
   text-align: center;
   text-decoration: none;
 }
@@ -466,13 +284,208 @@ tbody tr:nth-child(odd) {
 }
 
 .pagination-container{
+  height: 40px;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-around;
+}
+.page-selector{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
 }
 /* ============================ Entrée Stock ============================ */
 
 /* ============================ Sortie Stock ============================ */
+
+
+
+
+.add-task-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20rem;
+  height: 5.3rem;
+  margin: auto;
+  background: #a8a8a8;
+  border: #000013 0.2rem solid;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+}
+
+.columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin: 1.6rem auto;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.column {
+  width: 50%;
+  margin: 0 0.6rem;
+  background: #a8a8a8;
+  border: #000013 0.2rem solid;
+  border-radius: 0.2rem;
+}
+
+.column-header {
+  padding: 0.1rem;
+  border-bottom: #000013 0.2rem solid;
+}
+
+.column-header h4 {
+  text-align: center;
+}
+
+.to-do-column .column-header {
+  background: #ff872f;
+}
+
+.doing-column .column-header {
+  background: #13a4d9;
+}
+
+.done-column .column-header {
+  background: #15d072;
+}
+
+.trash-column .column-header {
+  background: #ff4444;
+}
+
+.task-list {
+  min-height: 3rem;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.column-button {
+  text-align: center;
+  padding: 0.1rem;
+}
+
+.button {
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  border: #000013 0.14rem solid;
+  border-radius: 0.2rem;
+  color: #000013;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #ff4444;
+  margin: 0.1rem auto 0.6rem auto;
+}
+
+.delete-button:hover {
+  background-color: #fa7070;
+}
+
+.add-button {
+  background-color: #ffcb1e;
+  padding: 0 1rem;
+  height: 2.8rem;
+  width: 10rem;
+  margin-top: 0.6rem;
+}
+
+.add-button:hover {
+  background-color: #ffdd6e;
+}
+
+.task {
+ 
+  display: flex;
+
+  justify-content: space-around;
+  
+  list-style-type: none;
+  background: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0.4rem;
+  height: 4rem;
+  border: #000013 0.15rem solid;
+  border-radius: 0.2rem;
+  cursor: move;
+  text-align: center;
+  width: 100px;
+  flex-direction: column;
+}
+
+#taskText {
+  background: #fff;
+  border: #000013 0.15rem solid;
+  border-radius: 0.2rem;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  height: 4rem;
+  width: 7rem;
+  margin: auto 0.8rem auto 0.1rem;
+}
+
+.task p {
+   margin: 0; 
+}
+
+/* Dragula CSS Release 3.2.0 from: https://github.com/bevacqua/dragula */
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+
+
 
 
 /* ============================ Modal  ============================ */
@@ -525,8 +538,34 @@ tbody tr:nth-child(odd) {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  height: 40px;
 }
 
 .update-button:hover {
   background-color: #45a049;
+}
+
+.input-color{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.input-color:checked {
+   border: 5px solid #2684FC; 
+ 
+}
+input{
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgb(90, 255, 118);
+}
+input:focus{
+  outline: none;
+  border-bottom: 2px solid rgb(56, 252, 56);
 }
