@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         </div>
     </div>
     <div class="container-date">
-        Date : <span class="h-date">12/07/2025</span>
+        Date : <span class="h-date" id="current-date">12/07/2025</span>
     </div>
     <div class="container-data">
         <table class="bs-data-table">
@@ -119,6 +119,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 <script>
     function openBSModal(strIds) {
+        let currentDate = new Date();
+        let day = currentDate.getDate();
+        let month = currentDate.getMonth() + 1; // Adding 1 because months are zero-based
+        let year = currentDate.getFullYear();
+
+        let date =  day+ "/" + month + "/" + year;
+        document.getElementById('current-date').textContent = date;
+        
         document.getElementById('bsModal').style.display = 'flex';
         $.ajax({
                 type: 'GET',
