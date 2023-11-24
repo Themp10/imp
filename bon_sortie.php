@@ -145,20 +145,25 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         }
                     }
 
+                    // Loop to create the rows
                     cartListe.forEach(function (row, index) {
                         var tr = document.createElement("tr");
 
-                        var demandeurTd = document.createElement("td");
-                        var demandeurInput = document.createElement("input");
-                        demandeurInput.type = "text";
-                        demandeurInput.placeholder = "Demandeur";
-                        demandeurInput.className = "input-bs-table";
-                        demandeurInput.id = "demandeur-bs-table-" + index;
+                        // For the first row, create and append the "Demandeur" input
+                        if (index === 0) {
+                            var demandeurTd = document.createElement("td");
+                            var demandeurInput = document.createElement("input");
+                            demandeurInput.type = "text";
+                            demandeurInput.placeholder = "Demandeur";
+                            demandeurInput.className = "input-bs-table";
+                            demandeurInput.id = "demandeur-bs-table"; // Use a consistent ID for the input
+                            demandeurTd.setAttribute("rowspan", cartListe.length);
+                            // demandeurInput.classList.add("center-vertically");
+                            demandeurTd.appendChild(demandeurInput);
+                            tr.appendChild(demandeurTd);
+                        }
 
-                        demandeurTd.appendChild(demandeurInput);
-                        tr.appendChild(demandeurTd);
-
-                        
+                        // Create and append other cells
                         var nameTd = document.createElement("td");
                         nameTd.textContent = row.name;
                         tr.appendChild(nameTd);
@@ -167,11 +172,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         colorTd.textContent = row.color;
                         tr.appendChild(colorTd);
 
-
                         var quantityTd = document.createElement("td");
                         var quantityInput = document.createElement("input");
                         quantityInput.type = "text";
-                        quantityInput.placeholder = "max "+row.stock;
+                        quantityInput.placeholder = "max " + row.stock;
                         quantityInput.className = "input-bs-table";
                         quantityInput.id = "quantite-bs-table-" + index;
                         quantityInput.setAttribute("stock", row.stock);
@@ -181,6 +185,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
                         tableBody.appendChild(tr);
                     });
+
                 },
                 error: function(xhr, status, error) {
                     // Handle AJAX error
