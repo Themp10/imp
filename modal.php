@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         <div class="color-selector" id="color-selector">
             <input type="checkbox" name="cb-black" id="cb-black" class="input-color Noir">
-            <input type="checkbox" name="cb-yellow" id="cb-yellow" class="input-color Yellow">
+            <input type="checkbox" name="cb-jaune" id="cb-jaune" class="input-color Jaune">
             <input type="checkbox" name="cb-magenta" id="cb-magenta" class="input-color Magenta">
             <input type="checkbox" name="cb-cyan" id="cb-cyan" class="input-color Cyan">
         </div>

@@ -161,7 +161,7 @@ body{
   .Noir{
     background-color: black;
   }
-  .Yellow{
+  .Jaune{
     background-color: #eaee07;
   }
   .Magenta{
@@ -347,14 +347,16 @@ thead {
 .column {
   width: 50%;
   margin: 0 0.6rem;
-  background: #a8a8a8;
-  border: #000013 0.2rem solid;
-  border-radius: 0.2rem;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border-radius: 15px;
+  
 }
 
 .column-header {
   padding: 0.1rem;
   border-bottom: #000013 0.2rem solid;
+  border-radius: 15px 15px 0 0;
 }
 
 .column-header h4 {
@@ -362,20 +364,19 @@ thead {
 }
 
 .stock-set-column .column-header {
-  background: #ff872f;
+  background: #ffbf92;
 }
-
-.doing-column .column-header {
-  background: #13a4d9;
+.stock-set-column .column-header:hover {
+  background: #fd9f5c;
 }
 
 .done-column .column-header {
-  background: #15d072;
+  background: #5fcf97;
+}
+.done-column .column-header:hover  {
+  background: #1fec86;
 }
 
-.cart-column .column-header {
-  background: #ff4444;
-}
 
 .task-list {
   min-height: 3rem;
@@ -409,22 +410,15 @@ li {
   cursor: pointer;
 }
 
-.delete-button {
-  background-color: #ff4444;
+.valider-button {
+  background-color: #15D072;
   margin: 0.1rem auto 0.6rem auto;
 }
 
-.delete-button:hover {
-  background-color: #fa7070;
+.valider-button:hover {
+  background-color: #52d895;
 }
 
-.add-button {
-  background-color: #ffcb1e;
-  padding: 0 1rem;
-  height: 2.8rem;
-  width: 10rem;
-  margin-top: 0.6rem;
-}
 
 .add-button:hover {
   background-color: #ffdd6e;
@@ -437,19 +431,22 @@ li {
   justify-content: space-around;
   
   list-style-type: none;
-  background: #fff;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  background: #ffffff;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
   margin: 0.4rem;
   height: 4rem;
-  border: #000013 0.15rem solid;
+  /* border: #000013 1px solid; */
   border-radius: 0.2rem;
   cursor: move;
   text-align: center;
   width: 100px;
   flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
-
+.task:hover{
+  transform: scale(1.05);
+}
 #taskText {
   background: #fff;
   border: #000013 0.15rem solid;

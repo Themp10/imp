@@ -43,28 +43,25 @@ $cartridgesList=get_cartridges_list();
     <ul class="columns">
 
         <li class="column stock-set-column">
-        <div class="column-header">
-            <h4>Stock</h4>
-           
-        </div>
-        <ul class="task-list" id="stock-set">
-            <?php echo generate_cartridge_Item($cartridgesList); ?>
-        </ul>
+            <div class="column-header">
+                <h4>Stock</h4>
+            
+            </div>
+            <ul class="task-list" id="stock-set">
+                <?php echo generate_cartridge_Item($cartridgesList); ?>
+            </ul>
         </li>
-
-
-
         <li class="column done-column">
-        <div class="column-header">
-            <h4>Sortie</h4>
-        </div>
-        <ul class="task-list" id="cart">
+            <div class="column-header">
+                <h4>Sortie</h4>
+            </div>
+            <ul class="task-list" id="cart">
 
 
-        </ul>
-        <div class="column-button">
-            <button class="button delete-button" onclick="validerSortie()">Valider</button>
-        </div>
+            </ul>
+            <div class="column-button">
+                <button class="button valider-button" onclick="validerSortie()">Valider</button>
+            </div>
         </li>
 
     </ul>
