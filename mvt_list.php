@@ -3,19 +3,31 @@
 include "db_connection.php";
 
 function getDatawithFilters($filters){
-    
+
 }
+// $filters=[];
+// if ($_SERVER["REQUEST_METHOD"] == "GET") {
+//     // Ensure the 'id' parameter is set
+//     if (isset($_GET["name"])) {
+//         $filters = $_GET["name"];
+//         echo getDatawithFilters($filters);
+        
+//         exit(); // Terminate further execution
+//     }
+// }
+// var_dump($filters);
+
 
 function getMvtDataWithPagination($page, $perPage) {
     global $conn;
 
-    // Calculate the offset
     $offset = ($page - 1) * $perPage;
 
     // Perform the database query to get movement data with pagination
     $sql  ="SELECT c.name ,c.color,m.user,c.users,m.qte,m.stock_apres,CASE WHEN m.type='e' THEN 'entrée' WHEN m.type='s' THEN 'sortie' END AS 'type',m.mvt_date" ;
     $sql .=" FROM mouvements m";
     $sql .=" INNER JOIN cartridges c ON c.id = m.id_cartridge";
+    $sql .=" WHERE 1=1 ";
     $sql .=" LIMIT ".$perPage." OFFSET ".$offset;
     $result = $conn->query($sql);
 
@@ -54,6 +66,20 @@ $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 // Get movement data with pagination
 $mvtData = getMvtDataWithPagination($page, $perPage);
 
+$name = isset($_GET['name']) ? $_GET['name'] : "";
+$color = isset($_GET['color']) ? $_GET['color'] : "";
+$users = isset($_GET['users']) ? $_GET['users'] : "";
+$type = isset($_GET['type']) ? $_GET['type'] : "";
+$dateFrom = isset($_GET['dateFrom']) ? $_GET['dateFrom'] : "";
+$dateTo = isset($_GET['dateTo']) ? $_GET['dateTo'] : "";
+$filters=[];
+array_push($filters, $name ,$color ,$users ,$type ,$dateFrom ,$dateTo);
+
+//terminer ici
+
+
+
+var_dump($filters);
 // Get the total number of rows
 $totalRows = getTotalRows();
 
@@ -120,6 +146,9 @@ function generate_filters() {
     $html .= '<i class="fa-regular fa-circle-xmark fa-xl cancel-filter" style="color: #f07575;" onclick="supprimerFiltre()"></i>';
     return $html;
 }
+
+
+
 ?>
 
 
@@ -215,6 +244,19 @@ function generate_filters() {
             dateFrom:document.getElementById("filter-date-from").value,
             dateTo:document.getElementById("filter-date-to").value
         }
-        console.log(filters)
+        $.ajax({
+            type: 'GET',
+            url: 'mvt_list.php', // Replace with the actual URL for your PHP script
+            data: filters,
+            success: function(response) {
+                // Parse the JSON response
+                var data = JSON.parse(response);
+                console.log(response)
+            },
+            error: function(xhr, status, error) {
+                // Handle AJAX error
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
     }
 </script>
