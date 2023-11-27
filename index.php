@@ -44,7 +44,7 @@ include "db_connection.php"; // Include database connection file
             </div>
         </div>
         <div class="inner-container" id="stock-movements">
-            <div class="inv-items-container">
+            <div class="mvt-items-container">
                 <?php include "mvt_list.php"; ?>
             </div>
         </div>
@@ -205,6 +205,7 @@ include "db_connection.php"; // Include database connection file
             };
         }
     </script>
+    <script src="https://kit.fontawesome.com/49540fc0d4.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

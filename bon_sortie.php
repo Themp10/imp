@@ -1,5 +1,6 @@
 <?php
 include "db_connection.php";
+include_once  "mvt_stock.php";
 
 function getCartridgeByIds($ids) {
     global $conn;
@@ -29,6 +30,23 @@ function getCartridgeByIds($ids) {
     return $cartListe;
 }
 
+function updateStockOutDatabase($demandeur,$rows){
+    global $conn;
+
+    foreach ($rows as $row) {
+        $newStock=$row['stock']-$row['qte'];
+        $updateQuery = "UPDATE cartridges set stock='$newStock' WHERE id='$row[id]'";
+
+        if ($conn->query($updateQuery) === TRUE) {
+           sortieStock($row["id"],$demandeur,$row['qte']);   
+        } else {
+            return 'Error inserting stock: ' . $conn->error;
+        }
+
+    } 
+    return 'success';
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["ids"])) {
         $ids = $_GET["ids"];
@@ -45,6 +63,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
      
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $demandeur = $_POST["demandeur"];
+    $rows = $_POST["rows"];
+    $updatedData = updateStockOutDatabase($demandeur,$rows);
+    echo $updatedData;
+        
+    exit(); 
+
+    
+    
+}
 ?>
 
 
@@ -110,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     </div>
 </div>
 
-        <button id="stock-button"  class="update-button">Valider et Imprimer</button>
+        <button id="stock-button"  class="update-button" onclick="validateAndPrint()">Valider et Imprimer</button>
 
 
     </div>
@@ -118,6 +147,68 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
 <script>
+
+    function validateAndPrint(){
+        let demandeur=document.getElementById("demandeur-bs-table").value
+        if(demandeur==""){
+            alert("Merci de saisir le demandeur !")
+            return
+        }
+
+        let tableRows=document.querySelectorAll("#table-body tr")
+        let rows=[]
+        let err=false
+        tableRows.forEach(function (row, index) {
+            
+            let id=row.getAttribute('item-id')
+            let tdQte=parseInt(document.getElementById("quantite-bs-table-"+index).value);
+            let qteMax=document.getElementById("quantite-bs-table-"+index).getAttribute('stock');
+            let stockMin=document.getElementById("quantite-bs-table-"+index).getAttribute('stock-min');
+    
+            let name=document.getElementById("name-bs-table-"+index).textContent;
+            if(tdQte=="" || tdQte==0){
+                alert("Merci de saisir la quantité pour "+name)
+                err=true
+                return
+            }
+            else if(tdQte>qteMax){
+                alert("Impossible de sortir plus que le stock pour "+name)
+                err=true
+                return
+            }
+            let data={id:id,qte:tdQte,stock:qteMax}
+            rows.push(data)
+        })
+
+        if(err){
+            return
+        }
+        let cartData={
+            "demandeur":demandeur,
+            "rows":rows
+        }
+     
+        $.ajax({
+                type: 'POST',
+                url: 'bon_sortie.php',
+                data: cartData,
+                success: function(response) {
+                    // Check the response from the server and handle accordingly
+                    if (response.trim() == 'success') {
+                        // Update successful, close the modal
+                        closeBSModal();
+                        location.reload();
+                    } else {
+                        // Handle error
+                        alert('Error updating stock: ' + response);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle AJAX error
+                    console.error('AJAX Error: ' + status + ' ' + error);
+                }
+            });
+    }
     function openBSModal(strIds) {
         let currentDate = new Date();
         let day = currentDate.getDate();
@@ -148,7 +239,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     // Loop to create the rows
                     cartListe.forEach(function (row, index) {
                         var tr = document.createElement("tr");
-
+                        tr.setAttribute("item-id", row.id);
                         // For the first row, create and append the "Demandeur" input
                         if (index === 0) {
                             var demandeurTd = document.createElement("td");
@@ -165,6 +256,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
                         // Create and append other cells
                         var nameTd = document.createElement("td");
+                        nameTd.id = "name-bs-table-" + index;
                         nameTd.textContent = row.name;
                         tr.appendChild(nameTd);
 

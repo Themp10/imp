@@ -1,70 +1,68 @@
 <?php
 
 
-// Function for "entree stock" (stock in)
+// Gerer le mouvement entrée stock
 function entreeStock($cartridgeId, $user, $quantity) {
     global $conn;
 
-    // Sanitize inputs to prevent SQL injection
+    // toujours pour eviter les injections sql 
     $cartridgeId = mysqli_real_escape_string($conn, $cartridgeId);
     $user = mysqli_real_escape_string($conn, $user);
     $quantity = mysqli_real_escape_string($conn, $quantity);
+    // récupérer le stock actuel
     $currentStock=getCurrentStock($cartridgeId);
+
     $type = 'e';//e pour entrée de stock
+    // formater la date
     $mvtDate = date("Y-m-d");
 
     // database insertion
     $sql = "INSERT INTO mouvements (id_cartridge, user, qte,stock_apres, type, mvt_date) 
             VALUES ('$cartridgeId', '$user', '$quantity','$currentStock', '$type', '$mvtDate')";
-
+    // vérifier si l'execution sql c'est bien passsée
     if ($conn->query($sql) === TRUE) {
-        return "Stock in recorded successfully.";
+        return "Mouvement entrée enregistré avec succés .";
     } else {
-        return "Error recording stock in: " . $conn->error;
+        return "Erreur mise à jour stock " . $conn->error;
     }
 }
 
-// Function for "sortie stock" (stock out)
+// Gerer le mouvement sortie stock
 function sortieStock($cartridgeId, $user, $quantity) {
     global $conn;
 
-    // Sanitize inputs to prevent SQL injection
     $cartridgeId = mysqli_real_escape_string($conn, $cartridgeId);
     $user = mysqli_real_escape_string($conn, $user);
     $quantity = mysqli_real_escape_string($conn, $quantity);
 
-    // Set the transaction type to 'out'
+    // s pour sortie
     $type = 's';
 
-    // Get the current date
+    // formater la date
     $mvtDate = date("Y-m-d");
 
-    // Check if there is enough stock for the requested quantity
+    // récupérer le stock actuel
     $currentStock = getCurrentStock($cartridgeId);
 
-    if ($currentStock >= $quantity) {
-        // Perform the database insertion
-        $sql = "INSERT INTO mouvements (id_cartridge, user, qte, type, mvt_date) 
-                VALUES ('$cartridgeId', '$user', '$quantity', '$type', '$mvtDate')";
+    $sql = "INSERT INTO mouvements(id_cartridge, user, qte,stock_apres, type, mvt_date) 
+            VALUES ('$cartridgeId', '$user', '$quantity','$currentStock', '$type', '$mvtDate')";
 
-        if ($conn->query($sql) === TRUE) {
-            return "Stock out recorded successfully.";
-        } else {
-            return "Error recording stock out: " . $conn->error;
-        }
+    // vérifier si l'execution sql c'est bien passsée
+    if ($conn->query($sql) === TRUE) {
+        return "Mouvement sortie enregistré avec succés .";
     } else {
-        return "Insufficient stock for stock out operation.";
+        return "Erreur mise à jour stock " . $conn->error;
     }
-}
+} 
 
-// Function to get the current stock for a specific cartridge
+// Fonction pour récuprer le stock actuel
 function getCurrentStock($cartridgeId) {
     global $conn;
 
-    // Sanitize input to prevent SQL injection
+   
     $cartridgeId = mysqli_real_escape_string($conn, $cartridgeId);
 
-    // Perform the database query to get the current stock from the 'cartridge' table
+   
     $stockQuery = "SELECT stock FROM cartridges WHERE id = '$cartridgeId'";
     $stockResult = $conn->query($stockQuery);
 
@@ -72,7 +70,9 @@ function getCurrentStock($cartridgeId) {
         $stockData = $stockResult->fetch_assoc();
         return $stockData['stock'];
     } else {
-        return "Error fetching current stock from 'cartridge' table: " . $conn->error;
+        return "erreur lors de la récupération du stock : " . $conn->error;
     }
 }
+
+
 ?>

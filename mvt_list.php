@@ -2,6 +2,10 @@
 
 include "db_connection.php";
 
+function getDatawithFilters($filters){
+    
+}
+
 function getMvtDataWithPagination($page, $perPage) {
     global $conn;
 
@@ -9,7 +13,7 @@ function getMvtDataWithPagination($page, $perPage) {
     $offset = ($page - 1) * $perPage;
 
     // Perform the database query to get movement data with pagination
-    $sql  ="SELECT c.name ,c.color,m.user,c.users,m.qte,m.stock_apres,CASE WHEN m.type='e' THEN 'entrée' WHEN m.type='e' THEN 'sortie' END AS 'type',m.mvt_date" ;
+    $sql  ="SELECT c.name ,c.color,m.user,c.users,m.qte,m.stock_apres,CASE WHEN m.type='e' THEN 'entrée' WHEN m.type='s' THEN 'sortie' END AS 'type',m.mvt_date" ;
     $sql .=" FROM mouvements m";
     $sql .=" INNER JOIN cartridges c ON c.id = m.id_cartridge";
     $sql .=" LIMIT ".$perPage." OFFSET ".$offset;
@@ -57,12 +61,75 @@ $totalRows = getTotalRows();
 $totalPages = ceil($totalRows / $perPage);
 
 
+function searchList($items){
+    global $conn;
+    $itemList=[];
+    if($items=="type"){
+        $itemList=['Entrée','Sortie'];
+    }else{
+        $sql  ="SELECT DISTINCT $items FROM cartridges" ;
+        $result = $conn->query($sql);
+        //var_dump($result);
+        if ($result) {
+            // Fetch the data as an associative array
+            $itemList = $result->fetch_all(MYSQLI_ASSOC);
+      
+        }
+    }
+
+    return $itemList;
+}
+function generate_filters() {
+    global $conn;
+    $filterTitle = ['Toner', 'Couleur', 'Utilisateur'];
+    $filters = ['name', 'color', 'users'];
+    $html = '';
+
+    foreach ($filters as $index => $filter) {
+        $items = searchList($filter);
+        
+        if (!is_array($items)) {
+            // Handle error if searchList returns an error
+            
+            $html .= '<p>' . $filter . '</p>';
+        } else {
+            // Generate HTML select box for each filter
+            $html .= '<div class="filter-box">';
+            $html .= '<p>' . $filterTitle[$index] . '</p>';
+            $html .= '<select id="filter-' . $filter . '" class="filter-select">';
+            $html .= '<option value="none">-</option>';
+            foreach ($items as $item) {
+                $html .= '<option value="' . $item[$filter] . '">' . $item[$filter] . '</option>';
+            }
+            $html .= '</select>';
+            $html .= '</div>';
+        }
+    }
+    $html .= '<div class="filter-box">';
+    $html .= '<p>Type</p>';
+    $html .= '<select id="filter-type" class="filter-select">';
+    $html .= '<option value="none">-</option>';
+    $html .= '<option value="e">Entrée</option>';
+    $html .= '<option value="s">Sortie</option>';
+    $html .= '</select>';
+    $html .= '</div>';
+    $date=date('Y-m-d');
+    $html .= '<input type="date" class="filter-select" id="filter-date-from" value="'.$date.'">-';
+    $html .= '<input type="date" class="filter-select" id="filter-date-to" value="'.$date.'" >';
+    $html .= '<input type="button" value="Filtrer" class="show-page-button" onclick="appliquerFiltre()">';
+    $html .= '<i class="fa-regular fa-circle-xmark fa-xl cancel-filter" style="color: #f07575;" onclick="supprimerFiltre()"></i>';
+    return $html;
+}
 ?>
 
 
 
 <div class="mvt-stock-header">
     <h2>Mouvements Stock </h2>
+</div>
+<div class="filters-container">
+
+<?php echo generate_filters(); ?>
 </div>
 <div class="pagination-container">
     <input type="button" value="Exporter (ne fonctionne pas)" class="show-page-button">
@@ -83,7 +150,7 @@ $totalPages = ceil($totalRows / $perPage);
     <!-- Rows per page dropdown menu -->
     <form class="page-selector" action="" method="get">
         <label for="perPage">Lignes :</label>
-        <select name="perPage" id="perPage" class="update-button">
+        <select name="perPage" id="perPage" class="filter-select">
             <?php foreach ($perPageOptions as $option): ?>
                 <option value="<?= $option ?>" <?= $option == $perPage ? 'selected' : '' ?>><?= $option ?></option>
             <?php endforeach; ?>
@@ -132,4 +199,22 @@ $totalPages = ceil($totalRows / $perPage);
     <p><?= $mvtData ?></p>
 <?php endif; ?>
 
-<!-- Add any additional content or scripts here -->
+<script>
+    function supprimerFiltre(){
+        document.getElementById("filter-name").value="none"
+        document.getElementById("filter-color").value="none"
+        document.getElementById("filter-users").value="none"
+        document.getElementById("filter-type").value="none"
+    }
+    function appliquerFiltre(){
+        let filters={
+            name:document.getElementById("filter-name").value,
+            color:document.getElementById("filter-color").value,
+            users:document.getElementById("filter-users").value,
+            type:document.getElementById("filter-type").value,
+            dateFrom:document.getElementById("filter-date-from").value,
+            dateTo:document.getElementById("filter-date-to").value
+        }
+        console.log(filters)
+    }
+</script>

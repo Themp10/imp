@@ -3,9 +3,8 @@
 <?php
 
 include "db_connection.php";
-
+include_once  "mvt_stock.php";
 // Fonctions pour mettre a jour le stock
-include "mvt_stock.php";
 
 function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users){
     global $conn;
