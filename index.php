@@ -1,5 +1,5 @@
 <?php
-include "db_connection.php"; // Include database connection file
+include "db_connection.php"; // Include databaseî connection file
 //include "render.php";
 
 
