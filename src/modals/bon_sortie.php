@@ -161,12 +161,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         tableRows.forEach(function (row, index) {
             
             let id=row.getAttribute('item-id')
-            let tdQte=parseInt(document.getElementById("quantite-bs-table-"+index).value);
+            let tdQte=parseInt(document.getElementById("quantite-bs-table-"+index).value)?parseInt(document.getElementById("quantite-bs-table-"+index).value):0;
             let qteMax=document.getElementById("quantite-bs-table-"+index).getAttribute('stock');
             let stockMin=document.getElementById("quantite-bs-table-"+index).getAttribute('stock-min');
     
             let name=document.getElementById("name-bs-table-"+index).textContent;
-            if(tdQte=="" || tdQte==0){
+            if(tdQte==0){
                 alert("Merci de saisir la quantité pour "+name)
                 err=true
                 return

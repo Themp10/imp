@@ -220,7 +220,7 @@ thead {
 }
 
 .mvt-table-tr th {
-  padding: 1rem 3rem;
+  padding: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: left;
@@ -297,7 +297,7 @@ thead {
   width: 250px;
 }
 .filters-container{
-  margin: 20px 0;
+  margin: 0px 0;
   border-bottom: 1px solid #bdbdbd;
   width: 100%;
   /* height: 70px; */
@@ -306,7 +306,7 @@ thead {
   /* justify-content: center; */
   align-items:center ;
   flex-wrap: wrap;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .filter-cancel{
@@ -361,6 +361,14 @@ thead {
 
 
 /* NEW stuff */
+.filter-box-per-page{
+  width: 100px;
+  height: 50px;
+  padding: 0;
+  border: 2px solid #40fd9e;
+  border-radius: 5px;
+  background-color: white;
+}
 
 .filter-box{
   width: 200px;
