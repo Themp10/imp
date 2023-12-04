@@ -1,6 +1,11 @@
 
 <?php
 include_once  dirname(__DIR__)."\db\db_connection.php";
+$defaultPerPage=getPerPageOptions()[1];
+$perPage = isset($_GET['perPage'])?intval($_GET['perPage']):$defaultPerPage;
+$page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+$totalRows=getNbRows();
+$totalPages=ceil($totalRows / $perPage);
 
 if (isset($_GET['action']) ) {
     if($_GET['action'] == 'setFilters'){
@@ -28,23 +33,43 @@ if (isset($_GET['action']) ) {
     $sqlWithPagination=setPagination($sql);
     $dataArray=getFiltredData($sqlWithPagination);
     if ($dataArray !== null) {
-        $data = json_encode($dataArray);
+        $data = json_encode($dataArray["mvtData"]);
     } 
 }
 
+function getNbRows(){
+    global $conn;
+    $sql = "SELECT COUNT(*) FROM mouvements";
+    $result = $conn->query($sql);
+    if ($result) {
+        $count = $result->fetch_row()[0];
+        return $count;
+    } else {
+        return 0;
+    }
+}
+
 function setPagination($sql){
+    global $perPage;
     $perPageOptions = getPerPageOptions();
-    $perPage = isset($_GET['perPage'])?intval($_GET['perPage']):10;
     $sql .=" LIMIT ".$perPage;//." OFFSET ".$offset;
     return $sql;
 }
 
 function getFiltredData($filtredSql){
     global $conn;
+    global $perPage;
+    global $totalPages;
+
     $result = $conn->query($filtredSql);
     if ($result) {
         $mvtData = $result->fetch_all(MYSQLI_ASSOC);
-        return $mvtData;
+
+        $fullData["mvtData"]=$mvtData;
+        $fullData["perPage"]=$perPage;
+        $fullData["totalPages"] = $totalPages;
+        
+        return $fullData;
     } else {
         return "Error fetching movement data: " . $conn->error;
     }
@@ -135,19 +160,15 @@ function getPerPageOptions(){
     </div>
     <div class="pagination-data">
         <button class="btn-arrow" id="prevPage" disabled>← <span class="nav-text"></span></button>
-        <div class="list-pages">
-            <div class="page-number active-number">1</div>
-            <div class="page-number">2</div>
-            <div class="page-number">3</div>
-            <div class="page-number">4</div>
-            <div class="page-number">5</div>
+        <div class="list-pages" id="pagination-pages">
+
         </div>
         <button class="btn-arrow" id="nextPage"><span class="nav-text"></span> →</button>
         <fieldset class="filter-box-per-page">
                 <legend class="filter-type-title">Eléments</legend>
                 <select id="filter-per-page" class="select-filter" name="name" onchange="handleSelectChange()">
                                 <?php foreach (getPerPageOptions() as $row): ?>
-                                    <option value="<?= $row?>"><?= $row?></option>
+                                    <option value="<?= $row?>" <?php echo ($perPage == $row) ? 'selected' : ''; ?> ><?= $row?></option>
                                 <?php endforeach; ?>
                 </select>
             </fieldset>
@@ -169,7 +190,7 @@ function getPerPageOptions(){
             </tr>
         </thead>
         <tbody  class="mvt-table-tbody" id="mvt-table-tbody">
-            <?php foreach ($dataArray as $row): ?>
+            <?php foreach ($dataArray["mvtData"] as $row): ?>
                 <tr class="mvt-table-tr">
                     <td><?= $row['name'] ?></td>
                     <td><?= $row['users'] ?></td>
@@ -220,14 +241,29 @@ function getPerPageOptions(){
                 perPage:document.getElementById("filter-per-page").value
             },
             success: function (response) {
-                let filtredData = JSON.parse(response);
+                console.log(response);
+                let data = JSON.parse(response);
 
                 // generation de la pagination
-                
+                let pages=data["totalPages"]
+                let pageBody=document.getElementById("pagination-pages")
 
+                if (pageBody.hasChildNodes()) {
+                        while (pageBody.firstChild) {
+                            pageBody.removeChild(pageBody.firstChild);
+                        }
+                    }
+                
+                for (let i = 1; i < pages+1; i++) {
+                    let div = document.createElement("div");
+                    div.className = "page-number";
+                    div.textContent = i; 
+                    pageBody.appendChild(div);    
+                }
+                setUpPages();
                 // generation du tableau
                 let tableBody = document.getElementById("mvt-table-tbody");
-                console.log(response);
+                
 
                 if (tableBody.hasChildNodes()) {
                         while (tableBody.firstChild) {
@@ -235,7 +271,7 @@ function getPerPageOptions(){
                         }
                     }
 
-                filtredData.forEach(function (row, index) {
+                    data["mvtData"].forEach(function (row, index) {
                     let tr = document.createElement("tr");
                     tr.className = "mvt-table-tr";
                     for (let key in row) {
@@ -254,4 +290,85 @@ function getPerPageOptions(){
     }
 
     
+</script>
+
+<script>
+
+
+
+    
+
+    function showPage(pageNumber,pages) {
+        pages.forEach((page, index) => {
+            if (index === pageNumber) {
+                page.style.display = "block";
+            } else {
+                page.style.display = "none";
+            }
+        });
+    }
+
+
+
+    function setActive(pageNumbers,currentPage) {
+        pageNumbers.forEach((page, index) => {
+            if(currentPage === index) {
+                page.classList.add("active-number");
+            } else {
+                page.classList.remove("active-number");
+            }
+        });
+    }
+
+    function setUpPages(){
+    let totalPages=<?php echo $totalPages; ?>    
+    const pages = document.querySelectorAll(".page");
+    const pageNumbers = document.querySelectorAll(".page-number");
+    const prevButton = document.getElementById("prevPage");
+    const nextButton = document.getElementById("nextPage");
+    let clonedprevButton = prevButton.cloneNode(true);
+    prevButton.parentNode.replaceChild(clonedprevButton, prevButton);
+    let clonednextButton = nextButton.cloneNode(true);
+    nextButton.parentNode.replaceChild(clonednextButton, nextButton);
+    let currentPage = 0;
+
+
+        pageNumbers.forEach((page, index) => {
+            page.addEventListener("click", function () {
+                showPage(index,pages);
+                currentPage = index;
+                clonedprevButton.disabled = currentPage === 0;
+                clonednextButton.disabled = currentPage === totalPages - 1
+                setActive(pageNumbers,currentPage);
+            });
+        });
+        
+        clonedprevButton.addEventListener("click", function () {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage,pages);
+                clonedprevButton.disabled = currentPage === 0;
+                clonednextButton.disabled = currentPage === totalPages - 1
+                setActive(pageNumbers,currentPage);
+            }
+        });
+
+        clonednextButton.addEventListener("click", function () {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                showPage(currentPage,pages);
+                clonedprevButton.disabled = currentPage === 0;
+                clonednextButton.disabled = currentPage === totalPages - 1
+                setActive(pageNumbers,currentPage);
+            }
+        });
+
+        showPage(currentPage,pages);
+        clonedprevButton.disabled = currentPage === 0;
+        clonednextButton.disabled = currentPage === totalPages - 1
+    }
+
+    setUpPages()
+
+
 </script>

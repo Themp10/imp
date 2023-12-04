@@ -278,9 +278,10 @@ thead {
   text-align: center;
   text-decoration: none;
 }
-.active{
+.active-number{
   background-color: #15d072 !important ;
-  border:2px solid #15d072;
+  border:2px solid #4dea9b;
+  color: white !important ;
 }
 
 .pagination-container{
@@ -452,16 +453,9 @@ thead {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .4s ease;
+  transition: .2s ease;
 }
 
-.active-number {
-  font-size: 1.3em;
-  height: 40px;
-  width: 40px;
-  background-color: #17c26d;
-  color: white;
-}
 
 .btn-arrow {
   width: 120px;
