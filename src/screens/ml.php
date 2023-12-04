@@ -62,6 +62,14 @@ function searchList($filter){
         </div>
     </div>
     <div class="pagination-data">
-
+        <button class="btn-arrow" id="prevPage" disabled>← <span class="nav-text"></span></button>
+        <div class="list-pages">
+            <div class="page-number active-number">1</div>
+            <div class="page-number">2</div>
+            <div class="page-number">3</div>
+            <div class="page-number">4</div>
+            <div class="page-number">5</div>
+        </div>
+        <button class="btn-arrow" id="nextPage"><span class="nav-text"></span> →</button>
     </div>
 </form>

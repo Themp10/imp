@@ -393,6 +393,109 @@ thead {
   flex-wrap: wrap;
   gap: 30px;
 }
+
+.pagination-data{
+  display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+  width: 100%;
+}
+
+
+.page {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page li {
+  list-style: none;
+  margin: 10px auto;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-pages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 200px;
+}
+
+.page-number {
+  cursor: pointer;
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s ease;
+}
+
+.active-number {
+  font-size: 1.3em;
+  height: 40px;
+  width: 40px;
+  background-color: #17c26d;
+  color: white;
+}
+
+.btn-arrow {
+  width: 120px;
+  padding: 8px 16px;
+  background-color: #ffffff00;
+  color: #17c26d;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-arrow:hover {
+  color: #17c26d;
+}
+
+.btn-arrow:disabled {
+  background-color: #ffffff00;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+#prevPage {
+  margin-right: 20px;
+}
+
+#nextPage {
+  margin-left: 20px;
+}
+
+.btn-arrow {
+  font-size: 1.2em;
+}
+
+.nav-text {
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+}
+
+
 /* ============================ Entrée Stock ============================ */
 
 /* ============================ Sortie Stock ============================ */
