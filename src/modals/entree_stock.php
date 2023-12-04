@@ -1,9 +1,9 @@
 
 
 <?php
-
-include "db_connection.php";
-include_once  "mvt_stock.php";
+//var_dump(dirname(__DIR__)."\util\mvt_stock.php");
+include_once  dirname(__DIR__)."\db\db_connection.php";
+include_once  dirname(__DIR__)."\util\mvt_stock.php";
 // Fonctions pour mettre a jour le stock
 
 function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users){
@@ -40,10 +40,9 @@ function updateStockInDatabase($id, $currentStock, $addedStock)
 
 function getCartridgeById($id) {
     global $conn;
-
     // Sanitize input to prevent SQL injection
     $id = mysqli_real_escape_string($conn, $id);
-
+    
     // Perform the database query
     $sql = "SELECT * FROM cartridges WHERE id = '$id'";
     $result = $conn->query($sql);
@@ -206,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             document.getElementById('stock').disabled=true;
             $.ajax({
                 type: 'GET',
-                url: 'modal.php', // Replace with the actual URL for your PHP script
+                url: './src/modals/entree_stock.php', // Replace with the actual URL for your PHP script
                 data: { id: cartridgeId },
                 success: function(response) {
                     // Parse the JSON response
@@ -317,7 +316,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         $.ajax({
                 type: 'POST',
-                url: 'modal.php',
+                url: 'src/modals/entree_stock.php',
                 data: data,
                 success: function(response) {
                     // Check the response from the server and handle accordingly

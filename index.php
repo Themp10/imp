@@ -1,9 +1,5 @@
 <?php
-include "db_connection.php"; // Include databaseî connection file
-//include "render.php";
-
-
-
+require "src/db/db_connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,23 +25,23 @@ include "db_connection.php"; // Include databaseî connection file
     <a href="#" onclick="showContent('take-from-stock')">Sortie Stock</a>
     </nav>
     <?php
-        include "modal.php";
-        include "bon_sortie.php";
+        include "src/modals/entree_stock.php";
+        include "src/modals/bon_sortie.php";
     ?>
     <div class="container" id="main-container">
         <div class="inner-container" id="cartridge-inventory">
-            <div class="invetory-header">
+            <div class="inventory-header">
                 <h2 class="inventory-title">Etat du stock</h2>
                 <input type="button" class="show-page-button" value="Nouveau Toner" onClick="addnew()">
             </div>
             
             <div class="inv-items-container">
-                <?php include "render.php"; ?>
+                <?php include "src/screens/inventory.php"; ?>
             </div>
         </div>
         <div class="inner-container" id="stock-movements">
             <div class="mvt-items-container">
-                <?php include "mvt_list.php"; ?>
+                <?php include "src/screens/ml.php"; ?>
             </div>
         </div>
         <!-- <div class="inner-container" id="add-to-stock">
@@ -53,7 +49,7 @@ include "db_connection.php"; // Include databaseî connection file
         </div> -->
         <div class="inner-container" id="take-from-stock">
             
-        <?php include "sortie_stock.php"; ?>
+        <?php include "src/screens/sortie_stock.php"; ?>
 
         </div>
     </div>
@@ -139,10 +135,6 @@ include "db_connection.php"; // Include databaseî connection file
             draggable.addEventListener('dragend', () => {
                 const cartridgeId = draggable.dataset.cartridgeId;
                 const statusColumn = getColumnStatus(draggable.parentElement.id); // Get status based on column ID
-
-                // Update the status in the database
-                updateCartridgeStatus(cartridgeId, statusColumn);
-
                 draggable.remove();
             });
         });
@@ -187,23 +179,6 @@ include "db_connection.php"; // Include databaseî connection file
             }
         }
 
-        // Add this function to update the status in the database
-        function updateCartridgeStatus(cartridgeId, newStatus) {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "update_status.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-            const data = "cartridgeId=" + encodeURIComponent(cartridgeId) + "&newStatus=" + encodeURIComponent(newStatus);
-            xhr.send(data);
-
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText);
-                } else {
-                    console.error("Error updating status");
-                }
-            };
-        }
     </script>
     <script src="https://kit.fontawesome.com/49540fc0d4.js" crossorigin="anonymous"></script>
 </body>

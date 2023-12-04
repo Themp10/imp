@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "classmap": [
+            "path/to/classes"
+        ],
+        "psr-4": {
+            "Namespace\\": "path/to/namespace"
+        }
+    }
+}

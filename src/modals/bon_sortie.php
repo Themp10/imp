@@ -1,6 +1,6 @@
 <?php
-include "db_connection.php";
-include_once  "mvt_stock.php";
+include_once  dirname(__DIR__)."\db\db_connection.php";
+include_once  dirname(__DIR__)."\util\mvt_stock.php";
 
 function getCartridgeByIds($ids) {
     global $conn;
@@ -190,7 +190,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      
         $.ajax({
                 type: 'POST',
-                url: 'bon_sortie.php',
+                url: './src/modals/bon_sortie.php',
                 data: cartData,
                 success: function(response) {
                     // Check the response from the server and handle accordingly
@@ -221,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.getElementById('bsModal').style.display = 'flex';
         $.ajax({
                 type: 'GET',
-                url: 'bon_sortie.php', // Replace with the actual URL for your PHP script
+                url: './src/modals/bon_sortie.php', // Replace with the actual URL for your PHP script
                 data: { ids: strIds },
                 success: function(response) {
                     // Parse the JSON response

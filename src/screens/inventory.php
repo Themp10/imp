@@ -1,5 +1,5 @@
 <?php
-include "db_connection.php";
+include "src/db/db_connection.php";
 
 function get_printers_list(){
     global $conn; 
