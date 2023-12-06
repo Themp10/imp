@@ -1,9 +1,10 @@
 
 <?php
 include_once  dirname(__DIR__)."\db\db_connection.php";
-$defaultPerPage=getPerPageOptions()[1];
+
+$defaultPerPage=getPerPageOptions()[2];
 $perPage = isset($_GET['perPage'])?intval($_GET['perPage']):$defaultPerPage;
-$page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+$page = isset($_GET['selectedPage']) ?intval($_GET['selectedPage']): 1;
 $totalRows=getNbRows();
 $totalPages=ceil($totalRows / $perPage);
 
@@ -51,8 +52,10 @@ function getNbRows(){
 
 function setPagination($sql){
     global $perPage;
+    global $page;
+    $offset = ($page - 1) * $perPage;
     $perPageOptions = getPerPageOptions();
-    $sql .=" LIMIT ".$perPage;//." OFFSET ".$offset;
+    $sql .=" LIMIT ".$perPage." OFFSET ".$offset;
     return $sql;
 }
 
@@ -60,6 +63,7 @@ function getFiltredData($filtredSql){
     global $conn;
     global $perPage;
     global $totalPages;
+    global $page;
 
     $result = $conn->query($filtredSql);
     if ($result) {
@@ -68,7 +72,7 @@ function getFiltredData($filtredSql){
         $fullData["mvtData"]=$mvtData;
         $fullData["perPage"]=$perPage;
         $fullData["totalPages"] = $totalPages;
-        
+        $fullData["selectedPage"] = $page;
         return $fullData;
     } else {
         return "Error fetching movement data: " . $conn->error;
@@ -112,7 +116,7 @@ function searchList($filter){
 }
 
 function getPerPageOptions(){
-    return [5, 10, 20, 100,200,1000];
+    return [1,5, 10, 20, 100,200,1000];
 }
 ?>
 <div class="mvt-stock-header">
@@ -158,18 +162,29 @@ function getPerPageOptions(){
             <button class="filter-cancel"><i class="fa-regular fa-circle-xmark fa-xl cancel-filter" style="color: #f07575;" onclick="supprimerFiltre()"></i></button>
         </div>
     </div>
-    <div class="pagination-data">
-        <button class="btn-arrow" id="prevPage" disabled>← <span class="nav-text"></span></button>
-        <div class="list-pages" id="pagination-pages">
 
-        </div>
-        <button class="btn-arrow" id="nextPage"><span class="nav-text"></span> →</button>
-        <fieldset class="filter-box-per-page">
-                <legend class="filter-type-title">Eléments</legend>
+    <div class="pagination-data">
+        <!-- <button class="btn-arrow" id="prevPage" disabled>← <span class="nav-text"></span></button> -->
+        <fieldset class="filter-box">
+            <legend class="filter-type-title">Page</legend>
+            <!-- <div class="list-pages" id="pagination-pages"></div> -->
+            <select id="filter-page" class="select-filter" name="name" onchange="handleSelectChange()">
+            <?php for ($i = 1; $i < $totalPages+1; $i++) { ?>
+                <option value="<?= $i ?>" <?php //echo ($page == $i) ? 'selected' : ''; ?>>
+                    <?= $i ?>
+                </option>
+            <?php } ?>
+
+            </select>
+        </fieldset>
+
+        <!-- <button class="btn-arrow" id="nextPage"><span class="nav-text"></span> →</button> -->
+        <fieldset class="filter-box">
+                <legend class="filter-type-title">Eléments par page</legend>
                 <select id="filter-per-page" class="select-filter" name="name" onchange="handleSelectChange()">
-                                <?php foreach (getPerPageOptions() as $row): ?>
-                                    <option value="<?= $row?>" <?php echo ($perPage == $row) ? 'selected' : ''; ?> ><?= $row?></option>
-                                <?php endforeach; ?>
+                    <?php foreach (getPerPageOptions() as $row): ?>
+                        <option value="<?= $row?>" <?php echo ($perPage == $row) ? 'selected' : ''; ?> ><?= $row?></option>
+                    <?php endforeach; ?>
                 </select>
             </fieldset>
     </div>
@@ -238,7 +253,8 @@ function getPerPageOptions(){
             data: {
                 action: action, 
                 filters:filters,
-                perPage:document.getElementById("filter-per-page").value
+                perPage:document.getElementById("filter-per-page").value,
+                selectedPage:document.getElementById("filter-page").value
             },
             success: function (response) {
                 console.log(response);
@@ -246,21 +262,21 @@ function getPerPageOptions(){
 
                 // generation de la pagination
                 let pages=data["totalPages"]
-                let pageBody=document.getElementById("pagination-pages")
+                let pageBody=document.getElementById("filter-page")
 
                 if (pageBody.hasChildNodes()) {
                         while (pageBody.firstChild) {
                             pageBody.removeChild(pageBody.firstChild);
                         }
                     }
-                
                 for (let i = 1; i < pages+1; i++) {
-                    let div = document.createElement("div");
-                    div.className = "page-number";
-                    div.textContent = i; 
-                    pageBody.appendChild(div);    
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = i; 
+                    pageBody.appendChild(option);    
                 }
-                setUpPages();
+
+                document.getElementById("filter-page").value=data["selectedPage"]
                 // generation du tableau
                 let tableBody = document.getElementById("mvt-table-tbody");
                 
@@ -296,8 +312,6 @@ function getPerPageOptions(){
 
 
 
-    
-
     function showPage(pageNumber,pages) {
         pages.forEach((page, index) => {
             if (index === pageNumber) {
@@ -324,12 +338,6 @@ function getPerPageOptions(){
     let totalPages=<?php echo $totalPages; ?>    
     const pages = document.querySelectorAll(".page");
     const pageNumbers = document.querySelectorAll(".page-number");
-    const prevButton = document.getElementById("prevPage");
-    const nextButton = document.getElementById("nextPage");
-    let clonedprevButton = prevButton.cloneNode(true);
-    prevButton.parentNode.replaceChild(clonedprevButton, prevButton);
-    let clonednextButton = nextButton.cloneNode(true);
-    nextButton.parentNode.replaceChild(clonednextButton, nextButton);
     let currentPage = 0;
 
 
@@ -337,35 +345,10 @@ function getPerPageOptions(){
             page.addEventListener("click", function () {
                 showPage(index,pages);
                 currentPage = index;
-                clonedprevButton.disabled = currentPage === 0;
-                clonednextButton.disabled = currentPage === totalPages - 1
                 setActive(pageNumbers,currentPage);
             });
         });
-        
-        clonedprevButton.addEventListener("click", function () {
-            if (currentPage > 0) {
-                currentPage--;
-                showPage(currentPage,pages);
-                clonedprevButton.disabled = currentPage === 0;
-                clonednextButton.disabled = currentPage === totalPages - 1
-                setActive(pageNumbers,currentPage);
-            }
-        });
-
-        clonednextButton.addEventListener("click", function () {
-            if (currentPage < totalPages - 1) {
-                currentPage++;
-                showPage(currentPage,pages);
-                clonedprevButton.disabled = currentPage === 0;
-                clonednextButton.disabled = currentPage === totalPages - 1
-                setActive(pageNumbers,currentPage);
-            }
-        });
-
         showPage(currentPage,pages);
-        clonedprevButton.disabled = currentPage === 0;
-        clonednextButton.disabled = currentPage === totalPages - 1
     }
 
     setUpPages()

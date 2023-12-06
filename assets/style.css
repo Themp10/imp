@@ -439,8 +439,8 @@ thead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 100%;
-  width: 200px;
+  width: 100%;
+
 }
 
 .page-number {
