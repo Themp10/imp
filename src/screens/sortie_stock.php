@@ -82,8 +82,12 @@ $cartridgesList=get_cartridges_list();
         let tonerList=Array.from(document.querySelector('#cart').children)
         let selectedIds=tonerList.map(toner =>toner.getAttribute('id-cartridge'));
         let strIds=selectedIds.join(",")
-
-        openBSModal(strIds)
+        if (strIds==""){
+            alert('Merci de choisir au moins un Toner !')
+        }else{
+            openBSModal(strIds)
+        }
+        
     }
     document.addEventListener('DOMContentLoaded', function () {
         var input = document.getElementById('item-search');

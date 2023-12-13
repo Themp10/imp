@@ -7,13 +7,27 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #120720a1;
+    color: black;
     text-align: center;
-    padding: 1em;
-    
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
 }
 
+.header-logo{
+
+  height: 50%;
+  margin-left: 20px;
+}
+.options-container{
+  width: 200px;
+  height: 100%;
+
+}
 nav {
     background-color: #4CAF50;
     /* overflow: hidden; */

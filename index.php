@@ -14,8 +14,12 @@ require "src/db/db_connection.php";
 </head>
 
 <body>
-    <header>
-        <h1>Gestionnaire de Stock de toner</h1>
+    <header class="page-header">
+            <img src="./assets/logo.png" alt="Logo" class="header-logo">
+            <h1>Gestionnaire de Stock de toner</h1>
+            <div class="options-container">
+                
+            </div>
     </header>
 
     <nav>
