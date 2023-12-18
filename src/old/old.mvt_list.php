@@ -146,10 +146,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     ? intval($_GET['perPage'])
     : $perPageOptions[2]; // Default to 20 if not set or invalid
 
-    $_SESSION['perPage']=$perPage
+    $_SESSION['perPage']=$perPage;
     // Get the current page from the URL parameter, default to page 1
     $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
-    $_SESSION['page']=$page
+    $_SESSION['page']=$page;
 
 
     // Get movement data with pagination

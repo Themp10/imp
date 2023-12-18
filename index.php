@@ -1,5 +1,7 @@
 <?php
+
 require "src/db/db_connection.php";
+
 ?>
 
 <!DOCTYPE html>

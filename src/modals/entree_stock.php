@@ -2,8 +2,8 @@
 
 <?php
 //var_dump(dirname(__DIR__)."\util\mvt_stock.php");
-include_once  dirname(__DIR__)."\db\db_connection.php";
-include_once  dirname(__DIR__)."\util\mvt_stock.php";
+include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."util".DIRECTORY_SEPARATOR ."mvt_stock.php";
 // Fonctions pour mettre a jour le stock
 
 function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users){

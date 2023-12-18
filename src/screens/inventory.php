@@ -1,5 +1,5 @@
 <?php
-include "src/db/db_connection.php";
+include "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 
 function get_printers_list(){
     global $conn; 

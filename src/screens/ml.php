@@ -1,6 +1,6 @@
 
 <?php
-include_once  dirname(__DIR__)."\db\db_connection.php";
+include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 
 $defaultPerPage=getPerPageOptions()[2];
 $perPage = isset($_GET['perPage'])?intval($_GET['perPage']):$defaultPerPage;
