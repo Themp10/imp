@@ -1,6 +1,6 @@
 <?php
 
-require "src/db/db_connection.php";
+require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 
 ?>
 
@@ -26,9 +26,12 @@ require "src/db/db_connection.php";
 
     <nav>
     <a href="#" onclick="showContent('cartridge-inventory')">Inventaire</a>
-    <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
-    <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
     <a href="#" onclick="showContent('take-from-stock')">Sortie Stock</a>
+    <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
+    <a href="#" onclick="showContent('page-DA')">DA</a>
+    <a href="#" onclick="showContent('page-stats')">Statistiques</a>
+    <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
+    
     </nav>
     <?php
         include "src/modals/entree_stock.php";
@@ -45,18 +48,18 @@ require "src/db/db_connection.php";
                 <?php include "src/screens/inventory.php"; ?>
             </div>
         </div>
+
         <div class="inner-container" id="stock-movements">
             <div class="mvt-items-container">
                 <?php include "src/screens/ml.php"; ?>
             </div>
         </div>
-        <!-- <div class="inner-container" id="add-to-stock">
-            <?php //include "add_new.php"; ?>
-        </div> -->
         <div class="inner-container" id="take-from-stock">
-            
-        <?php include "src/screens/sortie_stock.php"; ?>
-
+            <?php include "src/screens/sortie_stock.php"; ?>
+        </div>
+        <div class="inner-container" id="page-DA">
+        </div>
+        <div class="inner-container" id="page-stats">    
         </div>
     </div>
 <!-- Scripts for Drag and Drop -->
