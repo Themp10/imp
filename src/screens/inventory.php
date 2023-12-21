@@ -54,6 +54,7 @@ function generate_cartridge_html($cartridge) {
         $html .= '<div class="overlay-out">En rupture</div>';
     }
     $html .= '<div class="stock-item-data"><p>' . $cartridge['name'] . '</p><span class="badge-color ' . $cartridge['color'] . '"></span></div>';
+    $html .= '<span class="type-value">' . $cartridge['type'] . '</span>';
     $html .= '<p class="stock-values">En stock : <span>' . $cartridge['stock'] . '</span></p>';
     $html .= '<p class="stock-values">Stock min : <span>' . $cartridge['stock_min'] . '</span></p>';
     $html .= '</div>';

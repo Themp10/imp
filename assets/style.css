@@ -24,9 +24,20 @@ header {
   margin-left: 20px;
 }
 .options-container{
-  width: 200px;
   height: 100%;
-
+  display: flex;
+  gap: 50px;
+}
+.color-selector{
+  display: flex;
+}
+.type-selector{
+  display: flex;
+  flex-direction: column;
+}
+.type-row {
+  display: flex;
+  margin: 5px;
 }
 nav {
     background-color: #4CAF50;
@@ -162,10 +173,11 @@ body{
     position: relative;
     /* transition: 0.3s ease; */
   }
-    .cartridge-item:hover{
+  .cartridge-item:hover{
         transform: scale(1.02);
         cursor: pointer;
-    }
+  }
+
   .badge-color {
     
     width: 20px;
@@ -198,6 +210,10 @@ body{
     align-items: center;
   }
 
+  .type-value{
+    font-size: 10px;
+    margin-left: 15px;
+  }
   .overlay-out{
     position: absolute;
     width: 100px;
@@ -600,6 +616,12 @@ thead {
   background: #1fec86;
 }
 
+.da-set-column .column-header {
+  background: #92caff;
+}
+.da-set-column .column-header:hover {
+  background: #5cb5fd;
+}
 
 .task-list {
   min-height: 3rem;
@@ -684,6 +706,95 @@ li {
 .task p {
    margin: 0; 
 }
+
+
+.switch {
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+ }
+ 
+ .switch .input-switch {
+  display: none;
+ }
+ 
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3C3C3C;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+ }
+ 
+ .input-switch:checked + .slider {
+  background-color: #1ed655;
+ }
+ 
+ .input-switch:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ .input-switch:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(85px);
+ }
+ 
+.hide-column{
+  width: 0;
+  opacity: 0;
+}
+.show-column{
+  width: 50%;
+  opacity: 1;
+}
+
+.column {
+  transition: all .5s ease;
+  
+}
+
+ /*------ ADDED CSS ---------*/
+ .slider:after {
+  content: 'DA';
+  color: white;
+  display: block;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 18px;
+  font-family: Verdana, sans-serif;
+ }
+ 
+ input:checked + .slider:after {
+  content: 'Sortie';
+ }
+ 
+ /*--------- END --------*/
+
+
+
 
 /* Dragula CSS Release 3.2.0 from: https://github.com/bevacqua/dragula */
 
@@ -885,7 +996,7 @@ th {
 border: 1px solid black;
 font-family: Cambria;
 text-align: center;
-width: 25%;    
+/* width: 25%;     */
 
 }
 
@@ -950,4 +1061,88 @@ cursor: pointer;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+
+/* ============================ Liste DA ============================ */
+
+
+.da-list-container{
+display: flex;
+flex-direction: column;
+  /* background-color: rebeccapurple; */
+  padding: 15px;
+  gap: 20px;
+}
+.da-container{
+
+  /* background-color: #15D072; */
+  /* width: 100%; */
+  /* height: 100px; */
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+.da-en-cours{
+  border-left: 10px rgb(60, 245, 91) solid;
+}
+.da-container:hover{
+  cursor: pointer;
+}
+.da-overlay{
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 10px);
+  /* height: 130px; */
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #33333327;
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+
+.da-item-container{
+  /* display: flex; */
+  flex: 1;
+}
+
+.da-item-title{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.da-item-data{
+  font-size: 16px;
+  text-align: center;
+}
+
+.success-badge{
+  background-color: #15D072;
+  padding: 3px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+.warning-badge{
+  background-color: #ffd92f;
+  padding: 3px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+.idle-badge{
+  background-color: #9c9c9c;
+  padding: 3px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
 }

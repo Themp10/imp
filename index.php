@@ -19,17 +19,17 @@ require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php
     <header class="page-header">
             <img src="./assets/logo.png" alt="Logo" class="header-logo">
             <h1>Gestionnaire de Stock de toner</h1>
-            <div class="options-container">
+            <div class="settings-container">
                 
             </div>
     </header>
 
     <nav>
     <a href="#" onclick="showContent('cartridge-inventory')">Inventaire</a>
-    <a href="#" onclick="showContent('take-from-stock')">Sortie Stock</a>
+    <a href="#" onclick="showContent('take-from-stock')" id="a-stock">Sortie Stock</a>
     <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
     <a href="#" onclick="showContent('page-DA')">DA</a>
-    <a href="#" onclick="showContent('page-stats')">Statistiques</a>
+    <a href="#" onclick="showContent('page-tdb')">Tableau de bord</a>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
     
     </nav>
@@ -58,8 +58,10 @@ require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php
             <?php include "src/screens/sortie_stock.php"; ?>
         </div>
         <div class="inner-container" id="page-DA">
+            <?php include "src/screens/liste_da.php"; ?>
         </div>
-        <div class="inner-container" id="page-stats">    
+        <div class="inner-container" id="page-tdb">    
+            <?php include "src/screens/tbd.php"; ?>
         </div>
     </div>
 <!-- Scripts for Drag and Drop -->
@@ -86,6 +88,7 @@ require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php
 <script>
         /* Custom Dragula JS */
     dragula([
+    document.getElementById("da-set"),
     document.getElementById("stock-set"),
     document.getElementById("cart")
     ]);

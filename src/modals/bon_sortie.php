@@ -34,6 +34,7 @@ function getCartridgeByIds($ids) {
 function updateStockOutDatabase($demandeur,$rows){
     global $conn;
 
+    // mise à jpours des stock
     foreach ($rows as $row) {
         $newStock=$row['stock']-$row['qte'];
         $updateQuery = "UPDATE cartridges set stock='$newStock' WHERE id='$row[id]'";
@@ -48,6 +49,47 @@ function updateStockOutDatabase($demandeur,$rows){
     return 'success';
 }
 
+function commandable($id){
+$state=false;
+global $conn;
+
+   
+$id = mysqli_real_escape_string($conn, $id);
+
+//la requete recupere le stock à 0
+//pour le stock en dessous du stock sécurité utiliser : 
+//$stockQuery = "SELECT * FROM cartridges WHERE id = '$id' and stock<stock_min";
+$stockQuery = "SELECT * FROM cartridges WHERE id = '$id' and stock=0";
+$stockResult = $conn->query($stockQuery);
+
+if ($stockResult && $stockResult->num_rows > 0) {
+    $state=true;
+}
+
+return $state;
+}
+function createDA($demandeur,$rows){
+    
+
+    global $conn;
+    $user="admin";
+    $datesortie = date("Y-m-d");
+    foreach ($rows as $row) {
+        // >= pas de DA
+        //$row['stock']-$row['qte']-$row['stockMin']>=0 pour DA au dela de stok de sécurité
+        if($row['stock']-$row['qte']>0 ){
+            return 'success';
+        }
+        $insertQuery = "INSERT INTO da_sap (toner,qte, demandeur,date) VALUES ('$row[id]','$row[qte]','$demandeur', '$datesortie')";
+        if ($conn->query($insertQuery) === TRUE) {
+            $id = $conn->insert_id;
+        } else {
+            return 'Error creating DA : ' . $conn->error;
+        }
+
+    } 
+    return 'success';
+}
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["ids"])) {
         $ids = $_GET["ids"];
@@ -68,12 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $demandeur = $_POST["demandeur"];
     $rows = $_POST["rows"];
     $updatedData = updateStockOutDatabase($demandeur,$rows);
-    echo $updatedData;
-        
-    exit(); 
-
-    
-    
+    if( $updatedData=='success'){
+        //$createdDA = createDA($demandeur,$rows);
+        echo $updatedData ;
+    }else{
+        echo $updatedData;
+    } 
+    exit();    
 }
 ?>
 
@@ -177,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 err=true
                 return
             }
-            let data={id:id,qte:tdQte,stock:qteMax}
+            let data={id:id,qte:tdQte,stock:qteMax,stockMin:stockMin}
             rows.push(data)
         })
 

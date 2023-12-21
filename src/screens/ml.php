@@ -119,7 +119,7 @@ function getPerPageOptions(){
     return [1,5, 10, 20, 100,200,1000];
 }
 ?>
-<div class="mvt-stock-header">
+<div class="sortie-stock-header">
     <h2>Mouvements Stock </h2>
 </div>
 <div class="filters-container">

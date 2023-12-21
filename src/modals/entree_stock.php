@@ -6,12 +6,12 @@ include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."
 include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."util".DIRECTORY_SEPARATOR ."mvt_stock.php";
 // Fonctions pour mettre a jour le stock
 
-function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users){
+function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users,$type){
     global $conn;
     $colors = explode(",", $selectedColors);
     $user="admin";
     foreach ($colors as $color) {
-        $insertQuery = "INSERT INTO cartridges (name, model, color, stock, stock_min, users) VALUES ('$name', '$model', '$color', $stock, $stock_min, '$users')";
+        $insertQuery = "INSERT INTO cartridges (name, model,type, color, stock, stock_min, users) VALUES ('$name', '$model','$type', '$color', $stock, $stock_min, '$users')";
         if ($conn->query($insertQuery) === TRUE) {
             $id = $conn->insert_id;
             entreeStock($id,$user,$stock);   
@@ -67,7 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stock = $_POST["stock"];
         $stock_min = $_POST["stock_min"];
         $users = $_POST["users"];
-        $insertResult = insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users);
+        $type = $_POST["type"];
+        $insertResult = insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users,$type);
         echo $insertResult;
 
     }else{
@@ -113,15 +114,31 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <label for="model">Modèle :</label>
         <input type="text" name="model" id="modalCartridgeName" class="modal-input" disabled>
 
-        <label for="color">Couleur :</label>
-        <input type="text" name="color" id="color" class="modal-input" disabled>
-
-        <div class="color-selector" id="color-selector">
-            <input type="checkbox" name="cb-black" id="cb-black" class="input-color Noir">
-            <input type="checkbox" name="cb-jaune" id="cb-jaune" class="input-color Jaune">
-            <input type="checkbox" name="cb-magenta" id="cb-magenta" class="input-color Magenta">
-            <input type="checkbox" name="cb-cyan" id="cb-cyan" class="input-color Cyan">
+        <div class="options-container">
+            <div class="color-selector-container">
+                <label for="color">Couleur :</label>
+                <input type="text" name="color" id="color" class="modal-input" disabled>
+                <div class="color-selector" id="color-selector">
+                    <input type="checkbox" name="cb-black" id="cb-black" class="input-color Noir">
+                    <input type="checkbox" name="cb-jaune" id="cb-jaune" class="input-color Jaune">
+                    <input type="checkbox" name="cb-magenta" id="cb-magenta" class="input-color Magenta">
+                    <input type="checkbox" name="cb-cyan" id="cb-cyan" class="input-color Cyan">
+                </div>
+            </div>
+            <div class="type-selector">
+                <label for="color">Type :</label>
+                <div class="type-row">
+                    <label for="type-cartouche">Cartouche</label><br>  
+                    <input type="radio" id="type-cartouche" name="type-ct" value="cartouche">
+                </div>
+                <div class="type-row">
+                    <label for="type-toner">Toner</label><br>
+                    <input type="radio" id="type-toner" name="type-ct" value="toner">
+                </div>
+                    
+            </div>
         </div>
+
 
         <label for="stock">Stock:</label>
         <input type="number" name="stock" id="stock" class="modal-input" min="0" value="0" disabled>
@@ -276,7 +293,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 alert("Merci de renseigner le stock de sécurité ! ")
                 return
             }
-
+            let type_ctr=document.querySelector('input[name="type-ct"]:checked').value
             data={  
                     id: id,
                     name:tonerName,
@@ -284,7 +301,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     selectedColors: selectedColorsGlobal,
                     users: tonerUsers,
                     stock: stock,
-                    stock_min: stock_min
+                    stock_min: stock_min,
+                    type:type_ctr
                 }
 
         }else{
