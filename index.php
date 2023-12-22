@@ -28,7 +28,7 @@ require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php
     <a href="#" onclick="showContent('cartridge-inventory')">Inventaire</a>
     <a href="#" onclick="showContent('take-from-stock')" id="a-stock">Sortie Stock</a>
     <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
-    <a href="#" onclick="showContent('page-DA')">DA</a>
+    <a href="#" onclick="showContent('page-DA')">DA SAP</a>
     <a href="#" onclick="showContent('page-tdb')">Tableau de bord</a>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
     

@@ -1,9 +1,25 @@
 <?php
 include "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+function get_toner_list($da){
+    global $conn; 
+    $sql = "SELECT c.name,d.qte,d.demandeur,c.color FROM da_sap d, cartridges c WHERE d.toner=c.id and d.id_da=".$da;
+    $result = $conn->query($sql);
 
+    if ($result === false) {
+        die("Error in SQL query: " . $conn->error);
+    }
+
+    $toner_list = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $toner_list[] = $row;
+    }
+
+    return $toner_list;
+}
 function get_da_list(){
     global $conn; 
-    $sql = "SELECT * FROM da_sap";
+    $sql = "SELECT * FROM v_da";
     $result = $conn->query($sql);
 
     if ($result === false) {
@@ -18,6 +34,73 @@ function get_da_list(){
 
     return $da_list;
 }
+
+
+function generate_da_html($da) {
+
+    // $html = '<div class="cartridge-item';
+    // $html .= '<div class="stock-item-data"><p>' . $cartridge['name'] . '</p><span class="badge-color ' . $cartridge['color'] . '"></span></div>';
+    // $html .= '<span class="type-value">' . $cartridge['type'] . '</span>';
+    // $html .= '<p class="stock-values">En stock : <span>' . $cartridge['stock'] . '</span></p>';
+    // $html .= '<p class="stock-values">Stock min : <span>' . $cartridge['stock_min'] . '</span></p>';
+    // $html .= '</div>';
+    $html = '<div class="da-container da-en-cours">';
+    $html .='<div class="da-container-top">';
+    $html .= '<div class="da-item-container">';
+    $html .= '<p class="da-item-title">Id</p>';
+    $html .= '<p class="da-item-data">' . $da['id_da'] . '</p>';
+    $html .= ' </div>';
+    $html .= '<div class="da-item-container">';
+    $html .= '   <p class="da-item-title">Demande d achat</p>';
+    $html .= '   <p class="da-item-data">' . $da['date'] . '</p>';
+    $html .= ' </div>';
+    $html .= '<div class="da-item-container">';
+    $html .= '   <p class="da-item-title">Demande d achat</p>';
+    $html .= '   <p class="da-item-data success-badge">15/12/2023 : 230000012</p>';
+    $html .= ' </div>';
+    $html .= '  <div class="da-item-container">';
+    $html .= '     <p class="da-item-title">Bon de Commande</p>';
+    $html .= '     <p class="da-item-data warning-badge">' . $da['n_bc_sap'] . ' : ' . $da['date_bc'] . '</p>';
+    $html .= ' </div>';
+    $html .= ' <div class="da-item-container">';
+    $html .= '   <p class="da-item-title">Réception</p>';
+    $html .= '    <p class="da-item-data idle-badge">' . $da['n_br_sap'] . ' : ' . $da['date_br'] . '</p>';
+    $html .= ' </div>';
+    $html .= '</div>';
+    $html .='<div class="da-container-bottom">';
+        $toner_da=get_toner_list($da['id_da']);
+        foreach ($toner_da as $toner) {
+            $html .=  generate_toners_html($toner);
+        }
+    $html .='</div>';
+    $html .='</div>';
+    
+
+
+    return $html;
+}
+
+function generate_toners_html($toner) {
+
+
+    $html = '<div class="da-cartridge-item">';
+    $html .= '<div class="da-cartridge-container">';
+    $html .= '<div class="rnd-class"><p class="da-item-name">' . $toner['name'] . '</p><span class="da-badge-color ' . $toner['color'] . '"></span></div>';
+    $html .= '<span class="da-item-name">' . $toner['demandeur'] . '</span>';
+    $html .= '<p class="da-item-name">En stock : <span>' . $toner['qte'] . '</span></p>';
+    $html .= '</div>';
+    $html .= '</div>';
+
+
+    return $html;
+}
+
+function generate_all(){
+    $list_da=get_da_list();
+    foreach ($list_da as $da) {
+        echo generate_da_html($da);
+    }
+}
 ?>
 
 <div class="sortie-stock-header">
@@ -25,65 +108,7 @@ function get_da_list(){
 </div>
 
 <div class="da-list-container">
-    <div class="da-container da-en-cours">
-        <div class="da-item-container">
-            <p class="da-item-title">Modele</p>
-            <p class="da-item-data"> HP 207 A </p>
-        </div>
-        <div class="da-item-container">
-            <p class="da-item-title">Couleur</p>
-            <p class="da-item-data"> Noir</p>
-            <p class="da-item-data"> Cyan</p>
-            <p class="da-item-data"> Magenta</p>
-        </div>
-        <div class="da-item-container">
-            <p class="da-item-title">Quantité</p>
-            <p class="da-item-data">1</p>
-        </div>
-        <div class="da-item-container">
-            <p class="da-item-title">Demandeur</p>
-            <p class="da-item-data">Oussama/Oussama + AA/MMMM /FSDFSDFSDF sDFSF</p>
-        </div>
-        <div class="da-item-container">
-            <p class="da-item-title">Demande d'achat</p>
-            <p class="da-item-data success-badge">15/12/2023 : 230000012</p>
-        </div>
-        <div class="da-item-container">
-            <p class="da-item-title">Bon de Commande</p>
-            <p class="da-item-data warning-badge">15/12/2023 : 230000012</p>
-        </div>
-        <div class="da-item-container">
-            <p class="da-item-title">Réception</p>
-            <p class="da-item-data idle-badge">15/12/2023 : 230000012</p>
-        </div>
-    </div>
-    <div class="da-container">
-    <table>
-        <thead>
-            <tr>
-            <!-- <th colspan="2">The table header</th> -->
-            <th >Modèle</th>
-            <th >Couleur</th>
-            <th >Quantité</th>
-            <th >Demandeur</th>
-            <th >Demande d'achat</th>
-            <th >Bon de Commande</th>
-            <th >Réception</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>A342 411</td>
-            <td>Gris</td>
-            <td>11</td>
-            <td>Ama Ouss</td>
-            <td>la DA</td>
-            <td>le BC</td>
-            <td>le BR</td>
-            </tr>
-        </tbody>
-    </table>        
-    </div>
+    <?php echo generate_all(); ?>
     <div class="da-container">
     <div class="da-overlay"></div>
     </div>
