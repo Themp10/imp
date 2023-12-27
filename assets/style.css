@@ -1143,6 +1143,20 @@ flex-direction: column;
   color: white;
   font-weight: bold;
 }
+.danger-badge{
+  background-color: #fd6464;
+  padding: 3px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+.neutral-badge{
+  background-color: #30d3df;
+  padding: 3px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
 .warning-badge{
   background-color: #ffd92f;
   padding: 3px;

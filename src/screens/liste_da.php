@@ -1,5 +1,24 @@
 <?php
 include "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."hana_connection.php";
+function get_approval_status($da){
+    $sql='SELECT "Status" FROM "AM_PROINVEST_TEST"."OWDD" where "DraftEntry"='.$da;
+    $a=get_data_from_Hana($sql);
+    $status="";
+    switch ($a[0]["Status"]) {
+        case "W":
+            $status="Approbation en attente";
+            break;
+        case "N":
+            $status="Refusée";
+            break;
+        case "Y":
+            $status="Approuvée";
+            break;
+    }
+    return $status;
+}
+
 function get_toner_list($da){
     global $conn; 
     $sql = "SELECT c.name,d.qte,d.demandeur,c.color FROM da_sap d, cartridges c WHERE d.toner=c.id and d.id_da=".$da;
@@ -34,17 +53,14 @@ function get_da_list(){
 
     return $da_list;
 }
-
-
 function generate_da_html($da) {
+    //$items=["0 : da_data","1 : da_color","2 : bc_data","3 : bc_color","","4 : br_data","5 : br_color","6 : da_badge"]
+    $items=["A saisir sur SAP","","","","","",""];
+   if($da['da_ok']=="0"){
 
-    // $html = '<div class="cartridge-item';
-    // $html .= '<div class="stock-item-data"><p>' . $cartridge['name'] . '</p><span class="badge-color ' . $cartridge['color'] . '"></span></div>';
-    // $html .= '<span class="type-value">' . $cartridge['type'] . '</span>';
-    // $html .= '<p class="stock-values">En stock : <span>' . $cartridge['stock'] . '</span></p>';
-    // $html .= '<p class="stock-values">Stock min : <span>' . $cartridge['stock_min'] . '</span></p>';
-    // $html .= '</div>';
-    $html = '<div class="da-container da-en-cours">';
+   }
+    $approbation= get_approval_status($da['doc_key']);
+    $html = '<div class="da-container '.($da['n_br_sap']==""?"da-en-cours":"").'">';
     $html .='<div class="da-container-top">';
     $html .= '<div class="da-item-container">';
     $html .= '<p class="da-item-title">Id</p>';
@@ -54,17 +70,21 @@ function generate_da_html($da) {
     $html .= '   <p class="da-item-title">Demande d achat</p>';
     $html .= '   <p class="da-item-data">' . $da['date'] . '</p>';
     $html .= ' </div>';
+    //affichage DA
     $html .= '<div class="da-item-container">';
     $html .= '   <p class="da-item-title">Demande d achat</p>';
-    $html .= '   <p class="da-item-data success-badge">15/12/2023 : 230000012</p>';
+ 
+    $html .= '   <p class="da-item-data neutral-badge">'.($da['n_da_sap']==""?$approbation:($da['n_da_sap'].' : '.$da['date_da'])).'</p>';
     $html .= ' </div>';
+    //affichage BC
     $html .= '  <div class="da-item-container">';
     $html .= '     <p class="da-item-title">Bon de Commande</p>';
-    $html .= '     <p class="da-item-data warning-badge">' . $da['n_bc_sap'] . ' : ' . $da['date_bc'] . '</p>';
+    $html .= '     <p class="da-item-data danger-badge">'.($da['n_bc_sap']==""?"En cours":($da['n_bc_sap'].' : '.$da['date_bc'])).'</p>';
     $html .= ' </div>';
+    //affichage BR
     $html .= ' <div class="da-item-container">';
     $html .= '   <p class="da-item-title">Réception</p>';
-    $html .= '    <p class="da-item-data idle-badge">' . $da['n_br_sap'] . ' : ' . $da['date_br'] . '</p>';
+    $html .= '    <p class="da-item-data idle-badge">'.($da['n_br_sap']==""?"En cours":($da['n_br_sap'].' : '.$da['date_br'])).'</p>';
     $html .= ' </div>';
     $html .= '</div>';
     $html .='<div class="da-container-bottom">';
@@ -109,7 +129,5 @@ function generate_all(){
 
 <div class="da-list-container">
     <?php echo generate_all(); ?>
-    <div class="da-container">
-    <div class="da-overlay"></div>
-    </div>
+    <!-- <div class="da-overlay"></div> -->
 </div>
