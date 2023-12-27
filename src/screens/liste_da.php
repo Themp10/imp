@@ -1,6 +1,29 @@
 <?php
-include "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
-include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."hana_connection.php";
+include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+//include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."hana_connection.php";
+function get_data_from_Hana($sql){
+    $dsn = "HANA";
+    $username = "SYSTEM";
+    $password = "Skatys2020";
+    $Hanaconn = odbc_connect($dsn, $username, $password);
+
+    $data=[];
+    $result = odbc_exec($Hanaconn,$sql);
+    if (!$result)
+    {
+        echo "Error while sending SQL statement to the database server.\n";
+        echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
+    }
+    else
+    {
+        while ($row = odbc_fetch_array($result))
+        {
+            $data[]=$row;
+        }
+    }
+    odbc_close($Hanaconn);
+    return $data;
+}
 function get_approval_status($da){
     $sql='SELECT "Status" FROM "AM_PROINVEST_TEST"."OWDD" where "DraftEntry"='.$da;
     $a=get_data_from_Hana($sql);
@@ -54,13 +77,33 @@ function get_da_list(){
     return $da_list;
 }
 function generate_da_html($da) {
-    //$items=["0 : da_data","1 : da_color","2 : bc_data","3 : bc_color","","4 : br_data","5 : br_color","6 : da_badge"]
-    $items=["A saisir sur SAP","","","","","",""];
-   if($da['da_ok']=="0"){
+    //$items=["0 : da_data","1 : da_color","2 : bc_data","3 : bc_color","","4 : br_data","5 : br_color","6 : da en cours ?"]
+    $items=["A saisir sur SAP","idle-badge","A saisir sur SAP","idle-badge","A saisir sur SAP","idle-badge",""];
+    $approbation= get_approval_status($da['doc_key']);
+
+   if($da['n_br_sap']==""){
+        $items[6]="da-en-cours";
+   }
+   if($da['da_ok']=='1'){
+    $items[0]=$approbation;
+    $items[2]="DA non saisie";
+    $items[4]="BC non saisi";
+    if($approbation=="Approbation en attente"){
+        $items[1]="neutral-badge";
+    }elseif ($approbation=="Refusée") {
+        $items[1]="danger-badge";
+    }else{
+        $items[1]="success-badge";
+        if($da['n_da_sap']==""){
+            $items[0]=$da['n_da_sap']." : ".$da['date_da'];
+           }
+    }
+    
 
    }
-    $approbation= get_approval_status($da['doc_key']);
-    $html = '<div class="da-container '.($da['n_br_sap']==""?"da-en-cours":"").'">';
+
+    
+    $html = '<div class="da-container '.$items[6].'">';
     $html .='<div class="da-container-top">';
     $html .= '<div class="da-item-container">';
     $html .= '<p class="da-item-title">Id</p>';
@@ -74,17 +117,17 @@ function generate_da_html($da) {
     $html .= '<div class="da-item-container">';
     $html .= '   <p class="da-item-title">Demande d achat</p>';
  
-    $html .= '   <p class="da-item-data neutral-badge">'.($da['n_da_sap']==""?$approbation:($da['n_da_sap'].' : '.$da['date_da'])).'</p>';
+    $html .= '   <p class="da-item-data '.$items[1].'">'.$items[0].'</p>';
     $html .= ' </div>';
     //affichage BC
     $html .= '  <div class="da-item-container">';
     $html .= '     <p class="da-item-title">Bon de Commande</p>';
-    $html .= '     <p class="da-item-data danger-badge">'.($da['n_bc_sap']==""?"En cours":($da['n_bc_sap'].' : '.$da['date_bc'])).'</p>';
+    $html .= '     <p class="da-item-data '.$items[3].'">'.$items[2].'</p>';
     $html .= ' </div>';
     //affichage BR
     $html .= ' <div class="da-item-container">';
     $html .= '   <p class="da-item-title">Réception</p>';
-    $html .= '    <p class="da-item-data idle-badge">'.($da['n_br_sap']==""?"En cours":($da['n_br_sap'].' : '.$da['date_br'])).'</p>';
+    $html .= '    <p class="da-item-data '.$items[5].'">'.$items[4].'</p>';
     $html .= ' </div>';
     $html .= '</div>';
     $html .='<div class="da-container-bottom">';
