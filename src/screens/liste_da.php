@@ -1,6 +1,7 @@
 <?php
 include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 //include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."hana_connection.php";
+
 function get_data_from_Hana($sql){
     $dsn = "HANA";
     $username = "SYSTEM";
@@ -40,6 +41,48 @@ function get_approval_status($da){
             break;
     }
     return $status;
+}
+
+function update_bc_data($id_da,$n_bc_sap,$date_bc){
+    global $conn;
+    $sql = "UPDATE da_sap SET 
+    n_bc_sap = '$n_bc_sap',
+    date_bc = '$date_bc'
+    WHERE id_da = '$id_da'";
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
+        echo "<p class='message-maj'>Mise à jour réussie</p>";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+}
+function find_BC(){
+    global $conn; 
+    $sql="SELECT id_da,n_da_sap FROM v_da WHERE n_da_sap IS NOT NULL"; 
+    $result = $conn->query($sql);
+    if ($result === false) {
+        die("Error in SQL query: " . $conn->error);
+    }
+    $id_da_list = [];
+
+    while ($row = $result->fetch_assoc()) {
+        $id_da_list[] = $row;
+    }
+    
+    foreach ($id_da_list as $da) {
+        
+        $sql='SELECT "DocNum","DocDate" from "AM_PROINVEST_TEST"."OPOR" where "DocEntry" in( select "DocEntry" from "AM_PROINVEST_TEST"."POR1" where "BaseRef"=\''.$da["n_da_sap"].'\')';
+        
+        $a=get_data_from_Hana($sql);
+        
+        if(count($a)>0){
+            
+            $n_bc_sap=$a[0]["DocNum"];
+            $date_bc=$a[0]["DocDate"];
+           update_bc_data($da["id_da"],$n_bc_sap,$date_bc);
+        }
+
+    }
 }
 
 function get_toner_list($da){
@@ -94,9 +137,18 @@ function generate_da_html($da) {
         $items[1]="danger-badge";
     }else{
         $items[1]="success-badge";
-        if($da['n_da_sap']==""){
+        if($da['n_da_sap']!=""){
             $items[0]=$da['n_da_sap']." : ".$da['date_da'];
-           }
+            if($da['n_bc_sap']!=""){
+                $items[2]=$da['n_bc_sap']." : ".$da['date_bc'];
+                $items[3]="success-badge";
+                $items[4]="BR à saisir";
+                $items[5]="warning-badge";
+            }else{
+                $items[2]="En attente du bon de commande";
+                $items[3]="warning-badge";
+            }
+        }
     }
     
 
@@ -150,7 +202,7 @@ function generate_toners_html($toner) {
     $html .= '<div class="da-cartridge-container">';
     $html .= '<div class="rnd-class"><p class="da-item-name">' . $toner['name'] . '</p><span class="da-badge-color ' . $toner['color'] . '"></span></div>';
     $html .= '<span class="da-item-name">' . $toner['demandeur'] . '</span>';
-    $html .= '<p class="da-item-name">En stock : <span>' . $toner['qte'] . '</span></p>';
+    $html .= '<p class="da-item-name">Qte : <span>' . $toner['qte'] . '</span></p>';
     $html .= '</div>';
     $html .= '</div>';
 
@@ -164,6 +216,7 @@ function generate_all(){
         echo generate_da_html($da);
     }
 }
+find_BC($da);
 ?>
 
 <div class="sortie-stock-header">
