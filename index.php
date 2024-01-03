@@ -64,9 +64,14 @@ require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php
             <?php include "src/screens/tbd.php"; ?>
         </div>
     </div>
-<!-- Scripts for Drag and Drop -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js"></script>
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js"></script> -->
+<script src="src/static/dragula.js"></script>
+<script src="src/static/jquery-3.6.4.min.js"></script>
+<script src="src/static/49540fc0d4.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/49540fc0d4.js" crossorigin="anonymous"></script> -->
+
+<!-- Scripts for Drag and Drop -->
 <!-- Gestion de l'ajouter de quantité au click sur un toner -->
 <script>
     window.onload = (event) => {
@@ -192,7 +197,7 @@ require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php
         }
 
     </script>
-    <script src="https://kit.fontawesome.com/49540fc0d4.js" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

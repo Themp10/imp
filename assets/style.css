@@ -1197,3 +1197,76 @@ margin: 0;
   justify-content: space-between;
   gap: 10px;
 }
+
+
+/* ============================ Tableau de Bord ============================ */
+.card-row{
+  display: flex;
+  gap: 30px;
+}
+.card-item {
+  width: 250px;
+  height: 150px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 15px;
+    position: relative;
+}
+.card-item:nth-child(1) {
+  color: #488365;
+  background-color: #aff8d4;
+}
+.card-item:nth-child(1):hover {
+  background-color: #6dffb6;
+}
+.card-item:nth-child(2) {
+  color:#427b80 ;
+  background-color: #b3faff;
+}
+.card-item:nth-child(2):hover {
+  background-color: #91f8ff;
+}
+.card-item:nth-child(3) {
+  color:#9b5b5b ;
+  background-color: #ffc5c5;
+}
+.card-item:nth-child(3):hover {
+  background-color: #ff9797;
+}
+.card-item:nth-child(4) {
+  color:#9b8a5b ;
+  background-color: #fffbc5;
+}
+.card-item:nth-child(4):hover {
+  background-color: #fff597;
+}
+
+.card-title{
+  margin-top: 30px;
+  margin-left: 15px;
+  font-size: 20px;
+  
+}
+.card-data{
+position: absolute;
+right: 20px;
+bottom: 20px;
+font-size: 60px;
+}
+
+
+/* ============================ RESPONSIVE ============================ */
+
+@media only screen and (max-width: 600px) {
+
+  /* ============================ TDB ============================ */
+  .chart-container-row{
+    flex-direction: column;
+
+  }
+  .card-row{
+    flex-direction: column;
+  }
+  .card-item {
+    width: 100%;
+  }
+}
