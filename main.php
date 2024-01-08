@@ -1,5 +1,5 @@
 <?php
-
+define('BASEDIR', __DIR__);
 require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 session_start();
 $hidden=false;

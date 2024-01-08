@@ -1,5 +1,6 @@
 <?php
-include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+//include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+
 
 function get_users(){
     global $conn; 
@@ -17,10 +18,13 @@ function get_users(){
 }
 
 function insert_user($ldap_login,$sap_login){
-    global $conn; 
+    include_once "../db/db_connection.php"; 
+    global $conn;  
     $insertQuery = "INSERT INTO users (ldap_user,sap_user) VALUES ('$ldap_login','$sap_login')";
+    var_dump($insertQuery);
     if ($conn->query($insertQuery) === TRUE) {
         $id = $conn->insert_id;
+        
     } else {
         return 'Error creating user : ' . $conn->error;
     }
@@ -28,16 +32,18 @@ function insert_user($ldap_login,$sap_login){
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(!isset($_POST['ldap-login']) || !isset($_POST['sap-login'])  ){
+    if(isset($_POST['ldap-login'], $_POST['sap-login']) && !empty($_POST['ldap-login']) && !empty($_POST['sap-login'])){
         $ldap_login = $_POST['ldap-login'];
         $sap_login = $_POST['sap-login'];
-        insert_user($ldap_login,$sap_login);
-        exit(); 
+        insert_user($ldap_login, $sap_login);
+        //exit(); 
+    } else {
+        // Handle the case where one or both fields are empty
+        echo "Both LDAP Login and SAP Login must be filled out.";
+        //exit();
     }
-   // header('Location: /imp/main.php');
+    header('Location: /imp/main.php');
 }
-
-
 ?>
 
 
