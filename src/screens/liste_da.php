@@ -1,7 +1,7 @@
 <?php
 include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 //include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."hana_connection.php";
-
+$dataBase="AM_PROINVEST_TEST";
 function get_data_from_Hana($sql){
     $dsn = "HANA";
     $username = "SYSTEM";
@@ -26,7 +26,8 @@ function get_data_from_Hana($sql){
     return $data;
 }
 function get_approval_status($da){
-    $sql='SELECT "Status" FROM "AM_PROINVEST_TEST"."OWDD" where "DraftEntry"='.$da;
+    global $dataBase;
+    $sql='SELECT "Status" FROM "'.$dataBase.'"."OWDD" where "DraftEntry"='.$da;
     $a=get_data_from_Hana($sql);
     $status="";
     switch ($a[0]["Status"]) {
@@ -58,6 +59,7 @@ function update_bc_data($id_da,$n_bc_sap,$date_bc){
 }
 function find_BC(){
     global $conn; 
+    global $dataBase;
     $sql="SELECT id_da,n_da_sap FROM v_da WHERE n_da_sap IS NOT NULL"; 
     $result = $conn->query($sql);
     if ($result === false) {
@@ -71,7 +73,7 @@ function find_BC(){
     
     foreach ($id_da_list as $da) {
         
-        $sql='SELECT "DocNum","DocDate" from "AM_PROINVEST_TEST"."OPOR" where "DocEntry" in( select "DocEntry" from "AM_PROINVEST_TEST"."POR1" where "BaseRef"=\''.$da["n_da_sap"].'\')';
+        $sql='SELECT "DocNum","DocDate" from "'.$dataBase.'"."OPOR" where "DocEntry" in( select "DocEntry" from "'.$dataBase.'"."POR1" where "BaseRef"=\''.$da["n_da_sap"].'\')';
         
         $a=get_data_from_Hana($sql);
         
@@ -216,7 +218,7 @@ function generate_all(){
         echo generate_da_html($da);
     }
 }
-find_BC($da);
+find_BC();
 ?>
 
 <div class="sortie-stock-header">

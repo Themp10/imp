@@ -1253,10 +1253,141 @@ bottom: 20px;
 font-size: 60px;
 }
 
+/* ============================ Login ============================ */
+.login-body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://lh7-us.googleusercontent.com/ucKcniCYb7ohrYYPOEZLeD2bbXKPO6tts-LYoBtORE2NRsNLzSa6KQ2xOXieZFTeHH4F-L-Fi4BpSomDqtThUJBm0Dm-EBwf8PhjM7DgzRlxlLyz7B7fOiZ9KOnQ57Mv8cPiDSnklCtYv8lEb2XynQ=s2048');
+   background-position: 650px 0px;
+  background-repeat: no-repeat;
+  background-color: white; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
 
+.login-container {
+  background-color: #ffffffab;
+  backdrop-filter: blur(5px);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.login-container h2 {
+  color: #333; /* Assuming a dark grey color for text */
+  text-align: center;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-bottom: 1px solid rgb(252, 210, 74) !important;
+}
+
+.login-input:focus{
+  outline: none;
+  border-bottom: 1px solid rgb(252, 210, 74) !important;
+}
+
+.login-submit {
+  background-color: #ffcc00; /* Assuming a yellow color for the button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box; /* Make sure padding doesn't affect width */
+  margin-top: 50px;
+}
+
+.login-submit:hover {
+  background-color: #e6b800; /* Darker yellow on hover */
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 20px;
+}
+.login-err{
+  margin-top: 20px;
+  padding-left: 30px;
+  color: rgb(243, 103, 103);
+  font-style: italic;
+}
+.deco-btn{
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+.deco-btn:hover{
+  color: white;
+}
+.settings-username{
+  margin: 0 20px;
+  color: white;
+}
+
+
+
+/* ============================ Users============================ */
+.users-main-container{
+
+  width: 100%;
+  display: flex;
+}
+.users-right,.users-left{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.users-table{
+  width: 400px;
+}
+
+.users-form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 50px;
+}
+.users-input{
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  padding-left: 15px;
+  border-radius: 15px;
+}
+
+.users-btn{
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  padding-left: 15px;
+  border-radius: 15px;
+  background-color: #3afd9b;
+  border: none;
+  cursor: pointer;
+}
+.users-btn:hover{
+  color: rgb(255, 255, 255);
+  background-color: #32d182;
+
+}
 /* ============================ RESPONSIVE ============================ */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
   /* ============================ TDB ============================ */
   .chart-container-row{
@@ -1268,5 +1399,11 @@ font-size: 60px;
   }
   .card-item {
     width: 100%;
+  }
+
+
+  .users-main-container{
+    flex-direction: column;
+    gap: 30px;
   }
 }
