@@ -41,7 +41,10 @@ function get_years(){
             <div class="card-title">Toner en rupture</div>
             <div class="card-data" id="toner-rupture">10</div>
         </div>
-
+        <div class="card-item">
+            <div class="card-title">Total achat</div>
+            <div class="card-data" id="total-achat">10</div>
+        </div>
     </div>
 
     
@@ -54,6 +57,9 @@ function get_years(){
           <?php foreach (get_years() as $row): ?>
             <input class="btn-year" type="button" value="<?= $row["year"]?>" onclick="setYear(<?= $row["year"]?>)">
           <?php endforeach; ?>
+      </div>
+      <div class="chart-container" style="position: relative; height:300px; width:600px;">
+        <canvas id="chart-ppf"></canvas>
       </div>
       <div class="chart-container" style="position: relative; height:300px; width:600px;">
         <canvas id="chart-spu"></canvas>
@@ -75,7 +81,17 @@ function get_years(){
   document.getElementById('toner-rupture').textContent=jsonData.table8[0]["total"]
   
   const chart_spt = document.getElementById('chart-spt');//sortie par toner
-  
+
+  function getByfrs(listSAP,year=2023,societe="YASMINE_FONCIERE"){
+    const aggregatedData = listSAP.reduce((acc, item) => {
+  if (!acc[item.CardName]) {
+    acc[item.CardName] = 0;
+  }
+  acc[item.CardName] += parseFloat(item.Total);
+  return acc;
+}, {});
+  return aggregatedData
+}
 
 var options = {
     scales: {
@@ -177,9 +193,56 @@ const spdChart = new Chart(chart_spd, {
     },
     
   });
+
+  let listSAP=  jsonData.table9
+
+document.getElementById('total-achat').textContent=listSAP.reduce((sum, item) => {
+  return sum + parseInt(item.Total);
+}, 0);
+
+
+  let data1=getByfrs(listSAP)
+
+  const chart_ppf = document.getElementById('chart-ppf'); //sortie par utilsiateur
+let ppf_label=[]
+let ppf_data=[]
+console.log(data1)
+for (const key in data1) {
+  ppf_label.push(key)
+  ppf_data.push(data1[key])
+}
+
+  new Chart(chart_ppf, {
+    type: 'bar',
+    data: {
+      labels: ppf_label,
+      datasets: [{
+        label: 'Par fourisseur',
+        data: ppf_data,
+        borderWidth: 1
+      }]
+    },
+    options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Par fourisseur'
+      }
+    }
+  },
+  });
+
+
+
 </script>
 
 <script>
+
+
 
 function setYear(year){
 let spd_label=[]

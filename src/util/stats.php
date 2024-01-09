@@ -50,7 +50,7 @@ function ssql_from_Hana($sql){
 
 
 function fetchAllStatistics() {
-    // Your four queries
+    $dataBase="YASMINE_FONCIERE";
     $queries = [
         "SELECT SUM(stock) as 'Nombre de Toner' FROM cartridges WHERE TYPE='toner'",
         "SELECT SUM(stock) as 'Nombre de Cartouche' FROM cartridges WHERE TYPE='cartouche'",
@@ -62,15 +62,24 @@ function fetchAllStatistics() {
         "SELECT COUNT(*) AS total FROM cartridges WHERE stock=0",
 
     ];
-
+    $hanaQueries=[
+        'SELECT "OPOR"."CardName",YEAR("POR1"."DocDate") as "year",MONTH("POR1"."DocDate") as "month",SUM("POR1"."Price") as "Total"
+        FROM "YASMINE_FONCIERE"."POR1" as "POR1","YASMINE_FONCIERE"."OPOR" as "OPOR" 
+        WHERE "POR1"."DocEntry"="OPOR"."DocEntry" and "POR1"."ItemCode"=\'DEX00203\' and "POR1"."BaseType"=\'1470000113\'  
+        group by YEAR("POR1"."DocDate"),MONTH("POR1"."DocDate"),"OPOR"."CardName", "OPOR"."DocNum" order by  "OPOR"."DocNum"'
+    ];
     $statistics = [];
-
+    $a=0;
     // Loop through each query, execute it, and add the results to the statistics array
     foreach ($queries as $index => $query) {
         $result = sql_from_imp($query);
         $statistics['table' . ($index + 1)] = $result;
+        $a=$index+1;
     }
-
+    foreach ($hanaQueries as $index => $query) {
+        $result = ssql_from_Hana($query);
+        $statistics['table' . ($a+$index + 1)] = $result;
+    }
     // Return the statistics as a JSON string
     return json_encode($statistics);
 }

@@ -30,17 +30,22 @@ function get_approval_status($da){
     $sql='SELECT "Status" FROM "'.$dataBase.'"."OWDD" where "DraftEntry"='.$da;
     $a=get_data_from_Hana($sql);
     $status="";
-    switch ($a[0]["Status"]) {
-        case "W":
-            $status="Approbation en attente";
-            break;
-        case "N":
-            $status="Refusée";
-            break;
-        case "Y":
-            $status="Approuvée";
-            break;
+    if (isset($a[0]["Status"])) {
+        switch ($a[0]["Status"]) {
+            case "W":
+                $status="Approbation en attente";
+                break;
+            case "N":
+                $status="Refusée";
+                break;
+            case "Y":
+                $status="Approuvée";
+                break;
+        }
+    } else {
+        $status = "Status Not Set";
     }
+
     return $status;
 }
 
