@@ -18,10 +18,15 @@ function get_users(){
 }
 
 function insert_user($ldap_login,$sap_login){
-    include_once "../db/db_connection.php"; 
-    global $conn;  
-    $insertQuery = "INSERT INTO users (ldap_user,sap_user) VALUES ('$ldap_login','$sap_login')";
-    var_dump($insertQuery);
+    //!this is very wrong but it was the only way to make it work
+    $servername = "172.28.0.22";
+    $username = "sa";
+    $password = "MG+P@ssw0rd";
+    $dbname = "PRINTERS";
+    // Create connection
+
+    $conn = new mysqli($servername, $username, $password, $dbname); 
+    $insertQuery = "INSERT INTO users (ldap_user,sap_user) VALUES ('$ldap_login','$sap_login')";  
     if ($conn->query($insertQuery) === TRUE) {
         $id = $conn->insert_id;
         

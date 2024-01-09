@@ -40,7 +40,7 @@ function updateStockOutDatabase($demandeur,$rows){
         $updateQuery = "UPDATE cartridges set stock='$newStock' WHERE id='$row[id]'";
 
         if ($conn->query($updateQuery) === TRUE) {
-           sortieStock($row["id"],$demandeur,$row['qte']);   
+            sortieStock($row["id"],$demandeur,$row['qte']);   
         } else {
             return 'Error inserting stock: ' . $conn->error;
         }
@@ -53,7 +53,7 @@ function commandable($id){
 $state=false;
 global $conn;
 
-   
+
 $id = mysqli_real_escape_string($conn, $id);
 
 //la requete recupere le stock à 0
@@ -103,7 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         exit();
     }
-     
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -231,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "demandeur":demandeur,
             "rows":rows
         }
-     
+
         $.ajax({
                 type: 'POST',
                 url: './src/modals/bon_sortie.php',
@@ -269,7 +268,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 data: { ids: strIds },
                 success: function(response) {
                     // Parse the JSON response
-
                     var cartListe = JSON.parse(response);
                     console.log(cartListe)
                     var tableBody = document.getElementById("table-body");
@@ -279,7 +277,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             tableBody.removeChild(tableBody.firstChild);
                         }
                     }
-
                     // Loop to create the rows
                     cartListe.forEach(function (row, index) {
                         var tr = document.createElement("tr");
@@ -297,17 +294,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             demandeurTd.appendChild(demandeurInput);
                             tr.appendChild(demandeurTd);
                         }
-
                         // Create and append other cells
                         var nameTd = document.createElement("td");
                         nameTd.id = "name-bs-table-" + index;
                         nameTd.textContent = row.name;
                         tr.appendChild(nameTd);
-
                         var colorTd = document.createElement("td");
                         colorTd.textContent = row.color;
                         tr.appendChild(colorTd);
-
                         var quantityTd = document.createElement("td");
                         var quantityInput = document.createElement("input");
                         quantityInput.type = "text";
@@ -318,17 +312,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         quantityInput.setAttribute("stock_min", row.stock_min);
                         quantityTd.appendChild(quantityInput);
                         tr.appendChild(quantityTd);
-
                         tableBody.appendChild(tr);
                     });
-
                 },
                 error: function(xhr, status, error) {
                     // Handle AJAX error
                     console.error('AJAX Error: ' + status + ' ' + error);
                 }
             });
-
     }
     function closeBSModal(){
         

@@ -6,12 +6,12 @@ include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."
 include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."util".DIRECTORY_SEPARATOR ."mvt_stock.php";
 // Fonctions pour mettre a jour le stock
 
-function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users,$type){
+function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users,$type,$nb_printer){
     global $conn;
     $colors = explode(",", $selectedColors);
     $user="admin";
     foreach ($colors as $color) {
-        $insertQuery = "INSERT INTO cartridges (name, model,type, color, stock, stock_min, users) VALUES ('$name', '$model','$type', '$color', $stock, $stock_min, '$users')";
+        $insertQuery = "INSERT INTO cartridges (name, model,type, color, stock, stock_min, users,nb_printer) VALUES ('$name', '$model','$type', '$color', $stock, $stock_min, '$users','$nb_printer ')";
         if ($conn->query($insertQuery) === TRUE) {
             $id = $conn->insert_id;
             entreeStock($id,$user,$stock);   
@@ -68,7 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stock_min = $_POST["stock_min"];
         $users = $_POST["users"];
         $type = $_POST["type"];
-        $insertResult = insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users,$type);
+        $nb_printer = $_POST["nb_printer"];
+        $insertResult = insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_min, $users,$type,$nb_printer);
         echo $insertResult;
 
     }else{
@@ -148,6 +149,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
         <label for="users">Utilisateurs :</label>
         <input type="text" name="users" id="users" class="modal-input" disabled>
+
+        <label for="nb_printer">Nb imprimante :</label>
+        <input type="number" name="nb_printer" id="nb_printer" class="modal-input" min="0" value="0" disabled>
+
+
         <div id="new-stock">
             <label for="newStock">Cartouche / toner à ajouter :</label>
             <input type="number" id="newStock" class="modal-input" min="0" value="0">
@@ -206,6 +212,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             document.getElementById('stock').value = 0;
             document.getElementById('stock').disabled=false;
 
+            document.getElementById('nb_printer').value = 0;
+            document.getElementById('nb_printer').disabled=false;
+
             document.getElementById('new-stock').style.display = "none";
             document.getElementById('color-selector').style.display = "block";
 
@@ -219,6 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             document.getElementById('color').disabled=true;
             document.getElementById('stock_min').disabled=true;
             document.getElementById('users').disabled=true;
+            document.getElementById('nb_printer').disabled=true;
             document.getElementById('stock').disabled=true;
             $.ajax({
                 type: 'GET',
@@ -235,7 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     document.getElementById('stock_min').value = cartridgeData.stock_min;
                     document.getElementById('users').value = cartridgeData.users;
                     document.getElementById('stock').value = cartridgeData.stock;
-
+                    document.getElementById('nb_printer').value = cartridgeData.nb_printer;
                     // Show the modal
                     document.getElementById('myModal').style.display = 'flex';
                 },
@@ -293,7 +303,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 alert("Merci de renseigner le stock de sécurité ! ")
                 return
             }
-            let type_ctr=document.querySelector('input[name="type-ct"]:checked').value
+            let nb_printer=parseInt(document.getElementById('nb_printer').value)
+            if(nb_printer <= 0 ){
+                alert("Merci de renseigner le nombre d'imprimantes ! ")
+                return
+            }
+         
+            let type_ctr=document.querySelector('input[name="type-ct"]:checked')
+            if(!type_ctr){
+                alert("Merci de choisir le type! ")
+                return
+            }
             data={  
                     id: id,
                     name:tonerName,
@@ -302,7 +322,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     users: tonerUsers,
                     stock: stock,
                     stock_min: stock_min,
-                    type:type_ctr
+                    type:type_ctr.value,
+                    nb_printer:nb_printer,
                 }
 
         }else{

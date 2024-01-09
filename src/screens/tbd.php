@@ -1,60 +1,82 @@
 <?php
 include "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
-
+include "src". DIRECTORY_SEPARATOR ."util".DIRECTORY_SEPARATOR ."stats.php";
+// Example usage:
+$jsonData = fetchAllStatistics();
+function get_years(){ 
+  $sql="SELECT distinct YEAR(mvt_date) as year FROM mouvements  where type='s'";
+  $years=sql_from_imp($sql);
+  return $years;
+}
 ?>
+
 
 <div class="sortie-stock-header">
     <h2>Tableau de Bord </h2>
 </div>
 
 <div class="tbd-container">
-<div class="card-row">
-    <div class="card-item">
-        <div class="card-title">Nombre de Toner</div>
-        <div class="card-data">13</div>
+    <div class="card-row">
+        <div class="card-item">
+            <div class="card-title">Nombre de Toner</div>
+            <div class="card-data" id="nb-toner">13</div>
+        </div>
+        <div class="card-item">
+            <div class="card-title">Nombre de Cartouche</div>
+            <div class="card-data" id="nb-cartouche">24</div>
+        </div>
+        <div class="card-item">
+            <div class="card-title">DA en Cours</div>
+            <div class="card-data" id="da-en-cours">10</div>
+        </div>
+        <div class="card-item">
+            <div class="card-title">DA Cloturée</div>
+            <div class="card-data" id="da-cloture">10</div>
+        </div>
+        <div class="card-item">
+            <div class="card-title">Nombre d'imprimantes</div>
+            <div class="card-data" id="card-nb-printer">10</div>
+        </div>
+        <div class="card-item">
+            <div class="card-title">Toner en rupture</div>
+            <div class="card-data" id="toner-rupture">10</div>
+        </div>
+
     </div>
-    <div class="card-item">
-        <div class="card-title">Nombre de Cartouche</div>
-        <div class="card-data">24</div>
+
+    
+    <div class="charts-container">
+      <div class="chart-container" style="position: relative; height:300px; width:600px;">
+        <canvas id="chart-spt"></canvas>
+      </div>
+      <div class="tbd-btn-container" style="position: relative; height:300px; width:600px;">
+        <canvas id="chart-spd"></canvas>
+          <?php foreach (get_years() as $row): ?>
+            <input class="btn-year" type="button" value="<?= $row["year"]?>" onclick="setYear(<?= $row["year"]?>)">
+          <?php endforeach; ?>
+      </div>
+      <div class="chart-container" style="position: relative; height:300px; width:600px;">
+        <canvas id="chart-spu"></canvas>
+      </div>
+
     </div>
-    <div class="card-item">
-        <div class="card-title">Nombre d'imprimantes</div>
-        <div class="card-data">10</div>
-    </div>
-    <div class="card-item">
-        <div class="card-title">Nombre de machin</div>
-        <div class="card-data">10</div>
-    </div>
-</div>
-<div class="sortie-stock-header">
-    <h2>Charts</h2>
-    <div>
-    <div class="chart-container-row" style="position: relative; height:300px; width:100%;display:flex">
-        <canvas id="myChart"></canvas>
-        <canvas id="myChart2"></canvas>
-    </div>
-        
-    </div>
-</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  const ctx = document.getElementById('myChart');
-  const ctx2 = document.getElementById('myChart2');
+  let jsonData = <?php echo $jsonData; ?>;
+  console.log(jsonData)
+  document.getElementById('nb-toner').textContent=jsonData.table1[0]["Nombre de Toner"]
+  document.getElementById('nb-cartouche').textContent=jsonData.table2[0]["Nombre de Cartouche"]
+  document.getElementById('da-en-cours').textContent=jsonData.table3[0]["total"]
+  document.getElementById('da-cloture').textContent=jsonData.table3[1]["total"]
+  document.getElementById('card-nb-printer').textContent=jsonData.table7[0]["total"]
+  document.getElementById('toner-rupture').textContent=jsonData.table8[0]["total"]
+  
+  const chart_spt = document.getElementById('chart-spt');//sortie par toner
+  
 
-  const plugin = {
-  id: 'customCanvasBackgroundColor',
-  beforeDraw: (chart, args, options) => {
-    const {ctx} = chart;
-    ctx.save();
-    ctx.globalCompositeOperation = 'destination-over';
-    ctx.fillStyle = 'white';
-    //ctx.fillRect(0, 0, chart.width, chart.height);
-    ctx.restore();
-  }
-};
 var options = {
     scales: {
                 x: {
@@ -69,33 +91,117 @@ var options = {
                 }
                 }
 }
-  new Chart(ctx, {
+let spt_label=[]
+let spt_data=[]
+jsonData.table4.forEach(element => {
+  spt_label.push(element.Toner)
+  spt_data.push(element.utilisation)
+});
+  new Chart(chart_spt, {
     type: 'bar',
     data: {
-      labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin','Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
+      labels: spt_label,
       datasets: [{
-        label: 'Budget Toner',
-        data: [0, 1200, 3500, 2005, 0, 0,0, 5000, 10000, 5000, 8000, 3200],
+        label: 'Sortie par toner',
+        data: spt_data,
         borderWidth: 1
       }]
-    },
-    options: options
-    ,
-    plugins: [plugin]
+    }
+    // plugins: [plugin]
   });
 
-  new Chart(ctx2, {
+
+
+const chart_spu = document.getElementById('chart-spu'); //sortie par utilsiateur
+let spu_label=[]
+let spu_data=[]
+jsonData.table5.forEach(element => {
+  spu_label.push(element.user)
+  spu_data.push(element.utilisation)
+});
+  new Chart(chart_spu, {
     type: 'pie',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: spu_label,
       datasets: [{
         label: 'Sortie par utilisateur',
-        data: [12, 19, 3, 5, 2, 3],
+        data: spu_data,
         borderWidth: 1
       }]
     },
-    options: options
+    options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Sortie par utilisateur'
+      }
+    }
+  },
   });
 
+const chart_spd = document.getElementById('chart-spd'); //sortie par utilsiateur
+let spd_label=[]
+let spd_data=[]
+
+const mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+for (index = 0; index < mois.length; index++) {
+  let totalQte=0
+  jsonData.table6.forEach(element => {
+    if(element.year==2023){
+      if(element.month-1==index){
+        totalQte=element.total_quantity
+      }
+    }
+  });
+  spd_label.push(mois[index])  
+  spd_data.push(totalQte)
+}
+
+const spdChart = new Chart(chart_spd, {
+    type: 'bar',
+    data: {
+      labels: spd_label,
+      datasets: [{
+        label: 'Sortie par date : 2023',
+        data: spd_data,
+        borderWidth: 1,
+        backgroundColor: [
+      'rgba(255, 99, 132, 0.2)'
+    ]
+      }]
+
+    },
+    
+  });
+</script>
+
+<script>
+
+function setYear(year){
+let spd_label=[]
+let spd_data=[]
+
+const mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+for (index = 0; index < mois.length; index++) {
+  let totalQte=0
+  jsonData.table6.forEach(element => {
+    if(element.year==year){
+      if(element.month-1==index){
+        totalQte=element.total_quantity
+      }
+    }
+  });
+  spd_label.push(mois[index])  
+  spd_data.push(totalQte)
+}
+  spdChart.data.datasets[0].label="Sortie par date : "+year;
+  spdChart.data.labels=spd_label
+  spdChart.data.datasets[0].data=spd_data
+  spdChart.update();
+}
 
 </script>
