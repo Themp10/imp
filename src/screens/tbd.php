@@ -72,10 +72,10 @@ var options = {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin','Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
       datasets: [{
-        label: 'Sortie par utilisateur',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Budget Toner',
+        data: [0, 1200, 3500, 2005, 0, 0,0, 5000, 10000, 5000, 8000, 3200],
         borderWidth: 1
       }]
     },
