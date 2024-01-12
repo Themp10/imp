@@ -236,3 +236,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
     });
 </script>
+
+
+<script>
+    var cartridges = document.querySelectorAll('#stock-set .task');
+
+    cartridges.forEach(function(cartridge) {
+        var stock = cartridge.querySelector('.stock-quantity').textContent.toLowerCase();
+        if ( stock=="0") {
+                cartridge.style.display = 'none';
+            } else {
+                cartridge.style.display = '';
+            }
+        }); 
+</script>

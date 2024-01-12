@@ -136,7 +136,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <label for="type-toner">Toner</label><br>
                     <input type="radio" id="type-toner" name="type-ct" value="toner">
                 </div>
-                    
+                <div class="type-row">
+                    <label for="type-drum">Drum</label><br>
+                    <input type="radio" id="type-drum" name="type-ct" value="drum">
+                </div>    
             </div>
         </div>
 

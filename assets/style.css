@@ -1255,6 +1255,13 @@ margin: 0;
   background-color: #ff9797;
 }
 
+.card-item:nth-child(7) {
+  color:#555555 ;
+  background-color: #b8b8b8;
+}
+.card-item:nth-child(7):hover {
+  background-color: #7c7b7b;
+}
 .card-title{
   margin-top: 30px;
   margin-left: 15px;

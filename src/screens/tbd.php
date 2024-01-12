@@ -213,7 +213,7 @@ for (const key in data1) {
 }
 
   new Chart(chart_ppf, {
-    type: 'bar',
+    type: 'pie',
     data: {
       labels: ppf_label,
       datasets: [{
