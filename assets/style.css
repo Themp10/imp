@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-
+  
 }
 
 header {
@@ -1300,6 +1300,78 @@ flex-wrap: wrap;  gap: 50px;
 .btn-year:hover{
   background-color: #93ff93;
 }
+
+
+/* ============================ My DA ============================ */
+.card-approval-status {
+  border: 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 7px;
+   width: 200px; 
+
+}
+   
+.p-app-da{
+  margin: 0;
+}
+.card-approval-status:hover{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transform: scale(1.1);
+  border: 1px white solid;
+  transition: all 0.2s ease;
+}
+.my-da-list-container{
+  display: flex;
+}
+.da-left-container{
+   width: 200px; 
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  gap: 5px;
+  padding-right: 5px;
+  border-right: 3px black solid;
+}
+.da-right-container{
+}
+
+.soc-list-container{
+  display: 	flex;
+  gap: 10px;
+  padding: 10px;
+}
+.btn-set-soc{
+  background-color: white;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+  border-bottom: 3px solid black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.btn-set-soc:hover{
+  background-color: #59f8a9;
+}
+.btn-set-soc:focus{
+  background-color: #59f8a9;
+  font-weight: bold;
+}
+.approval-list-container{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-get-detail{
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px rgba(128, 128, 128, 0.438) solid;
+}
+
 /* ============================ Login ============================ */
 .login-body {
   font-family: Arial, sans-serif;
