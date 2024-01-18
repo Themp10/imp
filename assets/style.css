@@ -1335,6 +1335,8 @@ flex-wrap: wrap;  gap: 50px;
   border-right: 3px black solid;
 }
 .da-right-container{
+  width: 100%;
+  padding: 0 15px;
 }
 
 .soc-list-container{
@@ -1371,7 +1373,34 @@ flex-wrap: wrap;  gap: 50px;
   cursor: pointer;
   border-bottom: 2px rgba(128, 128, 128, 0.438) solid;
 }
+.da-list-table:nth-child(1){
+  height: 40px;
+  width: 20%;
+}
+.da-list-table:nth-child(2){
+  width: 60%;
+}
+.da-list-table:nth-child(3){
+  width: 20%;
+}
+.span-bc-right{
+  font-size: 20px;
+  margin: 0 0 20px 10px;
+}
 
+.succes-da{
+  border-left: 4px solid rgb(91, 243, 154);
+}
+.warning-da{
+  border-left: 4px solid rgb(243, 215, 91);
+}
+.td-list-table{
+  font-size: 14px !important;
+}
+
+.bc-list-table{
+  height: 40px;
+}
 /* ============================ Login ============================ */
 .login-body {
   font-family: Arial, sans-serif;

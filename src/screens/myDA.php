@@ -87,10 +87,14 @@ function generateSocieteSelector(){
 
 function get_DA_lista($base,$user){
     $html="";
-    $sql='SELECT "DocNum",TO_VARCHAR(TO_DATE("DocDate"), \'DD-MM-YYYY\') as "DocDate" FROM "'.$base.'"."OPRQ" WHERE "Requester"=\''.$user.'\' ORDER BY "OPRQ"."DocDate" DESC';
+    $sql='SELECT "DocNum",TO_VARCHAR(TO_DATE("DocDate"), \'DD-MM-YYYY\') as "DocDate","CANCELED","DocStatus" FROM "'.$base.'"."OPRQ" WHERE "Requester"=\''.$user.'\' ORDER BY "OPRQ"."DocDate" DESC';
     $list=sql_from_Hana($sql);
     foreach ($list as $item) {
-        $html.= "<button class='btn-get-detail' data-docnum='".$item["DocNum"]."'>".$item["DocNum"]." - ".$item["DocDate"]."</button>";
+        $badge="warning-da";
+        if($item["CANCELED"]=="N" && $item["DocStatus"]=="C"){
+            $badge="succes-da";
+        }
+        $html.= "<button class='btn-get-detail ".$badge."' data-docnum='".$item["DocNum"]."'>".$item["DocNum"]." - ".$item["DocDate"]."</button>";
     }
     return array(count($list),$html);
     return $html;
@@ -98,7 +102,13 @@ function get_DA_lista($base,$user){
 function get_DA_details($numDA,$base){
     $sql='SELECT * FROM "'.$base.'"."ETAT_ACHAT" WHERE "Num_DA"=\''.$numDA.'\'';
     $list=sql_from_Hana($sql);
-    return $list;
+    if (count($list)==0){
+        $sql='SELECT "ItemCode","Dscription","Quantity" from "'.$base.'"."PRQ1" where "DocEntry" = (SELECT "DocEntry" FROM "'.$base.'"."OPRQ" WHERE "DocNum"=\''.$numDA.'\')';
+        $list=sql_from_Hana($sql);
+        return array(false,$list);
+    }else{
+        return array(true,$list);
+    }
 }
 
 
@@ -117,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
         elseif ($_GET["action"]=="getda") {
             if (isset($_GET["DocNum"])) {
-                $daNoJson = get_DA_details($_GET["DocNum"],"AM_PROINVEST_TEST");
+                $daNoJson = get_DA_details($_GET["DocNum"],$_GET["base"]);
                 array_walk_recursive($daNoJson, function (&$item) {
                     if (is_string($item)) {
                         $item = mb_convert_encoding($item, 'UTF-8', 'UTF-8');
@@ -170,12 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     
-    let buttons = document.querySelectorAll('.btn-get-detail');
-    buttons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            fetchDaDetails(this.getAttribute('data-docnum'));
-        });
-    });
+
     
 });
 
@@ -190,9 +195,7 @@ function getApprovalDA(base){
                 base: base   
             },
         success: function(response) {
-            // Parse the JSON response
             let data = JSON.parse(response);
-            console.log(data)
             let listApproval = document.getElementById("approval-list-container");
             let listDA = document.getElementById("da-left-container");
             let countListDA = document.getElementById("count-list-da");
@@ -210,7 +213,12 @@ function getApprovalDA(base){
                 countListDA.innerHTML="( "+data.c_da+" )"
             }
 
-
+            let buttons = document.querySelectorAll('.btn-get-detail');
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    fetchDaDetails(this.getAttribute('data-docnum'),document.getElementById("societe-span").innerHTML);
+                });
+            });
         },
         error: function(xhr, status, error) {
             // Handle AJAX error
@@ -219,7 +227,7 @@ function getApprovalDA(base){
     });
 }
 
-function fetchDaDetails(docNum) {
+function fetchDaDetails(docNum,base) {
     $.ajax({
         type: 'GET',
         url: './src/screens/myDA.php', 
@@ -229,10 +237,85 @@ function fetchDaDetails(docNum) {
             base: base 
         },
         success: function(response) {
-            // Parse the JSON response
-            console.log(response)
-            //var cartListe = JSON.parse(response);
-            //console.log(cartListe)
+            var data = JSON.parse(response);
+            console.log(data)
+            let tableDiv = document.getElementById("da-detail-container");
+            tableDiv.innerHTML = '';
+            var spanBC = document.createElement('div');
+                spanBC.className = "span-bc-right";
+            if(data[0]){
+                //Bon de ocmmande saisie
+
+                spanBC.innerHTML = 'Total Bon de commande : ';
+                tableDiv.appendChild(spanBC); 
+                var table = document.createElement('table');
+                table.style.width = '100%';
+                table.setAttribute('border', '1');
+
+                // Create the header row
+                var thead = document.createElement('thead');
+                var headerRow = document.createElement('tr');
+                [ 'Code Article','Article', 'Fournisseur', 'BC','Date BC', 'Status_BC', 'BR', 'Date_BR', 'Status_BR', 'Total'].forEach(headerText => {
+                    var header = document.createElement('th');
+                    header.className = "bc-list-table";
+                    header.textContent = headerText;
+                    headerRow.appendChild(header);
+                });
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+
+                // Create the body of the table
+                var tbody = document.createElement('tbody');
+                data[1].forEach(item => {
+                    var row = document.createElement('tr');
+                    [  'Code_Article','Article', 'Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'Total'].forEach(key => {
+                        var cell = document.createElement('td');
+                        cell.className = "td-list-table";
+                        cell.textContent = item[key];
+                        row.appendChild(cell);
+                    });
+                    tbody.appendChild(row);
+                });
+                table.appendChild(tbody);
+
+                // Append the table to the div
+                tableDiv.appendChild(table);
+
+
+
+            }else{
+                //Bon de commande NONONONO saisie
+                
+                spanBC.innerHTML = 'Bon de commande non créé';
+                tableDiv.appendChild(spanBC);
+                var table = document.createElement('table');
+                // table.style.width = '100%';
+                // table.setAttribute('border', '1');
+                var thead = document.createElement('thead');
+                var headerRow = document.createElement('tr');
+                ['Code Article', 'Article ', 'Quantité'].forEach(headerText => {
+                    var header = document.createElement('th');
+                    header.className = "da-list-table";
+                    header.textContent = headerText;
+                    headerRow.appendChild(header);
+                });
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+
+                var tbody = document.createElement('tbody');
+                data[1].forEach(item => {
+                    var row = document.createElement('tr');
+                    ['ItemCode', 'Dscription', 'Quantity'].forEach(key => {
+                        var cell = document.createElement('td');
+                        cell.textContent = item[key];
+                        row.appendChild(cell);
+                    });
+                    tbody.appendChild(row);
+                });
+                table.appendChild(tbody);
+                tableDiv.appendChild(table);
+            }
+
             // var tableBody = document.getElementById("table-body");
 
             // if (tableBody.hasChildNodes()) {
