@@ -151,7 +151,9 @@ body{
 
   .printer-card{
     width: 490px;
-    height: 190px;
+    /* /height: 190px; */
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     border-radius  : 5px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
@@ -166,8 +168,8 @@ body{
   }
 
   .cartridge-item{
-    width: 100px;
-    height: 110px;
+    width: 120px;
+    height: 100px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     position: relative;
@@ -208,6 +210,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 5px;
   }
 
   .type-value{
@@ -1262,17 +1265,26 @@ margin: 0;
 .card-item:nth-child(7):hover {
   background-color: #7c7b7b;
 }
+.card-item:nth-child(8) {
+  color:#772f2f ;
+  background-color: #ca5656;
+}
+.card-item:nth-child(8):hover {
+  background-color: #ce4747;
+}
 .card-title{
   margin-top: 30px;
   margin-left: 15px;
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: clamp(1rem, 1.5vw, 3rem);
   
 }
 .card-data{
 position: absolute;
 right: 20px;
 bottom: 20px;
-font-size: 60px;
+font-size: clamp(1rem, 2vw, 3rem);
+/* font-size: 60px; */
 }
 .charts-container{
   display: flex;
@@ -1554,5 +1566,14 @@ flex-wrap: wrap;  gap: 50px;
   .users-main-container{
     flex-direction: column;
     gap: 30px;
+  }
+  .card-title{
+    font-size: 20px; 
+
+    
+  }
+  .card-data{
+  position: absolute;
+  font-size: 60px; 
   }
 }

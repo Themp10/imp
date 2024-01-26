@@ -55,11 +55,12 @@ function fetchAllStatistics() {
         "SELECT SUM(stock) as 'Nombre de Toner' FROM cartridges WHERE TYPE='toner'",
         "SELECT SUM(stock) as 'Nombre de Cartouche' FROM cartridges WHERE TYPE='cartouche'",
         "SELECT status, COUNT(*) as total FROM v_da GROUP BY STATUS",
-        "SELECT CONCAT(c.model,' ',c.color) AS 'Toner', SUM(m.qte) AS utilisation FROM mouvements m JOIN cartridges c ON m.id_cartridge = c.id GROUP BY c.type, c.model, c.color",
+        "SELECT CONCAT(c.name,' ',c.color) AS 'Toner', SUM(m.qte) AS utilisation FROM mouvements m JOIN cartridges c ON m.id_cartridge = c.id where m.type='s' GROUP BY c.type, c.name, c.color",
         "SELECT m.user, SUM(m.qte) as utilisation FROM mouvements m  where m.type='s' GROUP BY m.user",
         "SELECT MONTH(mvt_date) as month, YEAR(mvt_date) as year, SUM(qte) as total_quantity FROM mouvements GROUP BY YEAR(mvt_date), MONTH(mvt_date) ORDER BY YEAR(mvt_date),MONTH(mvt_date)",
         "SELECT SUM(nb_printer) AS total FROM (SELECT distinct NAME,nb_printer FROM cartridges) AS tt",
         "SELECT COUNT(*) AS total FROM cartridges WHERE stock=0",
+        "SELECT SUM(stock) as 'Nombre de Drum' FROM cartridges WHERE TYPE='drum'",
 
     ];
     $hanaQueries=[

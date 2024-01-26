@@ -19,32 +19,38 @@ function get_years(){
     <div class="card-row">
         <div class="card-item">
             <div class="card-title">Nombre de Toner</div>
-            <div class="card-data" id="nb-toner">13</div>
+            <div class="card-data" id="nb-toner">0</div>
         </div>
         <div class="card-item">
             <div class="card-title">Nombre de Cartouche</div>
-            <div class="card-data" id="nb-cartouche">24</div>
+            <div class="card-data" id="nb-cartouche">0</div>
         </div>
         <div class="card-item">
-            <div class="card-title">DA en Cours</div>
-            <div class="card-data" id="da-en-cours">10</div>
-        </div>
-        <div class="card-item">
-            <div class="card-title">DA Cloturée</div>
-            <div class="card-data" id="da-cloture">10</div>
+            <div class="card-title">Nombre de Drum</div>
+            <div class="card-data" id="nb-drum">0</div>
         </div>
         <div class="card-item">
             <div class="card-title">Nombre d'imprimantes</div>
-            <div class="card-data" id="card-nb-printer">10</div>
+            <div class="card-data" id="card-nb-printer">0</div>
         </div>
         <div class="card-item">
+            <div class="card-title">DA en Cours</div>
+            <div class="card-data" id="da-en-cours">0</div>
+        </div>
+        <div class="card-item">
+            <div class="card-title">DA Cloturée</div>
+            <div class="card-data" id="da-cloture">0</div>
+        </div>
+
+        <div class="card-item">
             <div class="card-title">Toner en rupture</div>
-            <div class="card-data" id="toner-rupture">10</div>
+            <div class="card-data" id="toner-rupture">0</div>
         </div>
         <div class="card-item">
             <div class="card-title">Total achat</div>
-            <div class="card-data" id="total-achat">10</div>
+            <div class="card-data" id="total-achat">0</div>
         </div>
+
     </div>
 
     
@@ -75,8 +81,9 @@ function get_years(){
   console.log(jsonData)
   document.getElementById('nb-toner').textContent=jsonData.table1[0]["Nombre de Toner"]
   document.getElementById('nb-cartouche').textContent=jsonData.table2[0]["Nombre de Cartouche"]
-  document.getElementById('da-en-cours').textContent=jsonData.table3[0]["total"]
-  document.getElementById('da-cloture').textContent=jsonData.table3[1]["total"]
+  document.getElementById('nb-drum').textContent=jsonData.table9[0]["Nombre de Drum"]
+  document.getElementById('da-en-cours').textContent=jsonData.table3[0]?jsonData.table3[0]["total"]:0;
+  document.getElementById('da-cloture').textContent=jsonData.table3[1]?jsonData.table3[1]["total"]:0;
   document.getElementById('card-nb-printer').textContent=jsonData.table7[0]["total"]
   document.getElementById('toner-rupture').textContent=jsonData.table8[0]["total"]
   
@@ -194,11 +201,11 @@ const spdChart = new Chart(chart_spd, {
     
   });
 
-  let listSAP=  jsonData.table9
+  let listSAP=  jsonData.table10
 
 document.getElementById('total-achat').textContent=listSAP.reduce((sum, item) => {
   return sum + parseInt(item.Total);
-}, 0);
+}, 0)+" Dhs"
 
 
   let data1=getByfrs(listSAP)
