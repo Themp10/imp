@@ -55,6 +55,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 
     <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a>
     <?php if(!$hidden) : ?>
+        <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
 
     <?php endif; ?>
@@ -97,6 +98,11 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-users">    
             <?php include "src/screens/users.php"; ?>
         </div>
+
+        <div class="inner-container" id="page-printers">    
+            <?php include "src/screens/printers.php"; ?>
+        </div>
+
         <?php endif; ?>
         <div class="inner-container" id="page-mes-DA">    
             <?php include "src/screens/myDA.php"; ?>
