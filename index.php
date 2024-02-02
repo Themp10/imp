@@ -1,5 +1,26 @@
 <?php
 session_start();
+define('BASEDIR', __DIR__);
+require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+
+function get_user($user){
+  global $conn; 
+  $sql="SELECT sap_user,profile FROM users where ldap_user='".$user."'"; 
+  echo $sql;
+  $result = $conn->query($sql);
+  if ($result === false) {
+      die("Error in SQL query: " . $conn->error);
+  }
+  $user_data = [];
+
+  while ($row = $result->fetch_assoc()) {
+      $user_data[] = $row;
+  }
+  return $user_data[0];
+}
+
+
+
 
 if (isset($_SESSION['error_message'])) {
     $cnn_err = $_SESSION['error_message'];
@@ -21,10 +42,12 @@ function init_login($username,$password){
       if(ldap_bind($ad, "{$username}@csi.local", $password)) {
             // User is authenticated
             session_start();
-            $arr=str_split($username, 1);
-            $init=$arr[0];
-            array_shift($arr);
-            $_SESSION['user'] = $init.".".implode("",$arr);
+            // $arr=str_split($username, 1);
+            // $init=$arr[0];
+            // array_shift($arr);
+            $user_data=get_user($username);
+            $_SESSION['user'] =$user_data['sap_user']; //$init.".".implode("",$arr);
+            $_SESSION['profile'] =$user_data['profile'] ;
             $_SESSION['connected'] = true;
             header('Location: main.php');
         } else {

@@ -3,13 +3,13 @@ define('BASEDIR', __DIR__);
 require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 session_start();
 $hidden=false;
+$profile=$_SESSION['profile'];
 // Check if the user is not logged in, redirect to login page
 if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     header('Location: index.php');
     exit;
 }else{
-
-    if($_SESSION['user']!="o.aboujaafar"){
+    if($profile !="admin"){
         $hidden=true;
     }
 }
@@ -30,14 +30,14 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 <body>
     <header class="page-header">
             <img src="./assets/logo.png" alt="Logo" class="header-logo">
-            <?php if(!$hidden) : ?>
+            <?php if($profile =="admin") : ?>
                 <h1>Gestionnaire de Stock de toner</h1>
             <?php else : ?>
                 <h1>Suivi des DA</h1>
             <?php endif; ?>
             
             <div class="settings-container">
-                <h2 class="settings-username"><?php echo $_SESSION['user'];?></h2>
+                <h2 class="settings-username"><?php echo $_SESSION['user']." | ".$_SESSION['profile'];?></h2>
             <form action="logout.php" method="get">
                 <input type="submit" class ="deco-btn" value="Se déconnecter">
             </form>
@@ -45,7 +45,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     </header>
 
     <nav>
-    <?php if(!$hidden) : ?>
+    <?php if($profile =="admin") : ?>
+        <a href="#">Gestion de stock</a>
         <a href="#" onclick="showContent('cartridge-inventory')">Inventaire</a>
         <a href="#" onclick="showContent('take-from-stock')" id="a-stock">Sortie Stock</a>
         <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
@@ -53,8 +54,12 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-tdb')">Tableau de bord</a>
     <?php endif; ?>
 
+    <?php if($profile =="admin" ||$profile =="achat") : ?>
+        <a href="#" onclick="showContent('page-all-DA')">Suvi DA</a>
+    <?php endif; ?>
+
     <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a>
-    <?php if(!$hidden) : ?>
+    <?php if($profile =="admin") : ?>
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
 
@@ -67,6 +72,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         include "src/modals/bon_sortie.php";
     ?>
     <div class="container" id="main-container">
+        <div id="sub-nav" class="sub-nav show">tttt</div>
         <?php if(!$hidden) : ?>
 
 
@@ -106,6 +112,10 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <?php endif; ?>
         <div class="inner-container" id="page-mes-DA">    
             <?php include "src/screens/myDA.php"; ?>
+        </div>
+
+        <div class="inner-container" id="page-all-DA">    
+            <?php include "src/screens/allDA.php"; ?>
         </div>
     </div>
 
@@ -241,7 +251,14 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         }
 
     </script>
-    
+    <script>
+        $(document).ready(function() {
+            $('nav a').hover(
+                function() { $('#sub-nav').addClass('hovered'); }, // Mouse enter
+                function() { $('#sub-nav').removeClass('hovered'); } // Mouse leave
+            );
+            });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-$base=['AM_PROINVEST_TEST','AM_PROINVEST','YASMINE_FONCIERE','PROBAT_INVEST'];
+$base=["AM_PROINVEST", "AM_PROINVEST_TEST", "ANFA_19", "ANFA_REALISATION", "CASA_COLIVING", "HOLDING_TARIK", "M_PROPERTIES", "PROBAT_INVEST", "RMM_BUILDING", "YASMINE_FONCIERE"];
 //include_once "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
 function sql_from_Hana($sql){
@@ -103,7 +103,7 @@ function get_DA_details($numDA,$base){
     $sql='SELECT * FROM "'.$base.'"."ETAT_ACHAT" WHERE "Num_DA"=\''.$numDA.'\'';
     $list=sql_from_Hana($sql);
     if (count($list)==0){
-        $sql='SELECT "ItemCode","Dscription","Quantity" from "'.$base.'"."PRQ1" where "DocEntry" = (SELECT "DocEntry" FROM "'.$base.'"."OPRQ" WHERE "DocNum"=\''.$numDA.'\')';
+        $sql='SELECT "ItemCode","Dscription","Quantity","FreeTxt" from "'.$base.'"."PRQ1" where "DocEntry" = (SELECT "DocEntry" FROM "'.$base.'"."OPRQ" WHERE "DocNum"=\''.$numDA.'\')';
         $list=sql_from_Hana($sql);
         return array(false,$list);
     }else{
@@ -255,7 +255,7 @@ function fetchDaDetails(docNum,base) {
                 // Create the header row
                 var thead = document.createElement('thead');
                 var headerRow = document.createElement('tr');
-                [ 'Code Article','Article', 'Fournisseur', 'BC','Date BC', 'Status_BC', 'BR', 'Date_BR', 'Status_BR', 'Total'].forEach(headerText => {
+                [ 'Code Article','Article','Texte Libre', 'Fournisseur', 'BC','Date BC', 'Status_BC', 'BR', 'Date_BR', 'Status_BR', 'Total'].forEach(headerText => {
                     var header = document.createElement('th');
                     header.className = "bc-list-table";
                     header.textContent = headerText;
@@ -268,7 +268,7 @@ function fetchDaDetails(docNum,base) {
                 var tbody = document.createElement('tbody');
                 data[1].forEach(item => {
                     var row = document.createElement('tr');
-                    [  'Code_Article','Article', 'Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'Total'].forEach(key => {
+                    [  'Code_Article','Article','FreeTxt', 'Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'Total'].forEach(key => {
                         var cell = document.createElement('td');
                         cell.className = "td-list-table";
                         cell.textContent = item[key];
@@ -293,7 +293,7 @@ function fetchDaDetails(docNum,base) {
                 // table.setAttribute('border', '1');
                 var thead = document.createElement('thead');
                 var headerRow = document.createElement('tr');
-                ['Code Article', 'Article ', 'Quantité'].forEach(headerText => {
+                ['Code Article', 'Article ', 'Texte libre', 'Quantité'].forEach(headerText => {
                     var header = document.createElement('th');
                     header.className = "da-list-table";
                     header.textContent = headerText;
@@ -305,7 +305,7 @@ function fetchDaDetails(docNum,base) {
                 var tbody = document.createElement('tbody');
                 data[1].forEach(item => {
                     var row = document.createElement('tr');
-                    ['ItemCode', 'Dscription', 'Quantity'].forEach(key => {
+                    ['ItemCode', 'Dscription','FreeTxt', 'Quantity'].forEach(key => {
                         var cell = document.createElement('td');
                         cell.textContent = item[key];
                         row.appendChild(cell);
