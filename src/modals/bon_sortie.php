@@ -181,8 +181,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </table>
     </div>
 </div>
-
-        <button id="stock-button"  class="update-button" onclick="validateAndPrint()">Valider et Imprimer</button>
+        <div class="print-container">
+            <button id="stock-button"  class="update-button" onclick="validateAndPrint() ">Valider et Imprimer</button>
+            <button id="stock-button"  class="update-button" onclick="downloadPDF()">Imprimer</button>
+        </div>
+        
+        <!--  -->
 
 
     </div>
@@ -230,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "demandeur":demandeur,
             "rows":rows
         }
-
+        downloadPDF();
         $.ajax({
                 type: 'POST',
                 url: './src/modals/bon_sortie.php',
@@ -331,4 +335,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //         closeBSModal();
     //     }
     // };
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    function downloadPDF() {
+        let demandeur=document.getElementById("demandeur-bs-table").value
+        let date=document.getElementById("current-date").textContent.split("/").join('-')
+        
+            const element = document.querySelector(".A4-format");
+                const options = {
+                    filename: 'BS-'+demandeur+'-'+date+'.pdf',
+                    margin: 0,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 0.9 },
+                    jsPDF: {
+                        unit: 'in',
+                        format: 'letter',
+                        orientation: 'landscape',
+                        left:1,
+                        right:1,
+                        width:11.7,
+                        height:8.3
+                    }
+                };
+ 
+                html2pdf().set(options).from(element).save();
+    }
+
+
 </script>

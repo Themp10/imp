@@ -72,7 +72,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         include "src/modals/bon_sortie.php";
     ?>
     <div class="container" id="main-container">
-        <div id="sub-nav" class="sub-nav show">tttt</div>
+        <div id="sub-nav" class="sub-nav">tttt</div>
         <?php if(!$hidden) : ?>
 
 
