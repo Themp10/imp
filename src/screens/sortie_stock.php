@@ -172,7 +172,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if(state){
             document.getElementById('stock-title').textContent="Sortie Stock"
-            document.getElementById('a-stock').textContent="Sortie Stock"
             cartridges.forEach(function(cartridge) {
             var stock = cartridge.querySelector('.stock-quantity').textContent.toLowerCase();
             if ( stock=="0") {
@@ -185,7 +184,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.getElementById('cart-column-id').classList.remove("hide-column")
         }else{
             document.getElementById('stock-title').textContent="Saisie DA"
-            document.getElementById('a-stock').textContent="Saisie DA"
             cartridges.forEach(function(cartridge) {
                 cartridge.style.display = '';
             });

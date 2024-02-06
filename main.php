@@ -46,19 +46,15 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 
     <nav>
     <?php if($profile =="admin") : ?>
-        <a href="#">Gestion de stock</a>
-        <a href="#" onclick="showContent('cartridge-inventory')">Inventaire</a>
-        <a href="#" onclick="showContent('take-from-stock')" id="a-stock">Sortie Stock</a>
-        <a href="#" onclick="showContent('stock-movements')">Mouvements Stock</a>
-        <a href="#" onclick="showContent('page-DA')">DA SAP</a>
-        <a href="#" onclick="showContent('page-tdb')">Tableau de bord</a>
+        <a href="#" id="sub-stock">Gestion de stock</a>
+        <a href="#" id="sub-da">Gestion des DA</a>
     <?php endif; ?>
 
     <?php if($profile =="admin" ||$profile =="achat") : ?>
-        <a href="#" onclick="showContent('page-all-DA')">Suvi DA</a>
+        <!-- <a href="#" onclick="showContent('page-all-DA')">Suvi DA</a> -->
     <?php endif; ?>
 
-    <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a>
+    <!-- <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a> -->
     <?php if($profile =="admin") : ?>
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
@@ -72,7 +68,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         include "src/modals/bon_sortie.php";
     ?>
     <div class="container" id="main-container">
-        <div id="sub-nav" class="sub-nav">tttt</div>
+        <div id="sub-nav" class="sub-nav"></div>
         <?php if(!$hidden) : ?>
 
 
@@ -129,6 +125,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 <!-- Gestion de l'ajouter de quantité au click sur un toner -->
 <script>
     window.onload = (event) => {
+        
         let screenId=localStorage.getItem("screen");
         if(screenId){
             document.getElementById(screenId).classList.add("show");
@@ -254,11 +251,63 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <script>
         $(document).ready(function() {
             $('nav a').hover(
-                function() { $('#sub-nav').addClass('hovered'); }, // Mouse enter
-                function() { $('#sub-nav').removeClass('hovered'); } // Mouse leave
+                function() {
+                        $('#sub-nav').empty()
+                        let id = $(this).attr('id');
+                        if(id =='sub-stock') {   
+                            $('#sub-nav').addClass('hovered');      
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'cartridge-inventory\')">Inventaire</a>');
+                            if($(".input-switch")[0].checked){
+                                $('#sub-nav').append('<a href="#" onclick="showContent(\'take-from-stock\')">Sortie Stock</a>');
+                            }else{
+                                $('#sub-nav').append('<a href="#" onclick="showContent(\'take-from-stock\')">Sasie DA</a>');
+                            }
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'stock-movements\')">Mouvements Stock</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-tdb\')">Tableau de bord</a>');
+                        }
+                        if(id =='sub-da') {   
+                            $('#sub-nav').addClass('hovered');      
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-DA\')">DA Toner</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-mes-DA\')">Mes DA</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-all-DA\')">Suvi DA</a>');
+
+                            
+                        }
+                    },
+                function() { 
+                    $('#sub-nav').removeClass('hovered');
+                    //$('#sub-nav').empty();
+                } // Mouse leave
             );
             });
     </script>
+        <script>
+        $(document).ready(function() {
+            $('#sub-nav').hover(
+                function() {
+                    $('#sub-nav').addClass('hovered'); 
+                    },
+                function() { 
+                    $('#sub-nav').removeClass('hovered');
+                    $('#sub-nav').empty();
+                } // Mouse leave
+            );
+            });
+    </script>
+    <script>
+        window.onload = (event) => {
+            let profile="<?php echo $profile ;?>"
+            console.log(profile)
+            if(profile =="achat") {
+                showContent('page-all-DA')
+            }else if(profile =="user") {
+                showContent('page-mes-DA')
+            }
+        
+
+    };
+    </script>
+
 </body>
 
 </html>

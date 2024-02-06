@@ -29,6 +29,7 @@ function get_data_from_oid($ip_address, $oid) {
 
 
 ?>
+<img src="https://img.over-blog-kiwi.com/2/06/71/57/20170222/ob_f3250f_4062754.jpg" alt="Logo" >
 
 <?php foreach (get_devices() as $row): ?>
     <div>  <?= get_data_from_oid($row["ip_address"], $row["oid_model"]).get_data_from_oid($row["ip_address"], $row["oid_count"])?></div>
