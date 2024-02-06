@@ -85,22 +85,60 @@ function generateSocieteSelector(){
     }
 }
 
+function generateYearSelector($base,$user){
+    $html="";
+    $sql='SELECT DISTINCT YEAR("DocDate") as "years" FROM "'.$base.'"."OPRQ" WHERE "Requester"=\''.$user.'\' ORDER BY "years" ASC';
+
+    $list=sql_from_Hana($sql);
+    foreach ($list as $year) {
+        $html.="<button class='btn-set-year' data-year='".$year["years"]."'>".$year["years"]."</button>";
+    }
+    return $html;
+}
+
+function getDaByYear($base,$user,$year){
+    $html="";
+    $status="";
+    $sql='SELECT "DocNum",TO_VARCHAR(TO_DATE("DocDate"), \'DD-MM-YYYY\') as "DocDate","CANCELED","DocStatus" FROM "'.$base.'"."OPRQ" WHERE "Requester"=\''.$user.'\' AND YEAR("DocDate")=\''.$year.'\' ORDER BY "OPRQ"."DocDate" DESC';
+    $list=sql_from_Hana($sql);
+    foreach ($list as $item) {
+        $badge="warning-da";
+        $status="BC à créer";
+        if($item["CANCELED"]=="N" && $item["DocStatus"]=="C"){
+            $badge="succes-da";
+            $status="BC OK";
+        }elseif($item["CANCELED"]=="Y" && $item["DocStatus"]=="C"){
+            $badge="danger-da";
+            $status="DA annulée";
+        }
+        $html.= "<button class='btn-get-detail ".$badge."' data-docnum='".$item["DocNum"]."'> ".$status."-".$item["DocNum"]." - ".$item["DocDate"]."</button>";
+    }
+
+    return array(count($list),$html);
+}
+
 function get_DA_lista($base,$user){
     $html="";
+    $status="";
     $sql='SELECT "DocNum",TO_VARCHAR(TO_DATE("DocDate"), \'DD-MM-YYYY\') as "DocDate","CANCELED","DocStatus" FROM "'.$base.'"."OPRQ" WHERE "Requester"=\''.$user.'\' ORDER BY "OPRQ"."DocDate" DESC';
     $list=sql_from_Hana($sql);
     foreach ($list as $item) {
         $badge="warning-da";
+        $status="BC à créer";
         if($item["CANCELED"]=="N" && $item["DocStatus"]=="C"){
             $badge="succes-da";
+            $status="BC OK";
+        }elseif($item["CANCELED"]=="Y" && $item["DocStatus"]=="C"){
+            $badge="danger-da";
+            $status="DA annulée";
         }
-        $html.= "<button class='btn-get-detail ".$badge."' data-docnum='".$item["DocNum"]."'>".$item["DocNum"]." - ".$item["DocDate"]."</button>";
+        $html.= "<button class='btn-get-detail ".$badge."' data-docnum='".$item["DocNum"]."'> ".$status."-".$item["DocNum"]." - ".$item["DocDate"]."</button>";
     }
     return array(count($list),$html);
     return $html;
 }
 function get_DA_details($numDA,$base){
-    $sql='SELECT * FROM "'.$base.'"."ETAT_ACHAT" WHERE "Num_DA"=\''.$numDA.'\'';
+    $sql='SELECT * FROM "'.$base.'"."ETAT_ACHAT" WHERE "Num DA"=\''.$numDA.'\'';
     $list=sql_from_Hana($sql);
     if (count($list)==0){
         $sql='SELECT "ItemCode","Dscription","Quantity","FreeTxt" from "'.$base.'"."PRQ1" where "DocEntry" = (SELECT "DocEntry" FROM "'.$base.'"."OPRQ" WHERE "DocNum"=\''.$numDA.'\')';
@@ -118,8 +156,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $listApproval = list_approval($_GET["base"]); 
             $user=$_SESSION['user'];
             $listDa = get_DA_lista($_GET["base"],$user); 
-        
-            $response = array("listApproval" => $listApproval,"c_da" =>$listDa[0] , "listDa" => $listDa[1]);
+            $listYears=generateYearSelector($_GET["base"],$user);
+            $response = array("listApproval" => $listApproval,"c_da" =>$listDa[0] , "listDa" => $listDa[1], "listyears" => $listYears);
         
             // Convert to JSON and output
             echo json_encode($response);
@@ -128,11 +166,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         elseif ($_GET["action"]=="getda") {
             if (isset($_GET["DocNum"])) {
                 $daNoJson = get_DA_details($_GET["DocNum"],$_GET["base"]);
-                array_walk_recursive($daNoJson, function (&$item) {
-                    if (is_string($item)) {
-                        $item = mb_convert_encoding($item, 'UTF-8', 'UTF-8');
-                    }
-                });
+                 array_walk_recursive($daNoJson, function (&$item) {
+                     if (is_string($item)) {
+                         $item = mb_convert_encoding($item, 'UTF-8', 'UTF-8');
+                     }
+                 });
                 if ($daNoJson !== null) {
                     
                     $daDetails = json_encode($daNoJson);
@@ -143,6 +181,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         
 
             }
+        }
+        elseif ($_GET["action"]=="getdabyyear") {
+                session_start();
+                $user=$_SESSION['user'];
+                $listDa = getDaByYear($_GET["base"],$user,$_GET["year"]); 
+                $response = array( "c_da" =>$listDa[0] ,"dayear" => $listDa[1]);
+                // Convert to JSON and output
+                echo json_encode($response);
         }
         exit();
     }
@@ -159,7 +205,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     <div class="approval-list-container" id="approval-list-container">
     Choisir une société !
     </div>  
-<h2>Liste des DA <span id="count-list-da"></span></h2>
+<h2 class="list-title">Liste des DA <span id="count-list-da"></span></h2>
+<div class="btn-date-container" id="btn-date-container">
+</div>
 <div class="my-da-list-container">
 
     <div class="da-left-container" id="da-left-container">
@@ -184,6 +232,46 @@ document.addEventListener('DOMContentLoaded', function () {
     
 });
 
+
+function getDabyYear(year){
+    base=document.getElementById("societe-span").innerHTML;
+    $.ajax({
+        type: 'GET',
+        url: './src/screens/myDA.php', 
+        data: { 
+                action:"getdabyyear",
+                base: base,
+                year:year
+            },
+        success: function(response) {
+            let data = JSON.parse(response);
+            let listDA = document.getElementById("da-left-container");
+            let countListDA = document.getElementById("count-list-da");
+
+            if(data.dayear==""){
+                listDA.innerHTML="Aucune donnée";
+                countListDA.innerHTML="( 0 )"
+            }else{
+                listDA.innerHTML=data.dayear;
+                countListDA.innerHTML="( "+data.c_da+" )"
+            }
+            
+            let buttons = document.querySelectorAll('.btn-get-detail');
+            buttons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    fetchDaDetails(this.getAttribute('data-docnum'),document.getElementById("societe-span").innerHTML);
+                });
+            });
+            
+        },
+        error: function(xhr, status, error) {
+            // Handle AJAX error
+            console.error('AJAX Error: ' + status + ' ' + error);
+        }
+    });
+}
+
+
 function getApprovalDA(base){
     document.getElementById("societe-span").innerHTML=base
     
@@ -199,7 +287,9 @@ function getApprovalDA(base){
             let listApproval = document.getElementById("approval-list-container");
             let listDA = document.getElementById("da-left-container");
             let countListDA = document.getElementById("count-list-da");
+            let yearsList = document.getElementById("btn-date-container");
 
+            
             if(data.listApproval==""){
                 listApproval.innerHTML="Aucune donnée";
             }else{
@@ -212,11 +302,18 @@ function getApprovalDA(base){
                 listDA.innerHTML=data.listDa;
                 countListDA.innerHTML="( "+data.c_da+" )"
             }
-
+            yearsList.innerHTML=data.listyears;
             let buttons = document.querySelectorAll('.btn-get-detail');
+            let buttonsYear = document.querySelectorAll('.btn-set-year');
             buttons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     fetchDaDetails(this.getAttribute('data-docnum'),document.getElementById("societe-span").innerHTML);
+                });
+            });
+
+            buttonsYear.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    getDabyYear(this.getAttribute('data-year'));
                 });
             });
         },
@@ -237,6 +334,7 @@ function fetchDaDetails(docNum,base) {
             base: base 
         },
         success: function(response) {
+            console.log(response)
             var data = JSON.parse(response);
             console.log(data)
             let tableDiv = document.getElementById("da-detail-container");
