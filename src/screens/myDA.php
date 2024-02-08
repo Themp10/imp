@@ -27,17 +27,41 @@ function sql_from_Hana($sql){
     return $data;
 }
 
+function getDraftData($DocEntry,$base){
+    $sql='SELECT "Dscription","Quantity" from "'.$base.'"."DRF1" where "DocEntry"=\''.$DocEntry.'\'';
+    $list=sql_from_Hana($sql);
+    $html="<ul>";
+    foreach ($list as $item) {
+        $html.="<li>".$item["Dscription"]." - Qte :  ".(int)$item["Quantity"]."</li>";
+    }
+    $html.="</ul>";
+    return $html;
+}
+
+
 function list_approval($base){
     session_start();
     $user=$_SESSION['user'];
-    $sql='SELECT "DocEntry","Status","IsDraft",TO_VARCHAR(TO_DATE("CreateDate"), \'DD-MM-YYYY\') as "DocDate" ,"ObjType","DraftEntry"
-     from "'.$base.'"."OWDD" WHERE "OwnerID"=(select "USERID" FROM "'.$base.'"."OUSR" where "IsDraft"=\'Y\' and "USER_CODE" =\''.$user.'\')';
+    //$sql='SELECT "DocEntry","Status","IsDraft",TO_VARCHAR(TO_DATE("CreateDate"), \'DD-MM-YYYY\') as "DocDate" ,"ObjType","DraftEntry"
+    // from "'.$base.'"."OWDD" WHERE "OwnerID"=(select "USERID" FROM "'.$base.'"."OUSR" where "IsDraft"=\'Y\' and "USER_CODE" =\''.$user.'\')';
+    $sql='SELECT "OUSR"."USER_CODE","OWDD"."DocEntry","WDD1"."Status","OWDD"."IsDraft",TO_VARCHAR(TO_DATE("OWDD"."CreateDate"), \'DD-MM-YYYY\') as "DocDate" ,
+    "OWDD"."ObjType","OWDD"."DraftEntry"
+         from "'.$base.'"."WDD1" as "WDD1","'.$base.'"."OWDD" as "OWDD","'.$base.'"."OUSR" as "OUSR"
+          WHERE "OWDD"."WddCode"="WDD1"."WddCode" and "WDD1"."UserID"="OUSR"."USERID" and
+          "OWDD"."OwnerID"=(select "USERID" FROM "'.$base.'"."OUSR" where "IsDraft"=\'Y\' and "USER_CODE" =\''.$user.'\')
+          and "WDD1"."StepCode"=(select max("StepCode") from "'.$base.'"."WDD1" where "WddCode"="OWDD"."WddCode" )';
     $list=sql_from_Hana($sql);
     $html="";
+    $htmlRefus="<div class='approval-cat'><h3 class='header-approval'>Refusée : </h3>";
+    $cRefus=0;
+    $htmlWaiting="<div class='approval-cat'><h3 class='header-approval'>En cours : </h3>";
+    $cWaiting=0;
+    $htmlTocreate="<div class='approval-cat'><h3 class='header-approval'>A créer : </h3>";
+    $cTocreate=0;
     foreach ($list as $item) {
+        $htmlTmp="";
         $status="";
         $docType="";
-        $docentry=-1;
         $badge="";
         // $date = new DateTime($item["CreateDate"]);
         // $formattedDate = $date->format('d-m-Y');
@@ -45,17 +69,21 @@ function list_approval($base){
 
         switch ($item["Status"]) {
             case "W":
-                $status="Approbation en attente";
+                $status="Approbation en attente par : ".$item["USER_CODE"];
                 $badge="warning-badge";
+                $cWaiting+=1;
+
                 break;
             case "N":
                 $status="Refusée";
                 $badge="danger-badge";
+                $cRefus+=1;
+
                 break;
             case "Y":
                 $status="Approuvée";
                 $badge="success-badge";
-                $docentry=$item["DocEntry"];
+                $cTocreate+=1;
                 break;
         }
         switch ($item["ObjType"]) {
@@ -68,14 +96,31 @@ function list_approval($base){
         }
         
 
-        // $html.="<div class='card-approval-status' data-docentry='".$docentry."'>".$status."</div>";
-        $html.="<div class='card-approval-status ".$badge."' data-docentry='".$docentry."'>";
-        $html.="<p class='p-app-da'>".$docType." : ".$item["DraftEntry"]."</p>";
-        $html.="<p class='p-app-da'>".$status."</p>";
-        $html.="<p class='p-app-da'>".$formattedDate."</p>";
-        $html.="</div>";
+        $htmlTmp.="<div class='card-approval-status ".$badge."' data-docentry='".$item["DraftEntry"]."'>";
+        $htmlTmp.="<p class='p-app-da'>".$docType." : ".$item["DraftEntry"]."</p>";
+        $htmlTmp.="<p class='p-app-da'>".$status."</p>";
+        $htmlTmp.="<p class='p-app-da'>".$formattedDate."</p>";
+        $htmlTmp.="</div>";
+
+        switch ($item["Status"]) {
+            case "W":
+                $htmlWaiting.=$htmlTmp;
+                break;
+            case "N":
+                $htmlRefus.=$htmlTmp;
+                break;
+            case "Y":
+                $htmlTocreate.=$htmlTmp;
+                break;
+        }
     }
-    return $html;
+    $htmlRefus.="</div>";
+    $htmlWaiting.="</div>";
+    $htmlTocreate.="</div>";
+    if ($cTocreate==0)$htmlTocreate="";
+    if ($cRefus==0)$htmlRefus="";
+    if ($cWaiting==0)$htmlWaiting="";
+    return $htmlRefus.$htmlWaiting.$htmlTocreate;
 }
 
 function generateSocieteSelector(){
@@ -166,11 +211,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         elseif ($_GET["action"]=="getda") {
             if (isset($_GET["DocNum"])) {
                 $daNoJson = get_DA_details($_GET["DocNum"],$_GET["base"]);
-                 array_walk_recursive($daNoJson, function (&$item) {
-                     if (is_string($item)) {
-                         $item = mb_convert_encoding($item, 'UTF-8', 'UTF-8');
-                     }
-                 });
+                array_walk_recursive($daNoJson, function (&$item) {
+                    if (is_string($item)) {
+                        $item = mb_convert_encoding($item, 'UTF-8', 'UTF-8');
+                    }
+                });
                 if ($daNoJson !== null) {
                     
                     $daDetails = json_encode($daNoJson);
@@ -187,9 +232,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 $user=$_SESSION['user'];
                 $listDa = getDaByYear($_GET["base"],$user,$_GET["year"]); 
                 $response = array( "c_da" =>$listDa[0] ,"dayear" => $listDa[1]);
-                // Convert to JSON and output
                 echo json_encode($response);
         }
+        elseif ($_GET["action"]=="getapprovalDetails") {
+            $list = getDraftData($_GET["docEntry"],($_GET["base"]));
+            
+            echo $list;
+    }
         exit();
     }
     
@@ -201,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     <div class="soc-list-container">
         <?php generateSocieteSelector();?> 
     </div>   
-<h2>Etat d'approbation</h2>
+<h2 id="appro-header">Etat d'approbation</h2>
     <div class="approval-list-container" id="approval-list-container">
     Choisir une société !
     </div>  
@@ -218,7 +267,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     </div>
 
 </div>
-
+<script src="src/static/jquery-3.6.4.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     let buttonsSoc = document.querySelectorAll('.btn-set-soc');
@@ -232,6 +281,31 @@ document.addEventListener('DOMContentLoaded', function () {
     
 });
 
+function getapprovalDetails(code){
+    base=document.getElementById("societe-span").innerHTML;
+
+    $.ajax({
+        type: 'GET',
+        url: './src/screens/myDA.php', 
+        data: { 
+                action:"getapprovalDetails",
+                base: base,
+                docEntry:code
+            },
+        success: function(response) {
+
+            let tipContainer = document.getElementById("tool-tip");
+
+            if(response!=""){
+                tipContainer.innerHTML=response;
+            }          
+        },
+        error: function(xhr, status, error) {
+            // Handle AJAX error
+            console.error('AJAX Error: ' + status + ' ' + error);
+        }
+    });
+}
 
 function getDabyYear(year){
     base=document.getElementById("societe-span").innerHTML;
@@ -291,9 +365,11 @@ function getApprovalDA(base){
 
             
             if(data.listApproval==""){
-                listApproval.innerHTML="Aucune donnée";
+                document.getElementById("appro-header").innerHTML=""
+                listApproval.innerHTML="";
             }else{
                 listApproval.innerHTML=data.listApproval;
+                document.getElementById("appro-header").innerHTML="Etat d'approbation"
             }
             if(data.listDa==""){
                 listDA.innerHTML="Aucune donnée";
@@ -316,6 +392,33 @@ function getApprovalDA(base){
                     getDabyYear(this.getAttribute('data-year'));
                 });
             });
+
+
+            $(document).ready(function() {
+            $('.card-approval-status').hover(
+                function() {
+                    getapprovalDetails(this.getAttribute('data-docentry'));
+                    let mouseX = event.pageX;
+                    let mouseY = event.pageY;
+                    $('#tool-tip').css({
+                                'left': mouseX+10 + 'px',
+                                'top': mouseY+10 + 'px',
+                                'z-index':2,
+                                'opacity':1
+        });
+                    },
+                function() { 
+                    let tipContainer = document.getElementById("tool-tip");
+                    tipContainer.innerHTML=""
+                    $('#tool-tip').css({
+                                'left': '0',
+                                'top': '0',
+                                'z-index':0,
+                                'opacity':0
+                    });
+                    },
+                ) 
+        });
         },
         error: function(xhr, status, error) {
             // Handle AJAX error
@@ -353,7 +456,7 @@ function fetchDaDetails(docNum,base) {
                 // Create the header row
                 var thead = document.createElement('thead');
                 var headerRow = document.createElement('tr');
-                [ 'Code Article','Article','Texte Libre', 'Fournisseur', 'BC','Date BC', 'Status_BC', 'BR', 'Date_BR', 'Status_BR', 'Total'].forEach(headerText => {
+                [ 'Code Article','Article','Texte Libre', 'Quantité','Fournisseur', 'BC','Date BC', 'Status BC', 'BR', 'Date BR', 'Status BR', 'Total'].forEach(headerText => {
                     var header = document.createElement('th');
                     header.className = "bc-list-table";
                     header.textContent = headerText;
@@ -366,7 +469,7 @@ function fetchDaDetails(docNum,base) {
                 var tbody = document.createElement('tbody');
                 data[1].forEach(item => {
                     var row = document.createElement('tr');
-                    [  'Code_Article','Article','FreeTxt', 'Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'Total'].forEach(key => {
+                    [  'Code Article','Article','FreeTxt', 'Qte BC','Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'LinTotal BC'].forEach(key => {
                         var cell = document.createElement('td');
                         cell.className = "td-list-table";
                         cell.textContent = item[key];
@@ -414,32 +517,6 @@ function fetchDaDetails(docNum,base) {
                 tableDiv.appendChild(table);
             }
 
-            // var tableBody = document.getElementById("table-body");
-
-            // if (tableBody.hasChildNodes()) {
-            //     while (tableBody.firstChild) {
-            //         tableBody.removeChild(tableBody.firstChild);
-            //     }
-            // }
-            // // Loop to create the rows
-            // cartListe.forEach(function (row, index) {
-            //     var tr = document.createElement("tr");
-            //     tr.setAttribute("item-id", row.id);
-            //     // For the first row, create and append the "Demandeur" input
-            //     if (index === 0) {
-            //         var demandeurTd = document.createElement("td");
-            //         var demandeurInput = document.createElement("input");
-            //         demandeurInput.type = "text";
-            //         demandeurInput.placeholder = "Demandeur";
-            //         demandeurInput.className = "input-bs-table";
-            //         demandeurInput.id = "demandeur-bs-table"; // Use a consistent ID for the input
-            //         demandeurTd.setAttribute("rowspan", cartListe.length);
-            //         // demandeurInput.classList.add("center-vertically");
-            //         demandeurTd.appendChild(demandeurInput);
-            //         tr.appendChild(demandeurTd);
-            //     }
-
-            // });
         },
         error: function(xhr, status, error) {
             // Handle AJAX error
@@ -447,6 +524,8 @@ function fetchDaDetails(docNum,base) {
         }
     });
 }
+
+
 
 
 </script>

@@ -1055,7 +1055,8 @@ td {
 
 font-size: 1rem;
 border: 1px solid black;
-text-align: center;
+padding-left: 5px;
+/* text-align: center; */
 }
 
 .bs-table-data-tr{
@@ -1366,6 +1367,18 @@ flex-wrap: wrap;  gap: 50px;
 
 
 /* ============================ My DA ============================ */
+.tool-tip{
+  padding: 10px;
+  background-color: white;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+}
 .card-approval-status {
   border: 0;
   cursor: pointer;
@@ -1373,7 +1386,7 @@ flex-wrap: wrap;  gap: 50px;
   padding: 5px;
   border-radius: 7px;
    width: 200px; 
-
+   border: 1px white solid;
 }
    
 .p-app-da{
@@ -1381,8 +1394,8 @@ flex-wrap: wrap;  gap: 50px;
 }
 .card-approval-status:hover{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  transform: scale(1.1);
-  border: 1px white solid;
+  
+  border: 1px black solid;
   transition: all 0.2s ease;
 }
 .my-da-list-container{
@@ -1495,6 +1508,21 @@ flex-wrap: wrap;  gap: 50px;
 
 .bc-list-table{
   height: 40px;
+}
+
+.approval-cat{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  padding-left: 95px;
+}
+.header-approval{
+ width: 95px;
+ position: absolute;
+  top: 0;
+  left: 0;
 }
 /* ============================ Login ============================ */
 .login-body {

@@ -67,6 +67,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         include "src/modals/entree_stock.php";
         include "src/modals/bon_sortie.php";
     ?>
+    <div class="tool-tip" id="tool-tip"></div>
     <div class="container" id="main-container">
         <div id="sub-nav" class="sub-nav"></div>
         <?php if(!$hidden) : ?>
@@ -302,6 +303,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                 showContent('page-all-DA')
             }else if(profile =="user") {
                 showContent('page-mes-DA')
+            }else if(profile =="admin") {
+                showContent('cartridge-inventory')
             }
         
 
