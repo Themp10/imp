@@ -1488,8 +1488,12 @@ flex-wrap: wrap;  gap: 50px;
 .span-bc-right{
   font-size: 20px;
   margin: 0 0 20px 10px;
+  display: inline-block;
 }
-
+.span-dt-right{
+  font-size: 30px;
+font-weight: bold;
+}
 .succes-da{
   border-left: 4px solid rgb(91, 243, 154);
 }

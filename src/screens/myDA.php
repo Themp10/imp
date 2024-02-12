@@ -442,13 +442,17 @@ function fetchDaDetails(docNum,base) {
             console.log(data)
             let tableDiv = document.getElementById("da-detail-container");
             tableDiv.innerHTML = '';
-            var spanBC = document.createElement('div');
+            var spanBC = document.createElement('span');
+            var spanDocTotal = document.createElement('span');
                 spanBC.className = "span-bc-right";
+                spanDocTotal.className = "span-dt-right";
             if(data[0]){
                 //Bon de ocmmande saisie
 
                 spanBC.innerHTML = 'Total Bon de commande : ';
                 tableDiv.appendChild(spanBC); 
+                spanDocTotal.innerHTML = parseFloat(data[1][0]['TotalTTC']).toFixed(2)+' DHS';
+                tableDiv.appendChild(spanDocTotal); 
                 var table = document.createElement('table');
                 table.style.width = '100%';
                 table.setAttribute('border', '1');
@@ -456,7 +460,7 @@ function fetchDaDetails(docNum,base) {
                 // Create the header row
                 var thead = document.createElement('thead');
                 var headerRow = document.createElement('tr');
-                [ 'Code Article','Article','Texte Libre', 'Quantité','Fournisseur', 'BC','Date BC', 'Status BC', 'BR', 'Date BR', 'Status BR', 'Total'].forEach(headerText => {
+                [ 'Code Article','Article','Texte Libre', 'Quantité','Prix U','Fournisseur', 'BC','Date BC', 'Status BC', 'BR', 'Date BR', 'Status BR', 'Total'].forEach(headerText => {
                     var header = document.createElement('th');
                     header.className = "bc-list-table";
                     header.textContent = headerText;
@@ -469,10 +473,15 @@ function fetchDaDetails(docNum,base) {
                 var tbody = document.createElement('tbody');
                 data[1].forEach(item => {
                     var row = document.createElement('tr');
-                    [  'Code Article','Article','FreeTxt', 'Qte BC','Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'LinTotal BC'].forEach(key => {
+                    [  'Code Article','Article','FreeTxt', 'Qte BC','PU BC','Fournisseur', 'Num_BC','Date_BC', 'Status_BC', 'Num_BR', 'Date BR', 'Status_BR', 'LinTotal BC'].forEach(key => {
                         var cell = document.createElement('td');
                         cell.className = "td-list-table";
-                        cell.textContent = item[key];
+                        if (key == 'Qte BC'|| key == 'LinTotal BC' ||key == 'PU BC') {
+                            cell.textContent = parseFloat(item[key]).toFixed(2);
+                        } else {
+
+                            cell.textContent = item[key];
+                        }
                         row.appendChild(cell);
                     });
                     tbody.appendChild(row);
@@ -508,7 +517,17 @@ function fetchDaDetails(docNum,base) {
                     var row = document.createElement('tr');
                     ['ItemCode', 'Dscription','FreeTxt', 'Quantity'].forEach(key => {
                         var cell = document.createElement('td');
-                        cell.textContent = item[key];
+                        if (typeof item[key] === 'number') {
+                            // Check if the number is a float with non-zero decimal places
+                            if (Math.floor(item[key]) !== item[key]) {
+                                cell.textContent = item[key].toFixed(2);
+                            } else {
+                                cell.textContent = parseInt(item[key], 10);
+                            }
+                        } else {
+                            // Return the value as it is if it's not a number
+                            cell.textContent = item[key];
+                        }
                         row.appendChild(cell);
                     });
                     tbody.appendChild(row);

@@ -22,7 +22,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionnaire de Stock de toner</title>
+    <title>Intranet Groupe Mfadel</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="assets/icon.png">
 </head>
@@ -30,11 +30,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 <body>
     <header class="page-header">
             <img src="./assets/logo.png" alt="Logo" class="header-logo">
-            <?php if($profile =="admin") : ?>
-                <h1>Gestionnaire de Stock de toner</h1>
-            <?php else : ?>
-                <h1>Suivi des DA</h1>
-            <?php endif; ?>
+                <h1>Intranet Groupe Mfadel</h1>
             
             <div class="settings-container">
                 <h2 class="settings-username"><?php echo $_SESSION['user']." | ".$_SESSION['profile'];?></h2>
