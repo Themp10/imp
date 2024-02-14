@@ -300,7 +300,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
             }else if(profile =="user") {
                 showContent('page-mes-DA')
             }else if(profile =="admin") {
-                showContent('cartridge-inventory')
+                //showContent('cartridge-inventory')
+                showContent('page-mes-DA')
+
             }
         
 

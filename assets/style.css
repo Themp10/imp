@@ -1389,8 +1389,12 @@ flex-wrap: wrap;  gap: 50px;
    border: 1px white solid;
 }
    
-.p-app-da{
+.p-app-da,.count-approval{
   margin: 0;
+}
+.count-approval{
+  margin-left: 70%;
+  font-size: 25px;
 }
 .card-approval-status:hover{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -1414,7 +1418,7 @@ flex-wrap: wrap;  gap: 50px;
   width: 100%;
   padding: 0 15px;
 }
-.list-title{
+.da-h2{
   margin:0 5px;
 }
 .soc-list-container{
