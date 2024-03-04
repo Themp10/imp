@@ -54,6 +54,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <?php if($profile =="admin") : ?>
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
+        <a href="#" onclick="showContent('page-sap-query')">Requetes SAP</a>
 
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
@@ -96,6 +97,10 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         </div>
         <div class="inner-container" id="page-users">    
             <?php include "src/screens/users.php"; ?>
+        </div>
+
+        <div class="inner-container" id="page-sap-query">    
+            <?php include "src/screens/SAPquery.php"; ?>
         </div>
 
         <div class="inner-container" id="page-printers">    

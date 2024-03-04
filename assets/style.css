@@ -1331,6 +1331,8 @@ margin: 0;
   font-size: clamp(1rem, 1.5vw, 3rem);
   
 }
+
+
 .card-data{
 position: absolute;
 right: 20px;
@@ -1679,6 +1681,48 @@ font-weight: bold;
   background-color: white;
 }
 
+/* ============================ Requete SAP ============================ */
+.base-group{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.base-group label{
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #bebebe63;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.base-group label input{
+  border-bottom:none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  vertical-align: middle;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+.base-group label input:checked  {
+  background-color: #57e977;
+ }
+ .sql-btn {
+  font-size: 20px;
+  width: 150px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #3afd9b;
+  border: none;
+  cursor: pointer;
+ }
+ .sql-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ }
 /* ============================ RESPONSIVE ============================ */
 
 @media only screen and (max-width: 800px) {

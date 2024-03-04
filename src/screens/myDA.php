@@ -242,10 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function() {
             getApprovalDA(this.getAttribute('data-base'));
         });
-    });
-    
-
-    
+    }); 
 });
 
 function applyYearFilter(year){
