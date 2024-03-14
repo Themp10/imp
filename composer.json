@@ -6,5 +6,8 @@
         "psr-4": {
             "Namespace\\": "path/to/namespace"
         }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^2.0"
     }
 }

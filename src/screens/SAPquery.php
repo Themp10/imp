@@ -6,28 +6,24 @@ function sql_from_Hana_query($sql,$base){
     $Hanaconn = odbc_connect($dsn, $username, $password);
  
     $data=[];
-    // $setCharset = odbc_exec($Hanaconn, "SET CHARACTER SET UTF8");
+    $setCharset = odbc_exec($Hanaconn, "SET NAMES UTF8");
+    $setCharset = odbc_exec($Hanaconn, "SET CHARACTER SET UTF8");
+    $setDb = odbc_exec($Hanaconn, "SET SCHEMA " . $base);
+    var_dump($setDb);
+    $result = odbc_exec($Hanaconn,$sql);
+    if (!$result)
+    {
+        echo "Error while sending SQL statement to the database server.\n";
+        echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
+    }
+    else
+    {
+        while ($row = odbc_fetch_array($result))
+        {
+            $data[]=mb_convert_encoding($row, "UTF-8", "iso-8859-1");
+        }
+    }
     
-    $setQuery = "SET SCHEMA " . $base;
-    if (!odbc_exec($Hanaconn, $setQuery)) {
-        // Handle the error if the query failed
-        echo "Failed to set databse: " . odbc_errormsg($Hanaconn);
-    }
-    else{
-        $result = odbc_exec($Hanaconn,$sql);
-        if (!$result)
-        {
-            echo "Error while sending SQL statement to the database server.\n";
-            echo "ODBC error code: " . odbc_error() . ". Message: " . odbc_errormsg();
-        }
-        else
-        {
-            while ($row = odbc_fetch_array($result))
-            {
-                $data[]=$row;
-            }
-        }
-    }
 
     odbc_close($Hanaconn);
     return $data;
@@ -42,9 +38,57 @@ function generateSqlTable($sql,$baseList){
     }
     return $html;
 }
+
+function createHtmlTableFromSqlResult($sql, $baseList) {
+
+    $html="";
+    $csv="";
+    $bases = explode(";", $baseList);
+    $headerProcessed = false;
+    $html = '<table border="1">';
+    $resultArray=[];
+    foreach ($bases as $base) {
+        $resultArray = sql_from_Hana_query($sql, $base);
+        if (!empty($resultArray)) {
+            foreach ($resultArray as $rowIndex => $row) {
+                if (!$headerProcessed) {
+                    $html .= '<tr><th>Base</th>';
+                    $csv .="base;";
+                    foreach ($row as $key => $value) {
+                        $csv .=$key.";";
+                        $html .= '<th>' . htmlspecialchars($key) . '</th>';
+                    }
+                    $csv .="\n";
+                    $html .= '</tr>';
+                    $headerProcessed = true;
+                }
+                $html .= '<tr><td>' . htmlspecialchars($base) . '</td>'; 
+                $csv .=$base.";";
+                foreach ($row as $value) {
+                    $html .= '<td>' . htmlspecialchars($value) . '</td>';
+                    $csv .=$value.";";
+                }
+                $csv .="\n";
+                $html .= '</tr>';
+            }
+            
+        } else {
+            $html = "No data found";
+        }
+    }
+    $html .= '</table>';
+    $filePath = "../../outputs/output.txt";
+    file_put_contents($filePath, $csv);
+    return $html;
+}
+
+
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["sql"])) {
-        $resultTable = generateSqlTable($_GET["sql"],$_GET["baseList"]); 
+        $resultTable = createHtmlTableFromSqlResult($_GET["sql"],$_GET["baseList"]); 
         echo $resultTable; 
         exit();
     }
@@ -55,6 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <div class="sql-container">
     <div class="base-group">
         <label for="AM_PROINVEST"><input type="checkbox" id="AM_PROINVEST" name="AM_PROINVEST" value="AM_PROINVEST"> AM_PROINVEST</label>
+        <label for="AM_PROINVEST_TEST"><input type="checkbox" id="AM_PROINVEST_TEST" name="AM_PROINVEST_TEST" value="AM_PROINVEST_TEST"> AM_PROINVEST_TEST</label>
         <label for="ANFA_19"><input type="checkbox" id="ANFA_19" name="ANFA_19" value="ANFA_19"> ANFA_19</label>
         <label for="ANFA_REALISATION"><input type="checkbox" id="ANFA_REALISATION" name="ANFA_REALISATION" value="ANFA_REALISATION"> ANFA_REALISATION</label>
         <label for="CASA_COLIVING"><input type="checkbox" id="CASA_COLIVING" name="CASA_COLIVING" value="CASA_COLIVING"> CASA_COLIVING</label>

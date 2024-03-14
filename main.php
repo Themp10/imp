@@ -17,10 +17,11 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- <meta charset="UTF-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet Groupe Mfadel</title>
     <link rel="stylesheet" href="assets/style.css">
