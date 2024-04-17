@@ -1,41 +1,62 @@
+
+
 <?php
-echo getcwd(); // Outputs the current working directory
-// Function to generate CSV string
-function generateCsvString() {
-    $data = [
-        ["ID", "Name", "Age"],
-        [1, "John Doe", 30],
-        [2, "Jane Doe", 25],
-        // Add more rows as needed
-    ];
+$serverName = "172.28.0.12";
+$connectionOptions = array(
+    "database" => "yasmine",
+    "uid" => "sa",
+    "pwd" => "Accordtime@"
+);
 
-    $csvString = "";
-
-    foreach ($data as $row) {
-        $csvString .= implode(",", $row) . "\n";
-    }
-
-    return $csvString;
+function exception_handler($exception) {
+    echo "<h1>Failure</h1>";
+    echo "Uncaught exception: " , $exception->getMessage();
+    echo "<h1>PHP Info for troubleshooting</h1>";
+    phpinfo();
 }
 
-// Generate CSV string
-$csvContent = generateCsvString();
+set_exception_handler('exception_handler');
 
-// Specify the file path
-$filePath = "outputs/output.txt";
+// Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+if ($conn === false) {
+    die(formatErrors(sqlsrv_errors()));
+}
 
-// Save the CSV string to a file
-file_put_contents($filePath, $csvContent);
+// Select Query
+$tsql = "SELECT @@Version AS SQL_VERSION";
 
-echo "File saved successfully.";
+// Executes the query
+$stmt = sqlsrv_query($conn, $tsql);
 
+// Error handling
+if ($stmt === false) {
+    die(formatErrors(sqlsrv_errors()));
+}
 ?>
 
+<h1> Success Results : </h1>
 
+<?php
+while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+    echo $row['SQL_VERSION'] . PHP_EOL;
+}
 
+sqlsrv_free_stmt($stmt);
+sqlsrv_close($conn);
 
-<H1>Hello</H1>
-<button >Imprimer</button>
+function formatErrors($errors)
+{
+    // Display errors
+    echo "<h1>SQL Error:</h1>";
+    echo "Error information: <br/>";
+    foreach ($errors as $error) {
+        echo "SQLSTATE: ". $error['SQLSTATE'] . "<br/>";
+        echo "Code: ". $error['code'] . "<br/>";
+        echo "Message: ". $error['message'] . "<br/>";
+    }
+}
+?>
 
 
 

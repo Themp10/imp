@@ -127,16 +127,6 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 <!-- Scripts for Drag and Drop -->
 <!-- Gestion de l'ajouter de quantité au click sur un toner -->
 <script>
-    window.onload = (event) => {
-        
-        let screenId=localStorage.getItem("screen");
-        if(screenId){
-            document.getElementById(screenId).classList.add("show");
-        }else{
-            document.getElementById("cartridge-inventory").classList.add("show");
-        }
-
-    };
     function addnew(){
         openModal() 
     }
@@ -299,15 +289,19 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     </script>
     <script>
         window.onload = (event) => {
+
             let profile="<?php echo $profile ;?>"
-            console.log(profile)
             if(profile =="achat") {
                 showContent('page-all-DA')
             }else if(profile =="user") {
                 showContent('page-mes-DA')
             }else if(profile =="admin") {
-                //showContent('cartridge-inventory')
-                showContent('page-mes-DA')
+                let screenId=localStorage.getItem("screen");
+                if(screenId){
+                    document.getElementById(screenId).classList.add("show");
+                }else{
+                    document.getElementById("cartridge-inventory").classList.add("show");
+                }
 
             }
         

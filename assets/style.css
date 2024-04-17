@@ -1423,13 +1423,13 @@ flex-wrap: wrap;  gap: 50px;
 .da-h2{
   margin:0 5px;
 }
-.soc-list-container{
+.soc-list-container,.da-container-achat{
   display: 	flex;
   gap: 10px;
   padding: 10px;
   flex-wrap: wrap;
 }
-.btn-set-soc{
+.btn-set-soc,.btn-soc-achat{
   background-color: white;
   border-radius: 5px;
   border: 0;
@@ -1440,10 +1440,10 @@ flex-wrap: wrap;  gap: 50px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.btn-set-soc:hover{
+.btn-set-soc:hover,.btn-soc-achat:hover{
   background-color: #59f8a9;
 }
-.btn-set-soc:focus{
+.btn-set-soc:focus,.btn-soc-achat:focus{
   background-color: #59f8a9;
   font-weight: bold;
 }
@@ -1533,6 +1533,33 @@ font-weight: bold;
  position: absolute;
   top: 0;
   left: 0;
+}
+
+.btn-da-achat{
+  /* width: 100px; */
+  padding:0 10px;
+  height: 80px;
+  background-color:#27c576;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12px;
+}
+.btn-da-achat-item{
+color: white;
+}
+.btn-da-achat-item:nth-child(1){
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+}
+.btn-da-achat-item:nth-child(3){
+  font-size: 15px;
+  font-weight: bold;
 }
 /* ============================ Login ============================ */
 .login-body {
