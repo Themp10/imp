@@ -56,6 +56,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
         <a href="#" onclick="showContent('page-sap-query')">Requetes SAP</a>
+        <a href="#" id="sub-rh">Gestion des sorties</a>
 
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
@@ -115,6 +116,20 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 
         <div class="inner-container" id="page-all-DA">    
             <?php include "src/screens/allDA.php"; ?>
+        </div>
+
+        <!-- Gestion des conges et sortie -->
+        <div class="inner-container" id="page-new-leave">    
+            <?php include "src/screens/rh_demande.php"; ?>
+        </div>
+        <div class="inner-container" id="page-my-leaves">    
+            <?php include "src/screens/rh_leaves.php"; ?>
+        </div>
+        <div class="inner-container" id="page-validation">    
+            <?php include "src/screens/rh_validation.php"; ?>
+        </div>
+        <div class="inner-container" id="page-etat">    
+            <?php include "src/screens/rh_etat.php"; ?>
         </div>
     </div>
 
@@ -262,9 +277,14 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').addClass('hovered');      
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-DA\')">DA Toner</a>');
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-mes-DA\')">Mes DA</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-all-DA\')">Suvi DA</a>');
-
-                            
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-all-DA\')">Suvi DA</a>');                         
+                        }
+                        if(id =='sub-rh') {   
+                            $('#sub-nav').addClass('hovered');      
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-new-leave\')">Nouvelle demande</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-my-leaves\')">Mes demandes</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-validation\')">Validation</a>');                         
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-etat\')">Etat des employés</a>');                         
                         }
                     },
                 function() { 

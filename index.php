@@ -46,7 +46,7 @@ function init_login($username,$password){
             // $init=$arr[0];
             // array_shift($arr);
             $user_data=get_user($username);
-            $_SESSION['user'] =$user_data['sap_user']; //$init.".".implode("",$arr);
+            $_SESSION['user'] =$user_data['sap_user']; 
             $_SESSION['profile'] =$user_data['profile'] ;
             $_SESSION['connected'] = true;
             header('Location: main.php');
