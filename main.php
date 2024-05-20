@@ -30,7 +30,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 
 <body>
     <header class="page-header">
-            <img src="./assets/logo.png" alt="Logo" class="header-logo">
+            <img src="./assets/MG-logo.png" alt="Logo" class="header-logo">
                 <h1>Intranet Groupe Mfadel</h1>
             
             <div class="settings-container">
@@ -57,6 +57,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
         <a href="#" onclick="showContent('page-sap-query')">Requetes SAP</a>
         <a href="#" id="sub-rh">Gestion des sorties</a>
+        <a href="#" onclick="showContent('page-decharge')">Décharge Matériel</a>
 
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
@@ -104,7 +105,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-sap-query">    
             <?php include "src/screens/SAPquery.php"; ?>
         </div>
-
+        <div class="inner-container" id="page-decharge">    
+            <?php include "src/screens/decharge.php"; ?>
+        </div>
         <div class="inner-container" id="page-printers">    
             <?php include "src/screens/printers.php"; ?>
         </div>
