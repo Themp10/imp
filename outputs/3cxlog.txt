@@ -51,3 +51,7 @@ Temporary table call_logs_temp cleared successfully
 ============== Fin : 2024/06/19 14:09:40
 ============== Début : 2024/06/19 14:14:35
 ============== Début : 2024/06/19 14:15:50
+All data inserted into temporary table successfully
+0 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:16:00
