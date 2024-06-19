@@ -9,7 +9,6 @@ function sql_from_Hana_query($sql,$base){
     $setCharset = odbc_exec($Hanaconn, "SET NAMES UTF8");
     $setCharset = odbc_exec($Hanaconn, "SET CHARACTER SET UTF8");
     $setDb = odbc_exec($Hanaconn, "SET SCHEMA " . $base);
-    var_dump($setDb);
     $result = odbc_exec($Hanaconn,$sql);
     if (!$result)
     {
@@ -18,6 +17,7 @@ function sql_from_Hana_query($sql,$base){
     }
     else
     {
+
         while ($row = odbc_fetch_array($result))
         {
             $data[]=mb_convert_encoding($row, "UTF-8", "iso-8859-1");
@@ -49,13 +49,14 @@ function createHtmlTableFromSqlResult($sql, $baseList) {
     $resultArray=[];
     foreach ($bases as $base) {
         $resultArray = sql_from_Hana_query($sql, $base);
+        
         if (!empty($resultArray)) {
             foreach ($resultArray as $rowIndex => $row) {
                 if (!$headerProcessed) {
                     $html .= '<tr><th>Base</th>';
-                    $csv .="base;";
+                    $csv .="base|";
                     foreach ($row as $key => $value) {
-                        $csv .=$key.";";
+                        $csv .=$key."|";
                         $html .= '<th>' . htmlspecialchars($key) . '</th>';
                     }
                     $csv .="\n";
@@ -63,10 +64,10 @@ function createHtmlTableFromSqlResult($sql, $baseList) {
                     $headerProcessed = true;
                 }
                 $html .= '<tr><td>' . htmlspecialchars($base) . '</td>'; 
-                $csv .=$base.";";
+                $csv .=$base."|";
                 foreach ($row as $value) {
                     $html .= '<td>' . htmlspecialchars($value) . '</td>';
-                    $csv .=$value.";";
+                    $csv .=str_replace(array("\r", "\n"), '', htmlspecialchars($value))."|";
                 }
                 $csv .="\n";
                 $html .= '</tr>';

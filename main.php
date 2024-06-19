@@ -13,7 +13,6 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         $hidden=true;
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +57,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-sap-query')">Requetes SAP</a>
         <a href="#" id="sub-rh">Gestion des sorties</a>
         <a href="#" onclick="showContent('page-decharge')">Décharge Matériel</a>
+        <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
 
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
@@ -108,6 +108,11 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-decharge">    
             <?php include "src/screens/decharge.php"; ?>
         </div>
+
+        <div class="inner-container" id="page-switch">    
+            <?php include "src/screens/switchs.php"; ?>
+        </div>
+
         <div class="inner-container" id="page-printers">    
             <?php include "src/screens/printers.php"; ?>
         </div>

@@ -1,36 +1,64 @@
 <?php
-include_once  dirname(__DIR__). DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+$printerIPs = [
+    '172.28.0.156', 
+    '172.28.1.156', 
+];
+$community = 'public'; // Replace with your SNMP community string
 
-function get_devices(){
+// SNMP OIDs to query
+$oids = [
+    'sysDescr' => '1.3.6.1.2.1.1.1.0',
+    'printerStatus' => '1.3.6.1.2.1.25.3.5.1.1.1',
+    'tonerLevelBlack' => '1.3.6.1.2.1.43.11.1.1.9.1.1',
+    'maxTonerLevelBlack' => '1.3.6.1.2.1.43.11.1.1.8.1.1',
+    'totalPagesPrinted' => '1.3.6.1.2.1.43.10.2.1.4.1.1',
+    'location' => '1.3.6.1.2.1.1.6.0',
+];
 
-    global $conn; 
-    $sql="SELECT * FROM imprimantes";
-    $result = $conn->query($sql);
-
-    if ($result === false) {
-        die("Error in SQL query: " . $conn->error);
-    }
-
-    $printers = [];
-
-    while ($row = $result->fetch_assoc()) {
-        $printers[] = $row;
-    }
-    return $printers;
+// Function to query SNMP OIDs
+function snmp_get_value($ip, $community, $oid) {
+    return str_replace(['Counter32: ', 'STRING: ', 'INTEGER: '], '', snmp2_get($ip, $community, $oid));
 }
-function get_data_from_oid($ip_address, $oid) {
-    $data = snmpget($ip_address, "public", $oid);
-    if ($data === false) {
-        return "Error in SNMP request";
+echo "<h1>Liste des imprimantes</h1>";
+// Loop through each printer IP
+echo '<div class="printers-container">';
+foreach ($printerIPs as $printerIP) {
+    // Query each OID and store the results
+    $printerInfo = [];
+    foreach ($oids as $key => $oid) {
+        $printerInfo[$key] = snmp_get_value($printerIP, $community, $oid);
     }
 
-    return explode(":",$data)[1];
-}
+    // Calculate toner level percentage
+    $printername=str_replace('"','',explode(';',$printerInfo['sysDescr'])[0]);
+    $printerlocation=str_replace('"','',$printerInfo['location']);
+    $tonerLevel = $printerInfo['tonerLevelBlack'];
+    $maxTonerLevel = $printerInfo['maxTonerLevelBlack'];
+    $tonerLevelPercentage = ($maxTonerLevel > 0) ? ($tonerLevel / $maxTonerLevel) * 100 : 0;
 
+    // HTML template
+    echo "
+    <div class=\"printer-container\">
+        <div class=\"printer-row\">
+            <div class=\"printer-column\">
+                <p class=\"printer-text\">{$printerIP}</p>
+                <p class=\"printer-text\">{$printername}</p>
+                <p class=\"printer-text\">{$printerlocation}</p>
+                <p class=\"printer-text\">Pages imprimées: {$printerInfo['totalPagesPrinted']}</p>
+            </div>
+            <div class=\"printer-column\">
+                <img src=\"./assets/3345.png\" alt=\"Logo\" class=\"printer-img\">
+            </div>
+        </div>
+        <div class=\"printer-row\">
+            <p class=\"printer-toner-level\">Toner : ".round($tonerLevelPercentage, 2)."%</p>
+            <div class=\"printer-level-container\">
+                <div class=\"printer-level\" style=\"width: {$tonerLevelPercentage}%\"></div>
+            </div>
+        </div>
+    </div>";
+}
+echo '</div>';
 
 ?>
-<img src="https://img.over-blog-kiwi.com/2/06/71/57/20170222/ob_f3250f_4062754.jpg" alt="Logo" >
 
-<?php foreach (get_devices() as $row): ?>
-    <div>  <?= get_data_from_oid($row["ip_address"], $row["oid_model"]).get_data_from_oid($row["ip_address"], $row["oid_count"])?></div>
-<?php endforeach; ?>

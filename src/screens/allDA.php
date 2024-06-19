@@ -1,5 +1,6 @@
 <?php
 $base=["AM_PROINVEST", "AM_PROINVEST_TEST", "ANFA_19", "ANFA_REALISATION", "CASA_COLIVING", "HOLDING_TARIK", "M_PROPERTIES", "PROBAT_INVEST", "RMM_BUILDING", "YASMINE_FONCIERE"];
+//
 function generateSocieteSelectorAchat(){
     global $base;
     $sql='select COUNT(*) as "total" from (
@@ -20,8 +21,8 @@ function sql_from_Hana_queryAchat($sql,$base){
     $Hanaconn = odbc_connect($dsn, $username, $password);
  
     $data=[];
-    $setCharset = odbc_exec($Hanaconn, "SET NAMES UTF8");
-    $setCharset = odbc_exec($Hanaconn, "SET CHARACTER SET UTF8");
+    //$setCharset = odbc_exec($Hanaconn, "SET NAMES UTF8");
+    //$setCharset = odbc_exec($Hanaconn, "SET CHARACTER SET UTF8");
     $setDb = odbc_exec($Hanaconn, "SET SCHEMA " . $base);
     $result = odbc_exec($Hanaconn,$sql);
     if (!$result)
@@ -42,7 +43,12 @@ function sql_from_Hana_queryAchat($sql,$base){
     return $data;
 }
 
-
+function logger($txt){
+    $filePath = "../../outputs/log.txt";
+    $fp = fopen($filePath, 'a');
+    fwrite($fp, $txt."\n");
+    fclose($fp);
+}
 
 
 
@@ -56,7 +62,7 @@ function getDAtoBCCountAchat($base){
         GROUP BY "OPRQ"."Requester","OPRQ"."DocNum","OPRQ"."CANCELED","OPRQ"."DocDate") where "count" != \'0\'';
     $data=sql_from_Hana_queryAchat($sql,$base);
     foreach ($data as $item) { 
-        $html.="<div class='btn-da-achat' data-base='".$soc."'>";
+        $html.="<div class='btn-da-achat' data-base='".$base."'>";
         $html.="<div class='btn-da-achat-item'>".$item["Requester"]."</div>";
         $html.="<div class='btn-da-achat-item'>".$item["DocNum"]."</div>";
         $html.="<div class='btn-da-achat-item'>".$item["count"]." Article(s)</div>";
@@ -69,6 +75,11 @@ function getDAtoBCCountAchat($base){
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["action"])) {
         if ($_GET["action"]=="setsoc") {
+            session_start();
+            $date = date('Y/m/d H:i:s');
+            $user = $_SESSION['user'];
+            $txt=$date." --- ".$_SESSION['user']." --- ".$_GET["base"];
+            logger($txt);
             $data = getDAtoBCCountAchat($_GET["base"]); 
             $response = array("data" => $data);
             // Convert to JSON and output
