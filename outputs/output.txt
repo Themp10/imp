@@ -1,732 +1,1465 @@
-base|N BC|Fournisseur|Dscription|FreeTxt|Pole Support|Comments|Qte Cmd|PU|Remise|Total|Total Ap Rem|N RC|Qte Rec|
-AM_PROINVEST|24000012|CENTRALE AUTOMOBILE CHERIFIENNE|Reparation||PS09|AUDI Q8 32212-B-7 Basé sur Demande d&#039;achat 23000398.|1.00|5000.00|0.00|5000.00|5000.00|23000288|1.00|
-AM_PROINVEST|24000021|MAROC TELECOM IAM|Abonnement Internet &amp; Télephone||PS08|CLIENT N° 5.14605.00.00.100004;MOBILE ANNEE 2024 Basé sur Demande d&#039;achat 24000020.|12.00|1000.00|0.00|12000.00|12000.00|||
-AM_PROINVEST|24000022|MAROC TELECOM IAM|Abonnement Internet &amp; Télephone||PS08|CLIENT N°8.12231311.00.00.100002; INTERNET ANNEE 2024 Basé sur Demande d&#039;achat 24000021.|12.00|1000.00|0.00|12000.00|12000.00|||
-AM_PROINVEST|24000023|MAROC TELECOM IAM|Abonnement Internet &amp; Télephone||PS08|CLIENT N°°8.12231311.00.00.100001; FIXE ANNEE 2024. Basé sur Demande d&#039;achat 24000022.|12.00|1000.00|0.00|12000.00|12000.00|||
-AM_PROINVEST|24000025|MICROSHOP|Reparation|Afficheur|PS08|PC de Mme SBIRY Basé sur Demande d&#039;achat 24000024.|1.00|1980.00|0.00|1980.00|1980.00|24000018|1.00|
-AM_PROINVEST|24000029|ACCORD SYSTEMS|Pointeuse HIK VISION + pose et fixation||PS04|Basé sur Demande d&#039;achat 24000028.|1.00|2160.00|0.00|2160.00|2160.00|24000098|1.00|
-AM_PROINVEST|24000031|FINASSURE|Assurance AT||PS08|ASSURANCE ACCIDENTS DE TRAVAIL DU 01.01.2024 AU 31.12.2024 Basé sur Demande d&#039;achat 24000031.|1.00|22421.36|0.00|22421.36|22421.36|24000029|1.00|
-AM_PROINVEST|24000032|FINASSURE|Assurances multirisque||PS08|ASSRANCE MULTIRISQUES INDUSTRIELLE DU 01.01.2024 AU 31.12.2024 Basé sur Demande d&#039;achat 24000030.|1.00|11398.19|0.00|11398.19|11398.19|24000027|1.00|
-AM_PROINVEST|24000034|FINASSURE|Assurances multirisque||PS08|ASSURANCE MULTIRISQUES INDUSTIELLE DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000032.|1.00|35347.08|0.00|35347.08|35347.08|24000028|1.00|
-AM_PROINVEST|24000042|FINASSURE|Assurance AT||PS08|AVENANT DE REGULARISATION ACCIDENTS DE TRAVAIL DU 01/01/2023 AU 31/12/2023 Basé sur Demande d&#039;achat 24000034.|1.00|5478.48|0.00|5478.48|5478.48|24000030|1.00|
-AM_PROINVEST|24000045|NACIRECK PLUS|Securite||PS08|Basé sur Demande d&#039;achat 24000043.|7.00|200.00|0.00|1400.00|1400.00|24000075|7.00|
-AM_PROINVEST|24000046|FINASSURE|Assurance RC exploitation||PS08|ASSURANCE RC EXPLOITATION DU 01/01/2024  AU 31/12/2024 Basé sur Demande d&#039;achat 24000044.|1.00|10681.30|0.00|10681.30|10681.30|24000041|1.00|
-AM_PROINVEST|24000047|FINASSURE|Assurance auto||PS08|ASSURANCE AUTI AUDI Q8 DU 09/05/2023 AU 31/12/2023 Basé sur Demande d&#039;achat 24000045.|1.00|7418.55|0.00|7418.55|7418.55|24000039|1.00|
-AM_PROINVEST|24000048|FINASSURE|Assurance auto||PS08|ASSURANCE AUTO FLOTTE DU 01/01/2024 AU 31/12/2024 UN MONTANT DE 83 741,19 FACTURE N° 72073 Basé sur Demande d&#039;achat 24000046.|1.00|83741.19|0.00|83741.19|83741.19|24000040|1.00|
-AM_PROINVEST|24000049|INFO COPIE|Impression|PLAN|PS08|Basé sur Demande d&#039;achat 24000048.|2.00|70.00|0.00|140.00|140.00|24000037|2.00|
-AM_PROINVEST|24000050|MFI Maroc SARL|Photocopie||PS08|LOCATION JANVIER 2024 Basé sur Demande d&#039;achat 24000047.|45247.00|0.07|0.00|3529.27|3529.27|24000038|45247.00|
-AM_PROINVEST|24000050|MFI Maroc SARL|Location Photocopieur|TASKalfa 3010i|PS08|LOCATION JANVIER 2024 Basé sur Demande d&#039;achat 24000047.|1.00|1200.00|0.00|1200.00|1200.00|24000038|1.00|
-AM_PROINVEST|24000051|2APM DISTRIBUTION|Vidange||PS08|SaLah Essaraoui; Matricule:29152-B-07 Basé sur Demande d&#039;achat 24000050.|1.00|680.00|0.00|680.00|680.00|||
-AM_PROINVEST|24000051|2APM DISTRIBUTION|Reparation||PS08|SaLah Essaraoui; Matricule:29152-B-07 Basé sur Demande d&#039;achat 24000050.|1.00|830.00|0.00|830.00|830.00|||
-AM_PROINVEST|24000052|Dr YASMINA BOUIZKRI|Honoraires des services|Janvier 2024|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000049.|1.00|4000.00|0.00|4000.00|4000.00|24000036|1.00|
-AM_PROINVEST|24000052|Dr YASMINA BOUIZKRI|Honoraires des services|Janvier 2024|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000049.|1.00|4000.00|0.00|4000.00|4000.00|24000043|1.00|
-AM_PROINVEST|24000052|Dr YASMINA BOUIZKRI|Honoraires des services|Décembre 2023|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000049.|1.00|4000.00|0.00|4000.00|4000.00|23000305|1.00|
-AM_PROINVEST|24000052|Dr YASMINA BOUIZKRI|Honoraires des services|Décembre 2023|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000049.|1.00|4000.00|0.00|4000.00|4000.00|23000302|1.00|
-AM_PROINVEST|24000053|EL HAMRI LARBI|Prestation de service||PS08|PAIE FEVRIER 2024 LHAMRI LARBI Basé sur Demande d&#039;achat 24000054.|1.00|3300.00|0.00|3300.00|3300.00|24000047|1.00|
-AM_PROINVEST|24000055|FINASSURE|Assurance AT||PS08|AVENANT DE REGULARISATION ACCIDENTS DE TRAVAIL du 01/01/2023 au 31/12/2023 de 5 478,48 Basé sur Demande d&#039;achat 24000062.|1.00|5478.48|0.00|5478.48|5478.48|24000045|1.00|
-AM_PROINVEST|24000056|YEVENTS|Prestation de service|Diffusion sonore + table mixage + cablage et accessoires son/Disk jockey/Arche de ballon (porte d&#039;en|PS02|Animation carnavale du 07/03/2024 Basé sur Demande d&#039;achat 24000063.|1.00|6000.00|0.00|6000.00|6000.00|24000074|1.00|
-AM_PROINVEST|24000057|ATTAR OMAR|Prestation de service|||PAIE FEVRIER 2024 ATTAR OMAR Basé sur Demande d&#039;achat 24000061.|1.00|5000.00|0.00|5000.00|5000.00|24000048|1.00|
-AM_PROINVEST|24000058|KOURBANI HASSAN|Prestation de service|||PAIE FEVRIER 2024 KOURBANI HASSAN Basé sur Demande d&#039;achat 24000060.|1.00|5000.00|0.00|5000.00|5000.00|24000049|1.00|
-AM_PROINVEST|24000059|QILACH HOUCINE|Prestation de service|||PAIE FEVRIER 2024 QILACH HOUCINE Basé sur Demande d&#039;achat 24000059.|1.00|7500.00|0.00|7500.00|7500.00|24000052|1.00|
-AM_PROINVEST|24000060|SALAH NAJIB|Prestation de service|||PAIE FEVRIER 2024 NAJIB SALAH Basé sur Demande d&#039;achat 24000058.|1.00|5500.00|0.00|5500.00|5500.00|24000050|1.00|
-AM_PROINVEST|24000061|NIYA HICHAM|Prestation de service|||PAIE FEVRIER 2024 NIYA HICHAM Basé sur Demande d&#039;achat 24000057.|1.00|2100.00|0.00|2100.00|2100.00|24000051|1.00|
-AM_PROINVEST|24000062|BEST INFO TECH|STANDARD TÉLÉPHONIQUE|Grandstream+Appareil telephonique(6) yc installation|PS04|Bénéficiaire : Accueil ( remplacement de l&#039;ancien) Basé sur Demande d&#039;achat 24000055.|1.00|6083.99|15.82|6084.00|5121.34|24000080|1.00|
-AM_PROINVEST|24000063|MICROSHOP|PC DELL OPTIPLEX|7010 i5-13500 8GB DDR4/512GB SSD.|PS04|Bénéficiaire : Salle informatique des professeurs et élèves Basé sur Demande d&#039;achat 24000051.|5.00|8760.00|0.00|43800.00|43800.00|||
-AM_PROINVEST|24000064|NEAB|Visite technique||PS08|Pour le véhicule 14563-b-7avant le 06/04/2024 Basé sur Demande d&#039;achat 24000068.|1.00|550.00|0.00|550.00|550.00|||
-AM_PROINVEST|24000065|NEAB|Visite technique||PS08|Pour le véhicule 13099-b-7Avant le 07/05/2024 Basé sur Demande d&#039;achat 24000067.|1.00|550.00|0.00|550.00|550.00|||
-AM_PROINVEST|24000066|NEAB|Visite technique||PS08|Pour le véhicule 37636-B-7Avant le 06/04/2024 Basé sur Demande d&#039;achat 24000066.|1.00|570.00|0.00|570.00|570.00|24000081|1.00|
-AM_PROINVEST|24000067|NEAB|Visite technique||PS08|Pour le vehicule 21405-B-7avant le 25/03/2024 Basé sur Demande d&#039;achat 24000065.|1.00|570.00|0.00|570.00|570.00|24000072|1.00|
-AM_PROINVEST|24000068|NEAB|Visite technique||PS08|Véhicule: 44776-B-7Avant le 27/03/2024 Basé sur Demande d&#039;achat 24000064.|1.00|570.00|0.00|570.00|570.00|24000073|1.00|
-AM_PROINVEST|24000069|STE AUDACE AUTO|Vidange||PS08|SaLah Essaraoui; Matricule:29152-B-07. Basé sur Demande d&#039;achat 24000069.|1.00|635.60|0.00|635.60|635.60|24000076|1.00|
-AM_PROINVEST|24000070|FINASSURE|Assurance RC scolaire||PS08|AVENANT D&#039;EXTENSION  DU 13/12/2023  AU 13/12/2023 de 672,50 DHS Basé sur Demande d&#039;achat 24000070.|1.00|672.50|0.00|672.50|672.50|24000056|1.00|
-AM_PROINVEST|24000071|FINASSURE|Assurance RC scolaire||PS08|AVNANT D&#039;EXTENSION DU 19/12/2023  AU  19/12/2023 DE 528,22  DHS Basé sur Demande d&#039;achat 24000071.|1.00|528.22|0.00|528.22|528.22|24000055|1.00|
-AM_PROINVEST|24000072|FINASSURE|Assurance RC scolaire||PS08|AVENANT D EXTENSION DU 22/12/2023  AU  31/08/2024 DE 148,17 DHS Basé sur Demande d&#039;achat 24000072.|1.00|148.17|0.00|148.17|148.17|24000054|1.00|
-AM_PROINVEST|24000073|FINASSURE|Assurance RC scolaire||PS08|AVENANT D EXTENTION DU 24/11/2023  AU 31/08/2023 DE 355,79 DHS Basé sur Demande d&#039;achat 24000073.|1.00|355.79|0.00|355.79|355.79|24000057|1.00|
-AM_PROINVEST|24000074|FINASSURE|Assurance RC scolaire||PS08|AVENANT D EXXTENSION DU 29/11/2023 AU 29/11/2023  DE 440,24 DHS Basé sur Demande d&#039;achat 24000074.|1.00|440.24|0.00|440.24|440.24|24000058|1.00|
-AM_PROINVEST|24000075|FINASSURE|Assurance RC exploitation||PS08|AVENANT D EXXTENSION DU 23/11/2023 AU 31/08/2023 DE 107,11   DHS Basé sur Demande d&#039;achat 24000075.|1.00|107.11|0.00|107.11|107.11|24000059|1.00|
-AM_PROINVEST|24000076|OUFKIR SAID|Prestation de service|Cablage DVR + Activation serveur + Insertion 5 SIM / 5 Vécules|PS08|Pour les 5 caméras des 5 transports scolaires Basé sur Demande d&#039;achat 24000076.|1.00|2500.00|0.00|2500.00|2500.00|24000053|1.00|
-AM_PROINVEST|24000077|FINASSURE|Assurance RC scolaire||PS08|AVENANT D&#039;EXTENSION DE GARANTIE  LE 03/02/2024 DE 148.17 DHS Basé sur Demande d&#039;achat 24000077.|1.00|148.17|0.00|148.17|148.17|24000070|1.00|
-AM_PROINVEST|24000078|FINASSURE|Assurance RC scolaire||PS08|AVENAANT D&#039;EXTENSION DE GARANTIE  LE 12/02/2024 D&#039;UN MONTANT DE 60.19 DHS Basé sur Demande d&#039;achat 24000078.|1.00|60.19|0.00|60.19|60.19|24000067|1.00|
-AM_PROINVEST|24000079|FINASSURE|Assurance RC scolaire||PS08|AVENANT D&#039;EXTENSION DE GARANTIE LE 21/02/2024 D&#039;UN MONTANT DE 250.22 DHS Basé sur Demande d&#039;achat 24000079.|1.00|250.22|0.00|250.22|250.22|24000071|1.00|
-AM_PROINVEST|24000080|FINASSURE|Assurance RC scolaire||PS08|AVENANT D&#039;EXTENSION RC SCOLAIRE LE 10/01/2024  de    107,11 DHS Basé sur Demande d&#039;achat 24000087.|1.00|107.11|0.00|107.11|107.11|24000061|1.00|
-AM_PROINVEST|24000081|FINASSURE|Assurance RC scolaire||PS08|AVENANT D&#039;EXTENSION DU 07/02/2024 DE 165,76 DHS Basé sur Demande d&#039;achat 24000088.|1.00|165.76|0.00|165.76|165.76|24000060|1.00|
-AM_PROINVEST|24000082|NIYA HICHAM|Prestation de service|:Activités de soutien à l&#039;enseignement||PAIE MARS 2024 NIYA HICHAM Basé sur Demande d&#039;achat 24000086.|1.00|900.00|0.00|900.00|900.00|24000062|1.00|
-AM_PROINVEST|24000083|SALAH NAJIB|Prestation de service|:Activités de soutien à l&#039;enseignement||PAIE MARS 2024 NAJIB SALAH Basé sur Demande d&#039;achat 24000085.|1.00|4000.00|0.00|4000.00|4000.00|24000063|1.00|
-AM_PROINVEST|24000084|KOURBANI HASSAN|Prestation de service|Prestation de service||PAIE MARS 2024 KOURBANI HASSAN Basé sur Demande d&#039;achat 24000084.|1.00|5000.00|0.00|5000.00|5000.00|24000064|1.00|
-AM_PROINVEST|24000085|ATTAR OMAR|Prestation de service|||PAIE MARS 2024 ATTAR OMAR Basé sur Demande d&#039;achat 24000083.|1.00|5000.00|0.00|5000.00|5000.00|24000065|1.00|
-AM_PROINVEST|24000086|QILACH HOUCINE|Prestation de service|Prestation de service||PAIE MARS 2024 QILACH HOUCINE Basé sur Demande d&#039;achat 24000082.|1.00|7500.00|0.00|7500.00|7500.00|24000066|1.00|
-AM_PROINVEST|24000087|Dr YASMINA BOUIZKRI|Honoraires des services|Février 2024|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000089.|1.00|4000.00|0.00|4000.00|4000.00|24000068|1.00|
-AM_PROINVEST|24000088|Dr YASMINA BOUIZKRI|Honoraires des services|Mars 2024|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000090.|1.00|4000.00|0.00|4000.00|4000.00|24000069|1.00|
-AM_PROINVEST|24000089|CLINIQUE AL AMAL|Prestation de service|TDM|PS08|Clinique: éléve: OUTIRY YAHYA Basé sur Demande d&#039;achat 24000093.|1.00|1000.00|0.00|1000.00|1000.00|24000077|1.00|
-AM_PROINVEST|24000089|CLINIQUE AL AMAL|Prestation de service|RADIOS|PS08|Clinique: éléve: OUTIRY YAHYA Basé sur Demande d&#039;achat 24000093.|2.00|200.00|0.00|400.00|400.00|24000077|2.00|
-AM_PROINVEST|24000089|CLINIQUE AL AMAL|Prestation de service|Bilan sanguin|PS08|Clinique: éléve: OUTIRY YAHYA Basé sur Demande d&#039;achat 24000093.|1.00|539.20|0.00|539.20|539.20|24000077|1.00|
-AM_PROINVEST|24000089|CLINIQUE AL AMAL|Prestation de service|Pharmacie|PS08|Clinique: éléve: OUTIRY YAHYA Basé sur Demande d&#039;achat 24000093.|1.00|210.30|0.00|210.30|210.30|24000077|1.00|
-AM_PROINVEST|24000089|CLINIQUE AL AMAL|Prestation de service|Consultation médecin DR KHADDAR &amp; DR EL BOUANANI|PS08|Clinique: éléve: OUTIRY YAHYA Basé sur Demande d&#039;achat 24000093.|1.00|600.00|0.00|600.00|600.00|24000077|1.00|
-AM_PROINVEST|24000090|NACIRECK PLUS|Nettoyage|de 2 lits et canapés(IMM4 appart 12 et13)/1 lit(IMM5 appart 8)/1 lit(IMM7 appart 16)||Nettoyage ameublement des appartement non vendus. Basé sur Demande d&#039;achat 24000094.|1.00|1000.00|0.00|1000.00|1000.00|24000086|1.00|
-AM_PROINVEST|24000091|EL HAMRI LARBI|Prestation de service||PS08|PAIE MARS 2024 LHAMRI LARBI Basé sur Demande d&#039;achat 24000092.|1.00|3300.00|0.00|3300.00|3300.00|24000079|1.00|
-AM_PROINVEST|24000092|LNTI|Visite technique||PS08|Véhicule 13221 B 7 Basé sur Demande d&#039;achat 24000091.|1.00|552.00|0.00|552.00|552.00|24000078|1.00|
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Fer en poudre 250 G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|192.00|0.00|192.00|192.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Bécher 50 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|3.00|24.00|0.00|72.00|72.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Bécher 100 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|3.00|36.00|0.00|108.00|108.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Bécher 250 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|5.00|48.00|0.00|240.00|240.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|éprouvette graduée 50 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|2.00|72.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Eau oxygénée 500ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|144.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Amidon 250G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|120.00|0.00|120.00|120.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Aluminium en poudre 150G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|144.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Acide sulfurique 500ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|120.00|0.00|120.00|120.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Permanganate de potassium 250G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|180.00|0.00|180.00|180.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Hydroxyde de sodium 250G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|84.00|0.00|84.00|84.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Sulfate de cuivre 250G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|144.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Model crane: chat|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|600.00|0.00|600.00|600.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Model crane: lapin|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|600.00|0.00|600.00|600.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Oxymètre|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|6360.00|0.00|6360.00|6360.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Microscope optique monoculaire rotative sur 360°, inclinée à 45°|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|2.00|2640.00|0.00|5280.00|5280.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Ether de pétrole 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|144.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Bleu de bromothymol 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|108.00|0.00|108.00|108.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Rouge de crésol 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|96.00|0.00|96.00|96.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Eau iodée 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|60.00|0.00|60.00|60.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Rouge de méthylène 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|84.00|0.00|84.00|84.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Eau de chaux 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|72.00|0.00|72.00|72.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Acide chlorhydrique HCL 500ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|60.00|0.00|60.00|60.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Erlenmeyer 50 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|3.00|36.00|0.00|108.00|108.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Erlenmeyer 100 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|3.00|48.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Erlenmeyer 250 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|3.00|72.00|0.00|216.00|216.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Burette graduée 25 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|240.00|0.00|240.00|240.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Entonnoir en plastique|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|30.00|0.00|30.00|30.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Pipettes pasteur (lot de 10)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|60.00|0.00|60.00|60.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Tubes à essai (lot de 10)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|60.00|0.00|60.00|60.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Boites de petri (lot de 5)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|240.00|0.00|240.00|240.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Lunettes de laboratoire|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|15.00|96.00|0.00|1440.00|1440.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Barreau aimanté d&#039;agitateur magnétique|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|96.00|0.00|96.00|96.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|éprouvette graduée 100 ml|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|2.00|120.00|0.00|240.00|240.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Acétone 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|72.00|0.00|72.00|72.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Benzène 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|144.00|0.00|144.00|144.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Liqueur de fehling A et B 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|240.00|0.00|240.00|240.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Nitrate d&#039;argent 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|420.00|0.00|420.00|420.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Oxalate d&#039;alimmonium 250G|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|180.00|0.00|180.00|180.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Acide nitrique 250ML|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|72.00|0.00|72.00|72.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|lames microscope (boite de 50 lames)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|60.00|0.00|60.00|60.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Coffret modèles moléculaires|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|1080.00|0.00|1080.00|1080.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Les supports métalliques|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|10.00|360.00|0.00|3600.00|3600.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Les masses marquées|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|780.00|0.00|780.00|780.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|les dynamomètres 1N, 5N, 10N|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|3.00|360.00|0.00|1080.00|1080.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Support universel statif avec tige|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|2.00|480.00|0.00|960.00|960.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Les ressorts à spires jointives lot de 3|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|5.00|180.00|0.00|900.00|900.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Boite des roches métamorphique (Boite en bois)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|96.00|0.00|96.00|96.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Boite des roches magmatiques (Boite en bois)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|96.00|0.00|96.00|96.00|||
-AM_PROINVEST|24000093|GSIOG|Produit laboratoire|Boite des roches sédimentaires (boite en bois)|PS08|MP:50% Avance/50% Aprés 30 jours.-Pour les classes SVT Basé sur Demande d&#039;achat 24000080.|1.00|96.00|0.00|96.00|96.00|||
-AM_PROINVEST|24000094|BERMUDES FOURNITURE|Fourniture|dossiers scolaire|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|100.00|1.68|0.00|168.00|168.00|24000087|100.00|
-AM_PROINVEST|24000094|BERMUDES FOURNITURE|Fourniture|Livret médical scolaire|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|100.00|4.56|0.00|456.00|456.00|24000087|100.00|
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|1 grand rouleau papier KRAFT marron|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|1.00|984.00|0.00|984.00|984.00|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Marqueur noir pour calligraphie arabe|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|2.00|10.20|0.00|20.40|20.40|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Paillette|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|2.00|168.00|0.00|336.00|336.00|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Scotch transparent|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|8.00|13.20|0.00|105.60|105.60|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Scotch couleur divers|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|8.00|9.00|0.00|72.00|72.00|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Ruban satiné (rouge-vert-bleu-blanc-marron)|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|5.00|36.00|0.00|180.00|180.00|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Grand rouleau papier cellophane|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|2.00|264.00|0.00|528.00|528.00|||
-AM_PROINVEST|24000095|BEST INFO TECH|Fourniture|Carton|PS08|Pour le projet éco-école Basé sur Demande d&#039;achat 24000052.|20.00|14.40|0.00|288.00|288.00|||
-AM_PROINVEST|24000097|STE AUDACE AUTO|Reparation|et entretien:Moteur thermique:kit de distribution Gates/Pompe a Eau airtex/|PS08|SALAH ESSARAOUI;Matricule:29152-B-7 Basé sur Demande d&#039;achat 24000096.|1.00|1951.10|0.00|1951.10|1951.10|24000082|1.00|
-AM_PROINVEST|24000097|STE AUDACE AUTO|Plaquettes|et disque|PS08|SALAH ESSARAOUI;Matricule:29152-B-7 Basé sur Demande d&#039;achat 24000096.|1.00|1653.06|31.51|1653.06|1132.17|24000082|1.00|
-AM_PROINVEST|24000098|ASSURANCES GRAS SAVOYE MAROC|Assurance AT||PS08|ASSURANCE  ACCIDENTS  DU TRAVAIL  DU 01/01/2020 AU  31/12/2020 de  3 854,46  DHS Basé sur Demande d&#039;achat 24000098.|1.00|3854.46|0.00|3854.46|3854.46|24000085|1.00|
-AM_PROINVEST|24000099|ASSURANCES GRAS SAVOYE MAROC|Assurance AT||PS08|ASSURANCE ACCIDENTS DE TRAVAIL DU 01/01/2021  AU  31/12/2021  de  15 425,00 DHS Basé sur Demande d&#039;achat 24000099.|1.00|15425.00|0.00|15425.00|15425.00|24000084|1.00|
-AM_PROINVEST|24000100|WAFA IMA ASSISTANCE|Assurances multirisque||PS08|ASSURANCE WAFA IMA  ASSISTANCE : GROUPE SCOLAIRE MFADEL KAMAL de 14 128,04 dhs. Basé sur Demande d&#039;achat 24000097.|1.00|14128.04|0.00|14128.04|14128.04|24000083|1.00|
-AM_PROINVEST|24000101|ASK ASSURANCE|Assurance AT||PS08|Assurance  Régularisation Accidents du  Travail    2021    du  01/01/2021   au   31/12/2021 de  7 882,17  dhs Basé sur Demande d&#039;achat 24000111.|1.00|7882.17|0.00|7882.17|7882.17|24000095|1.00|
-AM_PROINVEST|24000102|Dr YASMINA BOUIZKRI|Honoraires des services|Avril 2024|PS08|Médecin de travail Basé sur Demande d&#039;achat 24000100.|1.00|4000.00|0.00|4000.00|4000.00|24000093|1.00|
-AM_PROINVEST|24000103|QILACH HOUCINE|Prestation de service|Avril 2024||PAIE AVRIL 2024 QILACH HOUCINE Basé sur Demande d&#039;achat 24000101.|1.00|7500.00|0.00|7500.00|7500.00|24000094|1.00|
-AM_PROINVEST|24000104|NIYA HICHAM|Prestation de service|||PAIE AVRIL 2024 NIYA HICHAM Basé sur Demande d&#039;achat 24000102.|1.00|900.00|0.00|900.00|900.00|24000092|1.00|
-AM_PROINVEST|24000105|KOURBANI HASSAN|Prestation de service|||PAIE AVRIL 2024 KOURBANI HASSAN Basé sur Demande d&#039;achat 24000103.|1.00|5000.00|0.00|5000.00|5000.00|24000091|1.00|
-AM_PROINVEST|24000106|SALAH NAJIB|Prestation de service|||PAIE AVRIL 2024 NAJIB SALAH Basé sur Demande d&#039;achat 24000104.|1.00|4000.00|0.00|4000.00|4000.00|24000090|1.00|
-AM_PROINVEST|24000107|EL HAMRI LARBI|Prestation de service||PS08|PAIE AVRIL 2024 LHAMRI LARBI Basé sur Demande d&#039;achat 24000105.|1.00|3300.00|0.00|3300.00|3300.00|24000089|1.00|
-AM_PROINVEST|24000108|ABOUSAID OTHMANE|Prestation de service||PS08|PAIE MARS 2024ABOUSAID OTHMANE Basé sur Demande d&#039;achat 24000106.|1.00|4050.00|0.00|4050.00|4050.00|24000097|1.00|
-AM_PROINVEST|24000109|ABOUSAID OTHMANE|Prestation de service||PS08|PAIE AVRIL 2024ABOUSAID OTHMANE Basé sur Demande d&#039;achat 24000107.|1.00|2850.00|0.00|2850.00|2850.00|24000096|1.00|
-AM_PROINVEST|24000110|OMEGA CHRONO|Reparation|Vérification après installation|PS08|Véhicule HYUNDAI 13221.b.7 Basé sur Demande d&#039;achat 24000112.|1.00|720.00|0.00|720.00|720.00|||
-AM_PROINVEST|24000110|OMEGA CHRONO|Reparation|Vérification première|PS08|Véhicule HYUNDAI 13221.b.7 Basé sur Demande d&#039;achat 24000112.|1.00|240.00|0.00|240.00|240.00|||
-AM_PROINVEST|24000110|OMEGA CHRONO|Reparation|Tachygraphe sara électronique 12V|PS08|Véhicule HYUNDAI 13221.b.7 Basé sur Demande d&#039;achat 24000112.|1.00|4800.00|0.00|4800.00|4800.00|23000005|1.00|
-AM_PROINVEST|24000111|ATTAR OMAR|Prestation de service|Déclaration d&#039;impôts||PAIE AVRIL 2024 ATTAR OMAR Basé sur Demande d&#039;achat 24000113.|1.00|1264.90|0.00|1264.90|1264.90|||
-AM_PROINVEST|24000111|ATTAR OMAR|Prestation de service|||PAIE AVRIL 2024 ATTAR OMAR Basé sur Demande d&#039;achat 24000113.|1.00|5000.00|0.00|5000.00|5000.00|||
-AM_PROINVEST|24000112|RIMOTEX|Fourniture|Coupe moyenne avec gravure||Pour tournoi 19/05/2024 Basé sur Demande d&#039;achat 24000114.|2.00|172.80|0.00|345.60|345.60|24000100|2.00|
-AM_PROINVEST|24000112|RIMOTEX|Fourniture|Coupe grande avec gravure||Pour tournoi 19/05/2024 Basé sur Demande d&#039;achat 24000114.|2.00|216.00|0.00|432.00|432.00|24000100|2.00|
-AM_PROINVEST|24000112|RIMOTEX|Fourniture|Médaille argenté avec impression||Pour tournoi 19/05/2024 Basé sur Demande d&#039;achat 24000114.|40.00|28.80|0.00|1152.00|1152.00|24000100|40.00|
-AM_PROINVEST|24000112|RIMOTEX|Fourniture|Médaille bronze avec impression||Pour tournoi 19/05/2024 Basé sur Demande d&#039;achat 24000114.|40.00|28.80|0.00|1152.00|1152.00|24000100|40.00|
-AM_PROINVEST|24000112|RIMOTEX|Fourniture|Tenue sportive avec logo école 12 ans à 18 ans||Pour tournoi 19/05/2024 Basé sur Demande d&#039;achat 24000114.|40.00|72.00|0.00|2880.00|2880.00|24000100|40.00|
-AM_PROINVEST|24000112|RIMOTEX|Fourniture|Tenue sportive avec logo école 6ans à 12 ans||Pour tournoi 19/05/2024 Basé sur Demande d&#039;achat 24000114.|30.00|60.00|0.00|1800.00|1800.00|24000100|30.00|
-AM_PROINVEST|24000113|MFI Maroc SARL|Location Photocopieur|TASKalfa 3010i|PS08|LOCATION FEVRIER 2024 Basé sur Demande d&#039;achat 24000116.|1.00|1200.00|0.00|1200.00|1200.00|||
-AM_PROINVEST|24000114|MFI Maroc SARL|Location Photocopieur|TASKalfa 3010i|PS08|LOCATION MARS 2024 Basé sur Demande d&#039;achat 24000115.|1.00|1200.00|0.00|1200.00|1200.00|||
-AM_PROINVEST|24000114|MFI Maroc SARL|Photocopie||PS08|LOCATION MARS 2024 Basé sur Demande d&#039;achat 24000115.|19608.00|0.07|0.00|1529.42|1529.42|||
-AM_PROINVEST|24000115|BEST INFO TECH|Toner|CF530A|PS08|1) Imprimante HP LASER PRO4003 Mme Houda BENTAJER.2) Les CF pour l&#039;imprimante du sce pédagogique.3) Imprimante Mme Leila SADIR Basé sur Demande d&#039;achat 24000108.|2.00|708.00|2.47|1416.00|1380.89|24000114|2.00|
-AM_PROINVEST|24000115|BEST INFO TECH|Toner|CF531A|PS08|1) Imprimante HP LASER PRO4003 Mme Houda BENTAJER.2) Les CF pour l&#039;imprimante du sce pédagogique.3) Imprimante Mme Leila SADIR Basé sur Demande d&#039;achat 24000108.|2.00|778.79|4.27|1557.60|1490.97|24000114|2.00|
-AM_PROINVEST|24000115|BEST INFO TECH|Toner|CF532A|PS08|1) Imprimante HP LASER PRO4003 Mme Houda BENTAJER.2) Les CF pour l&#039;imprimante du sce pédagogique.3) Imprimante Mme Leila SADIR Basé sur Demande d&#039;achat 24000108.|2.00|778.79|4.27|1557.60|1490.97|24000114|2.00|
-AM_PROINVEST|24000115|BEST INFO TECH|Toner|CF533A|PS08|1) Imprimante HP LASER PRO4003 Mme Houda BENTAJER.2) Les CF pour l&#039;imprimante du sce pédagogique.3) Imprimante Mme Leila SADIR Basé sur Demande d&#039;achat 24000108.|2.00|778.79|4.27|1557.60|1490.97|24000114|2.00|
-AM_PROINVEST|24000116|OUSSAAD NEGOCE|Toner|CE285A|PS08|1) Imprimante HP LASER PRO4003 Mme Houda BENTAJER.2) Les CF pour l&#039;imprimante du sce pédagogique.3) Imprimante Mme Leila SADIR Basé sur Demande d&#039;achat 24000108.|2.00|1020.00|0.00|2040.00|2040.00|||
-AM_PROINVEST|24000116|OUSSAAD NEGOCE|Toner|W1510A/151A|PS08|1) Imprimante HP LASER PRO4003 Mme Houda BENTAJER.2) Les CF pour l&#039;imprimante du sce pédagogique.3) Imprimante Mme Leila SADIR Basé sur Demande d&#039;achat 24000108.|2.00|1488.00|3.12|2976.00|2883.00|||
-AM_PROINVEST|24000117|MFI Maroc SARL|Photocopie||PS08|LOCATION AVRIL 2024 Basé sur Demande d&#039;achat 24000118.|26670.00|0.07|0.00|2080.26|2080.26|||
-AM_PROINVEST|24000117|MFI Maroc SARL|Location Photocopieur|TASKalfa 3010i|PS08|LOCATION AVRIL 2024 Basé sur Demande d&#039;achat 24000118.|1.00|1200.00|0.00|1200.00|1200.00|||
-AM_PROINVEST|24000118|YEVENTS|Prestation de service|Location ECRAN LED de 5m/3 (15m²) avec systeme de suspension en fond de scene|PS02|Animation fin d&#039;année 2023-2024 Basé sur Demande d&#039;achat 24000117.|15.00|1200.00|0.00|18000.00|18000.00|24000113|15.00|
-AM_PROINVEST|24000118|YEVENTS|Prestation de service|Sonorisation et éclairage|PS02|Animation fin d&#039;année 2023-2024 Basé sur Demande d&#039;achat 24000117.|1.00|14400.00|0.00|14400.00|14400.00|24000113|1.00|
-AM_PROINVEST|24000118|YEVENTS|Prestation de service|Animateur micro pro|PS02|Animation fin d&#039;année 2023-2024 Basé sur Demande d&#039;achat 24000117.|1.00|2400.00|0.00|2400.00|2400.00|24000113|1.00|
-AM_PROINVEST|24000118|YEVENTS|Prestation de service|Disc Jockey|PS02|Animation fin d&#039;année 2023-2024 Basé sur Demande d&#039;achat 24000117.|1.00|1800.00|0.00|1800.00|1800.00|24000113|1.00|
-AM_PROINVEST|24000118|YEVENTS|Prestation de service|Troupe de Batucada|PS02|Animation fin d&#039;année 2023-2024 Basé sur Demande d&#039;achat 24000117.|1.00|3600.00|0.00|3600.00|3600.00|24000113|1.00|
-AM_PROINVEST|24000118|YEVENTS|Prestation de service|Cameraman + Photographe album photo en USB + BEST OFF de la journée|PS02|Animation fin d&#039;année 2023-2024 Basé sur Demande d&#039;achat 24000117.|1.00|3600.00|0.00|3600.00|3600.00|24000113|1.00|
-AM_PROINVEST|24000119|OUFKIR SAID|Reparation|Carte mère caméra IP|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|4.00|200.00|0.00|800.00|800.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Fourniture|LA PLANTE 16/40|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|2.00|18.00|0.00|36.00|36.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Cable|Cable reseau CAT 6|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|1.00|210.00|0.00|210.00|210.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Fourniture|Boite alimentation 20 AMER|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|1.00|300.00|0.00|300.00|300.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Fourniture|SWITCH 8 PORT|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|1.00|120.00|0.00|120.00|120.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Maintenance|&amp; Programmation des caméras de l&#039;école + transport|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|1.00|1300.00|0.00|1300.00|1300.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Lampe|3 D LED 18|PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|9.00|55.00|0.00|495.00|495.00|||
-AM_PROINVEST|24000119|OUFKIR SAID|Detecteur de mouvement apparent 360°||PS08|Maintenance caméra + éléctricité ECOLE Basé sur Demande d&#039;achat 24000120.|2.00|95.00|0.00|190.00|190.00|||
-AM_PROINVEST|24000120|STE AUDACE AUTO|Reparation|:Batterie 275/175/190 640a 70ah|PS08|Salah Essaraoui;Matricule:29152-B-7 Basé sur Demande d&#039;achat 24000121.|1.00|1043.91|0.00|1043.91|1043.91|24000103|1.00|
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose de code WC et rallonge|PS08|Basé sur Demande d&#039;achat 24000119.|1.00|168.00|0.00|168.00|168.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Poignée SDB||PS08|Basé sur Demande d&#039;achat 24000119.|3.00|264.00|0.00|792.00|792.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose de PVC diametre 40 y/c racole|PS08|Basé sur Demande d&#039;achat 24000119.|3.00|96.00|0.00|288.00|288.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose de robinet arco|PS08|Basé sur Demande d&#039;achat 24000119.|1.00|108.00|0.00|108.00|108.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose de mécanisme|PS08|Basé sur Demande d&#039;achat 24000119.|4.00|336.00|0.00|1344.00|1344.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose d&#039;abattent|PS08|Basé sur Demande d&#039;achat 24000119.|7.00|228.00|0.00|1596.00|1596.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose de pompe de relevage|PS08|Basé sur Demande d&#039;achat 24000119.|1.00|4080.00|0.00|4080.00|4080.00|||
-AM_PROINVEST|24000121|ZAGOGECT|Travaux de plomberie|Fourniture et pose de spot|PS08|Basé sur Demande d&#039;achat 24000119.|7.00|102.00|0.00|714.00|714.00|||
-AM_PROINVEST|24000122|FINASSURE|Assurance RC scolaire||PS08|AVENANT D&#039;EXTENSION DU 27/03/2024 AU 31/08/2024 de 66,06 dhs : FACTURE :73889 Basé sur Demande d&#039;achat 24000122.|1.00|66.06|0.00|66.06|66.06|24000102|1.00|
-AM_PROINVEST|24000123|SALAH NAJIB|Prestation de service|||PAIE Mai 2024 NAJIB SALAH Basé sur Demande d&#039;achat 24000124.|1.00|4000.00|0.00|4000.00|4000.00|24000104|1.00|
-AM_PROINVEST|24000124|KOURBANI HASSAN|Prestation de service|||PAIE MAI 2024 KOURBANI HASSAN Basé sur Demande d&#039;achat 24000125.|1.00|6395.00|0.00|6395.00|6395.00|24000105|1.00|
-AM_PROINVEST|24000125|QILACH HOUCINE|Prestation de service|||PAIE MAI 2024 QILACH HOUCINE Basé sur Demande d&#039;achat 24000126.|1.00|7500.00|0.00|7500.00|7500.00|24000106|1.00|
-AM_PROINVEST|24000126|ABOUSAID OTHMANE|Prestation de service||PS08|PAIE MAI 2024ABOUSAID OTHMANE Basé sur Demande d&#039;achat 24000127.|1.00|2100.00|0.00|2100.00|2100.00|24000107|1.00|
-AM_PROINVEST|24000127|ATTAR OMAR|Prestation de service|||PAIE MAI 2024 ATTAR OMAR Basé sur Demande d&#039;achat 24000128.|1.00|5000.00|0.00|5000.00|5000.00|24000108|1.00|
-AM_PROINVEST|24000128|TRAITEMENT HYGIENE|Prestation de service|Dératisation|PS08|Basé sur Demande d&#039;achat 24000123.|1.00|5556.00|0.00|5556.00|5556.00|||
-AM_PROINVEST|24000129|EL HAMRI LARBI|Prestation de service||PS08|PAIE MAI 2024 LHAMRI LARBI Basé sur Demande d&#039;achat 24000129.|1.00|3300.00|0.00|3300.00|3300.00|24000109|1.00|
-AM_PROINVEST|24000130|AUTO-ENTREPRENEUR SBIRY FATIMA|Prestation de service|||PAIE MME SBIRY MAI 2024 Basé sur Demande d&#039;achat 24000130.|1.00|17000.00|0.00|17000.00|17000.00|24000112|1.00|
-AM_PROINVEST|24000130|AUTO-ENTREPRENEUR SBIRY FATIMA|Prestation de service|||PAIE MME SBIRY MAI 2024 Basé sur Demande d&#039;achat 24000130.|1.00|17000.00|0.00|17000.00|17000.00|24000110|1.00|
-CASA_COLIVING|24000012|MAROC TELECOM|Abonnement internet &amp; téléphone|||consomation decembre 2023 Basé sur Demande d&#039;achat 24000015.|1.00|169.00|0.00|169.00|169.00|||
-CASA_COLIVING|24000013|NACIRECK PLUS|Femme de ménage|decembre 2023||BDV WE LIVE Basé sur Demande d&#039;achat 24000019.|1.00|3000.00|0.00|3000.00|3000.00|23000119|1.00|
-CASA_COLIVING|24000013|NACIRECK PLUS|Femme de ménage|novembre 2023||BDV WE LIVE Basé sur Demande d&#039;achat 24000019.|1.00|3000.00|0.00|3000.00|3000.00|23000120|1.00|
-CASA_COLIVING|24000014|NACIRECK PLUS|Femme de ménage|||BDV WE LIVE ANNEE 2024 Basé sur Demande d&#039;achat 24000020.|12.00|3000.00|0.00|36000.00|36000.00|24000059|1.00|
-CASA_COLIVING|24000014|NACIRECK PLUS|Femme de ménage|||BDV WE LIVE ANNEE 2024 Basé sur Demande d&#039;achat 24000020.|12.00|3000.00|0.00|36000.00|36000.00|24000015|1.00|
-CASA_COLIVING|24000014|NACIRECK PLUS|Femme de ménage|||BDV WE LIVE ANNEE 2024 Basé sur Demande d&#039;achat 24000020.|12.00|3000.00|0.00|36000.00|36000.00|24000037|1.00|
-CASA_COLIVING|24000014|NACIRECK PLUS|Femme de ménage|||BDV WE LIVE ANNEE 2024 Basé sur Demande d&#039;achat 24000020.|12.00|3000.00|0.00|36000.00|36000.00|24000043|1.00|
-CASA_COLIVING|24000016|INFO COPIE|Impression|des supports commerciaux||Basé sur Demande d&#039;achat 24000021.|658.00|1.66|0.00|1096.67|1096.67|24000009|658.00|
-CASA_COLIVING|24000016|INFO COPIE|Spiral|métalique||Basé sur Demande d&#039;achat 24000021.|14.00|10.83|0.00|151.67|151.67|24000009|14.00|
-CASA_COLIVING|24000021|FINASSURE|ASSURANCE TRC|||AVENANT DE PROROGATION ASSURANCE  TRC CASA COLIVING DU 01/01/2024  AU 31/01/2024 Basé sur Demande d&#039;achat 24000032.|1.00|2141.59|0.00|2141.59|2141.59|24000010|1.00|
-CASA_COLIVING|24000022|ESPACE BADR|Ameublement APPT Temoin|Lave vaisselle bosch SMS 4HMB60T en noir verre trompé||APPART TEMOIN WE LIVE MP:A LA LIVRAISON Basé sur Demande d&#039;achat 24000022.|1.00|6250.00|0.00|6250.00|6250.00|24000020|1.00|
-CASA_COLIVING|24000022|ESPACE BADR|Ameublement APPT Temoin|Refrigirateur bosch KGN56LB31U en noir verre trompé||APPART TEMOIN WE LIVE MP:A LA LIVRAISON Basé sur Demande d&#039;achat 24000022.|1.00|10500.00|9.99|10500.00|9450.68|24000020|1.00|
-CASA_COLIVING|24000027|FINASSURE|ASSURANCE TRC|||AVENANT N 1 C DE PROROGATION DU 01/02/2024 AU 29/02/2024 Basé sur Demande d&#039;achat 24000038.|1.00|1981.50|0.00|1981.50|1981.50|24000017|1.00|
-CASA_COLIVING|24000028|MAPLE déco|Prestation de service|:deplacement des portes en verre nettoyage local existant des portes/pose tissu et pieds du||Basé sur Demande d&#039;achat 24000039.|1.00|1400.00|0.00|1400.00|1400.00|23000128|1.00|
-CASA_COLIVING|24000030|FINASSURE|ASSURANCE CARTE VERTE|||CARTE VERTE  DU 21/02/2024 AU 31/12/2024  de 500.00 DHS Basé sur Demande d&#039;achat 24000041.|1.00|500.00|0.00|500.00|500.00|24000021|1.00|
-CASA_COLIVING|24000031|Cabinet chardy - Patentmark|Honoraires de service|Dépot de la marque WE LIVE||Basé sur Demande d&#039;achat 24000044.|1.00|6900.00|0.00|6900.00|6900.00|23000126|1.00|
-CASA_COLIVING|24000032|FINASSURE|ASSURANCE AUTO|||ASSURANCE AUTO FLOTTE MARQUE LAND ROVER WW318259   du  16/02/2024  au  31/12/2024 de  20103,64  DHS. Basé sur Demande d&#039;achat 24000045.|1.00|20103.64|0.00|20103.64|20103.64|24000023|1.00|
-CASA_COLIVING|24000033|FINASSURE|ASSURANCE TRC|||ASSURANCE T R C   CASA CO-LIVING  GEO    DU  12/02/2024   AU  12/04/2025  de  120 449,20  dhs Basé sur Demande d&#039;achat 24000046.|1.00|120449.20|0.00|120449.20|120449.20|24000034|1.00|
-CASA_COLIVING|24000034|GEEB SERVICES|bon d&#039;achat|||Basé sur Demande d&#039;achat 24000047.|100.00|103.00|0.00|10300.00|10300.00|24000031|100.00|
-CASA_COLIVING|24000035|Cabinet chardy - Patentmark|Honoraires de service|depot d&#039;une marque dans une classe + par classe supplémentaire||50% Avance Basé sur Demande d&#039;achat 24000048.|1.00|6334.17|16.66|6334.17|5278.47|24000044|1.00|
-CASA_COLIVING|24000038|MARAB TRADING|DON|||Basé sur Demande d&#039;achat 24000049.|75.00|325.00|0.00|24375.00|24375.00|24000033|75.00|
-CASA_COLIVING|24000038|MARAB TRADING|DON|||Basé sur Demande d&#039;achat 24000049.|50.00|250.00|0.00|12500.00|12500.00|24000033|50.00|
-CASA_COLIVING|24000039|STUDIO NUMERIQUE MAROC|Affichage|Diffusion spot publicitaire match Marox VS Angola||Basé sur Demande d&#039;achat 24000051.|3.00|36000.00|0.00|108000.00|108000.00|24000042|3.00|
-CASA_COLIVING|24000040|MONAGO SERVICES|Elaboration d&#039;un planning éditorial|creation de 4 posts par semaine soit 16 posts par mois + creation de stories au besoin||Régule Basé sur Demande d&#039;achat 24000050.|1.00|5300.00|0.00|5300.00|5300.00|24000036|1.00|
-CASA_COLIVING|24000041|ALVABAT|Caisson en backlight|4m X 1m eclairages en Led avec pose||Basé sur Demande d&#039;achat 24000053.|4.00|10000.00|0.00|40000.00|40000.00|24000050|2.00|
-CASA_COLIVING|24000042|MAPLE déco|Prestation de service|:deplacement des portes en verre nettoyage local existant des portes/pose tissu et pieds du||ANCIEN BDV WE LIVE Basé sur Demande d&#039;achat 24000054.|1.00|2300.00|0.00|2300.00|2300.00|24000048|1.00|
-CASA_COLIVING|24000043|ESPACE BADR|Ameublement APPT Temoin|Televiseur SAMSUNG 65cu8000||Appart Temoin.(Televiseur pour MR.Mehdi RIDA). Basé sur Demande d&#039;achat 24000052.|1.00|8083.33|0.00|8083.33|8083.33|24000046|1.00|
-CASA_COLIVING|24000043|ESPACE BADR|Ameublement APPT Temoin|Machine a lav samsung ww70ta046||Appart Temoin.(Televiseur pour MR.Mehdi RIDA). Basé sur Demande d&#039;achat 24000052.|1.00|3875.00|0.00|3875.00|3875.00|24000049|1.00|
-CASA_COLIVING|24000044|OGICOM|Ameublement bureau de vente|:Chauffe eau 80L ELECTRIQUE BOSH||Basé sur Demande d&#039;achat 24000055.|1.00|1805.00|5.00|1805.00|1714.75|||
-CASA_COLIVING|24000047|VISION VOYAGES|VOYAGE AFFAIRE|Mr MfadeL||Basé sur Demande d&#039;achat 24000061.|1.00|41944.00|0.00|41944.00|41944.00|||
-CASA_COLIVING|24000049|STE ZAGOGECT|Ameublement bureau de vente|:Chauffe eau 80L ELECTRIQUE BOSH YC LA POSE||Basé sur Demande d&#039;achat 24000060.|1.00|1600.00|0.00|1600.00|1600.00|||
-CASA_COLIVING|24000051|NACIRECK PLUS|Femme de ménage|avec produits inclus||ANCIEN BDV Basé sur Demande d&#039;achat 24000063.|1.00|600.00|0.00|600.00|600.00|24000047|1.00|
-CASA_COLIVING|24000062|CENTRALE AUTOMOBILE CHERIFIENNE|A4 PI 2.0 163 TDI PREMIUM BA NOIR BRILLANT BRUN OKAPI|||BC DE RESERVATION Basé sur Demande d&#039;achat 24000078.|1.00|342112.50|0.00|342112.50|342112.50|||
-CASA_COLIVING|24000062|CENTRALE AUTOMOBILE CHERIFIENNE|Prestation de service|:Frais de mise en service||BC DE RESERVATION Basé sur Demande d&#039;achat 24000078.|1.00|300.00|0.00|300.00|300.00|||
-CASA_COLIVING|24000062|CENTRALE AUTOMOBILE CHERIFIENNE|Prestation de service|:Frais d&#039;immatriculation||BC DE RESERVATION Basé sur Demande d&#039;achat 24000078.|1.00|7105.00|0.00|7105.00|7105.00|||
-CASA_COLIVING|24000063|KAMAR BENOUNA|Honoraires de service|supervision &amp; controle exercice comptable 2023||NH N°001/03/24/AZKAMAR BENOUNA Basé sur Demande d&#039;achat 24000077.|1.00|20000.00|0.00|20000.00|20000.00|24000062|1.00|
-PROBAT_INVEST|23000338|RCI FINANCE MAROC|Leasing||PS10|LEASING 2023/&quot;RENAULT EXPRESS&quot; 30419-T-6/CONTRAT N°BA289830 Basé sur Demande d&#039;achat 23000300.|12.00|4072.16|0.00|48865.92|48865.92|||
-PROBAT_INVEST|23000339|RCI FINANCE MAROC|Leasing||PS10|LEASING 2023/&quot;DACIA DUSTER&quot; 14477-T-6 /CONTRAT N°RE334700 Basé sur Demande d&#039;achat 23000301.|12.00|4746.48|0.00|56957.76|56957.76|||
-PROBAT_INVEST|23000340|RCI FINANCE MAROC|Leasing||PS10|LEASING 2023/&quot;DACIA LOGAN&quot; 30418-T-6/CONTRAT N°BA289970 Basé sur Demande d&#039;achat 23000302.|12.00|3881.09|0.00|46573.08|46573.08|||
-PROBAT_INVEST|23000341|IAM|Abonnement Internet &amp; Télephone||PS08|Decembre 2023 Basé sur Demande d&#039;achat 24000006.|1.00|934.81|0.00|934.81|934.81|24000004|1.00|
-PROBAT_INVEST|24000002|TOP AUTO|Reparation|||Réparation DACIA DUSTER 14477-T-06 :SINISTRE DU 19/10/2023 Basé sur Demande d&#039;achat 24000001.|1.00|581.95|0.00|581.95|581.95|24000001|1.00|
-PROBAT_INVEST|24000003|FAST PRO S.A|Pneu|Mic 245/50R19 XL 105W ZP LAT SP 3*+montage Equilibrage|PS08|SouhaiL BENARROU;Matricule 80637-W-6. Basé sur Demande d&#039;achat 24000002.|2.00|4200.06|0.00|8400.12|8400.12|24000003|1.00|
-PROBAT_INVEST|24000003|FAST PRO S.A|Pneu|Mic 245/50R19 XL 105W ZP LAT SP 3*+montage Equilibrage|PS08|SouhaiL BENARROU;Matricule 80637-W-6. Basé sur Demande d&#039;achat 24000002.|2.00|4200.06|0.00|8400.12|8400.12|24000002|1.00|
-PROBAT_INVEST|24000004|MY CHOCOLAT|Chocolats|Lot de 2 Box carrés avec assortiment de chocolats-18pcs &amp; sleeve personalisé (Logo Mfadel)|PS02|Basé sur Demande d&#039;achat 24000003.|2.00|170.00|0.00|340.00|340.00|24000011|2.00|
-PROBAT_INVEST|24000005|2APM DISTRIBUTION|Vidange|:Huile 5W30/FILTRE A HUILE/FILTRE A AIR;30524 km|PS08|Lahlimi Med Yassine;Matricule:30419-T-6 Basé sur Demande d&#039;achat 24000004.|1.00|840.00|0.00|840.00|840.00|24000009|1.00|
-PROBAT_INVEST|24000006|FINASSURE|Assurance mutuelle|||ASSURANCE MUTUELLE  DIM  4 T  DU 01/10/2023 AU  31/12/2023 Basé sur Demande d&#039;achat 24000005.|1.00|34006.63|0.00|34006.63|34006.63|24000010|1.00|
-PROBAT_INVEST|24000007|IAM|Abonnement Internet &amp; Télephone||PS08|CLIENT N° 1.56704537422 MOBILE ANNEE 2024 Basé sur Demande d&#039;achat 24000007.|12.00|1000.00|0.00|12000.00|12000.00|||
-PROBAT_INVEST|24000008|INTERFACE RESSOURCES HUMAINES ET COACHING|Prestation de service|:Recrutement Chef de Projet Omar ksikes|PS03|Basé sur Demande d&#039;achat 24000008.|1.00|62748.72|0.00|62748.72|62748.72|24000101|1.00|
-PROBAT_INVEST|24000008|INTERFACE RESSOURCES HUMAINES ET COACHING|Prestation de service|:Recrutement Chef de Projet Omar ksikes|PS03|Basé sur Demande d&#039;achat 24000008.|1.00|62748.72|0.00|62748.72|62748.72|24000008|1.00|
-PROBAT_INVEST|24000011|FIRST INFORMATIQUE|PC DELL LATTITUDE 5440 I7-1365U 14 FHD 16 GO 512 GO SSD WIN11 PRO||PS04|Bénéficiaire : Resposnable Programme Basé sur Demande d&#039;achat 24000011.|1.00|13350.00|0.00|13350.00|13350.00|||
-PROBAT_INVEST|24000012|BUSINESS CENTER NETWORK|Frais de Domiciliation||PS08|REGULARISATION FN°37/24 FOURNISSEUR:BUSINESS CENTER NETWORK /FRAIS DE DOMICILIATION DU 25/01/2024 AU 25/01/2025 Basé sur Demande d&#039;achat 24000010.|1.00|2083.33|0.00|2083.33|2083.33|24000024|1.00|
-PROBAT_INVEST|24000015|FINASSURE|Autre assurance|||ASSURANCE RC EXPLOITATION DU 01/01/2024  AU 31/12/2024 Basé sur Demande d&#039;achat 24000014.|1.00|9404.00|0.00|9404.00|9404.00|24000040|1.00|
-PROBAT_INVEST|24000016|Centrale Automobile cherifienne|Vidange||PS08|SOUFIAN KAMAL;MATRICULE:25640*T*6 Basé sur Demande d&#039;achat 24000015.|1.00|3969.17|0.00|3969.17|3969.17|24000023|1.00|
-PROBAT_INVEST|24000018|VISION VOYAGES|Voyage affaire||PS09|EN FAVEUR PDG Basé sur Demande d&#039;achat 24000019.|1.00|35060.00|0.00|35060.00|35060.00|24000026|1.00|
-PROBAT_INVEST|24000022|POL IT|ASUS FX507VU4 I7-13700H 15,6 POUCES FHD 16 GO 512 Go SSD RTX 4050 6G W11H MECHA G||PS04|Bénéficiaire : Resposnable Programme Camélia Sherry Senhaji Basé sur Demande d&#039;achat 24000020.|1.00|15489.99|1.02|15490.00|15331.63|24000049|1.00|
-PROBAT_INVEST|24000023|SMEIA SA|Vidange||PS08|Souhail Benarrou;Matricule:80637-E-6 Basé sur Demande d&#039;achat 24000024.|1.00|1022.29|0.00|1022.29|1022.29|24000047|1.00|
-PROBAT_INVEST|24000028|FINASSURE|Assurance AT|||ASSURANCE ACCIDENTS DE TRAVAIL DU 01/01/2024  AU  31/03/2024   DE    78 709,23  DHS. Basé sur Demande d&#039;achat 24000028.|1.00|78709.23|0.00|78709.23|78709.23|24000052|1.00|
-PROBAT_INVEST|24000029|FINASSURE|Assurance auto|||ASSURANCE  AUTO DU 01.01.2024 AU 31.12.2024 DE  38 005,03 DHS Basé sur Demande d&#039;achat 24000027.|1.00|38005.03|0.00|38005.03|38005.03|24000053|1.00|
-PROBAT_INVEST|24000035|STE AUDACE AUTO|Plaquette||PS08|FAHD EL GHATASS;MATRICULE:86995-W-6 Basé sur Demande d&#039;achat 24000035.|1.00|423.77|0.00|423.77|423.77|24000078|1.00|
-PROBAT_INVEST|24000043|FINASSURE|Autre assurance||PS08|AVENANT DE REGULARISATION RESP. CIVILE  EXPLOITATION  DU 01/01/2022  AU 31/12/2022 de 29 162,25 dhs. Basé sur Demande d&#039;achat 24000046.|1.00|29162.24|0.00|29162.24|29162.24|24000071|1.00|
-PROBAT_INVEST|24000044|STE AUDACE AUTO|Reparation|: Plaquettes de frein AR+Ampole H7 12V|PS08|Matricule:84435-H-6;Soussy Hanane; Basé sur Demande d&#039;achat 24000048.|1.00|300.73|13.99|300.74|258.64|24000077|1.00|
-PROBAT_INVEST|24000044|STE AUDACE AUTO|Vidange|Express isotech 10w40|PS08|Matricule:84435-H-6;Soussy Hanane; Basé sur Demande d&#039;achat 24000048.|1.00|349.00|0.00|349.00|349.00|24000077|1.00|
-PROBAT_INVEST|24000048|FINASSURE|Assurance auto|||ASSURANCE  BRANCHE  AUTO   MERCEDES 84370-E-01   DE 2 761,22 dhs   du  29/11/2023  au  31/12/2023 Basé sur Demande d&#039;achat 24000056.|1.00|2761.22|0.00|2761.22|2761.22|24000089|1.00|
-PROBAT_INVEST|24000049|FINASSURE|Autre assurance|||ASSURANCE CARTE VERTE  AUTO MERCEDES                   84370 - E -  01de 500,00  DHS Basé sur Demande d&#039;achat 24000055.|1.00|500.00|0.00|500.00|500.00|24000092|1.00|
-PROBAT_INVEST|24000051|FINASSURE|Assurance auto|||ASSURANCE BRANCHE  AUTO MERCEDES 84370-E-01  de 30 369,72  DU 01/01/2024  AU 31/12/2024 Basé sur Demande d&#039;achat 24000053.|1.00|30369.72|0.00|30369.72|30369.72|24000088|1.00|
-PROBAT_INVEST|24000052|FINASSURE|Autre assurance|||ASSURANCE  CARTE  VERTE  MERCEDES  84370-E-01   de  500,00  dhs  du  29/11/2023  au  31/12/2023 Basé sur Demande d&#039;achat 24000054.|1.00|500.00|0.00|500.00|500.00|24000102|1.00|
-PROBAT_INVEST|24000054|GARAGE SAINT MICHEL|Reparation|Véhicule yc fourniture|PS09|Mme Yasmine MFADEL;69741-A-72 Basé sur Demande d&#039;achat 24000062.|1.00|55545.60|0.00|55545.60|55545.60|||
-PROBAT_INVEST|24000055|FINASSURE|Assurance mutuelle|||ASSURANCE  GROUPE  MALADIE  DU  01/01/2024  AU  31/03/2024  de 55 212,61  dhs Basé sur Demande d&#039;achat 24000061.|1.00|55212.61|0.00|55212.61|55212.61|24000090|1.00|
-PROBAT_INVEST|24000056|FINASSURE|Assurance AT|||ASSURANCE  ACCIDENTS DE TRAVAIL  du 01/04/2024  au  30/06/2024  de  21 410,40  DHS Basé sur Demande d&#039;achat 24000060.|1.00|21410.40|0.00|21410.40|21410.40|24000091|1.00|
-PROBAT_INVEST|24000058|VISION VOYAGES|Voyage affaire|Mr MFADEL TARIK|PS09|Basé sur Demande d&#039;achat 24000063.|1.00|18785.00|0.00|18785.00|18785.00|24000093|1.00|
-PROBAT_INVEST|24000059|VISION VOYAGES|Voyage affaire|en faveur Mr Mfadel Tarik|PS09|Basé sur Demande d&#039;achat 24000064.|1.00|50620.00|0.00|50620.00|50620.00|24000087|1.00|
-PROBAT_INVEST|24000060|AL AFRAH MOUBARAKA|Don|:Pendant le mois de ramadan|PS08|Basé sur Demande d&#039;achat 24000065.|1.00|72000.00|0.00|72000.00|72000.00|24000097|1.00|
-PROBAT_INVEST|24000066|FINASSURE|Assurance auto|||ASSURANCE AUTO MR ENNAJI   AHMED  RENEAULT 52095-A-14  DU 01/01/2024  AU  31/12/2024  de  2 816,79 dhs Basé sur Demande d&#039;achat 24000067.|1.00|2816.79|0.00|2816.79|2816.79|24000109|1.00|
-PROBAT_INVEST|24000066|FINASSURE|Assurance auto|||ASSURANCE AUTO MR ENNAJI   AHMED  RENEAULT 52095-A-14  DU 01/01/2024  AU  31/12/2024  de  2 816,79 dhs Basé sur Demande d&#039;achat 24000067.|1.00|2816.79|0.00|2816.79|2816.79|22000451|552.00|
-PROBAT_INVEST|24000067|STE AUDACE AUTO|Pneu|pirelli 245/50 R19 105W RF|PS08|Benarrou Souhail;Matricule:80637-E-6 Basé sur Demande d&#039;achat 24000070.|2.00|4207.75|25.00|8415.50|6311.62|24000111|2.00|
-PROBAT_INVEST|24000068|STE AUDACE AUTO|Pneu||PS08|HANANE SOUSSY;MATRICULE 84435-H-6 Basé sur Demande d&#039;achat 24000071.|4.00|1007.30|25.00|4029.21|3021.90|24000110|4.00|
-PROBAT_INVEST|24000069|FINASSURE|Assurance AT|||Complémnt  Accidents du Travail du 2eme trimestre 2024  du 01/04/2024   au  30/06/2024 de 30 048,00  dhs : FACTURE N° 73073 / 01 Basé sur Demande d&#039;achat 24000073.|1.00|30048.00|0.00|30048.00|30048.00|24000120|1.00|
-RMM_BUILDING|24000001|AMTEL|Cadeaux client|A05S 4/128Go+chargeur|PS09|PO PDG Basé sur Demande d&#039;achat 24000004.|2.00|2169.00|0.00|4338.00|4338.00|24000013|2.00|
-RMM_BUILDING|24000008|TOP AUTO|Vidange||PS08|Mr Boutayeb;MAT:40038-B-7. Basé sur Demande d&#039;achat 24000009.|1.00|1176.08|0.00|1176.08|1176.08|24000008|1.00|
-RMM_BUILDING|24000009|INFO COPIE|Impression|A3 couleur|PS02|Régule Basé sur Demande d&#039;achat 24000012.|264.00|6.66|0.00|1760.01|1760.01|23000491|264.00|
-RMM_BUILDING|24000009|INFO COPIE|Reliure a spiral|A3|PS02|Régule Basé sur Demande d&#039;achat 24000012.|4.00|12.50|0.00|50.00|50.00|23000491|4.00|
-RMM_BUILDING|24000009|INFO COPIE|Impression|de plans A3|PS02|Régule Basé sur Demande d&#039;achat 24000012.|2.00|41.66|0.00|83.33|83.33|23000491|2.00|
-RMM_BUILDING|24000014|SECTION 1|Securite|Nuit||BDV OP (BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000013.|12.00|3450.00|0.00|41400.00|41400.00|24000063|1.00|
-RMM_BUILDING|24000014|SECTION 1|Securite|Nuit||BDV OP (BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000013.|12.00|3450.00|0.00|41400.00|41400.00|24000069|1.00|
-RMM_BUILDING|24000014|SECTION 1|Securite|Nuit||BDV OP (BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000013.|12.00|3450.00|0.00|41400.00|41400.00|24000126|1.00|
-RMM_BUILDING|24000014|SECTION 1|Securite|Nuit||BDV OP (BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000013.|12.00|3450.00|0.00|41400.00|41400.00|24000125|1.00|
-RMM_BUILDING|24000015|SECTION I SECURITE|Securite|Decembre 2023||BDV OP Basé sur Demande d&#039;achat 24000014.|1.00|3450.00|0.00|3450.00|3450.00|23000480|1.00|
-RMM_BUILDING|24000016|KITEA|Ameublement||PS02|APPARTEMENT G7 CP KITEA Basé sur Demande d&#039;achat 24000015.|1.00|1113.33|0.00|1113.33|1113.33|24000148|1.00|
-RMM_BUILDING|24000017|KITEA|Ameublement||PS02|APPARTEMENT G7 CP KITEA Basé sur Demande d&#039;achat 24000016.|1.00|28583.33|0.00|28583.33|28583.33|24000151|0.02|
-RMM_BUILDING|24000017|KITEA|Ameublement||PS02|APPARTEMENT G7 CP KITEA Basé sur Demande d&#039;achat 24000016.|1.00|28583.33|0.00|28583.33|28583.33|24000152|0.45|
-RMM_BUILDING|24000017|KITEA|Ameublement||PS02|APPARTEMENT G7 CP KITEA Basé sur Demande d&#039;achat 24000016.|1.00|28583.33|0.00|28583.33|28583.33|24000150|0.00|
-RMM_BUILDING|24000017|KITEA|Ameublement||PS02|APPARTEMENT G7 CP KITEA Basé sur Demande d&#039;achat 24000016.|1.00|28583.33|0.00|28583.33|28583.33|24000149|0.51|
-RMM_BUILDING|24000018|SYH MOROCCO|Ameublement||PS02|APPARTEMENT G7 CP IKEA CHQ CERTIFIER Basé sur Demande d&#039;achat 24000018.|1.00|17917.33|0.00|17917.33|17917.33|||
-RMM_BUILDING|24000019|BRICOMA|Lampe|panel led 24w6k plast ip44||APPARTEMENT G7 CP Basé sur Demande d&#039;achat 24000019.|3.00|49.16|0.00|147.50|147.50|||
-RMM_BUILDING|24000020|RM WASSITE|Prestation de services|Décoration|PS02|Prestation de service:Decoration app G7 Basé sur Demande d&#039;achat 24000020.BC Non validé par Mr.YASSINE|1.00|10000.00|0.00|10000.00|10000.00|||
-RMM_BUILDING|24000021|SYH MOROCCO|Ameublement||PS02|APPARTEMENT TEMOIN OP CHQ CERTIFIER Basé sur Demande d&#039;achat 24000021.|1.00|25389.75|0.00|25389.75|25389.75|||
-RMM_BUILDING|24000022|KITEA|Ameublement||PS02|APPARTEMENT TEMOIN OP Basé sur Demande d&#039;achat 24000022.|1.00|1076.67|0.00|1076.67|1076.67|24000147|1.00|
-RMM_BUILDING|24000023|KITEA|Ameublement||PS02|APPARTEMENT TEMOIN OP Basé sur Demande d&#039;achat 24000023.|1.00|24249.17|0.00|24249.17|24249.17|||
-RMM_BUILDING|24000024|RM WASSITE|Prestation de services|Décoration|PS02|APPT L21 CP Basé sur Demande d&#039;achat 24000024.BC Non validé par Mr.YASSINE|1.00|10000.00|0.00|10000.00|10000.00|||
-RMM_BUILDING|24000025|KITEA|Ameublement|kitea|PS02|APPT L21 CP Basé sur Demande d&#039;achat 24000025.|1.00|36147.50|0.00|36147.50|36147.50|||
-RMM_BUILDING|24000026|SYH MOROCCO|Ameublement||PS02|APPRT L21 CP Basé sur Demande d&#039;achat 24000026.|1.00|23490.66|0.00|23490.67|23490.67|||
-RMM_BUILDING|24000027|RM WASSITE|Prestation de services|Décoration|PS02|Basé sur Demande d&#039;achat 24000027.BC Non validé par Mr.YASSINE|1.00|10000.00|0.00|10000.00|10000.00|||
-RMM_BUILDING|24000028|TOP AUTO|Entretien|:Plaquettes|PS08|Mr Boutayeb;MAT:40038-B-7. Basé sur Demande d&#039;achat 24000028.|1.00|1053.32|0.00|1053.32|1053.32|24000022|1.00|
-RMM_BUILDING|24000029|FINASSURE|Assurance mutuelle|||ASSURANCE MUTUELLE   DIM  4  T    DU 01/10/2023  AU 31/12/2023 Basé sur Demande d&#039;achat 24000017.|1.00|24689.32|0.00|24689.32|24689.32|24000007|1.00|
-RMM_BUILDING|24000033|FINASSURE|Assurance multirisque|||ASSURANCE MULTIRISQUES INDUSTRIELLE DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000052.|1.00|4150.15|0.00|4150.15|4150.15|24000038|1.00|
-RMM_BUILDING|24000034|FINASSURE|Assurance AT|||ASSURANCE ACCIDENTS DE TRAVAIL DU 01/01/2024  AU 31/12/2024 Basé sur Demande d&#039;achat 24000051.|1.00|13704.02|0.00|13704.02|13704.02|24000037|1.00|
-RMM_BUILDING|24000035|FINASSURE|Assurance multirisque||PS08|ASSURANCE MULTIRISQUES INDUSTRIELLE  DU 01/01/2024  AU  31/12/2024 Basé sur Demande d&#039;achat 24000050.|1.00|12459.65|0.00|12459.65|12459.65|24000036|1.00|
-RMM_BUILDING|24000037|SECTION PLUS|Femme de menage|||Décembre 2023 Basé sur Demande d&#039;achat 24000029.|1.00|3500.00|0.00|3500.00|3500.00|23000495|1.00|
-RMM_BUILDING|24000037|SECTION PLUS|Femme de menage|||Décembre 2023 Basé sur Demande d&#039;achat 24000029.|7.00|3000.00|0.00|21000.00|21000.00|23000495|7.00|
-RMM_BUILDING|24000037|SECTION PLUS|Femme de menage|||Décembre 2023 Basé sur Demande d&#039;achat 24000029.|2.00|2884.61|0.00|5769.23|5769.23|23000495|2.00|
-RMM_BUILDING|24000037|SECTION PLUS|Femme de menage|||Décembre 2023 Basé sur Demande d&#039;achat 24000029.|1.00|1083.46|0.00|1083.46|1083.46|23000495|1.00|
-RMM_BUILDING|24000038|MULTIPNEUS|Pneu|PN 275*40*19 MICHELIN/PLOT SPORT 3 MO|PS09|Mr Redone MfadeL.MAT:92962-A-7 Basé sur Demande d&#039;achat 24000054.|2.00|4200.00|0.00|8400.00|8400.00|24000029|2.00|
-RMM_BUILDING|24000040|FINASSURE|Assurance AT||PS08|ASSURANCE AVEANT DE REGULARISATION ACCIDENTS DE TRAVAIL  DU 01/01/2023 AU 31/12/2023 Basé sur Demande d&#039;achat 24000057.|1.00|4435.13|0.00|4435.13|4435.13|24000039|1.00|
-RMM_BUILDING|24000041|SBIRY FATIMA|Prestation de services||PS08|JANVIER 2024 Basé sur Demande d&#039;achat 24000058.|1.00|16000.00|0.00|16000.00|16000.00|24000030|1.00|
-RMM_BUILDING|24000047|SECTION PLUS|Femme de menage|26||Janvier 2024 Basé sur Demande d&#039;achat 24000059.|7.00|3000.00|0.00|21000.00|21000.00|24000064|7.00|
-RMM_BUILDING|24000047|SECTION PLUS|Femme de menage|25||Janvier 2024 Basé sur Demande d&#039;achat 24000059.|2.00|2884.61|0.00|5769.22|5769.22|24000064|2.00|
-RMM_BUILDING|24000047|SECTION PLUS|Femme de menage|23||Janvier 2024 Basé sur Demande d&#039;achat 24000059.|1.00|2653.84|0.00|2653.84|2653.84|24000064|1.00|
-RMM_BUILDING|24000048|ASK GRAS SAVOYE|Assurance auto|Flotte|PS08|ASSURANCE AUTO RENEAULT KADJAR 40038-B / 7 ASK GRAS SAVOYE Basé sur Demande d&#039;achat 24000064.|1.00|3204.55|0.00|3204.55|3204.55|24000040|1.00|
-RMM_BUILDING|24000050|DIGIBAY|Ameublement|frost silver siera ref dp27s 270L||Benificiare:Omar Qaf Basé sur Demande d&#039;achat 24000068.|1.00|2699.00|0.00|2699.00|2699.00|24000048|1.00|
-RMM_BUILDING|24000051|DIGIBAY|Ameublement|: inverter ocean clim 9000btu acsoih9ma||Benificiare:Driss oueld yazid Basé sur Demande d&#039;achat 24000067.|1.00|4299.00|0.00|4299.00|4299.00|24000049|1.00|
-RMM_BUILDING|24000052|INFO COPIE|Impression|de plans A1 Couleur Mme hanane|PS08|Basé sur Demande d&#039;achat 24000069.|16.00|25.00|0.00|400.00|400.00|24000052|16.00|
-RMM_BUILDING|24000052|INFO COPIE|Impression|A4(LOI 2024) Mme wafaa|PS08|Basé sur Demande d&#039;achat 24000069.|1.00|638.33|0.00|638.33|638.33|24000052|1.00|
-RMM_BUILDING|24000052|INFO COPIE|Impression|de plans couleur Mme aicha|PS08|Basé sur Demande d&#039;achat 24000069.|28.00|75.00|0.00|2100.00|2100.00|24000052|28.00|
-RMM_BUILDING|24000053|VISION VOYAGE|Voyage affaire|:Faveur TM|PS09|TM Basé sur Demande d&#039;achat 24000073.|1.00|33680.00|0.00|33680.00|33680.00|24000041|1.00|
-RMM_BUILDING|24000054|FINASSURE|Assurance risque d&#039;exploitation||PS08|ASSURANCE RC EXPLOITATION DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000070.|1.00|745.99|0.00|745.99|745.99|24000050|1.00|
-RMM_BUILDING|24000056|2APM DISTRIBUTION|Entretien||PS08|Redone sbiry;Matricule: 5129-B-7 Basé sur Demande d&#039;achat 24000072.|1.00|1250.00|0.00|1250.00|1250.00|||
-RMM_BUILDING|24000063|CENTRAL AUTOMOBILE CHERIFIENNE|Vidange||PS08|Pour la voiiture de M. Imad Basé sur Demande d&#039;achat 24000080.|1.00|1635.19|0.00|1635.19|1635.19|24000051|1.00|
-RMM_BUILDING|24000064|FINASSURE|Assurance auto||PS08|ASSURANCE AUTO FLOTTE DU 01/01/2024 AU 31/12/2024 DE 51 491,15 DHS Basé sur Demande d&#039;achat 24000081.|1.00|51491.15|0.00|51491.15|51491.15|24000058|1.00|
-RMM_BUILDING|24000068|SBIRY FATIMA|Prestation de services||PS08|FEVRIER 2024 Basé sur Demande d&#039;achat 24000086.|1.00|14000.00|0.00|14000.00|14000.00|24000059|1.00|
-RMM_BUILDING|24000069|BARID AL MAGHRIB|Taxe communale|||Basé sur Demande d&#039;achat 24000085.|1.00|7.28|0.00|7.28|7.28|||
-RMM_BUILDING|24000069|BARID AL MAGHRIB|Frais Postaux|Recommande avec AR||Basé sur Demande d&#039;achat 24000085.|1.00|2912.40|0.00|2912.40|2912.40|24000082|1.00|
-RMM_BUILDING|24000070|CAMELEON MEDIA|campagne Publicitaire||PS02|Basé sur Demande d&#039;achat 24000087.|1.00|35420.00|0.00|35420.00|35420.00|24000106|1.00|
-RMM_BUILDING|24000073|FINASSURE|Assurance AT||PS08|AVENAANT DE REGULARISATION ACCIDENTS DE TRAVAIL DU 01/01/2023 AU 1/12/2023 de  4 435,13 dhs Basé sur Demande d&#039;achat 24000093.|1.00|4435.13|0.00|4435.13|4435.13|24000068|1.00|
-RMM_BUILDING|24000074|FINASSURE|Autre assurances||PS08|ASSURANCE  CARTE VERTE , MARQUE VOLKSWAGEN 34735-B-07  DU 01/01/2024  AU 31/12/2024 Basé sur Demande d&#039;achat 24000091.|1.00|500.00|0.00|500.00|500.00|24000065|1.00|
-RMM_BUILDING|24000075|FINASSURE|Autre assurances||PS08|ASSURANCE CARTE VERTE , MARQUE BMW 92962-A-07  DU  01/01/2024  AU  31/12/2024 Basé sur Demande d&#039;achat 24000090.|1.00|500.00|0.00|500.00|500.00|24000066|1.00|
-RMM_BUILDING|24000076|FINASSURE|Autre assurances||PS08|ASSURANCE  CARTE  VERTE  N°  46899-E-01  DU 01/01/2024  AU  31/12/2024 Basé sur Demande d&#039;achat 24000089.|1.00|500.00|0.00|500.00|500.00|24000067|1.00|
-RMM_BUILDING|24000077|INFO COPIE|Scan|de plans|PS08|Basé sur Demande d&#039;achat 24000096.|14.00|39.58|0.00|554.17|554.17|24000080|14.00|
-RMM_BUILDING|24000077|INFO COPIE|Impression|de plans couleur|PS08|Basé sur Demande d&#039;achat 24000096.|28.00|79.16|0.00|2216.67|2216.67|24000080|28.00|
-RMM_BUILDING|24000077|INFO COPIE|Reliure a spiral||PS08|Basé sur Demande d&#039;achat 24000096.|1.00|8.33|0.00|8.33|8.33|24000080|1.00|
-RMM_BUILDING|24000077|INFO COPIE|Impression|A4/CL|PS08|Basé sur Demande d&#039;achat 24000096.|65.00|1.25|0.00|81.25|81.25|24000080|65.00|
-RMM_BUILDING|24000078|GEEB SERVICES|bon d&#039;achat|+ commission|PS08|Basé sur Demande d&#039;achat 24000097.|100.00|103.00|0.00|10300.00|10300.00|24000078|100.00|
-RMM_BUILDING|24000078|GEEB SERVICES|bon d&#039;achat|+ commission|PS08|Basé sur Demande d&#039;achat 24000097.|100.00|103.00|0.00|10300.00|10300.00|22000419|1.00|
-RMM_BUILDING|24000079|CENTRAL AUTOMOBILE CHERIFIENNE|Entretien|:FEUB AR/G CASSE+BALAIS USES|PS08|IMAD RIDA;34735-B-7 Basé sur Demande d&#039;achat 24000098.|1.00|1584.25|0.00|1584.25|1584.25|22000421|1.00|
-RMM_BUILDING|24000079|CENTRAL AUTOMOBILE CHERIFIENNE|Entretien|:FEUB AR/G CASSE+BALAIS USES|PS08|IMAD RIDA;34735-B-7 Basé sur Demande d&#039;achat 24000098.|1.00|1584.25|0.00|1584.25|1584.25|24000077|1.00|
-RMM_BUILDING|24000080|STE AUDACE AUTO|Plaquettes||PS08|ZERKANI MOHAMMED; 29150-A-7,Operation Effectuee le 16/03/2024 le Basé sur Demande d&#039;achat 24000100.|1.00|1921.18|8.95|1921.18|1749.09|24000097|1.00|
-RMM_BUILDING|24000080|STE AUDACE AUTO|Vidange||PS08|ZERKANI MOHAMMED; 29150-A-7,Operation Effectuee le 16/03/2024 le Basé sur Demande d&#039;achat 24000100.|1.00|437.06|0.00|437.06|437.06|24000097|1.00|
-RMM_BUILDING|24000081|AUDACE AUTO|Plaquettes||PS08|Aicha kirad;Matricule:2407-B-7 Basé sur Demande d&#039;achat 24000101.MT RECTIFIER AU NIVEAU D LA RECEPTION|1.00|887.00|0.00|887.00|887.00|||
-RMM_BUILDING|24000081|AUDACE AUTO|Vidange||PS08|Aicha kirad;Matricule:2407-B-7 Basé sur Demande d&#039;achat 24000101.MT RECTIFIER AU NIVEAU D LA RECEPTION|1.00|823.46|0.00|823.46|823.46|24000104|1.00|
-RMM_BUILDING|24000089|NEWCOM|Cadeaux client|Iphone 15 PRO MAX 512 Go|PS08|PDG Basé sur Demande d&#039;achat 24000106.|1.00|18890.00|0.00|18890.00|18890.00|||
-RMM_BUILDING|24000092|HATIM BOUKHRIS|Honoraire de service|Rêquete de mise a disposition document sociaux syndic residence Centrale park|PS08|Basé sur Demande d&#039;achat 24000105.|1.00|4500.00|0.00|4500.00|4500.00|24000107|1.00|
-RMM_BUILDING|24000093|SECTION PLUS|Femme de menage|: 26 jrs||Mois Février 2024 Basé sur Demande d&#039;achat 24000099.|6.00|3000.00|0.00|18000.00|18000.00|24000089|6.00|
-RMM_BUILDING|24000093|SECTION PLUS|Femme de menage|: 12 jrs||Mois Février 2024 Basé sur Demande d&#039;achat 24000099.|3.00|1384.61|0.00|4153.83|4153.83|24000089|3.00|
-RMM_BUILDING|24000097|ESPACE BADR|Cadeaux client|Ecran qled samsung QA98Q80CAUXMV|PS08|PDG Basé sur Demande d&#039;achat 24000111.|1.00|67500.00|0.00|67500.00|67500.00|||
-RMM_BUILDING|24000099|TOP AUTO|Vidange||PS08|M.Boutayeb;MAT:40038-B-7 Basé sur Demande d&#039;achat 24000114.|1.00|1618.36|0.00|1618.36|1618.36|24000145|1.00|
-RMM_BUILDING|24000100|CENTRAL AUTOMOBILE CHERIFIENNE|Réparation|PLAQUETTES DE FREIN AV/AR|PS08|Pour la voiture de M. Imad Basé sur Demande d&#039;achat 24000112.|1.00|7634.60|0.00|7634.60|7634.60|24000131|1.00|
-RMM_BUILDING|24000101|STE AUDACE AUTO|Vidange||PS08|NIZAR MEZOUARI;2435-B-7 Basé sur Demande d&#039;achat 24000115.|1.00|349.00|0.00|349.00|349.00|24000096|1.00|
-RMM_BUILDING|24000105|S.N.A.M|Frais Autoroute Jawaz||PS08|Jawaz MR Redone MFADEL Basé sur Demande d&#039;achat 24000121.|1.00|1000.00|0.00|1000.00|1000.00|24000122|1.00|
-RMM_BUILDING|24000107|NEAB|Visite technique||PS08|AICHA KIRAD-2407-B-7 Basé sur Demande d&#039;achat 24000126.|1.00|350.00|0.00|350.00|350.00|24000136|1.00|
-RMM_BUILDING|24000108|VISION VOYAGE|Voyage affaire|:Faveur Mr Mfadel.|PS09|Basé sur Demande d&#039;achat 24000127.|1.00|9980.00|0.00|9980.00|9980.00|24000120|1.00|
-RMM_BUILDING|24000109|AUDACE AUTO|Entretien|et réparation:Plaquettes|PS08|Aicha kirad;Matricule:2407-B-7. Basé sur Demande d&#039;achat 24000124.|1.00|300.19|14.59|300.20|256.38|24000137|1.00|
-RMM_BUILDING|24000109|AUDACE AUTO|Pneu||PS08|Aicha kirad;Matricule:2407-B-7. Basé sur Demande d&#039;achat 24000124.|4.00|879.80|0.00|3519.22|3519.22|24000137|4.00|
-RMM_BUILDING|24000115|FINASSURE|Assurance mutuelle||PS08|ASSURANCE  GROUPE MALADIE  DU  01/01/2024  AU  31/03/2024   de  24 784,83 Basé sur Demande d&#039;achat 24000130.|1.00|24784.83|0.00|24784.83|24784.83|24000127|1.00|
-RMM_BUILDING|24000116|ASK GRAS SAVOYE|Assurance auto||PS08|ASSURANCE  AUTO  FLOTTE DU 01/01/2020  AU  31/12/2020  DE  17.00   DHS Basé sur Demande d&#039;achat 24000131.|1.00|17.00|0.00|17.00|17.00|24000129|1.00|
-RMM_BUILDING|24000117|ASK GRAS SAVOYE|Assurance auto||PS08|ASSURANCE FLOTTE AUTO DU 01/01/2019   AU  31/12/2019 DE  13 798,89 DHS Basé sur Demande d&#039;achat 24000132.|1.00|13798.89|0.00|13798.89|13798.89|24000130|1.00|
-RMM_BUILDING|24000118|ASK GRAS SAVOYE|Assurance auto||PS08|ASSURANCE FLOTTE AUTO DU 01/01/2020  AU  31/12/2020  de  4708,23  DHS Basé sur Demande d&#039;achat 24000133.|1.00|4708.23|0.00|4708.23|4708.23|24000128|1.00|
-RMM_BUILDING|24000119|FONDATION MFADEL POUR LES OEUVRES SOCIAL|DONS||PS08|Basé sur Demande d&#039;achat 24000136.|1.00|20000.00|0.00|20000.00|20000.00|24000121|1.00|
-RMM_BUILDING|24000120|MAPLE DECO|Prestation de services|Montage et Demontage maquette du Zenata vers Casa yc transport allez et retour.|PS08|Basé sur Demande d&#039;achat 24000137.|1.00|2000.00|0.00|2000.00|2000.00|||
-RMM_BUILDING|24000121|SBIRY FATIMA|Prestation de services||PS08|AVRIL 2024 Basé sur Demande d&#039;achat 24000138.|1.00|15000.00|0.00|15000.00|15000.00|24000123|1.00|
-RMM_BUILDING|24000122|VISION VOYAGE|Voyage affaire|:Faveur Mr Mfadel tarik|PS09|Basé sur Demande d&#039;achat 24000140.|1.00|15843.00|0.00|15843.00|15843.00|24000139|1.00|
-RMM_BUILDING|24000132|SECTION PLUS|Femme de menage|: 26 jrs||MARS/AVRIL 2024 Basé sur Demande d&#039;achat 24000149.|5.00|3000.00|0.00|15000.00|15000.00|||
-RMM_BUILDING|24000132|SECTION PLUS|Femme de menage|: 24 jrs||MARS/AVRIL 2024 Basé sur Demande d&#039;achat 24000149.|1.00|2769.23|0.00|2769.23|2769.23|||
-RMM_BUILDING|24000132|SECTION PLUS|Femme de menage|: 6 jrs||MARS/AVRIL 2024 Basé sur Demande d&#039;achat 24000149.|6.00|115.38|0.00|692.31|692.31|||
-RMM_BUILDING|24000133|INFO COPIE|Impression|A3 NB|PS08|Basé sur Demande d&#039;achat 24000150.|95.00|1.66|0.00|158.33|158.33|24000146|95.00|
-RMM_BUILDING|24000133|INFO COPIE|Impression|A3 CL|PS08|Basé sur Demande d&#039;achat 24000150.|9.00|2.50|0.00|22.50|22.50|24000146|9.00|
-RMM_BUILDING|24000133|INFO COPIE|Impression|A3 NB|PS08|Basé sur Demande d&#039;achat 24000150.|11.00|1.66|0.00|18.33|18.33|24000146|11.00|
-RMM_BUILDING|24000133|INFO COPIE|Impression|de plans A1 Couleur|PS08|Basé sur Demande d&#039;achat 24000150.|4.00|25.00|0.00|100.00|100.00|24000146|4.00|
-RMM_BUILDING|24000134|AGEON CONSULTING|Prestation de services|:Mission decoration &amp; ameublement appart L21;F7 CP/appart témoin OP|PS08|Basé sur Demande d&#039;achat 24000152.|1.00|30000.00|0.00|30000.00|30000.00|24000162|1.00|
-RMM_BUILDING|24000137|DIGIBAY|Cadeaux client|:Machine a laver MAL WTE7512BOB/WTV7513BB 7KG 1000T A+++ NOIR BEKO||Bénificiare:Alaoui Ismaili Ismael C07-081Basé sur Demande d&#039;achat 24000155.|1.00|3599.00|0.00|3599.00|3599.00|24000163|1.00|
-RMM_BUILDING|24000137|DIGIBAY|Cadeaux client|:Refrigirateur COMB WFNF 81E K NOIR DUAL NF 320L A+ WHIRLPOOL||Bénificiare:Alaoui Ismaili Ismael C07-081Basé sur Demande d&#039;achat 24000155.|1.00|6499.00|0.00|6499.00|6499.00|24000163|1.00|
-RMM_BUILDING|24000139|AUDACE AUTO|Entretien|Ampole P21/5W|PS08|Mohammed Zarkani;Matricule:29150B7 Basé sur Demande d&#039;achat 24000151.|1.00|22.00|0.00|22.00|22.00|24000138|1.00|
-RMM_BUILDING|24000139|AUDACE AUTO|Entretien|Ampole P21/5W|PS08|Mohammed Zarkani;Matricule:29150B7 Basé sur Demande d&#039;achat 24000151.|1.00|22.00|0.00|22.00|22.00|24000144|1.00|
-RMM_BUILDING|24000139|AUDACE AUTO|Pneu|ULTRACONTACT|PS08|Mohammed Zarkani;Matricule:29150B7 Basé sur Demande d&#039;achat 24000151.|4.00|956.31|25.00|3825.24|2868.93|24000138|4.00|
-RMM_BUILDING|24000139|AUDACE AUTO|Pneu|ULTRACONTACT|PS08|Mohammed Zarkani;Matricule:29150B7 Basé sur Demande d&#039;achat 24000151.|4.00|956.31|25.00|3825.24|2868.93|24000144|4.00|
-RMM_BUILDING|24000140|TOP AUTO MOHAMMEDIA|Entretien|et reparation:Compresseur de clim|PS08|AICHA KIRAD;Matricule:2407-B-7 Basé sur Demande d&#039;achat 24000157.|1.00|1916.56|0.00|1916.56|1916.56|||
-RMM_BUILDING|24000141|SBIRY FATIMA|Prestation de services||PS08|MARS 2024 Basé sur Demande d&#039;achat 24000158.|1.00|17000.00|0.00|17000.00|17000.00|24000153|1.00|
-RMM_BUILDING|24000142|NEOKECH|TABLEAU D&#039;EXPOSITION||PS09|VT Basé sur Demande d&#039;achat 24000159.|1.00|200000.00|0.00|200000.00|200000.00|24000154|1.00|
-RMM_BUILDING|24000144|NS Signature|Chocolats||PS09|Basé sur Demande d&#039;achat 24000161.|1.00|4000.00|0.00|4000.00|4000.00|24000155|1.00|
-YASMINE_FONCIERE|23001099|LYDEC|Electricite||PS10|DA COMPLEMENTAIRE POUR Contrat n°: M217204ELECTRICITE MNO ASC 1 IMM N Basé sur Demande d&#039;achat 23001067.|5.00|1000.00|0.00|5000.00|5000.00|23001603|1.00|
-YASMINE_FONCIERE|23001099|LYDEC|Electricite||PS10|DA COMPLEMENTAIRE POUR Contrat n°: M217204ELECTRICITE MNO ASC 1 IMM N Basé sur Demande d&#039;achat 23001067.|5.00|1000.00|0.00|5000.00|5000.00|23001603|1.00|
-YASMINE_FONCIERE|23001099|LYDEC|Electricite||PS10|DA COMPLEMENTAIRE POUR Contrat n°: M217204ELECTRICITE MNO ASC 1 IMM N Basé sur Demande d&#039;achat 23001067.|5.00|1000.00|0.00|5000.00|5000.00|23001603|1.00|
-YASMINE_FONCIERE|24000001|LYDEC|Electricite||PS10|DA COMPLEMENTAIRE POUR Contrat n°: M217202ELECTRICITE MNO ASC 2 IMM M2 Basé sur Demande d&#039;achat 23001069.|5.00|1000.00|0.00|5000.00|5000.00|23001615|1.00|
-YASMINE_FONCIERE|24000001|LYDEC|Electricite||PS10|DA COMPLEMENTAIRE POUR Contrat n°: M217202ELECTRICITE MNO ASC 2 IMM M2 Basé sur Demande d&#039;achat 23001069.|5.00|1000.00|0.00|5000.00|5000.00|23001615|1.00|
-YASMINE_FONCIERE|24000001|LYDEC|Electricite||PS10|DA COMPLEMENTAIRE POUR Contrat n°: M217202ELECTRICITE MNO ASC 2 IMM M2 Basé sur Demande d&#039;achat 23001069.|5.00|1000.00|0.00|5000.00|5000.00|23001615|1.00|
-YASMINE_FONCIERE|24000002|OUSSAAD NEGOCE|Ramette Papier|A4 80G Target|PS15|CMD PRECEDENTE LIVREE LE 14/11/2023 Basé sur Demande d&#039;achat 24000003.|70.00|35.00|12.50|2450.00|2143.75|24000012|70.00|
-YASMINE_FONCIERE|24000004|AZUNIX  SARL|Switch : CBS350 Managed 24-port GE,4*10G SFP+|(2)/Point d&#039;access GrandStream GWN7001(1)/GWN7615(4);Firewall : FortiGate-61F+FortiCare Premium and|PS04|Projet mise à niveaux infrastructure réseau SIEGE;MP:-20% avance-60% à la livraison-20% a la reception.Basé sur Demande d&#039;achat 24000001.|1.00|165243.00|0.00|165243.00|165243.00|||
-YASMINE_FONCIERE|24000006|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau sidi ali 33cl|PS15|BDV WE LIVE JANVIER 2024 Basé sur Demande d&#039;achat 24000006.|80.00|22.95|0.00|1836.00|1836.00|24000006|80.00|
-YASMINE_FONCIERE|24000007|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|L:03/01/2024|PS15|FDC WE LIVE JANVIER 2024 Basé sur Demande d&#039;achat 24000007.|1.00|1853.80|0.00|1853.80|1853.80|24000005|1.00|
-YASMINE_FONCIERE|24000008|ASWAK ASSALAM|Repas|Couscous|PS17|VENDREDI 05/01/2024 Basé sur Demande d&#039;achat 24000008.|1.00|3982.05|0.00|3982.05|3982.05|24000008|1.00|
-YASMINE_FONCIERE|24000009|HATIM BOUKHRIS|Honoraire Avocat|:Abonnement du mois d&#039;OCTOBRE,NOVEMBRE et DECEMBRE 2023|PS18|4 TRIMESTRE DU 2023 Basé sur Demande d&#039;achat 24000009.|3.00|12000.00|0.00|36000.00|36000.00|24000010|3.00|
-YASMINE_FONCIERE|24000010|NOVOTEL MOHAMMEDIA|Séjour|CHOFA Driss;du23 au 26/12/2023|PS17|PO Mr imad Basé sur Demande d&#039;achat 24000010.|1.00|2968.80|0.00|2968.80|2968.80|23001653|1.00|
-YASMINE_FONCIERE|24000011|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:08/01/2024|PS15|Complement BDV KPC Basé sur Demande d&#039;achat 24000011.|1.00|119.40|0.00|119.40|119.40|24000009|1.00|
-YASMINE_FONCIERE|24000012|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau ain saiss 33cl|PS15|Eau Siege janvier 2024. Basé sur Demande d&#039;achat 24000012.|72.00|1.89|0.00|136.79|136.79|24000007|72.00|
-YASMINE_FONCIERE|24000012|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau sidi ali 33cl|PS15|Eau Siege janvier 2024. Basé sur Demande d&#039;achat 24000012.|360.00|2.00|0.00|720.00|720.00|24000007|360.00|
-YASMINE_FONCIERE|24000013|INFO COPIE|Cachet|&#039;&#039;NAVIS PROPERTY SA&#039;&#039; pour les courssiers|PS15|Basé sur Demande d&#039;achat 24000013.|3.00|83.33|0.00|250.00|250.00|23001625|3.00|
-YASMINE_FONCIERE|24000013|INFO COPIE|Caoutchouc Pour Cachet|&#039;&#039;NAVIS PROPERTY SA&#039;&#039; pour chargée d&#039;acceuil|PS15|Basé sur Demande d&#039;achat 24000013.|1.00|41.66|0.00|41.67|41.67|23001625|1.00|
-YASMINE_FONCIERE|24000013|INFO COPIE|Tableau Blanc|90*60 CRC|PS15|Basé sur Demande d&#039;achat 24000013.|1.00|250.00|0.00|250.00|250.00|23001625|1.00|
-YASMINE_FONCIERE|24000013|INFO COPIE|Scan plan CL||PS15|Basé sur Demande d&#039;achat 24000013.|2.00|55.83|0.00|111.66|111.66|23001626|2.00|
-YASMINE_FONCIERE|24000013|INFO COPIE|Impression|plans/CL|PS15|Basé sur Demande d&#039;achat 24000013.|4.00|55.83|0.00|223.32|223.32|23001626|4.00|
-YASMINE_FONCIERE|24000015|FIRST INFORMATIQUE|PC DELL LATTITUDE 5440 I7-1365U 14 FHD 16 GO 512 GO SSD WIN11 PRO 36M||PS04|Bénéficiaires : Yassir BoutarfHanane Soussy Basé sur Demande d&#039;achat 24000005.|2.00|13350.00|0.00|26700.00|26700.00|24000029|2.00|
-YASMINE_FONCIERE|24000016|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|03/01/2024|PS15|FDC SIEGE JANVIER 2024 Basé sur Demande d&#039;achat 24000017.|1.00|2278.60|0.00|2278.60|2278.60|24000004|1.00|
-YASMINE_FONCIERE|24000017|HATIM BOUKHRIS|Honoraire Avocat|Accompagnement juridique projet immobilierbresidentiel dakar|PS18|Basé sur Demande d&#039;achat 24000018.|1.00|13500.00|0.00|13500.00|13500.00|23001627|1.00|
-YASMINE_FONCIERE|24000018|EAGLE ENGINEERING|Honoraires de service|1ère tranche d&#039;accompagnement a la maintenance du systeme d management qualité(2023-2024)|PS18|Basé sur Demande d&#039;achat 24000021.|1.00|79800.00|0.00|79800.00|79800.00|23001628|1.00|
-YASMINE_FONCIERE|24000019|LYDEC|Eau||PS10|DA COMPLEMNATIRE POUR Contrat n°: M166145EAU MNO ESC IMM M 1 Basé sur Demande d&#039;achat 23001075.|5.00|10000.00|0.00|50000.00|50000.00|23001663|1.00|
-YASMINE_FONCIERE|24000021|YEALEAD|Licence 3CX Pro Annuelle|logiciel + license|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|1.00|2887.00|0.00|2887.00|2887.00|||
-YASMINE_FONCIERE|24000021|YEALEAD|Presatation de service Informatique|Mise en place de la solution VICIDIAL|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|4.00|3000.00|0.00|12000.00|12000.00|||
-YASMINE_FONCIERE|24000021|YEALEAD|Passerelle Openvox SWG-3008G  8 ports GSM|pour VICIDIAL|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|1.00|8535.03|3.00|8535.03|8278.97|||
-YASMINE_FONCIERE|24000021|YEALEAD|Passerelle DINSTAR MTG200  VoIP Accès primaire|pour 3CX|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|1.00|7789.05|5.00|7789.05|7399.59|||
-YASMINE_FONCIERE|24000021|YEALEAD|Abonnement|VPS Hosting Serveur privé dedié pour 3CX|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|1.00|3325.00|5.00|3325.00|3158.75|||
-YASMINE_FONCIERE|24000021|YEALEAD|Abonnement|VPS Hosting Serveur privé dedié pour VICIDIAL|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|1.00|2799.00|0.00|2799.00|2799.00|||
-YASMINE_FONCIERE|24000021|YEALEAD|Presatation de service Informatique|Installation et configuration du matériel + Paramétrage de la solution 3CX+Formation des agents|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|4.00|3000.00|0.00|12000.00|12000.00|||
-YASMINE_FONCIERE|24000021|YEALEAD|Maintenance|Maintenance curative et préventive en matériels et logiciels informatiques|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|1.00|6000.00|0.00|6000.00|6000.00|||
-YASMINE_FONCIERE|24000021|YEALEAD|Casque|Fanvil HT302-U Casque USB Duo|PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTIONDA 24000022.|5.00|521.55|5.00|2607.75|2477.36|||
-YASMINE_FONCIERE|24000022|2APM Distribution|Reparation|plaquette|PS15|Gananache youssef 32891-B-72 Basé sur Demande d&#039;achat 24000023.|1.00|408.00|0.00|408.00|408.00|24000028|1.00|
-YASMINE_FONCIERE|24000023|2APM Distribution|Vidange|+MO|PS15|Daouichy Abdelhak;32888B72 Basé sur Demande d&#039;achat 24000019.|1.00|1176.00|0.00|1176.00|1176.00|24000027|1.00|
-YASMINE_FONCIERE|24000023|2APM Distribution|Reparation|Batterie force|PS15|Daouichy Abdelhak;32888B72 Basé sur Demande d&#039;achat 24000019.|1.00|900.00|0.00|900.00|900.00|24000027|1.00|
-YASMINE_FONCIERE|24000024|RAOUIA INFO|Prestation de service|CR004/PL/CALCULE/RC|PS18|Basé sur Demande d&#039;achat 24000024.|1.00|389.50|0.00|389.50|389.50|23001643|1.00|
-YASMINE_FONCIERE|24000025|Best Info Tech|Cable|HDMI|PS15|Basé sur Demande d&#039;achat 24000025.|3.00|18.00|0.00|54.00|54.00|24000031|3.00|
-YASMINE_FONCIERE|24000025|Best Info Tech|Adaptateur|VGA/HDMI|PS15|Basé sur Demande d&#039;achat 24000025.|3.00|65.00|0.00|195.00|195.00|24000031|3.00|
-YASMINE_FONCIERE|24000025|Best Info Tech|Adaptateur|C/HDMI|PS15|Basé sur Demande d&#039;achat 24000025.|3.00|90.00|0.00|270.00|270.00|24000031|3.00|
-YASMINE_FONCIERE|24000026|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 12/01/2024 avec MT Basé sur Demande d&#039;achat 24000026.|1.00|3970.23|0.00|3970.23|3970.23|24000017|1.00|
-YASMINE_FONCIERE|24000027|SECTION I SECURITE|Securite|Agent de sécutité nuit|PS18|VILLA PDG(BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000027.|12.00|4140.00|0.00|49680.00|49680.00|24000102|1.00|
-YASMINE_FONCIERE|24000027|SECTION I SECURITE|Securite|Agent de sécutité nuit|PS18|VILLA PDG(BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000027.|12.00|4140.00|0.00|49680.00|49680.00|24000065|1.00|
-YASMINE_FONCIERE|24000027|SECTION I SECURITE|Securite|Agent de sécutité nuit|PS18|VILLA PDG(BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000027.|12.00|4140.00|0.00|49680.00|49680.00|24000214|1.00|
-YASMINE_FONCIERE|24000027|SECTION I SECURITE|Securite|Agent de sécutité nuit|PS18|VILLA PDG(BC ANNUELLE 2024) Basé sur Demande d&#039;achat 24000027.|12.00|4140.00|0.00|49680.00|49680.00|24000213|1.00|
-YASMINE_FONCIERE|24000031|NACIRECK PLUS|Femme de menage|decembre 2023|PS15|stock appartement CP/KPC Basé sur Demande d&#039;achat 24000052.|1.00|3000.00|0.00|3000.00|3000.00|23001654|1.00|
-YASMINE_FONCIERE|24000032|ASWAK ASSALAM|Repas|Couscous|PS15|Vendredi 19/01/2024 Basé sur Demande d&#039;achat 24000053.|1.00|3808.40|0.00|3808.40|3808.40|24000025|1.00|
-YASMINE_FONCIERE|24000033|FINASSURE|Assurance mutuelle||PS12|Assurance Mutuelle DIM  4 T du 01/10/2023  au  31/12/2023 Basé sur Demande d&#039;achat 24000049.|1.00|98411.38|0.00|98411.38|98411.38|24000033|1.00|
-YASMINE_FONCIERE|24000034|FINASSURE|Autre Assurances||PS12|ASSURANCE BATEAU DE PLAISANCE DU 01/01/2024   AU  31/12/2024 Basé sur Demande d&#039;achat 24000050.|1.00|15855.00|0.00|15855.00|15855.00|24000034|1.00|
-YASMINE_FONCIERE|24000035|AMA STORE|Store|:Changement tissu fenetre open space N°1+Mecanisme pour cuisine|PS19|Basé sur Demande d&#039;achat 24000054.|1.00|1603.20|0.00|1603.20|1603.20|||
-YASMINE_FONCIERE|24000035|AMA STORE|Store|VerticaL 3.17 BUREAU DAF|PS19|Basé sur Demande d&#039;achat 24000054.|1.00|543.80|0.00|543.80|543.80|||
-YASMINE_FONCIERE|24000036|NACIRECK PLUS|Femme de menage||PS15|Stock appart CP/KPC ANNEE 2024 NACIRECK Basé sur Demande d&#039;achat 24000055.|12.00|3000.00|0.00|36000.00|36000.00|24000077|1.00|
-YASMINE_FONCIERE|24000037|2APM Distribution|Reparation|Balais essuie glace|PS15|HALIMA LAMKINSSI;37413-b-72 Basé sur Demande d&#039;achat 24000056.|1.00|216.00|0.00|216.00|216.00|24000026|1.00|
-YASMINE_FONCIERE|24000038|AMTEL|Télephone Portable|Samsung Galaxy S24 8/256 Go ONYX BLACK+ CHARGEUR GRATUIT|PS15|Bénificiare:Nadia EL houdaigui Basé sur Demande d&#039;achat 24000057.|1.00|10989.99|8.34|10990.00|10073.40|24000041|1.00|
-YASMINE_FONCIERE|24000039|Best Info Tech|Barrette memoire||PS15|Mme ALLALI Basé sur Demande d&#039;achat 24000051.|1.00|260.00|0.00|260.00|260.00|24000050|1.00|
-YASMINE_FONCIERE|24000039|Best Info Tech|Disque Dur||PS15|Mme ALLALI Basé sur Demande d&#039;achat 24000051.|1.00|470.00|0.00|470.00|470.00|24000050|1.00|
-YASMINE_FONCIERE|24000040|INTERFACE RESSOURCES HUMAINES ET COACHING|Prestation de service|:Recrutement Technicien IT Hamza Bouhlal|PS18|Basé sur Demande d&#039;achat 24000060.|1.00|9369.60|0.00|9369.60|9369.60|24000021|1.00|
-YASMINE_FONCIERE|24000040|INTERFACE RESSOURCES HUMAINES ET COACHING|Prestation de service|:Recrutement RESPONSABLE IT Oussama Aboujaafar|PS18|Basé sur Demande d&#039;achat 24000060.|1.00|21953.88|0.00|21953.88|21953.88|24000022|1.00|
-YASMINE_FONCIERE|24000040|INTERFACE RESSOURCES HUMAINES ET COACHING|Prestation de service|:Recrutement Responsable Marketing Sara Elghalimi|PS18|Basé sur Demande d&#039;achat 24000060.|1.00|39935.62|0.00|39935.62|39935.62|24000023|1.00|
-YASMINE_FONCIERE|24000041|S.C.A.E|Assurance auto||PS12|ASSURANCE MFADEL ABDELLAH YASSINE  MERCEDES 34825-E-01  DU 01.01.2024  AU 31.12.2024 Basé sur Demande d&#039;achat 24000058.|1.00|27686.44|0.00|27686.44|27686.44|24000040|1.00|
-YASMINE_FONCIERE|24000042|S.C.A.E|Assurance auto||PS12|ASSURANCE MFADEL ABDELLAH YASSINE  CARTE  VERTE MERCEDES 34825-E-01  du 01.01.2024  au 31.12.2024 Basé sur Demande d&#039;achat 24000059.|1.00|500.00|0.00|500.00|500.00|24000039|1.00|
-YASMINE_FONCIERE|24000050|ASWAK ASSALAM|Repas|Couscous|PS15|Vendredi 26/01/2024 Basé sur Demande d&#039;achat 24000067.|1.00|3946.20|0.00|3946.20|3946.20|24000044|1.00|
-YASMINE_FONCIERE|24000053|Nestle Maroc|Capsules|VOLLUTO|PS15|Complement du stock Basé sur Demande d&#039;achat 24000070.|120.00|51.96|0.00|6235.20|6235.20|24000058|120.00|
-YASMINE_FONCIERE|24000054|FINASSURE|Assurance AT||PS12|ASSURANCE ACCIDENTS DE TRAVAIL DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000073.|1.00|45764.89|0.00|45764.89|45764.89|24000063|1.00|
-YASMINE_FONCIERE|24000055|FINASSURE|Assurances multirisque||PS12|ASSURANCE MULTIRISQUES  INDUSTRIELLE DU 01/01/2024  AU 31/12/2024 Basé sur Demande d&#039;achat 24000072.|1.00|20635.91|0.00|20635.91|20635.91|24000062|1.00|
-YASMINE_FONCIERE|24000056|FINASSURE|Assurances multirisque||PS12|ASSURANCE MULTIRISQUES INDUSTRIELLE DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000071.|1.00|23897.46|0.00|23897.46|23897.46|24000061|1.00|
-YASMINE_FONCIERE|24000057|FINASSURE|Assurances multirisque||PS12|ASSURANCE MULTIRISQUES INDUSTRIELLE DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000069.|1.00|14015.27|0.00|14015.27|14015.27|24000060|1.00|
-YASMINE_FONCIERE|24000059|ASWAK ASSALAM|Repas|Couscous|PS15|Vendredi 02/02/2024 Basé sur Demande d&#039;achat 24000077.|1.00|3958.74|0.00|3958.74|3958.74|24000042|1.00|
-YASMINE_FONCIERE|24000060|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau ain saiss 33cl|PS15|Eau Siege FEVRIER 2024. Basé sur Demande d&#039;achat 24000078.|72.00|1.90|0.00|136.80|136.80|24000043|72.00|
-YASMINE_FONCIERE|24000060|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau sidi ali 33cl|PS15|Eau Siege FEVRIER 2024. Basé sur Demande d&#039;achat 24000078.|360.00|2.00|0.00|720.00|720.00|24000043|360.00|
-YASMINE_FONCIERE|24000061|ACCORD SYSTEMS|5 Pointeuses HIK VISION+Logiciel de gestion de pointage+Formation+ pose et fixation||PS04|Projet Pointage siege + bureau de vente -MP:20% Avance/60% A la livraison/20% A la réception.Basé sur Demande d&#039;achat 24000076.|1.00|17500.00|0.00|17500.00|17500.00|24000232|1.00|
-YASMINE_FONCIERE|24000062|POL IT|IMPRIMANTE HP LASER M283 FDW COULEUR 4EN1|4 en 1|PS04|Bénéficiaires:AFAF CHABINI/NADIA EL HOUDAIGUI.1operation avec fournisseur Basé sur Demande d&#039;achat 24000074.|2.00|4399.99|6.38|8800.00|8238.29|24000049|2.00|
-YASMINE_FONCIERE|24000063|Best Info Tech|Switch|TPLINK 8 ports 1 Gigabit|PS04|Rallonge et cables réseaux pour projet mise à niveau infrastructure,Switch pour bureau Oussama et Hamza Basé sur Demande d&#039;achat 24000075.|1.00|220.00|7.94|220.00|202.51|24000051|1.00|
-YASMINE_FONCIERE|24000063|Best Info Tech|Rallonge|Rallonge rackable pour rack local informatique|PS04|Rallonge et cables réseaux pour projet mise à niveau infrastructure,Switch pour bureau Oussama et Hamza Basé sur Demande d&#039;achat 24000075.|1.00|220.00|12.00|220.00|193.60|24000051|1.00|
-YASMINE_FONCIERE|24000063|Best Info Tech|Cable|Cable réseau rouge|PS04|Rallonge et cables réseaux pour projet mise à niveau infrastructure,Switch pour bureau Oussama et Hamza Basé sur Demande d&#039;achat 24000075.|10.00|17.00|10.52|170.00|152.10|24000051|10.00|
-YASMINE_FONCIERE|24000063|Best Info Tech|Cable|Cable réseau vert|PS04|Rallonge et cables réseaux pour projet mise à niveau infrastructure,Switch pour bureau Oussama et Hamza Basé sur Demande d&#039;achat 24000075.|10.00|17.00|10.52|170.00|152.10|24000051|10.00|
-YASMINE_FONCIERE|24000063|Best Info Tech|Cable|Cable réseau bleu|PS04|Rallonge et cables réseaux pour projet mise à niveau infrastructure,Switch pour bureau Oussama et Hamza Basé sur Demande d&#039;achat 24000075.|10.00|17.00|10.52|170.00|152.10|24000051|10.00|
-YASMINE_FONCIERE|24000064|AMTEL|Télephone Portable|Samsung Galaxy A54 8/256 Go BLACK+ CHARGEUR GRATUIT|PS15|Camelia sherry Senhaji;MP a la livraison Basé sur Demande d&#039;achat 24000080.|1.00|4749.00|0.00|4749.00|4749.00|24000078|1.00|
-YASMINE_FONCIERE|24000069|RAOUIA INFO|Prestation de service|CR004/RC|PS18|Basé sur Demande d&#039;achat 24000085.|1.00|8920.50|0.00|8920.50|8920.50|24000048|1.00|
-YASMINE_FONCIERE|24000070|EXPO ENERGY|Store|Changement tissu fenetre open space/nouveau store pour cuisine/Reparation lame|PS19|BUREAU DAF/OPEN SPACE N°1/CUISINE. Basé sur Demande d&#039;achat 24000079.|1.00|2000.00|28.57|2000.00|1428.57|24000247|1.00|
-YASMINE_FONCIERE|24000071|FINASSURE|Assurance AT||PS12|AVENANT DE REGULARISATION ACCIDENTS DE TRVAIL DU 01/01/2023  AU  31/12/2023 Basé sur Demande d&#039;achat 24000084.|1.00|24442.29|0.00|24442.29|24442.29|24000064|1.00|
-YASMINE_FONCIERE|24000075|2APM Distribution|Vidange||PS15|Abdelghani Abodi;Matricule:44554-B-72 Basé sur Demande d&#039;achat 24000089.|1.00|840.00|0.00|840.00|840.00|24000076|1.00|
-YASMINE_FONCIERE|24000076|MAPLE déco|Montage Et Démontage|2 Marguerittes+bureau|PS18|Bénificiares:bureau Camélia sherry senhaji et open space N°1 Basé sur Demande d&#039;achat 24000090.|1.00|1000.00|23.07|1000.00|769.23|24000072|1.00|
-YASMINE_FONCIERE|24000077|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|06/02/2024|PS15|FDC SIEGE FEVRIER 2024 Basé sur Demande d&#039;achat 24000091.|1.00|2556.10|0.00|2556.10|2556.10|24000073|1.00|
-YASMINE_FONCIERE|24000078|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau evian 33cl|PS15|EAU PDG Basé sur Demande d&#039;achat 24000092.|48.00|9.95|0.00|477.60|477.60|24000074|48.00|
-YASMINE_FONCIERE|24000078|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau Perrier 33cl|PS15|EAU PDG Basé sur Demande d&#039;achat 24000092.|36.00|15.95|0.00|574.20|574.20|24000074|36.00|
-YASMINE_FONCIERE|24000079|OUSSAAD NEGOCE|ARMOIRE METALLIQUE 120*100 RIDEAUX EN PVC||PS04|Benificiares:-Armoire 120*200 Stock IT/ADV-Armoire 120*100 bureau camélia/open space N°1 Basé sur Demande d&#039;achat 24000093.|3.00|4050.00|10.00|12150.00|10935.00|24000108|3.00|
-YASMINE_FONCIERE|24000079|OUSSAAD NEGOCE|Armoire métallique 120*200 à rideau en pvc gris||PS04|Benificiares:-Armoire 120*200 Stock IT/ADV-Armoire 120*100 bureau camélia/open space N°1 Basé sur Demande d&#039;achat 24000093.|2.00|2799.99|3.44|5600.00|5406.89|24000108|2.00|
-YASMINE_FONCIERE|24000080|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 09/02/2024 Basé sur Demande d&#039;achat 24000095.|1.00|4118.45|0.00|4118.45|4118.45|24000075|1.00|
-YASMINE_FONCIERE|24000081|OUSSAAD NEGOCE|Souris Sans Fil||PS04|Bénéficaire : Souris DOSI, Basé sur Demande d&#039;achat 24000094.|10.00|110.00|0.00|1100.00|1100.00|24000168|10.00|
-YASMINE_FONCIERE|24000082|POL IT|Chargeur|Chargeur PC|PS04|Bénéficaire :Chargeur PC , Moustafa Hachach Basé sur Demande d&#039;achat 24000094.|1.00|750.00|0.00|750.00|750.00|24000096|1.00|
-YASMINE_FONCIERE|24000084|STE ZAGOGECT|Travaux de climatisation|:F/P de porte visite y compris toutes sujetion de fourniture et pose+Nettoyage des unités interieur|PS18|Les bureaux DG/SALLE DE CONSEIL ET APPART Basé sur Demande d&#039;achat 24000097.|1.00|3610.00|5.00|3610.00|3429.50|24000098|1.00|
-YASMINE_FONCIERE|24000085|STE ZAGOGECT|Travaux de plomberie|F&amp;P de chauffe eau elec TEKA,75cm de cuivre y compris raccordement,robinet douchette,robinet arco|PS18|wc homme Basé sur Demande d&#039;achat 24000098.|1.00|1720.00|0.00|1720.00|1720.00|24000153|1.00|
-YASMINE_FONCIERE|24000086|VISION VOYAGES|Voyage affaire|:Mr YASSINE MFADEL/MR MEHDI RIDA|PS17|Basé sur Demande d&#039;achat 24000103.|1.00|26382.00|0.00|26382.00|26382.00|24000059|1.00|
-YASMINE_FONCIERE|24000087|IKAY OFFICES|Serviette|ZIG ZAG(PAQUET DE 20U)|PS15|Cmd precedente livrée le 31/10/2023 Basé sur Demande d&#039;achat 24000104.|4.00|340.00|0.00|1360.00|1360.00|24000084|4.00|
-YASMINE_FONCIERE|24000092|STE ZAGOGECT|Travaux de climatisation|:F&amp;Mise en oeuvre de gaz pour groupe centrale au terrasse+Nettoyage|PS18|groupe centrale au terrasse Basé sur Demande d&#039;achat 24000105.|1.00|8550.00|5.00|8550.00|8122.50|24000097|1.00|
-YASMINE_FONCIERE|24000093|INFO COPIE|Etiquettes||PS15|Basé sur Demande d&#039;achat 24000108.|1.00|116.66|0.00|116.67|116.67|24000090|1.00|
-YASMINE_FONCIERE|24000093|INFO COPIE|Photocopie||PS15|Basé sur Demande d&#039;achat 24000108.|117.00|0.83|0.00|97.52|97.52|24000090|117.00|
-YASMINE_FONCIERE|24000093|INFO COPIE|Cachet||PS15|Basé sur Demande d&#039;achat 24000108.|1.00|83.33|0.00|83.33|83.33|24000090|1.00|
-YASMINE_FONCIERE|24000093|INFO COPIE|Caoutchouc Pour Cachet|+Recharge cachet 4913|PS15|Basé sur Demande d&#039;achat 24000108.|1.00|62.50|0.00|62.50|62.50|24000090|1.00|
-YASMINE_FONCIERE|24000094|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 16/02/2024 Basé sur Demande d&#039;achat 24000109.|1.00|3952.58|0.00|3952.58|3952.58|24000087|1.00|
-YASMINE_FONCIERE|24000095|FINASSURE|Assurance auto||PS12|ASSURANCE AUTO  FLOTTE DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000111.|1.00|32268.31|0.00|32268.31|32268.31|24000085|1.00|
-YASMINE_FONCIERE|24000097|FINASSURE|Assurances risque d&#039;exploitation||PS12|ASSURANCE RC EXPLOITATION DU 01/01/2024 AU 31/12/2024 Basé sur Demande d&#039;achat 24000110.|1.00|2962.96|0.00|2962.96|2962.96|24000086|1.00|
-YASMINE_FONCIERE|24000098|EPICURIA|Fontaine d&#039;eau||PS15|Open space N°1 Basé sur Demande d&#039;achat 24000112.|1.00|3900.00|0.00|3900.00|3900.00|24000133|1.00|
-YASMINE_FONCIERE|24000100|GOPPION TEC|Cafe||PS15|Distributeur du siège:Consomation du 29/11/2023 au 30/01/2024 Basé sur Demande d&#039;achat 24000120.|2248.00|1.20|0.00|2697.60|2697.60|24000091|2248.00|
-YASMINE_FONCIERE|24000101|AKUMENIA|Prestation de service|Accompagnement a l&#039;indentification|PS18|Basé sur Demande d&#039;achat 24000114.|1.00|280000.00|0.00|280000.00|280000.00|24000154|0.30|
-YASMINE_FONCIERE|24000101|AKUMENIA|Prestation de service|Accompagnement a l&#039;indentification|PS18|Basé sur Demande d&#039;achat 24000114.|1.00|280000.00|0.00|280000.00|280000.00|24000092|0.20|
-YASMINE_FONCIERE|24000102|MICROSHOP|2*Micro LOGITECH AF pour la rally+1*Barco clickShare CX-20 + 1*BARCO One ClickShare USB-C Button||PS04|Pour Salle de Conseil Basé sur Demande d&#039;achat 24000124.|1.00|25040.00|0.00|25040.00|25040.00|24000164|1.00|
-YASMINE_FONCIERE|24000103|STE ZAGOGECT|Travaux de climatisation|:open space N°1|PS18|OPEN SPACE N°1/2 Basé sur Demande d&#039;achat 24000106.|1.00|12198.00|5.14|12198.00|11570.08|24000151|1.00|
-YASMINE_FONCIERE|24000103|STE ZAGOGECT|Travaux de climatisation|:open space N°2|PS18|OPEN SPACE N°1/2 Basé sur Demande d&#039;achat 24000106.|1.00|11647.00|5.00|11647.00|11064.65|24000150|1.00|
-YASMINE_FONCIERE|24000104|MULTI - TECH EXPERT|Habillage en aluminium|:Ajustement enseigne en ALUCOBAND|PS18|Basé sur Demande d&#039;achat 24000127.|5.00|1200.00|0.00|6000.00|6000.00|||
-YASMINE_FONCIERE|24000111|BERMUDES FOURNITURE|Pack clavier + souris sans fil|Logitech|PS04|Bénéficiaire : Clavier + souris salle de conseilBobine DOSIBasé sur Demande d&#039;achat 24000126.|1.00|210.00|0.00|210.00|210.00|24000101|1.00|
-YASMINE_FONCIERE|24000111|BERMUDES FOURNITURE|Bobine de cable Rj45|Categorie 6 305 metres|PS04|Bénéficiaire : Clavier + souris salle de conseilBobine DOSIBasé sur Demande d&#039;achat 24000126.|1.00|650.00|0.00|650.00|650.00|24000101|1.00|
-YASMINE_FONCIERE|24000112|MICROSHOP|Imprimante HP Office Jet Pro 7740 WF||PS04|Bénéficiaire :-Camélia Sherry Senhaji -Halima Lamkinsi.Basé sur Demande d&#039;achat 24000126.|1.00|2430.00|0.00|2430.00|2430.00|24000107|1.00|
-YASMINE_FONCIERE|24000114|POL IT|Destructeur|Followes powershred 79 CI|PS15|Remplacement dechecteuse open space N°1 date d&#039;acqusition2009,Basé sur Demande d&#039;achat 24000131.|1.00|2649.99|3.63|2650.00|2553.63|24000099|1.00|
-YASMINE_FONCIERE|24000115|STE FAIS ELEC|Travaux d&#039;électricité|interrupteur differentiel 30 ma|PS18|Séparation groupe d&#039;electricité open space N°2.-Absence tableau comparatif:pour s&#039;assurer qu&#039;il n&#039;y a pas de dysfonctionnement provenant d&#039;une autre entreprise.Basé sur Demande d&#039;achat 24000132.|1.00|570.00|0.00|570.00|570.00|||
-YASMINE_FONCIERE|24000115|STE FAIS ELEC|Travaux d&#039;électricité|Tube iso gris diametre 16|PS18|Séparation groupe d&#039;electricité open space N°2.-Absence tableau comparatif:pour s&#039;assurer qu&#039;il n&#039;y a pas de dysfonctionnement provenant d&#039;une autre entreprise.Basé sur Demande d&#039;achat 24000132.|35.00|3.50|0.00|122.50|122.50|||
-YASMINE_FONCIERE|24000115|STE FAIS ELEC|Travaux d&#039;électricité|câble r2v 3*1.5 nexans|PS18|Séparation groupe d&#039;electricité open space N°2.-Absence tableau comparatif:pour s&#039;assurer qu&#039;il n&#039;y a pas de dysfonctionnement provenant d&#039;une autre entreprise.Basé sur Demande d&#039;achat 24000132.|35.00|18.50|0.00|647.50|647.50|||
-YASMINE_FONCIERE|24000115|STE FAIS ELEC|Main d&#039;oeuvre||PS18|Séparation groupe d&#039;electricité open space N°2.-Absence tableau comparatif:pour s&#039;assurer qu&#039;il n&#039;y a pas de dysfonctionnement provenant d&#039;une autre entreprise.Basé sur Demande d&#039;achat 24000132.|1.00|800.00|0.00|800.00|800.00|||
-YASMINE_FONCIERE|24000116|STE ZAGOGECT|Travaux de plomberie|F/P Douchette hygienique,porte papier hygiénique/pose distributeur à papier|PS18|wc plateau direction generale Basé sur Demande d&#039;achat 24000133.|1.00|1000.00|0.00|1000.00|1000.00|24000152|1.00|
-YASMINE_FONCIERE|24000117|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau sidi ali 33cl|PS15|EAU SIEGE MARS 2024 Basé sur Demande d&#039;achat 24000134.|360.00|2.00|0.00|720.00|720.00|24000088|360.00|
-YASMINE_FONCIERE|24000117|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau ain saiss 33cl|PS15|EAU SIEGE MARS 2024 Basé sur Demande d&#039;achat 24000134.|36.00|1.89|0.00|68.40|68.40|24000088|36.00|
-YASMINE_FONCIERE|24000118|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi le 23/02/2024 Basé sur Demande d&#039;achat 24000135.|1.00|4138.97|0.00|4138.97|4138.97|24000089|1.00|
-YASMINE_FONCIERE|24000119|GAL SOCRATE|Main d&#039;oeuvre|et deplacement|PS15|Maintenace robinet cuisine siege Basé sur Demande d&#039;achat 24000137.|1.00|50.00|0.00|50.00|50.00|24000155|1.00|
-YASMINE_FONCIERE|24000119|GAL SOCRATE|Maintenance|periodique|PS15|Maintenace robinet cuisine siege Basé sur Demande d&#039;achat 24000137.|1.00|85.00|0.00|85.00|85.00|24000155|1.00|
-YASMINE_FONCIERE|24000119|GAL SOCRATE|Filtre|T33 finisseur de chlore/gout|PS15|Maintenace robinet cuisine siege Basé sur Demande d&#039;achat 24000137.|1.00|100.00|0.00|100.00|100.00|24000155|1.00|
-YASMINE_FONCIERE|24000119|GAL SOCRATE|Changement sedimentaire|Bloc|PS15|Maintenace robinet cuisine siege Basé sur Demande d&#039;achat 24000137.|1.00|260.00|0.00|260.00|260.00|24000155|1.00|
-YASMINE_FONCIERE|24000121|POL IT|IMPRIMANTE HP LASER M283 FDW COULEUR 4EN1||PS04|-Bénéficiare :JERAOUI Aicha.-Remplacement:Cassée au niveau du roulette et la casquette.-Date d&#039;acquisition:2017.Basé sur Demande d&#039;achat 24000136.|1.00|4400.00|2.22|4400.00|4302.22|24000100|1.00|
-YASMINE_FONCIERE|24000122|KITEA|Ameublement||PS02|KPC L29 Basé sur Demande d&#039;achat 24000138.|1.00|21292.50|0.00|21292.50|21292.50|||
-YASMINE_FONCIERE|24000123|RM WASSITE|Honoraires de service|pour APP L29|PS02|KPC L29 Basé sur Demande d&#039;achat 24000140.|1.00|10000.00|0.00|10000.00|10000.00|24000106|1.00|
-YASMINE_FONCIERE|24000125|SOMASOFT|Prestation de service||PS18|ASSISTANCE-TELEDECLARATION BILAN 2023 Basé sur Demande d&#039;achat 24000141.|1.00|8000.00|0.00|8000.00|8000.00|24000104|1.00|
-YASMINE_FONCIERE|24000126|SYH MOROCCO|Ameublement||PS02|KPC L29 Basé sur Demande d&#039;achat 24000142.|1.00|31906.66|0.00|31906.67|31906.67|||
-YASMINE_FONCIERE|24000127|ASWAK ASSALAM|Repas|Couscous|PS17|vendredi 01/02/2024 Basé sur Demande d&#039;achat 24000143.|1.00|3668.74|0.00|3668.74|3668.74|24000105|1.00|
-YASMINE_FONCIERE|24000128|FINASSURE|Assurance AT||PS12|ASSURANCE AVENANT DE REGULARISATION  ACCIDENTS DE TRAVAIL DU 01/01/2023 AU 31/12/2023 DE 24442,29 Basé sur Demande d&#039;achat 24000147.|1.00|24442.29|0.00|24442.29|24442.29|24000125|1.00|
-YASMINE_FONCIERE|24000129|FINASSURE|Autre Assurances||PS12|ASSURANCE  CARTE  VERTE, MARQUE  BMW 30182-B-72  DU  01/01/2024  AU  31/12/2024 Basé sur Demande d&#039;achat 24000145.|1.00|500.00|0.00|500.00|500.00|24000124|1.00|
-YASMINE_FONCIERE|24000132|NACIRECK PLUS|Travaux de nettoyage||PS18|Nettoyage Villa MONICA suite à la sortie du locataire Basé sur Demande d&#039;achat 24000121.|1.00|650.00|0.00|650.00|650.00|24000149|1.00|
-YASMINE_FONCIERE|24000135|SOLDAT S.A.R.L.|100*Symantec Endpoint Security Enterprise+ 6*License Windows Server 2022 Standard + 2* Prestation|Symantec license 3ans, windows server downgradable , prestation de service 2*jours à 5000 Dhs/j|PS04|Projet mise à niveaux infrastructure réseau SIEGE Basé sur Demande d&#039;achat 24000146.|1.00|120400.00|0.00|120400.00|120400.00|24000103|1.00|
-YASMINE_FONCIERE|24000136|PROMASEC|Installation et mise en service|:Contrôle d&#039;acces/installations electrique des lecteurs existants|PS18|Réparation porte communicante -Absence tableau comparatif:pour s&#039;assurer qu&#039;il n&#039;y a pas de dysfonctionnement provenant d&#039;une autre entreprise Basé sur Demande d&#039;achat 24000150.BC Modifier avec tva|2.00|532.00|0.00|1064.00|1064.00|24000180|2.00|
-YASMINE_FONCIERE|24000140|INFO COPIE|Impression|A4 AVEC RELIURE LOI 2024|PS15|Basé sur Demande d&#039;achat 24000151.|1.00|646.66|0.00|646.66|646.66|24000136|1.00|
-YASMINE_FONCIERE|24000140|INFO COPIE|Impression plans||PS15|Basé sur Demande d&#039;achat 24000151.|2.00|58.33|0.00|116.67|116.67|24000136|2.00|
-YASMINE_FONCIERE|24000140|INFO COPIE|Impression plans|CL|PS15|Basé sur Demande d&#039;achat 24000151.|3.00|62.50|0.00|187.50|187.50|24000136|3.00|
-YASMINE_FONCIERE|24000141|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|06/03/2023|PS15|FDC MARS 2024 Basé sur Demande d&#039;achat 24000152.|1.00|2420.20|0.00|2420.20|2420.20|24000137|1.00|
-YASMINE_FONCIERE|24000142|Positive agenda advisory|Honoraires de service|Mission d&#039;accompagnement de la sociéte Groupe MFADEL dans ses projets d&#039;investissements|PS18|T2-2023 Basé sur Demande d&#039;achat 24000154.|1.00|125000.00|0.00|125000.00|125000.00|24000262|1.00|
-YASMINE_FONCIERE|24000142|Positive agenda advisory|Honoraires de service|Mission d&#039;accompagnement de la sociéte Groupe MFADEL dans ses projets d&#039;investissements|PS18|T2-2023 Basé sur Demande d&#039;achat 24000154.|1.00|125000.00|0.00|125000.00|125000.00|24000251|1.00|
-YASMINE_FONCIERE|24000143|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi du 08/03/2024 Basé sur Demande d&#039;achat 24000153.|1.00|4287.66|0.00|4287.66|4287.66|24000138|1.00|
-YASMINE_FONCIERE|24000149|GEEB SERVICES|bon d&#039;achat|+ comission et frais de transport|PS17|Basé sur Demande d&#039;achat 24000156.|100.00|104.20|0.00|10420.00|10420.00|24000135|100.00|
-YASMINE_FONCIERE|24000151|CENTRE TECHNIQUE GHANDI|Visite technique||PS15|MARIA ERRITOUNI;1536-B-72 Basé sur Demande d&#039;achat 24000157.|1.00|351.00|0.00|351.00|351.00|24000156|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Lustre (SODAKRA) salon/couloire|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|2.00|748.33|0.00|1496.67|1496.67|24000185|2.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Lustre (SOLHETTA)|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|6.00|233.00|0.00|1398.00|1398.00|24000185|6.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Lustre(TROLLBO) chambre enfant|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|399.16|0.00|399.17|399.17|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Lustre(VINGMAST) chambre parents|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|582.50|0.00|582.50|582.50|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Lustre(HEMMA) chambre parents|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|54.08|0.00|54.08|54.08|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Lustre(FYRTIOFYRA) CUISINE|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|107.50|0.00|107.50|107.50|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Miroire(Rotsund) entree|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|832.50|0.00|832.50|832.50|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Table de chevet(BRIMNES)|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|2.00|1081.66|0.00|2163.33|2163.33|24000185|2.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Combainison meubmle tv(SKRUVBY)|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|2491.66|0.00|2491.67|2491.67|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Combainison Rangement portes(BESTA)|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|4875.00|0.00|4875.00|4875.00|24000185|1.00|
-YASMINE_FONCIERE|24000152|SYH MOROCCO|Ameublement|Table 2 chaises(TARNO)|PS02|KPC L14 Basé sur Demande d&#039;achat 24000158.|1.00|1194.16|0.00|1194.17|1194.17|24000185|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmobilier.com|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|178.00|0.00|178.00|178.00|24000263|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmobilier.com|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|178.00|0.00|178.00|178.00|24000252|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmobilier.ma|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|178.00|0.00|178.00|178.00|24000263|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmo.com|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|189.00|0.00|189.00|189.00|24000263|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmobilier.ma|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|178.00|0.00|178.00|178.00|24000252|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmo.com|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|189.00|0.00|189.00|189.00|24000252|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmo.ma|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|189.00|0.00|189.00|189.00|24000263|1.00|
-YASMINE_FONCIERE|24000153|ARCANES TECHNOLOGIES|Prestation de service|Nom de domaine : mfadelimmo.ma|PS04|Renouvellement noms de domains sur HeberHajiz Basé sur Demande d&#039;achat 24000155.|1.00|189.00|0.00|189.00|189.00|24000252|1.00|
-YASMINE_FONCIERE|24000154|NEWCOM|Cadeaux client|Apple airpods pro(2eme génération)|PS17|PDG Basé sur Demande d&#039;achat 24000160.|1.00|3890.00|0.00|3890.00|3890.00|24000134|1.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Kit maintenance imprimante|versalink B7030|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|2.00|2536.00|0.00|5072.00|5072.00|24000166|2.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Toner|Versalink B7030|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|2.00|681.99|1.01|1364.00|1350.14|24000166|2.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|045 Canon Cyan|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|1.00|675.00|2.03|675.00|661.28|24000166|1.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|953 Noir|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|4.00|375.00|0.00|1500.00|1500.00|24000166|4.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|953 Yellow|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|3.00|264.00|0.00|792.00|792.00|24000166|3.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|953 Magenta|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|3.00|264.00|0.00|792.00|792.00|24000166|3.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|953 Cyan|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|3.00|264.00|0.00|792.00|792.00|24000166|3.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|652 Couleurs|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|2.00|155.00|0.00|310.00|310.00|24000166|2.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Cartouche|652 Noir|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|2.00|183.00|0.00|366.00|366.00|24000166|2.00|
-YASMINE_FONCIERE|24000156|Best Info Tech|Toner|hp 207A NOIR|PS04|Benificiares: En pj Basé sur Demande d&#039;achat 24000163.|2.00|732.00|0.00|1464.00|1464.00|24000166|2.00|
-YASMINE_FONCIERE|24000157|STE AUDACE AUTO|Vidange||PS15|Gananache youssef 32891-B-72 Basé sur Demande d&#039;achat 24000162.MT RECTIFIER AU NIVEAU D LA RECEPTION|1.00|437.06|0.00|437.06|437.06|24000169|1.00|
-YASMINE_FONCIERE|24000159|CENTRALE AUTOMOBILE CHERIFIENNE|Prestation de service|Frais d&#039;immatriculation|PS11|BC Réservation véhicule NADIA ELHOUDAIGUI Basé sur Demande d&#039;achat 24000164.|1.00|7105.00|0.00|7105.00|7105.00|||
-YASMINE_FONCIERE|24000159|CENTRALE AUTOMOBILE CHERIFIENNE|Prestation de service|Frais de mise en service|PS11|BC Réservation véhicule NADIA ELHOUDAIGUI Basé sur Demande d&#039;achat 24000164.|1.00|300.00|0.00|300.00|300.00|||
-YASMINE_FONCIERE|24000159|CENTRALE AUTOMOBILE CHERIFIENNE|Audi A4 PI 2.0 163 TDI PREMIEUM BA NOIR BRILLANT BRUN OKAPI||PS11|BC Réservation véhicule NADIA ELHOUDAIGUI Basé sur Demande d&#039;achat 24000164.|1.00|346579.17|0.00|346579.17|346579.17|||
-YASMINE_FONCIERE|24000160|CONFEDERATION GENERALE DES ENTREPRISE DU MAROC|Cotisation|2024|PS18|CGEM Basé sur Demande d&#039;achat 24000165.|1.00|15000.00|0.00|15000.00|15000.00|24000139|1.00|
-YASMINE_FONCIERE|24000161|GOPPION TEC|Cafe||PS15|Distributeur a café;Consomation du 30/01/2024 au 01/03/2024. Basé sur Demande d&#039;achat 24000166.|1213.20|1.00|0.00|1213.20|1213.20|24000160|1011.00|
-YASMINE_FONCIERE|24000161|GOPPION TEC|Cafe||PS15|Distributeur a café;Consomation du 30/01/2024 au 01/03/2024. Basé sur Demande d&#039;achat 24000166.|1213.20|1.00|0.00|1213.20|1213.20|24000143|1011.00|
-YASMINE_FONCIERE|24000162|RAOUIA INFO|Prestation de service|CR004/PL/CL/LA NOTE/RC|PS18|Mars 2024 Basé sur Demande d&#039;achat 24000167.|1.00|2365.50|0.00|2365.50|2365.50|24000142|1.00|
-YASMINE_FONCIERE|24000163|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|L:15/03/2024|PS15|FDC BDV KPC Basé sur Demande d&#039;achat 24000168.|1.00|226.70|0.00|226.70|226.70|24000141|1.00|
-YASMINE_FONCIERE|24000164|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|L:15/03/2024|PS15|pour APPART CP Basé sur Demande d&#039;achat 24000169.|1.00|157.80|0.00|157.80|157.80|24000140|1.00|
-YASMINE_FONCIERE|24000165|VISION VOYAGES|Voyage affaire|:Mr MR|PS17|Basé sur Demande d&#039;achat 24000171.|1.00|15381.00|0.00|15381.00|15381.00|24000147|1.00|
-YASMINE_FONCIERE|24000166|VISION VOYAGES|Voyage affaire|:MR ABDELLAH YASSINE.|PS17|Basé sur Demande d&#039;achat 24000172.|1.00|22669.00|0.00|22669.00|22669.00|24000148|1.00|
-YASMINE_FONCIERE|24000167|DEVOTEAM|Licences Gsuite Business Starter||PS04|Renouvellement Abonnement GOOGLE SUITE (Messagerie) Période couverte : 10 mars 2024 au 09 mars 2025 Basé sur Demande d&#039;achat 24000173.|90.00|520.00|0.00|46800.00|46800.00|24000187|90.00|
-YASMINE_FONCIERE|24000167|DEVOTEAM|Licences Gsuite Business Starter||PS04|Renouvellement Abonnement GOOGLE SUITE (Messagerie) Période couverte : 10 mars 2024 au 09 mars 2025 Basé sur Demande d&#039;achat 24000173.|90.00|520.00|0.00|46800.00|46800.00|24000269|90.00|
-YASMINE_FONCIERE|24000169|Best Info Tech|Disque Dur|Disque Dur SSD 1TO|PS04|Bénéficiaire : Disque : Disque dur/Barette 32Go:PC Mounir CDG 1TOAdaptateur: Asmae + StockBasé sur Demande d&#039;achat 24000175.|1.00|1120.00|0.00|1120.00|1120.00|24000167|1.00|
-YASMINE_FONCIERE|24000169|Best Info Tech|Barrette memoire|Barette 32 GO DDR4|PS04|Bénéficiaire : Disque : Disque dur/Barette 32Go:PC Mounir CDG 1TOAdaptateur: Asmae + StockBasé sur Demande d&#039;achat 24000175.|1.00|810.00|22.85|810.00|624.85|24000167|1.00|
-YASMINE_FONCIERE|24000169|Best Info Tech|Adaptateur|Adaptateur USB-C réseau|PS04|Bénéficiaire : Disque : Disque dur/Barette 32Go:PC Mounir CDG 1TOAdaptateur: Asmae + StockBasé sur Demande d&#039;achat 24000175.|3.00|130.00|0.00|390.00|390.00|24000167|3.00|
-YASMINE_FONCIERE|24000169|Best Info Tech|Adaptateur|Adaptateur USB réseau|PS04|Bénéficiaire : Disque : Disque dur/Barette 32Go:PC Mounir CDG 1TOAdaptateur: Asmae + StockBasé sur Demande d&#039;achat 24000175.|3.00|130.00|0.00|390.00|390.00|24000167|3.00|
-YASMINE_FONCIERE|24000170|POL IT|Barrette memoire|Barette 8 GO DDR3|PS04|Bénéficiaire : Barette 8 Go Pc en stock(Affectation prévu SAV) Basé sur Demande d&#039;achat 24000175.|1.00|290.00|0.00|290.00|290.00|||
-YASMINE_FONCIERE|24000171|MICROSHOP|Chargeur|HP 65 W|PS04|Bénéficiaire : Chargeur Pc en stock(Affectation prévu SAV) Livraison dans 48H Basé sur Demande d&#039;achat 24000175.|1.00|720.00|0.00|720.00|720.00|24000165|1.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Parapheur|18 Volet|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|10.00|49.00|2.00|490.00|480.20|24000208|10.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Porte Document|120 Vue|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|40.00|16.00|3.15|640.00|619.77|24000208|40.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Fluoriscent|bleu|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|4.00|0.00|80.00|80.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Fluoriscent|Rose|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|4.00|0.00|80.00|80.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Chemise Cartonner|Fluresent|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|51.00|0.00|1020.00|1020.00|||
-YASMINE_FONCIERE|24000172|Best Info Tech|Blanco||PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|10.00|4.00|0.00|40.00|40.00|24000208|10.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Bac classement|Ensemble de 5 pieces|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|4.00|189.00|0.00|756.00|756.00|24000208|4.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Poubelle|Metallique GM|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|30.00|42.00|0.00|1260.00|1260.00|24000208|30.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Tapis souris||PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|12.00|0.00|240.00|240.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Fluoriscent|jaune|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|4.00|0.00|80.00|80.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Fluoriscent|mauve|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|4.00|0.00|80.00|80.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Classeur|Sicla vert|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|130.00|18.20|0.00|2366.00|2366.00|24000208|130.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Colle Stick|GM|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|10.00|10.50|0.00|105.00|105.00|24000208|10.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Gomme||PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|10.00|3.50|12.50|35.00|30.62|24000208|10.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Calculatrice||PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|10.00|80.00|0.00|800.00|800.00|24000208|10.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Boîte Archive|plastifier de 12 cm|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|30.00|25.00|0.00|750.00|750.00|24000208|30.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Fluoriscent|Orange|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|4.00|0.00|80.00|80.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Chemise A Rabat||PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|40.00|5.50|0.00|220.00|220.00|24000208|40.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Chemise Bulle|kraft|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|24.50|0.00|490.00|490.00|24000208|20.00|
-YASMINE_FONCIERE|24000172|Best Info Tech|Chemise Perforée|plastifier A4 80 mic|PS15|CMD N°1 EN 2024.Basé sur Demande d&#039;achat 24000176.|20.00|60.00|1.63|1200.00|1180.32|24000208|20.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Chemise|a coin|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|2.00|30.00|0.00|60.00|60.00|24000199|2.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Trombonnes|55mm|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|20.00|7.00|0.00|140.00|140.00|24000199|20.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Perforeuse||PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|6.00|18.00|0.00|108.00|108.00|24000199|6.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Taille Crayon||PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|15.00|2.00|0.00|30.00|30.00|24000199|15.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Stylo|pilot bleu|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|2.00|96.00|0.00|192.00|192.00|24000199|2.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Stylo|pilot noir|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|2.00|96.00|0.00|192.00|192.00|24000199|2.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Stylo|bic bleu|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|3.00|60.00|0.00|180.00|180.00|24000199|3.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Stylo|pilot vert|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|2.00|96.00|0.00|192.00|192.00|24000199|2.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Stylo|pilot rouge|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|2.00|96.00|0.00|192.00|192.00|24000199|2.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Chemise|a clips|PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|2.00|12.00|0.00|24.00|24.00|24000199|2.00|
-YASMINE_FONCIERE|24000173|OUSSAAD NEGOCE|Ciseau||PS15|CMD N°1 EN 2024 Basé sur Demande d&#039;achat 24000176.|10.00|8.16|0.00|81.60|81.60|24000199|10.00|
-YASMINE_FONCIERE|24000175|NACIRECK PLUS|Femme de menage|||Du 01 au 30 avril 2024Accompagnement des travaux Basé sur Demande d&#039;achat 24000177.|1.00|2950.00|0.00|2950.00|2950.00|24000233|1.00|
-YASMINE_FONCIERE|24000176|HIVE TECH|Installation et mise en service||PS17|POUR LA SALLE DE CONSEIL Basé sur Demande d&#039;achat 24000178.|1.00|1200.00|0.00|1200.00|1200.00|||
-YASMINE_FONCIERE|24000176|HIVE TECH|Support|POUR TV 86 POUCE|PS17|POUR LA SALLE DE CONSEIL Basé sur Demande d&#039;achat 24000178.|1.00|700.00|0.00|700.00|700.00|||
-YASMINE_FONCIERE|24000176|HIVE TECH|Televiseur|LG 80006LA LED 86P UHD 4K SMART|PS17|POUR LA SALLE DE CONSEIL Basé sur Demande d&#039;achat 24000178.|1.00|18500.00|0.00|18500.00|18500.00|||
-YASMINE_FONCIERE|24000177|HIVE TECH|TELEVISEUR LG 80006LA LED 86P UHD 4K SMART+INSTALLATION||PS17|SALLE DE CONSEIL Basé sur Demande d&#039;achat 24000179.|1.00|19700.00|0.00|19700.00|19700.00|24000162|1.00|
-YASMINE_FONCIERE|24000178|AXIOS ADVISORY|Prestation de service|Accompagnement et conseil financier dans le cadre de projets d&#039;investissements immobilier:|PS18|MP:30% à la validation.40% Apres un mois et demi de demarrage de la mission.30% Aprés 3 mois du demarrage de la mission. Basé sur Demande d&#039;achat 24000180.|1.00|100000.00|0.00|100000.00|100000.00|||
-YASMINE_FONCIERE|24000179|PROMASEC|Travaux d&#039;aluminium|:Reparation porte et chagement poignée ovale|PS18|Bénificiare:-changement poignée:Wafaa benaadi.-Maintenance:Salle de reunin Mohammedia/Afaf chabini/Halima lamkinssi/CRC Basé sur Demande d&#039;achat 24000181.|1.00|1190.00|0.00|1190.00|1190.00|24000241|1.00|
-YASMINE_FONCIERE|24000179|PROMASEC|Travaux d&#039;aluminium|:Maintenance porte aluminium|PS18|Bénificiare:-changement poignée:Wafaa benaadi.-Maintenance:Salle de reunin Mohammedia/Afaf chabini/Halima lamkinssi/CRC Basé sur Demande d&#039;achat 24000181.|2.00|240.00|0.00|480.00|480.00|24000241|1.00|
-YASMINE_FONCIERE|24000179|PROMASEC|Travaux d&#039;aluminium|:Reparation porte et chagement poignée ovale|PS18|Bénificiare:-changement poignée:Wafaa benaadi.-Maintenance:Salle de reunin Mohammedia/Afaf chabini/Halima lamkinssi/CRC Basé sur Demande d&#039;achat 24000181.|1.00|1190.00|0.00|1190.00|1190.00|24000231|1.00|
-YASMINE_FONCIERE|24000179|PROMASEC|Travaux d&#039;aluminium|:Maintenance porte aluminium|PS18|Bénificiare:-changement poignée:Wafaa benaadi.-Maintenance:Salle de reunin Mohammedia/Afaf chabini/Halima lamkinssi/CRC Basé sur Demande d&#039;achat 24000181.|2.00|240.00|0.00|480.00|480.00|24000231|2.00|
-YASMINE_FONCIERE|24000180|Positive agenda advisory|Honoraires de service|Mission d&#039;accompagnement de la sociéte Groupe MFADEL dans ses projets d&#039;investissements|PS18|T3-2023 Basé sur Demande d&#039;achat 24000183.|1.00|125000.00|0.00|125000.00|125000.00|24000161|1.00|
-YASMINE_FONCIERE|24000181|BERMUDES FOURNITURE|Ramette Papier|A4 80G|PS15|CMD PRECEDENTE LIVREE LE 16/01/2024 Basé sur Demande d&#039;achat 24000184.|70.00|34.00|0.00|2380.00|2380.00|24000178|70.00|
-YASMINE_FONCIERE|24000182|ESPACE BADR|Televiseur|Samsung led AU65CU8000UXMV|PS15|POUR:M.Imad rida(Ancienne tele affectation appart temoin wel live) Basé sur Demande d&#039;achat 24000182.|1.00|9700.00|0.00|9700.00|9700.00|24000177|1.00|
-YASMINE_FONCIERE|24000183|HIVE TECH|TELEVISEUR LG OLED77LA POUCE 4K||PS17|Basé sur Demande d&#039;achat 24000187.|1.00|37800.00|0.00|37800.00|37800.00|24000163|1.00|
-YASMINE_FONCIERE|24000184|Best Info Tech|Impression|papier en tête|PS15|Détails en PJ Basé sur Demande d&#039;achat 24000188.|12500.00|0.65|0.00|8125.00|8125.00|||
-YASMINE_FONCIERE|24000185|3 A PREMIUM|Prestation de service|:Séminaire sur les dispositions fiscales de la loi de finances 2024|PS18|Formation pour Service Comptabilité -Objet:Les dispositions de la loi de finances 2024.Basé sur Demande d&#039;achat 24000186.|1.00|8000.00|0.00|8000.00|8000.00|24000268|1.00|
-YASMINE_FONCIERE|24000185|3 A PREMIUM|Prestation de service|:Séminaire sur les dispositions fiscales de la loi de finances 2024|PS18|Formation pour Service Comptabilité -Objet:Les dispositions de la loi de finances 2024.Basé sur Demande d&#039;achat 24000186.|1.00|8000.00|0.00|8000.00|8000.00|24000175|1.00|
-YASMINE_FONCIERE|24000185|3 A PREMIUM|Prestation de service|:Séminaire sur les dispositions fiscales de la loi de finances 2024|PS18|Formation pour Service Comptabilité -Objet:Les dispositions de la loi de finances 2024.Basé sur Demande d&#039;achat 24000186.|1.00|8000.00|0.00|8000.00|8000.00|24000186|1.00|
-YASMINE_FONCIERE|24000188|NACIRECK PLUS|Femme de menage|:2Cantonnier/2 femmes ménage|PS17|VT Basé sur Demande d&#039;achat 24000185.|1.00|700.00|0.00|700.00|700.00|24000176|1.00|
-YASMINE_FONCIERE|24000189|STE AUDACE AUTO|Reparation|véhicule:Plaquette de frein avant arriere et Témoin d&#039;usure AV/AR+Remplacement Fils electriques +MO|PS17|Matricule:30182-B-72;Mme Allali Amina Basé sur Demande d&#039;achat 24000189.|1.00|2170.31|0.00|2170.31|2170.31|24000194|1.00|
-YASMINE_FONCIERE|24000196|DIRECTE MENUISERIE|Ameublement|:Fabrication d&#039;un meuble TV avec 2 tiroirs touche lâche+niche au milieu en bois latté de 18 mm|PS18|Pour Salle de conseils Basé sur Demande d&#039;achat 24000198.|1.00|5999.99|26.47|6000.00|4411.76|||
-YASMINE_FONCIERE|24000197|HATIM BOUKHRIS|Honoraire Avocat|abonnement annuelle pour anneé 2024|PS18|bc global d&#039;abonnement 2024.Basé sur Demande d&#039;achat 24000199.|4.00|36000.00|0.00|144000.00|144000.00|24000223|1.00|
-YASMINE_FONCIERE|24000198|INFO COPIE|Porte Document||PS15|Basé sur Demande d&#039;achat 24000200.|3.00|29.16|0.00|87.50|87.50|24000183|3.00|
-YASMINE_FONCIERE|24000198|INFO COPIE|Scan plan CL||PS15|Basé sur Demande d&#039;achat 24000200.|2.00|33.33|0.00|66.67|66.67|24000183|2.00|
-YASMINE_FONCIERE|24000198|INFO COPIE|Impression|de plans CL|PS15|Basé sur Demande d&#039;achat 24000200.|4.00|33.33|0.00|133.33|133.33|24000183|4.00|
-YASMINE_FONCIERE|24000198|INFO COPIE|Manifold||PS15|Basé sur Demande d&#039;achat 24000200.|1.00|15.00|0.00|15.00|15.00|24000183|1.00|
-YASMINE_FONCIERE|24000198|INFO COPIE|Chemise A Rabat||PS15|Basé sur Demande d&#039;achat 24000200.|3.00|6.66|0.00|20.00|20.00|24000183|3.00|
-YASMINE_FONCIERE|24000199|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Evian blle verre 33cl|PS15|EAU PDG Basé sur Demande d&#039;achat 24000201.|24.00|25.50|0.00|612.00|612.00|24000191|24.00|
-YASMINE_FONCIERE|24000199|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Contrex 50cl Blle|PS15|EAU PDG Basé sur Demande d&#039;achat 24000201.|24.00|14.49|0.00|348.00|348.00|24000191|24.00|
-YASMINE_FONCIERE|24000199|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Perrier 33cl Blle|PS15|EAU PDG Basé sur Demande d&#039;achat 24000201.|24.00|15.95|0.00|382.80|382.80|24000191|24.00|
-YASMINE_FONCIERE|24000203|FINASSURE|Assurance mutuelle||PS12|ASSURANCE MALADIE DU 01/03/2024 AU 31/12/2024  de 9700,00  DHS Basé sur Demande d&#039;achat 24000194.|1.00|9700.00|0.00|9700.00|9700.00|24000200|1.00|
-YASMINE_FONCIERE|24000204|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine||PS15|FDC SIEGE AVRIL 2024. Basé sur Demande d&#039;achat 24000207.|1.00|1622.00|0.00|1622.00|1622.00|24000195|1.00|
-YASMINE_FONCIERE|24000209|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau sidi ali 33cl|PS15|EAU SIEGE AVRIL 2024 Basé sur Demande d&#039;achat 24000212.|360.00|2.00|0.00|720.00|720.00|24000215|360.00|
-YASMINE_FONCIERE|24000209|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau ain saiss 33cl|PS15|EAU SIEGE AVRIL 2024 Basé sur Demande d&#039;achat 24000212.|72.00|1.89|0.00|136.79|136.79|24000215|72.00|
-YASMINE_FONCIERE|24000210|STE AUDACE AUTO|Reparation|Systeme eclairage et signalisation:Ampol w3w Vale|PS15|Abdelhak Daouichy;Matriculation:32888-B-72 Basé sur Demande d&#039;achat 24000205.|1.00|34.00|0.00|34.00|34.00|24000192|1.00|
-YASMINE_FONCIERE|24000210|STE AUDACE AUTO|Vidange||PS15|Abdelhak Daouichy;Matriculation:32888-B-72 Basé sur Demande d&#039;achat 24000205.|1.00|349.00|0.00|349.00|349.00|24000192|1.00|
-YASMINE_FONCIERE|24000211|STE AUDACE AUTO|Reparation|Plaquettes+Systeme éclairage et signalisation:Ampol w3w Vale|PS15|Halima Lamkinssi;Matricule;37413-B-72 Basé sur Demande d&#039;achat 24000213.|1.00|653.10|11.94|653.10|575.06|24000193|1.00|
-YASMINE_FONCIERE|24000211|STE AUDACE AUTO|Vidange||PS15|Halima Lamkinssi;Matricule;37413-B-72 Basé sur Demande d&#039;achat 24000213.|1.00|870.39|0.00|870.39|870.39|24000193|1.00|
-YASMINE_FONCIERE|24000212|PROMASEC|Travaux d&#039;aluminium|:Reparation porte et chagement poignée ovale F/P|PS18|Bénificiare:M.Mehdi RIDA.Complement BC N)24000179.Motif:poignée endomagée et la poignée digital ne peut pas etre installé sur la porte vitrée.Basé sur Demande d&#039;achat 24000206.|1.00|1190.00|0.00|1190.00|1190.00|24000239|1.00|
-YASMINE_FONCIERE|24000214|FINASSURE|Assurance mutuelle||PS12|ASSURANCE GROUPE MALADIE DU  01/01/2024  AU  31/03/2024   de  118 941,56  DHS Basé sur Demande d&#039;achat 24000214.|1.00|118941.56|0.00|118941.56|118941.56|24000201|1.00|
-YASMINE_FONCIERE|24000216|Artemis|Conseil juridique|(Pack droit des affaires, fiscalité et droit social)|PS18|Réabonnement annuel d&#039;ARTEMIS pour la période du 05/05/2024 au 05/05/2025 Basé sur Demande d&#039;achat 24000223.|1.00|19950.00|0.00|19950.00|19950.00|24000236|1.00|
-YASMINE_FONCIERE|24000217|ASK GRAS SAVOYE|Autre Assurances||PS12|ASSURANCE ISAAF MONDE  DU 29/01/2019 AU 28/01/2023 D&#039;UN MONTANT de 2 800.00  DHS &quot;MME  ALALI AMINA&quot; Basé sur Demande d&#039;achat 24000216.|1.00|2800.00|0.00|2800.00|2800.00|24000206|1.00|
-YASMINE_FONCIERE|24000218|ASK GRAS SAVOYE|Autre Assurances||PS12|ASSURANCE GLOBAL ASSISSTANCE DU 21/06/2018  AU  20/06/2019 D&#039;UN MONTANT DE  890.00  DHS &quot;HALLAOUI  ABDELLATIF&quot; Basé sur Demande d&#039;achat 24000217.|1.00|890.00|0.00|890.00|890.00|24000205|1.00|
-YASMINE_FONCIERE|24000219|ASK GRAS SAVOYE|Assurance auto||PS12|ASSUANCE CARTE VERTE DE LAND ROVER 27843-H-01 D&#039;UN MONTANT DE 500.00 DHS Basé sur Demande d&#039;achat 24000218.|1.00|500.00|0.00|500.00|500.00|24000203|1.00|
-YASMINE_FONCIERE|24000220|ASK GRAS SAVOYE|Assurance auto||PS12|ASSURANCE FLOTTE AUTO  DU 01/01/2020  AU  31/12/2020  D&#039;UN  MONTANT   DE  4241,79 DHS Basé sur Demande d&#039;achat 24000219.|1.00|4241.79|0.00|4241.79|4241.79|24000204|1.00|
-YASMINE_FONCIERE|24000221|ASK GRAS SAVOYE|Assurance auto||PS12|ASSURANCE  FLOTTE  AUTO  DU 04/12/2020 AU  31/12/2020  D&#039;UN MONTANT  de  182,90  DHS Basé sur Demande d&#039;achat 24000220.|1.00|182.90|0.00|182.90|182.90|24000202|1.00|
-YASMINE_FONCIERE|24000222|RAOUIA INFO|Prestation de service|CR004/RC/CL/PL/LA NOTE|PS18|Basé sur Demande d&#039;achat 24000224.|1.00|2356.00|0.00|2356.00|2356.00|24000197|1.00|
-YASMINE_FONCIERE|24000224|MULTIPNEUS|Pneu||PS17|84370-E-1 Basé sur Demande d&#039;achat 24000228.|1.00|5800.00|0.00|5800.00|5800.00|24000196|1.00|
-YASMINE_FONCIERE|24000226|ASWAK ASSALAM|Cadeaux client|:Telephone portable Samsung Galaxy A05 64Go|PS17|Bénificiaires:2 Agents SAV:Badr abdel ilah/Hicham Dahar.Demandeur:Maria Erritouni Basé sur Demande d&#039;achat 24000229.|2.00|1199.00|0.00|2398.00|2398.00|||
-YASMINE_FONCIERE|24000227|BARID AL MAGHRIB|Frais postaux|AVRIL 2024|PS20|Basé sur Demande d&#039;achat 24000230.|1.00|3546.85|0.00|3546.85|3546.85|24000198|1.00|
-YASMINE_FONCIERE|24000227|BARID AL MAGHRIB|Taxe communale|AVRIL 2024|PS20|Basé sur Demande d&#039;achat 24000230.|1.00|8.87|0.00|8.87|8.87|24000198|1.00|
-YASMINE_FONCIERE|24000228|BERMUDES FOURNITURE|FAUTEUIL VISITEUR REVETEMENT DOSSIER EN MESH ASSISE EN TISSU NOIR ACCOUDOIRS EN T LUGE NOIR||PS19|Bureau Mr Redouan MfadeL Basé sur Demande d&#039;achat 24000231.|2.00|1250.00|0.00|2500.00|2500.00|24000237|2.00|
-YASMINE_FONCIERE|24000232|VISION VOYAGES|Voyage affaire|:MR ABDELLAH YASSINE.|PS17|Basé sur Demande d&#039;achat 24000235.|1.00|8363.00|0.00|8363.00|8363.00|24000222|1.00|
-YASMINE_FONCIERE|24000236|FINASSURE|Assurance auto||PS12|ASSURANCE AUTO MFADEL YASMINE  69741-A-72  du  08/05/2024  AU 08/08/2024 de 857,41 dhs Basé sur Demande d&#039;achat 24000237.|1.00|857.41|0.00|857.41|857.41|24000226|1.00|
-YASMINE_FONCIERE|24000237|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 10/05/2024 Basé sur Demande d&#039;achat 24000240.|1.00|3251.50|0.00|3251.50|3251.50|24000227|1.00|
-YASMINE_FONCIERE|24000237|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 10/05/2024 Basé sur Demande d&#039;achat 24000240.|1.00|265.30|0.00|265.30|265.30|24000235|1.00|
-YASMINE_FONCIERE|24000238|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau sidi ali 33cl|PS15|MAI 2024 Basé sur Demande d&#039;achat 24000241.|360.00|1.65|0.00|597.56|597.56|24000228|360.00|
-YASMINE_FONCIERE|24000238|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:Eau ain saiss 33cl|PS15|MAI 2024 Basé sur Demande d&#039;achat 24000241.|72.00|1.89|0.00|136.79|136.79|24000228|72.00|
-YASMINE_FONCIERE|24000239|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine||PS15|FDC MAI 2024 Basé sur Demande d&#039;achat 24000242.|1.00|1948.00|0.00|1948.00|1948.00|24000229|1.00|
-YASMINE_FONCIERE|24000240|INFO COPIE|Cachet|Sharp tower|PS15|Basé sur Demande d&#039;achat 24000243.|4.00|83.33|0.00|333.33|333.33|24000225|4.00|
-YASMINE_FONCIERE|24000240|INFO COPIE|Cachet|Sharp Tower|PS15|Basé sur Demande d&#039;achat 24000243.|2.00|100.00|0.00|200.00|200.00|24000225|2.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Impression plans||PS15|Basé sur Demande d&#039;achat 24000244.|24.00|86.25|0.00|2070.00|2070.00|24000224|24.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Reliure a Baguette|A3|PS15|Basé sur Demande d&#039;achat 24000244.|25.00|8.33|0.00|208.33|208.33|24000224|25.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Impression plans|CL/A3|PS15|Basé sur Demande d&#039;achat 24000244.|414.00|2.50|0.00|1035.00|1035.00|24000224|414.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Impression plans|CL/A0|PS15|Basé sur Demande d&#039;achat 24000244.|21.00|41.66|0.00|875.00|875.00|24000224|21.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Impression plans|CL/A2|PS15|Basé sur Demande d&#039;achat 24000244.|42.00|16.66|0.00|700.00|700.00|24000224|42.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Impression plans|NB/A1|PS15|Basé sur Demande d&#039;achat 24000244.|1.00|16.66|0.00|16.67|16.67|24000224|1.00|
-YASMINE_FONCIERE|24000241|INFO COPIE|Impression plans|CL/A2|PS15|Basé sur Demande d&#039;achat 24000244.|12.00|16.66|0.00|200.00|200.00|24000224|12.00|
-YASMINE_FONCIERE|24000242|IKAY OFFICES|Serviette|ZIG ZAG(PAQUET DE 20U)|PS15|Cmd précedente livrée la 21/02/2024 Basé sur Demande d&#039;achat 24000245.|4.00|340.00|0.00|1360.00|1360.00|24000249|4.00|
-YASMINE_FONCIERE|24000245|AGEON CONSULTING|Honoraires de service|Février-Mars-Avril 2024|PS18|Février-Mars-avril 2024 Basé sur Demande d&#039;achat 24000250.|1.00|150000.00|0.00|150000.00|150000.00|24000234|1.00|
-YASMINE_FONCIERE|24000246|EXPO ENERGY|FAUTEUIL AVEC DEUX CANAPES|EN GRIS|PS19|Bureau Mr IMAD RIDA. Basé sur Demande d&#039;achat 24000251.|1.00|9300.00|0.00|9300.00|9300.00|||
-YASMINE_FONCIERE|24000247|SECTION I SECURITE|Securite|Agent de sécutité nuit|PS17|VY Basé sur Demande d&#039;achat 24000253.|2.00|1150.00|0.00|2300.00|2300.00|24000230|2.00|
-YASMINE_FONCIERE|24000251|OGICOM|Insecticide|:PERFECT 25EC|PS15|Entretien Magasins KPC Basé sur Demande d&#039;achat 24000255.|10.00|262.20|5.00|2622.00|2490.90|24000238|10.00|
-YASMINE_FONCIERE|24000252|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 17/05/2024 Basé sur Demande d&#039;achat 24000257.|1.00|3996.39|0.00|3996.39|3996.39|24000273|1.00|
-YASMINE_FONCIERE|24000253|MOORE CASABLANCA|Honoraire Avocat||PS18|MISE A JOUR DES STATUTS+REFACTURATION DES FRAIS ADMINISTRATIFS Basé sur Demande d&#039;achat 24000256.|1.00|2000.00|0.00|2000.00|2000.00|23001684|1.00|
-YASMINE_FONCIERE|24000253|MOORE CASABLANCA|Prestation de service||PS18|MISE A JOUR DES STATUTS+REFACTURATION DES FRAIS ADMINISTRATIFS Basé sur Demande d&#039;achat 24000256.|1.00|3262.00|0.00|3262.00|3262.00|23001684|1.00|
-YASMINE_FONCIERE|24000254|Exored|Prestation de service|:Grand ménage 3 Bureaux Marina R+1 ;deplacement stock du 8éme|PS18|Deplacement stock 8ème et 7ème IMMA KPC vers MARINA Basé sur Demande d&#039;achat 24000258.|1.00|6540.00|0.00|6540.00|6540.00|||
-YASMINE_FONCIERE|24000256|TOP AUTO MOHAMMEDIA|Vidange||PS15|ABDELTIF EZZIYAT;MATRICULE: 36167-B-72 Basé sur Demande d&#039;achat 24000260.|1.00|704.08|0.00|704.08|704.08|24000271|1.00|
-YASMINE_FONCIERE|24000257|VISION VOYAGES|Entretien|:RESERVOIR+FORFAIT DE LA MAIN D&#039;OEUVRE|PS15|Maintenance robinet cuisine siège. Basé sur Demande d&#039;achat 24000261.|1.00|19954.00|0.00|19954.00|19954.00|||
-YASMINE_FONCIERE|24000259|VISION VOYAGES|Voyage affaire|:MR ABDELLAH YASSINE.|PS17|Basé sur Demande d&#039;achat 24000262.|1.00|19954.00|0.00|19954.00|19954.00|24000270|1.00|
-YASMINE_FONCIERE|24000261|GAL SOCRATE|Entretien|:RESERVOIR+FORFAIT DE LA MAIN D&#039;OEUVRE|PS15|Maintenace robinet cuisine siege Basé sur Demande d&#039;achat 24000264.|1.00|570.00|0.00|570.00|570.00|||
-YASMINE_FONCIERE|24000262|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 24/05/2024. Basé sur Demande d&#039;achat 24000265.|1.00|3344.72|0.00|3344.72|3344.72|24000272|1.00|
-YASMINE_FONCIERE|24000263|OUSSAAD NEGOCE|Cartouche|045 CANON NOIR|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|2.00|670.00|0.00|1340.00|1340.00|||
-YASMINE_FONCIERE|24000263|OUSSAAD NEGOCE|Cartouche|652 COULEURS|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|2.00|150.00|6.25|300.00|281.25|||
-YASMINE_FONCIERE|24000263|OUSSAAD NEGOCE|Cartouche|652 NOIR|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|2.00|180.00|0.00|360.00|360.00|||
-YASMINE_FONCIERE|24000263|OUSSAAD NEGOCE|Toner|XEROX 3345|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|2100.00|0.00|2100.00|2100.00|||
-YASMINE_FONCIERE|24000265|Best Info Tech|Toner|CF533A|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|640.00|5.60|640.00|604.12|24000283|1.00|
-YASMINE_FONCIERE|24000265|Best Info Tech|Toner|CF532A|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|640.00|5.60|640.00|604.12|24000283|1.00|
-YASMINE_FONCIERE|24000265|Best Info Tech|Toner|CF531A|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|640.00|5.60|640.00|604.12|24000283|1.00|
-YASMINE_FONCIERE|24000265|Best Info Tech|Toner|CF530A|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|590.00|2.47|590.00|575.37|24000283|1.00|
-YASMINE_FONCIERE|24000266|MICROSHOP|Toner|HP 207A NOIR|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|2.00|730.00|0.00|1460.00|1460.00|||
-YASMINE_FONCIERE|24000266|MICROSHOP|Cartouche|045 CANON CYAN|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|664.99|1.48|665.00|655.14|||
-YASMINE_FONCIERE|24000266|MICROSHOP|Cartouche|045 CANON MAGENTA|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|2.00|664.99|1.48|1330.00|1310.29|||
-YASMINE_FONCIERE|24000266|MICROSHOP|Cartouche|045 CANON YELLOW|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|2.00|664.99|1.48|1330.00|1310.29|||
-YASMINE_FONCIERE|24000266|MICROSHOP|Toner|CF217|PS04|Bénificiare en pj Basé sur Demande d&#039;achat 24000270.|1.00|779.99|1.51|780.00|768.18|||
-YASMINE_FONCIERE|24000269|OGICOM|Extincteur|à poudre ABC de 9kg|PS15|Pour Marina. Basé sur Demande d&#039;achat 24000263.|1.00|570.00|0.00|570.00|570.00|||
-YASMINE_FONCIERE|24000271|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:EAU 27/05/2024|PS15|FDC+EAU BDV OP Mai 2024 Basé sur Demande d&#039;achat 24000272.|1.00|1147.50|0.00|1147.50|1147.50|24000255|1.00|
-YASMINE_FONCIERE|24000271|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:27/05/2024|PS15|FDC+EAU BDV OP Mai 2024 Basé sur Demande d&#039;achat 24000272.|1.00|1728.75|0.00|1728.75|1728.75|24000256|1.00|
-YASMINE_FONCIERE|24000273|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:L:28/05/2024|PS15|FDC BDV WE LIVE MAI 2024. Basé sur Demande d&#039;achat 24000274.|1.00|1570.40|0.00|1570.40|1570.40|24000257|1.00|
-YASMINE_FONCIERE|24000274|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:L:28/05/2024.|PS15|FDC BDV KPC Basé sur Demande d&#039;achat 24000275.|1.00|1594.25|0.00|1594.25|1594.25|24000258|1.00|
-YASMINE_FONCIERE|24000275|DIGIBAY|Télephone Portable|A05S 4/128G|PS15|Bénificiare:Khadija BARKA. Basé sur Demande d&#039;achat 24000276.|1.00|1749.00|0.00|1749.00|1749.00|||
-YASMINE_FONCIERE|24000276|OUFKIR SAID|Prestation de service|:installation et programmation camèra 8MP,XVR 4K 16 Chnnel,Disque dur AT surveillance samsung|PS15|Pour MARINA Basé sur Demande d&#039;achat 24000277.|1.00|11485.00|0.00|11485.00|11485.00|||
-YASMINE_FONCIERE|24000277|MICROSHOP|PC DELL LATTITUDE 3540 I5-1335U 15.6 FHD 8 GO 512 GO SSD WIN11 PRO 36M||PS04|Bénéficiaire : SAV Basé sur Demande d&#039;achat 24000278.|1.00|8499.99|1.16|8500.00|8401.16|||
-YASMINE_FONCIERE|24000278|YEALEAD|Projet Téléphonie CRC ( 3CX+VICIDIAL+2 PASSERELLES+2VPS+5CASQUES+PRESTA+MAINTENANCE)||PS04|+Matériel sous un an de garantie et un mois de support technique offert pour Passerelle OpenVox et Passerelle DINSTAR+Infogérance et Maintenance d&#039;un an (à partir d&#039;un mois après récéption).MP:20%AVANCE60%A LA LIVRAISON20%A LA RECEPTION Basé sur Dem|1.00|57942.83|0.00|57942.83|57942.83|24000265|1.00|
-YASMINE_FONCIERE|24000279|ASWAK ASSALAM|Repas|Couscous|PS17|VENDEDI 31/05/2024 Basé sur Demande d&#039;achat 24000280.|1.00|3327.76|0.00|3327.76|3327.76|24000274|1.00|
-YASMINE_FONCIERE|24000283|MULTIPNEUS|Pneu||PS17|YM 34825-E-1 Basé sur Demande d&#039;achat 24000285.|1.00|4950.00|0.00|4950.00|4950.00|24000277|1.00|
-YASMINE_FONCIERE|24000284|INNOVACORE|Prestation de service|Achat materiel de cuisine||Event AFTER WORK MNO 16/05/2024 Basé sur Demande d&#039;achat 24000281.|1.00|9341.60|0.00|9341.60|9341.60|24000281|1.00|
-YASMINE_FONCIERE|24000285|STE TRAITEMENT HYGIENE|Prestation de service|:Désinsectisation|PS18|Pour Marina Basé sur Demande d&#039;achat 24000287.|1.00|2300.00|0.00|2300.00|2300.00|||
-YASMINE_FONCIERE|24000287|STE AUDACE AUTO|Vidange|+Filtre d&#039;habitacle wix|PS15|ABODI Abdelghani;Matricule 44664-B-72 Basé sur Demande d&#039;achat 24000288.|1.00|876.29|0.00|876.29|876.29|||
-YASMINE_FONCIERE|24000288|DECOKAD|Travaux de peinture interieur|cuisine,acceuil,3 sdb,bureau camelia,couloire open space N°1,salle de conseil,salle de repos|PS18|Siège. Basé sur Demande d&#039;achat 24000289.|1.00|6500.00|0.00|6500.00|6500.00|24000282|1.00|
-YASMINE_FONCIERE|24000289|AGEON CONSULTING|Honoraires de service||PS18|MAI 2024 Basé sur Demande d&#039;achat 24000290.|1.00|50000.00|0.00|50000.00|50000.00|||
-YASMINE_FONCIERE|24000290|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:livré le 03/06/2024|PS15|FDC SIEGE JUIN 2024 Basé sur Demande d&#039;achat 24000291.|1.00|1825.15|0.00|1825.15|1825.15|||
-YASMINE_FONCIERE|24000291|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine||PS15|EAU SIEGE JUIN 2024. Basé sur Demande d&#039;achat 24000292.|30.00|22.95|0.00|688.50|688.50|||
-YASMINE_FONCIERE|24000292|ASWAK ASSALAM|Repas|Couscous|PS17|Vendredi 07/06/2024 Basé sur Demande d&#039;achat 24000293.|1.00|2831.53|0.00|2831.53|2831.53|||
-YASMINE_FONCIERE|24000293|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:EAU SIDI ALI 05/06/2024|PS15|EAU BDV KPC MAI JUIN 2024 Basé sur Demande d&#039;achat 24000294.|240.00|1.80|0.00|432.00|432.00|||
-YASMINE_FONCIERE|24000294|ASWAK ASSALAM|Produits de nettoyage et consommable cuisine|:EAU SIDI ALI 05/06/2024|PS15|EAU BDV WE LIVE JUIN 2024 Basé sur Demande d&#039;achat 24000295.|600.00|1.80|0.00|1080.00|1080.00|||
-YASMINE_FONCIERE|24000295|BERMUDES FOURNITURE|Impression|papier en tête(opal)100G|PS15|Basé sur Demande d&#039;achat 24000296.|10000.00|1.18|1.66|11800.00|11603.32|||
-YASMINE_FONCIERE|24000296|Nestle Maroc|Capsules|VOLLUTO(Reste en stock 43)|PS15|Bénificiares: LA DG/SIEGE/LES BDV/ECOLE. Basé sur Demande d&#039;achat 24000297.|50.00|65.04|0.00|3252.00|3252.00|||
-YASMINE_FONCIERE|24000296|Nestle Maroc|Capsules|ARPEGGIO(Reste en stock 3 paquet)|PS15|Bénificiares: LA DG/SIEGE/LES BDV/ECOLE. Basé sur Demande d&#039;achat 24000297.|200.00|51.96|0.00|10392.00|10392.00|||
+base ~AcctCode ~
+YASMINE_FONCIERE ~99999999 ~
+YASMINE_FONCIERE ~232230NV ~
+YASMINE_FONCIERE ~233200NV ~
+YASMINE_FONCIERE ~233220NV ~
+YASMINE_FONCIERE ~233223NV ~
+YASMINE_FONCIERE ~34552020 ~
+YASMINE_FONCIERE ~44170000 ~
+YASMINE_FONCIERE ~233245NV ~
+YASMINE_FONCIERE ~44111000 ~
+YASMINE_FONCIERE ~51410001 ~
+YASMINE_FONCIERE ~233244NV ~
+YASMINE_FONCIERE ~2332NOVO ~
+YASMINE_FONCIERE ~234 ~
+YASMINE_FONCIERE ~34110001 ~
+YASMINE_FONCIERE ~61251300 ~
+YASMINE_FONCIERE ~99999998 ~
+YASMINE_FONCIERE ~44112000 ~
+YASMINE_FONCIERE ~2332 ~
+YASMINE_FONCIERE ~23324000 ~
+YASMINE_FONCIERE ~23330000 ~
+YASMINE_FONCIERE ~23380000 ~
+YASMINE_FONCIERE ~4413RGDP ~
+YASMINE_FONCIERE ~23320000 ~
+YASMINE_FONCIERE ~44131AZO ~
+YASMINE_FONCIERE ~44132AZO ~
+YASMINE_FONCIERE ~61251400 ~
+YASMINE_FONCIERE ~61180000 ~
+YASMINE_FONCIERE ~23321000 ~
+YASMINE_FONCIERE ~61190000 ~
+YASMINE_FONCIERE ~61211000 ~
+YASMINE_FONCIERE ~233215NV ~
+YASMINE_FONCIERE ~61253100 ~
+YASMINE_FONCIERE ~2338NOVO ~
+YASMINE_FONCIERE ~235 ~
+YASMINE_FONCIERE ~234000NV ~
+YASMINE_FONCIERE ~4413ABRG ~
+YASMINE_FONCIERE ~233241NV ~
+YASMINE_FONCIERE ~233243NV ~
+YASMINE_FONCIERE ~23560000 ~
+YASMINE_FONCIERE ~235600NV ~
+YASMINE_FONCIERE ~34552008 ~
+YASMINE_FONCIERE ~3455IM20 ~
+YASMINE_FONCIERE ~345520CP ~
+YASMINE_FONCIERE ~61253300 ~
+YASMINE_FONCIERE ~51410032 ~
+YASMINE_FONCIERE ~14810001 ~
+YASMINE_FONCIERE ~4413NTCP ~
+YASMINE_FONCIERE ~4413TBCP ~
+YASMINE_FONCIERE ~3455BQ10 ~
+YASMINE_FONCIERE ~44578000 ~
+YASMINE_FONCIERE ~61446000 ~
+YASMINE_FONCIERE ~61253400 ~
+YASMINE_FONCIERE ~44131000 ~
+YASMINE_FONCIERE ~61312000 ~
+YASMINE_FONCIERE ~34552000 ~
+YASMINE_FONCIERE ~23270000 ~
+YASMINE_FONCIERE ~34550007 ~
+YASMINE_FONCIERE ~71278000 ~
+YASMINE_FONCIERE ~61262000 ~
+YASMINE_FONCIERE ~6126 ~
+YASMINE_FONCIERE ~61661000 ~
+YASMINE_FONCIERE ~44410000 ~
+YASMINE_FONCIERE ~61455000 ~
+YASMINE_FONCIERE ~61254100 ~
+YASMINE_FONCIERE ~44151000 ~
+YASMINE_FONCIERE ~61473000 ~
+YASMINE_FONCIERE ~44522000 ~
+YASMINE_FONCIERE ~51410014 ~
+YASMINE_FONCIERE ~14810007 ~
+YASMINE_FONCIERE ~441300MF ~
+YASMINE_FONCIERE ~16010000 ~
+YASMINE_FONCIERE ~28321000 ~
+YASMINE_FONCIERE ~34550010 ~
+YASMINE_FONCIERE ~34552013 ~
+YASMINE_FONCIERE ~14851000 ~
+YASMINE_FONCIERE ~14810006 ~
+YASMINE_FONCIERE ~14810004 ~
+YASMINE_FONCIERE ~14840000 ~
+YASMINE_FONCIERE ~34552007 ~
+YASMINE_FONCIERE ~14850000 ~
+YASMINE_FONCIERE ~14860000 ~
+YASMINE_FONCIERE ~14880000 ~
+YASMINE_FONCIERE ~14830001 ~
+YASMINE_FONCIERE ~16050000 ~
+YASMINE_FONCIERE ~17 ~
+YASMINE_FONCIERE ~171 ~
+YASMINE_FONCIERE ~17100000 ~
+YASMINE_FONCIERE ~172 ~
+YASMINE_FONCIERE ~17200000 ~
+YASMINE_FONCIERE ~61261000 ~
+YASMINE_FONCIERE ~345520RG ~
+YASMINE_FONCIERE ~44 ~
+YASMINE_FONCIERE ~441 ~
+YASMINE_FONCIERE ~4411 ~
+YASMINE_FONCIERE ~4413 ~
+YASMINE_FONCIERE ~14870000 ~
+YASMINE_FONCIERE ~15 ~
+YASMINE_FONCIERE ~151 ~
+YASMINE_FONCIERE ~15110000 ~
+YASMINE_FONCIERE ~15120000 ~
+YASMINE_FONCIERE ~15130000 ~
+YASMINE_FONCIERE ~15140000 ~
+YASMINE_FONCIERE ~15150000 ~
+YASMINE_FONCIERE ~15160000 ~
+YASMINE_FONCIERE ~15180000 ~
+YASMINE_FONCIERE ~155 ~
+YASMINE_FONCIERE ~15510000 ~
+YASMINE_FONCIERE ~15520000 ~
+YASMINE_FONCIERE ~15550000 ~
+YASMINE_FONCIERE ~15580000 ~
+YASMINE_FONCIERE ~16 ~
+YASMINE_FONCIERE ~160 ~
+YASMINE_FONCIERE ~14820000 ~
+YASMINE_FONCIERE ~14830000 ~
+YASMINE_FONCIERE ~34552014 ~
+YASMINE_FONCIERE ~34560000 ~
+YASMINE_FONCIERE ~44550000 ~
+YASMINE_FONCIERE ~44210000 ~
+YASMINE_FONCIERE ~61650000 ~
+YASMINE_FONCIERE ~34810000 ~
+YASMINE_FONCIERE ~34570000 ~
+YASMINE_FONCIERE ~346 ~
+YASMINE_FONCIERE ~34610000 ~
+YASMINE_FONCIERE ~61263100 ~
+YASMINE_FONCIERE ~441776NV ~
+YASMINE_FONCIERE ~34620000 ~
+YASMINE_FONCIERE ~441744NV ~
+YASMINE_FONCIERE ~61120000 ~
+YASMINE_FONCIERE ~61280000 ~
+YASMINE_FONCIERE ~34630000 ~
+YASMINE_FONCIERE ~44450000 ~
+YASMINE_FONCIERE ~34640000 ~
+YASMINE_FONCIERE ~34670000 ~
+YASMINE_FONCIERE ~442 ~
+YASMINE_FONCIERE ~22201000 ~
+YASMINE_FONCIERE ~44250000 ~
+YASMINE_FONCIERE ~44270000 ~
+YASMINE_FONCIERE ~44280000 ~
+YASMINE_FONCIERE ~4421 ~
+YASMINE_FONCIERE ~44430000 ~
+YASMINE_FONCIERE ~34680000 ~
+YASMINE_FONCIERE ~348 ~
+YASMINE_FONCIERE ~44530000 ~
+YASMINE_FONCIERE ~44630040 ~
+YASMINE_FONCIERE ~34552011 ~
+YASMINE_FONCIERE ~34910000 ~
+YASMINE_FONCIERE ~34530000 ~
+YASMINE_FONCIERE ~341810009 ~
+YASMINE_FONCIERE ~34880000 ~
+YASMINE_FONCIERE ~34820000 ~
+YASMINE_FONCIERE ~34870000 ~
+YASMINE_FONCIERE ~349 ~
+YASMINE_FONCIERE ~34810015 ~
+YASMINE_FONCIERE ~34810016 ~
+YASMINE_FONCIERE ~34810017 ~
+YASMINE_FONCIERE ~34810018 ~
+YASMINE_FONCIERE ~34810019 ~
+YASMINE_FONCIERE ~34810020 ~
+YASMINE_FONCIERE ~34810021 ~
+YASMINE_FONCIERE ~445520NV ~
+YASMINE_FONCIERE ~443 ~
+YASMINE_FONCIERE ~61110000 ~
+YASMINE_FONCIERE ~44330000 ~
+YASMINE_FONCIERE ~44340000 ~
+YASMINE_FONCIERE ~71271000 ~
+YASMINE_FONCIERE ~44370000 ~
+YASMINE_FONCIERE ~44380000 ~
+YASMINE_FONCIERE ~444 ~
+YASMINE_FONCIERE ~44525000 ~
+YASMINE_FONCIERE ~61612000 ~
+YASMINE_FONCIERE ~612855NV ~
+YASMINE_FONCIERE ~61212000 ~
+YASMINE_FONCIERE ~61291000 ~
+YASMINE_FONCIERE ~34810003 ~
+YASMINE_FONCIERE ~34810004 ~
+YASMINE_FONCIERE ~612 ~
+YASMINE_FONCIERE ~61292000 ~
+YASMINE_FONCIERE ~61293000 ~
+YASMINE_FONCIERE ~61295000 ~
+YASMINE_FONCIERE ~61296000 ~
+YASMINE_FONCIERE ~61298000 ~
+YASMINE_FONCIERE ~61311000 ~
+YASMINE_FONCIERE ~61314000 ~
+YASMINE_FONCIERE ~61315000 ~
+YASMINE_FONCIERE ~61316000 ~
+YASMINE_FONCIERE ~6129 ~
+YASMINE_FONCIERE ~34810006 ~
+YASMINE_FONCIERE ~613 ~
+YASMINE_FONCIERE ~6131 ~
+YASMINE_FONCIERE ~75970000 ~
+YASMINE_FONCIERE ~61313000 ~
+YASMINE_FONCIERE ~34810001 ~
+YASMINE_FONCIERE ~34810007 ~
+YASMINE_FONCIERE ~34810008 ~
+YASMINE_FONCIERE ~34810002 ~
+YASMINE_FONCIERE ~34810005 ~
+YASMINE_FONCIERE ~34810022 ~
+YASMINE_FONCIERE ~44470000 ~
+YASMINE_FONCIERE ~34810010 ~
+YASMINE_FONCIERE ~34810011 ~
+YASMINE_FONCIERE ~34810013 ~
+YASMINE_FONCIERE ~34810023 ~
+YASMINE_FONCIERE ~34810024 ~
+YASMINE_FONCIERE ~61330000 ~
+YASMINE_FONCIERE ~61341000 ~
+YASMINE_FONCIERE ~61348000 ~
+YASMINE_FONCIERE ~61317000 ~
+YASMINE_FONCIERE ~6132 ~
+YASMINE_FONCIERE ~6133 ~
+YASMINE_FONCIERE ~61313100 ~
+YASMINE_FONCIERE ~61335000 ~
+YASMINE_FONCIERE ~6134 ~
+YASMINE_FONCIERE ~34581000 ~
+YASMINE_FONCIERE ~61336300 ~
+YASMINE_FONCIERE ~44320000 ~
+YASMINE_FONCIERE ~61336400 ~
+YASMINE_FONCIERE ~61345000 ~
+YASMINE_FONCIERE ~34580001 ~
+YASMINE_FONCIERE ~61343000 ~
+YASMINE_FONCIERE ~613312NV ~
+YASMINE_FONCIERE ~613311NV ~
+YASMINE_FONCIERE ~34580002 ~
+YASMINE_FONCIERE ~613356NV ~
+YASMINE_FONCIERE ~44180000 ~
+YASMINE_FONCIERE ~613362NV ~
+YASMINE_FONCIERE ~613411NV ~
+YASMINE_FONCIERE ~34810012 ~
+YASMINE_FONCIERE ~613481NV ~
+YASMINE_FONCIERE ~61318000 ~
+YASMINE_FONCIERE ~4417 ~
+YASMINE_FONCIERE ~6121 ~
+YASMINE_FONCIERE ~44480000 ~
+YASMINE_FONCIERE ~61367000 ~
+YASMINE_FONCIERE ~34810014 ~
+YASMINE_FONCIERE ~61371000 ~
+YASMINE_FONCIERE ~71278001 ~
+YASMINE_FONCIERE ~34970000 ~
+YASMINE_FONCIERE ~61378000 ~
+YASMINE_FONCIERE ~34930000 ~
+YASMINE_FONCIERE ~34950000 ~
+YASMINE_FONCIERE ~51112000 ~
+YASMINE_FONCIERE ~35020000 ~
+YASMINE_FONCIERE ~35040000 ~
+YASMINE_FONCIERE ~6137 ~
+YASMINE_FONCIERE ~3506 ~
+YASMINE_FONCIERE ~35061000 ~
+YASMINE_FONCIERE ~35062000 ~
+YASMINE_FONCIERE ~61365000 ~
+YASMINE_FONCIERE ~61353100 ~
+YASMINE_FONCIERE ~37 ~
+YASMINE_FONCIERE ~370 ~
+YASMINE_FONCIERE ~37010000 ~
+YASMINE_FONCIERE ~37020000 ~
+YASMINE_FONCIERE ~39 ~
+YASMINE_FONCIERE ~4413DCRG ~
+YASMINE_FONCIERE ~391 ~
+YASMINE_FONCIERE ~445 ~
+YASMINE_FONCIERE ~44131ATL ~
+YASMINE_FONCIERE ~4413NTRG ~
+YASMINE_FONCIERE ~4413OQRG ~
+YASMINE_FONCIERE ~34552110 ~
+YASMINE_FONCIERE ~4413RGFJ ~
+YASMINE_FONCIERE ~4413RGJI ~
+YASMINE_FONCIERE ~4413RGMB ~
+YASMINE_FONCIERE ~4413RVRG ~
+YASMINE_FONCIERE ~44132100 ~
+YASMINE_FONCIERE ~4413DECP ~
+YASMINE_FONCIERE ~4413TBRG ~
+YASMINE_FONCIERE ~39110000 ~
+YASMINE_FONCIERE ~4413GCCP ~
+YASMINE_FONCIERE ~39120000 ~
+YASMINE_FONCIERE ~39130000 ~
+YASMINE_FONCIERE ~44131PRO ~
+YASMINE_FONCIERE ~39140000 ~
+YASMINE_FONCIERE ~44132000 ~
+YASMINE_FONCIERE ~39150000 ~
+YASMINE_FONCIERE ~394 ~
+YASMINE_FONCIERE ~61362100 ~
+YASMINE_FONCIERE ~61362300 ~
+YASMINE_FONCIERE ~61365100 ~
+YASMINE_FONCIERE ~61353000 ~
+YASMINE_FONCIERE ~61211100 ~
+YASMINE_FONCIERE ~11400000 ~
+YASMINE_FONCIERE ~23400000 ~
+YASMINE_FONCIERE ~61351000 ~
+YASMINE_FONCIERE ~61352000 ~
+YASMINE_FONCIERE ~6135 ~
+YASMINE_FONCIERE ~61361000 ~
+YASMINE_FONCIERE ~6136 ~
+YASMINE_FONCIERE ~61365200 ~
+YASMINE_FONCIERE ~61353200 ~
+YASMINE_FONCIERE ~39410000 ~
+YASMINE_FONCIERE ~39420000 ~
+YASMINE_FONCIERE ~61211200 ~
+YASMINE_FONCIERE ~39430000 ~
+YASMINE_FONCIERE ~24831000 ~
+YASMINE_FONCIERE ~39460000 ~
+YASMINE_FONCIERE ~3151 ~
+YASMINE_FONCIERE ~31510016 ~
+YASMINE_FONCIERE ~61211300 ~
+YASMINE_FONCIERE ~312320NV ~
+YASMINE_FONCIERE ~341800NV ~
+YASMINE_FONCIERE ~39480000 ~
+YASMINE_FONCIERE ~613531NV ~
+YASMINE_FONCIERE ~613656NV ~
+YASMINE_FONCIERE ~61415000 ~
+YASMINE_FONCIERE ~61411000 ~
+YASMINE_FONCIERE ~614 ~
+YASMINE_FONCIERE ~6141 ~
+YASMINE_FONCIERE ~61413000 ~
+YASMINE_FONCIERE ~395 ~
+YASMINE_FONCIERE ~34552016 ~
+YASMINE_FONCIERE ~39500000 ~
+YASMINE_FONCIERE ~61416000 ~
+YASMINE_FONCIERE ~34552010 ~
+YASMINE_FONCIERE ~61421000 ~
+YASMINE_FONCIERE ~6142 ~
+YASMINE_FONCIERE ~61425100 ~
+YASMINE_FONCIERE ~61425000 ~
+YASMINE_FONCIERE ~61426000 ~
+YASMINE_FONCIERE ~61428000 ~
+YASMINE_FONCIERE ~51 ~
+YASMINE_FONCIERE ~511 ~
+YASMINE_FONCIERE ~6143 ~
+YASMINE_FONCIERE ~4452 ~
+YASMINE_FONCIERE ~44521000 ~
+YASMINE_FONCIERE ~61433000 ~
+YASMINE_FONCIERE ~4455 ~
+YASMINE_FONCIERE ~5111 ~
+YASMINE_FONCIERE ~349100NV ~
+YASMINE_FONCIERE ~44550010 ~
+YASMINE_FONCIERE ~31510019 ~
+YASMINE_FONCIERE ~51111000 ~
+YASMINE_FONCIERE ~23510000 ~
+YASMINE_FONCIERE ~44560000 ~
+YASMINE_FONCIERE ~35 ~
+YASMINE_FONCIERE ~44526000 ~
+YASMINE_FONCIERE ~350 ~
+YASMINE_FONCIERE ~44580000 ~
+YASMINE_FONCIERE ~44880002 ~
+YASMINE_FONCIERE ~44570000 ~
+YASMINE_FONCIERE ~61435000 ~
+YASMINE_FONCIERE ~61441000 ~
+YASMINE_FONCIERE ~445710NV ~
+YASMINE_FONCIERE ~61211400 ~
+YASMINE_FONCIERE ~445810NV ~
+YASMINE_FONCIERE ~448800NV ~
+YASMINE_FONCIERE ~65831000 ~
+YASMINE_FONCIERE ~44970000 ~
+YASMINE_FONCIERE ~61221000 ~
+YASMINE_FONCIERE ~44640000 ~
+YASMINE_FONCIERE ~44650000 ~
+YASMINE_FONCIERE ~446 ~
+YASMINE_FONCIERE ~44610000 ~
+YASMINE_FONCIERE ~44620000 ~
+YASMINE_FONCIERE ~63115000 ~
+YASMINE_FONCIERE ~44680000 ~
+YASMINE_FONCIERE ~448 ~
+YASMINE_FONCIERE ~44810000 ~
+YASMINE_FONCIERE ~44830000 ~
+YASMINE_FONCIERE ~448100NV ~
+YASMINE_FONCIERE ~44930000 ~
+YASMINE_FONCIERE ~449 ~
+YASMINE_FONCIERE ~44910000 ~
+YASMINE_FONCIERE ~44950000 ~
+YASMINE_FONCIERE ~44840000 ~
+YASMINE_FONCIERE ~44850000 ~
+YASMINE_FONCIERE ~44870000 ~
+YASMINE_FONCIERE ~44880000 ~
+YASMINE_FONCIERE ~45 ~
+YASMINE_FONCIERE ~450 ~
+YASMINE_FONCIERE ~45010000 ~
+YASMINE_FONCIERE ~45020000 ~
+YASMINE_FONCIERE ~45050000 ~
+YASMINE_FONCIERE ~45060000 ~
+YASMINE_FONCIERE ~45070000 ~
+YASMINE_FONCIERE ~45080000 ~
+YASMINE_FONCIERE ~47 ~
+YASMINE_FONCIERE ~470 ~
+YASMINE_FONCIERE ~71242100 ~
+YASMINE_FONCIERE ~47010000 ~
+YASMINE_FONCIERE ~47020000 ~
+YASMINE_FONCIERE ~55 ~
+YASMINE_FONCIERE ~552 ~
+YASMINE_FONCIERE ~71217000 ~
+YASMINE_FONCIERE ~71241000 ~
+YASMINE_FONCIERE ~71242000 ~
+YASMINE_FONCIERE ~71221000 ~
+YASMINE_FONCIERE ~55200000 ~
+YASMINE_FONCIERE ~35010000 ~
+YASMINE_FONCIERE ~71222000 ~
+YASMINE_FONCIERE ~44880001 ~
+YASMINE_FONCIERE ~553 ~
+YASMINE_FONCIERE ~55300000 ~
+YASMINE_FONCIERE ~554 ~
+YASMINE_FONCIERE ~55410000 ~
+YASMINE_FONCIERE ~61222000 ~
+YASMINE_FONCIERE ~448300NV ~
+YASMINE_FONCIERE ~44570006 ~
+YASMINE_FONCIERE ~44630000 ~
+YASMINE_FONCIERE ~23520000 ~
+YASMINE_FONCIERE ~35080000 ~
+YASMINE_FONCIERE ~7122 ~
+YASMINE_FONCIERE ~7124 ~
+YASMINE_FONCIERE ~712481NV ~
+YASMINE_FONCIERE ~11990000 ~
+YASMINE_FONCIERE ~16010001 ~
+YASMINE_FONCIERE ~11890000 ~
+YASMINE_FONCIERE ~71242400 ~
+YASMINE_FONCIERE ~71242500 ~
+YASMINE_FONCIERE ~5113 ~
+YASMINE_FONCIERE ~51131000 ~
+YASMINE_FONCIERE ~51132000 ~
+YASMINE_FONCIERE ~35010001 ~
+YASMINE_FONCIERE ~34550014 ~
+YASMINE_FONCIERE ~34550020 ~
+YASMINE_FONCIERE ~342730NV ~
+YASMINE_FONCIERE ~51180000 ~
+YASMINE_FONCIERE ~34551020 ~
+YASMINE_FONCIERE ~61223000 ~
+YASMINE_FONCIERE ~71247200 ~
+YASMINE_FONCIERE ~31510013 ~
+YASMINE_FONCIERE ~61251000 ~
+YASMINE_FONCIERE ~6144 ~
+YASMINE_FONCIERE ~233100NV ~
+YASMINE_FONCIERE ~61442000 ~
+YASMINE_FONCIERE ~61443000 ~
+YASMINE_FONCIERE ~61436000 ~
+YASMINE_FONCIERE ~34212000 ~
+YASMINE_FONCIERE ~61444000 ~
+YASMINE_FONCIERE ~61455PNV ~
+YASMINE_FONCIERE ~61448000 ~
+YASMINE_FONCIERE ~34310002 ~
+YASMINE_FONCIERE ~238 ~
+YASMINE_FONCIERE ~239 ~
+YASMINE_FONCIERE ~51150000 ~
+YASMINE_FONCIERE ~61442100 ~
+YASMINE_FONCIERE ~233218NV ~
+YASMINE_FONCIERE ~61447100 ~
+YASMINE_FONCIERE ~61451000 ~
+YASMINE_FONCIERE ~75851000 ~
+YASMINE_FONCIERE ~61680000 ~
+YASMINE_FONCIERE ~61932000 ~
+YASMINE_FONCIERE ~61768000 ~
+YASMINE_FONCIERE ~233222NV ~
+YASMINE_FONCIERE ~61461000 ~
+YASMINE_FONCIERE ~61678000 ~
+YASMINE_FONCIERE ~2351NOVO ~
+YASMINE_FONCIERE ~233242NV ~
+YASMINE_FONCIERE ~6122 ~
+YASMINE_FONCIERE ~44630001 ~
+YASMINE_FONCIERE ~61766000 ~
+YASMINE_FONCIERE ~23920000 ~
+YASMINE_FONCIERE ~61673000 ~
+YASMINE_FONCIERE ~23930000 ~
+YASMINE_FONCIERE ~61480000 ~
+YASMINE_FONCIERE ~61212100 ~
+YASMINE_FONCIERE ~31232000 ~
+YASMINE_FONCIERE ~23940000 ~
+YASMINE_FONCIERE ~2355NOVO ~
+YASMINE_FONCIERE ~23970000 ~
+YASMINE_FONCIERE ~23980000 ~
+YASMINE_FONCIERE ~24 ~
+YASMINE_FONCIERE ~241 ~
+YASMINE_FONCIERE ~61227000 ~
+YASMINE_FONCIERE ~24110000 ~
+YASMINE_FONCIERE ~51610000 ~
+YASMINE_FONCIERE ~34380000 ~
+YASMINE_FONCIERE ~61241000 ~
+YASMINE_FONCIERE ~342 ~
+YASMINE_FONCIERE ~34310000 ~
+YASMINE_FONCIERE ~3421 ~
+YASMINE_FONCIERE ~34230000 ~
+YASMINE_FONCIERE ~61232100 ~
+YASMINE_FONCIERE ~61242200 ~
+YASMINE_FONCIERE ~61243100 ~
+YASMINE_FONCIERE ~61224000 ~
+YASMINE_FONCIERE ~61225000 ~
+YASMINE_FONCIERE ~61226000 ~
+YASMINE_FONCIERE ~34240000 ~
+YASMINE_FONCIERE ~61231000 ~
+YASMINE_FONCIERE ~61233000 ~
+YASMINE_FONCIERE ~6123 ~
+YASMINE_FONCIERE ~34250000 ~
+YASMINE_FONCIERE ~6124 ~
+YASMINE_FONCIERE ~23550000 ~
+YASMINE_FONCIERE ~61243000 ~
+YASMINE_FONCIERE ~6125 ~
+YASMINE_FONCIERE ~61222100 ~
+YASMINE_FONCIERE ~61244000 ~
+YASMINE_FONCIERE ~612230NV ~
+YASMINE_FONCIERE ~34310001 ~
+YASMINE_FONCIERE ~3427 ~
+YASMINE_FONCIERE ~34271000 ~
+YASMINE_FONCIERE ~612521NV ~
+YASMINE_FONCIERE ~61431000 ~
+YASMINE_FONCIERE ~34310009 ~
+YASMINE_FONCIERE ~3431DAOU ~
+YASMINE_FONCIERE ~61674000 ~
+YASMINE_FONCIERE ~61611000 ~
+YASMINE_FONCIERE ~61615000 ~
+YASMINE_FONCIERE ~61745000 ~
+YASMINE_FONCIERE ~63114000 ~
+YASMINE_FONCIERE ~44570001 ~
+YASMINE_FONCIERE ~3431EZZE ~
+YASMINE_FONCIERE ~61671000 ~
+YASMINE_FONCIERE ~34272000 ~
+YASMINE_FONCIERE ~61764000 ~
+YASMINE_FONCIERE ~34280000 ~
+YASMINE_FONCIERE ~343 ~
+YASMINE_FONCIERE ~61455100 ~
+YASMINE_FONCIERE ~34 ~
+YASMINE_FONCIERE ~61678100 ~
+YASMINE_FONCIERE ~341 ~
+YASMINE_FONCIERE ~34130000 ~
+YASMINE_FONCIERE ~61455500 ~
+YASMINE_FONCIERE ~34170000 ~
+YASMINE_FONCIERE ~61481200 ~
+YASMINE_FONCIERE ~61615200 ~
+YASMINE_FONCIERE ~61615300 ~
+YASMINE_FONCIERE ~34180000 ~
+YASMINE_FONCIERE ~34310010 ~
+YASMINE_FONCIERE ~3123 ~
+YASMINE_FONCIERE ~71211000 ~
+YASMINE_FONCIERE ~31231000 ~
+YASMINE_FONCIERE ~3431BERR ~
+YASMINE_FONCIERE ~61615400 ~
+YASMINE_FONCIERE ~23580000 ~
+YASMINE_FONCIERE ~23800000 ~
+YASMINE_FONCIERE ~23801000 ~
+YASMINE_FONCIERE ~23950000 ~
+YASMINE_FONCIERE ~31233000 ~
+YASMINE_FONCIERE ~44630050 ~
+YASMINE_FONCIERE ~61712200 ~
+YASMINE_FONCIERE ~31260000 ~
+YASMINE_FONCIERE ~31280000 ~
+YASMINE_FONCIERE ~313 ~
+YASMINE_FONCIERE ~71211100 ~
+YASMINE_FONCIERE ~3431SOUS ~
+YASMINE_FONCIERE ~3131 ~
+YASMINE_FONCIERE ~3431TAOU ~
+YASMINE_FONCIERE ~65851000 ~
+YASMINE_FONCIERE ~61440000 ~
+YASMINE_FONCIERE ~31312000 ~
+YASMINE_FONCIERE ~61765200 ~
+YASMINE_FONCIERE ~61456000 ~
+YASMINE_FONCIERE ~6145 ~
+YASMINE_FONCIERE ~6146 ~
+YASMINE_FONCIERE ~31317000 ~
+YASMINE_FONCIERE ~71321000 ~
+YASMINE_FONCIERE ~61820100 ~
+YASMINE_FONCIERE ~61448200 ~
+YASMINE_FONCIERE ~61712000 ~
+YASMINE_FONCIERE ~617 ~
+YASMINE_FONCIERE ~61455400 ~
+YASMINE_FONCIERE ~6171 ~
+YASMINE_FONCIERE ~61715000 ~
+YASMINE_FONCIERE ~6174 ~
+YASMINE_FONCIERE ~61462000 ~
+YASMINE_FONCIERE ~61471000 ~
+YASMINE_FONCIERE ~6147 ~
+YASMINE_FONCIERE ~61472000 ~
+YASMINE_FONCIERE ~616 ~
+YASMINE_FONCIERE ~61744000 ~
+YASMINE_FONCIERE ~6161 ~
+YASMINE_FONCIERE ~6167 ~
+YASMINE_FONCIERE ~61761000 ~
+YASMINE_FONCIERE ~61762000 ~
+YASMINE_FONCIERE ~61763000 ~
+YASMINE_FONCIERE ~6176 ~
+YASMINE_FONCIERE ~24864000 ~
+YASMINE_FONCIERE ~61481100 ~
+YASMINE_FONCIERE ~6148 ~
+YASMINE_FONCIERE ~34551000 ~
+YASMINE_FONCIERE ~61490000 ~
+YASMINE_FONCIERE ~61771000 ~
+YASMINE_FONCIERE ~61774000 ~
+YASMINE_FONCIERE ~61780000 ~
+YASMINE_FONCIERE ~6177 ~
+YASMINE_FONCIERE ~3134 ~
+YASMINE_FONCIERE ~6178 ~
+YASMINE_FONCIERE ~61780100 ~
+YASMINE_FONCIERE ~61713001 ~
+YASMINE_FONCIERE ~63111000 ~
+YASMINE_FONCIERE ~61810000 ~
+YASMINE_FONCIERE ~618 ~
+YASMINE_FONCIERE ~61820000 ~
+YASMINE_FONCIERE ~6331 ~
+YASMINE_FONCIERE ~61850000 ~
+YASMINE_FONCIERE ~61860000 ~
+YASMINE_FONCIERE ~6182 ~
+YASMINE_FONCIERE ~61870000 ~
+YASMINE_FONCIERE ~61911000 ~
+YASMINE_FONCIERE ~61912000 ~
+YASMINE_FONCIERE ~61921000 ~
+YASMINE_FONCIERE ~619 ~
+YASMINE_FONCIERE ~6191 ~
+YASMINE_FONCIERE ~61922000 ~
+YASMINE_FONCIERE ~61923000 ~
+YASMINE_FONCIERE ~6192 ~
+YASMINE_FONCIERE ~61928000 ~
+YASMINE_FONCIERE ~61931000 ~
+YASMINE_FONCIERE ~61933000 ~
+YASMINE_FONCIERE ~61934000 ~
+YASMINE_FONCIERE ~6193 ~
+YASMINE_FONCIERE ~61935000 ~
+YASMINE_FONCIERE ~61938000 ~
+YASMINE_FONCIERE ~61942000 ~
+YASMINE_FONCIERE ~61943000 ~
+YASMINE_FONCIERE ~61880000 ~
+YASMINE_FONCIERE ~6194 ~
+YASMINE_FONCIERE ~61955000 ~
+YASMINE_FONCIERE ~61957000 ~
+YASMINE_FONCIERE ~6195 ~
+YASMINE_FONCIERE ~61961000 ~
+YASMINE_FONCIERE ~61964000 ~
+YASMINE_FONCIERE ~61981000 ~
+YASMINE_FONCIERE ~61984000 ~
+YASMINE_FONCIERE ~63113000 ~
+YASMINE_FONCIERE ~6196 ~
+YASMINE_FONCIERE ~6198 ~
+YASMINE_FONCIERE ~63180000 ~
+YASMINE_FONCIERE ~63 ~
+YASMINE_FONCIERE ~631 ~
+YASMINE_FONCIERE ~6311 ~
+YASMINE_FONCIERE ~633 ~
+YASMINE_FONCIERE ~61964100 ~
+YASMINE_FONCIERE ~31110000 ~
+YASMINE_FONCIERE ~34110000 ~
+YASMINE_FONCIERE ~31341000 ~
+YASMINE_FONCIERE ~31342000 ~
+YASMINE_FONCIERE ~63115100 ~
+YASMINE_FONCIERE ~614610NV ~
+YASMINE_FONCIERE ~31343000 ~
+YASMINE_FONCIERE ~63118000 ~
+YASMINE_FONCIERE ~63310000 ~
+YASMINE_FONCIERE ~63380000 ~
+YASMINE_FONCIERE ~63820000 ~
+YASMINE_FONCIERE ~63850000 ~
+YASMINE_FONCIERE ~63860000 ~
+YASMINE_FONCIERE ~63880000 ~
+YASMINE_FONCIERE ~63910000 ~
+YASMINE_FONCIERE ~638 ~
+YASMINE_FONCIERE ~63920000 ~
+YASMINE_FONCIERE ~63930000 ~
+YASMINE_FONCIERE ~63940000 ~
+YASMINE_FONCIERE ~63960000 ~
+YASMINE_FONCIERE ~639 ~
+YASMINE_FONCIERE ~63980000 ~
+YASMINE_FONCIERE ~65120000 ~
+YASMINE_FONCIERE ~65130000 ~
+YASMINE_FONCIERE ~65140000 ~
+YASMINE_FONCIERE ~65180000 ~
+YASMINE_FONCIERE ~65610000 ~
+YASMINE_FONCIERE ~65 ~
+YASMINE_FONCIERE ~651 ~
+YASMINE_FONCIERE ~65680000 ~
+YASMINE_FONCIERE ~65811000 ~
+YASMINE_FONCIERE ~656 ~
+YASMINE_FONCIERE ~65812000 ~
+YASMINE_FONCIERE ~658 ~
+YASMINE_FONCIERE ~6581 ~
+YASMINE_FONCIERE ~31380000 ~
+YASMINE_FONCIERE ~65820000 ~
+YASMINE_FONCIERE ~61252000 ~
+YASMINE_FONCIERE ~51410031 ~
+YASMINE_FONCIERE ~65850000 ~
+YASMINE_FONCIERE ~65861000 ~
+YASMINE_FONCIERE ~314 ~
+YASMINE_FONCIERE ~65821000 ~
+YASMINE_FONCIERE ~65850200 ~
+YASMINE_FONCIERE ~6583 ~
+YASMINE_FONCIERE ~6585 ~
+YASMINE_FONCIERE ~65833000 ~
+YASMINE_FONCIERE ~6586 ~
+YASMINE_FONCIERE ~3141 ~
+YASMINE_FONCIERE ~24831100 ~
+YASMINE_FONCIERE ~65850100 ~
+YASMINE_FONCIERE ~65862000 ~
+YASMINE_FONCIERE ~31411000 ~
+YASMINE_FONCIERE ~65863000 ~
+YASMINE_FONCIERE ~51410041 ~
+YASMINE_FONCIERE ~61711000 ~
+YASMINE_FONCIERE ~44550020 ~
+YASMINE_FONCIERE ~61412000 ~
+YASMINE_FONCIERE ~44630060 ~
+YASMINE_FONCIERE ~31412000 ~
+YASMINE_FONCIERE ~61711001 ~
+YASMINE_FONCIERE ~61711002 ~
+YASMINE_FONCIERE ~71243000 ~
+YASMINE_FONCIERE ~67010000 ~
+YASMINE_FONCIERE ~65911000 ~
+YASMINE_FONCIERE ~65912000 ~
+YASMINE_FONCIERE ~65913000 ~
+YASMINE_FONCIERE ~65941000 ~
+YASMINE_FONCIERE ~65942000 ~
+YASMINE_FONCIERE ~659 ~
+YASMINE_FONCIERE ~6591 ~
+YASMINE_FONCIERE ~65944000 ~
+YASMINE_FONCIERE ~65945000 ~
+YASMINE_FONCIERE ~65946000 ~
+YASMINE_FONCIERE ~6594 ~
+YASMINE_FONCIERE ~65955000 ~
+YASMINE_FONCIERE ~65957000 ~
+YASMINE_FONCIERE ~65962000 ~
+YASMINE_FONCIERE ~65963000 ~
+YASMINE_FONCIERE ~65980000 ~
+YASMINE_FONCIERE ~6595 ~
+YASMINE_FONCIERE ~67050000 ~
+YASMINE_FONCIERE ~6596 ~
+YASMINE_FONCIERE ~67080000 ~
+YASMINE_FONCIERE ~65880000 ~
+YASMINE_FONCIERE ~67 ~
+YASMINE_FONCIERE ~670 ~
+YASMINE_FONCIERE ~6143110 ~
+YASMINE_FONCIERE ~65880100 ~
+YASMINE_FONCIERE ~6588 ~
+YASMINE_FONCIERE ~3145 ~
+YASMINE_FONCIERE ~233111NV ~
+YASMINE_FONCIERE ~31510020 ~
+YASMINE_FONCIERE ~31510014 ~
+YASMINE_FONCIERE ~31451000 ~
+YASMINE_FONCIERE ~31510015 ~
+YASMINE_FONCIERE ~24150000 ~
+YASMINE_FONCIERE ~348110000 ~
+YASMINE_FONCIERE ~61254000 ~
+YASMINE_FONCIERE ~71279000 ~
+YASMINE_FONCIERE ~34580000 ~
+YASMINE_FONCIERE ~4413GCRG ~
+YASMINE_FONCIERE ~31452000 ~
+YASMINE_FONCIERE ~71248200 ~
+YASMINE_FONCIERE ~31453000 ~
+YASMINE_FONCIERE ~31480000 ~
+YASMINE_FONCIERE ~71274100 ~
+YASMINE_FONCIERE ~71274200 ~
+YASMINE_FONCIERE ~71251000 ~
+YASMINE_FONCIERE ~71252000 ~
+YASMINE_FONCIERE ~71253000 ~
+YASMINE_FONCIERE ~7125 ~
+YASMINE_FONCIERE ~71249200 ~
+YASMINE_FONCIERE ~71260000 ~
+YASMINE_FONCIERE ~7127 ~
+YASMINE_FONCIERE ~71278002 ~
+YASMINE_FONCIERE ~71272000 ~
+YASMINE_FONCIERE ~71273000 ~
+YASMINE_FONCIERE ~71275000 ~
+YASMINE_FONCIERE ~71276000 ~
+YASMINE_FONCIERE ~71280000 ~
+YASMINE_FONCIERE ~71291000 ~
+YASMINE_FONCIERE ~71292000 ~
+YASMINE_FONCIERE ~71294000 ~
+YASMINE_FONCIERE ~71295000 ~
+YASMINE_FONCIERE ~71298000 ~
+YASMINE_FONCIERE ~71410000 ~
+YASMINE_FONCIERE ~71420000 ~
+YASMINE_FONCIERE ~71430000 ~
+YASMINE_FONCIERE ~71480000 ~
+YASMINE_FONCIERE ~71610000 ~
+YASMINE_FONCIERE ~7129 ~
+YASMINE_FONCIERE ~713 ~
+YASMINE_FONCIERE ~7131 ~
+YASMINE_FONCIERE ~7132 ~
+YASMINE_FONCIERE ~71341000 ~
+YASMINE_FONCIERE ~71317000 ~
+YASMINE_FONCIERE ~7134 ~
+YASMINE_FONCIERE ~71327000 ~
+YASMINE_FONCIERE ~71312000 ~
+YASMINE_FONCIERE ~71322000 ~
+YASMINE_FONCIERE ~714 ~
+YASMINE_FONCIERE ~716 ~
+YASMINE_FONCIERE ~71343000 ~
+YASMINE_FONCIERE ~71311000 ~
+YASMINE_FONCIERE ~71342000 ~
+YASMINE_FONCIERE ~712746NV ~
+YASMINE_FONCIERE ~315 ~
+YASMINE_FONCIERE ~71250000 ~
+YASMINE_FONCIERE ~71680000 ~
+YASMINE_FONCIERE ~71810000 ~
+YASMINE_FONCIERE ~71820000 ~
+YASMINE_FONCIERE ~71850000 ~
+YASMINE_FONCIERE ~71860000 ~
+YASMINE_FONCIERE ~71880000 ~
+YASMINE_FONCIERE ~71910000 ~
+YASMINE_FONCIERE ~71920000 ~
+YASMINE_FONCIERE ~71930000 ~
+YASMINE_FONCIERE ~71940000 ~
+YASMINE_FONCIERE ~71950000 ~
+YASMINE_FONCIERE ~71960000 ~
+YASMINE_FONCIERE ~718 ~
+YASMINE_FONCIERE ~719 ~
+YASMINE_FONCIERE ~44630010 ~
+YASMINE_FONCIERE ~73310000 ~
+YASMINE_FONCIERE ~73210000 ~
+YASMINE_FONCIERE ~61253000 ~
+YASMINE_FONCIERE ~73250000 ~
+YASMINE_FONCIERE ~73280000 ~
+YASMINE_FONCIERE ~71971000 ~
+YASMINE_FONCIERE ~71972000 ~
+YASMINE_FONCIERE ~71973000 ~
+YASMINE_FONCIERE ~71975000 ~
+YASMINE_FONCIERE ~73 ~
+YASMINE_FONCIERE ~732 ~
+YASMINE_FONCIERE ~733 ~
+YASMINE_FONCIERE ~71976000 ~
+YASMINE_FONCIERE ~7197 ~
+YASMINE_FONCIERE ~71978000 ~
+YASMINE_FONCIERE ~71981000 ~
+YASMINE_FONCIERE ~71984000 ~
+YASMINE_FONCIERE ~7198 ~
+YASMINE_FONCIERE ~71964100 ~
+YASMINE_FONCIERE ~345 ~
+YASMINE_FONCIERE ~3451 ~
+YASMINE_FONCIERE ~75840000 ~
+YASMINE_FONCIERE ~61713000 ~
+YASMINE_FONCIERE ~75850000 ~
+YASMINE_FONCIERE ~75830000 ~
+YASMINE_FONCIERE ~75131000 ~
+YASMINE_FONCIERE ~75132000 ~
+YASMINE_FONCIERE ~73310100 ~
+YASMINE_FONCIERE ~34511000 ~
+YASMINE_FONCIERE ~75130000 ~
+YASMINE_FONCIERE ~73811000 ~
+YASMINE_FONCIERE ~73813000 ~
+YASMINE_FONCIERE ~73830000 ~
+YASMINE_FONCIERE ~73840000 ~
+YASMINE_FONCIERE ~73850000 ~
+YASMINE_FONCIERE ~73880000 ~
+YASMINE_FONCIERE ~73910000 ~
+YASMINE_FONCIERE ~73920000 ~
+YASMINE_FONCIERE ~73930000 ~
+YASMINE_FONCIERE ~73940000 ~
+YASMINE_FONCIERE ~73960000 ~
+YASMINE_FONCIERE ~73971000 ~
+YASMINE_FONCIERE ~73973000 ~
+YASMINE_FONCIERE ~73978000 ~
+YASMINE_FONCIERE ~73980000 ~
+YASMINE_FONCIERE ~75120000 ~
+YASMINE_FONCIERE ~75820000 ~
+YASMINE_FONCIERE ~75911000 ~
+YASMINE_FONCIERE ~738 ~
+YASMINE_FONCIERE ~7381 ~
+YASMINE_FONCIERE ~75140000 ~
+YASMINE_FONCIERE ~75180000 ~
+YASMINE_FONCIERE ~75610000 ~
+YASMINE_FONCIERE ~73860000 ~
+YASMINE_FONCIERE ~73380000 ~
+YASMINE_FONCIERE ~75680000 ~
+YASMINE_FONCIERE ~739 ~
+YASMINE_FONCIERE ~75770000 ~
+YASMINE_FONCIERE ~75780000 ~
+YASMINE_FONCIERE ~7397 ~
+YASMINE_FONCIERE ~75 ~
+YASMINE_FONCIERE ~751 ~
+YASMINE_FONCIERE ~75811000 ~
+YASMINE_FONCIERE ~75912000 ~
+YASMINE_FONCIERE ~75913000 ~
+YASMINE_FONCIERE ~75941000 ~
+YASMINE_FONCIERE ~75942000 ~
+YASMINE_FONCIERE ~7331 ~
+YASMINE_FONCIERE ~756 ~
+YASMINE_FONCIERE ~757 ~
+YASMINE_FONCIERE ~758 ~
+YASMINE_FONCIERE ~7581 ~
+YASMINE_FONCIERE ~75944000 ~
+YASMINE_FONCIERE ~75945000 ~
+YASMINE_FONCIERE ~75946000 ~
+YASMINE_FONCIERE ~75955000 ~
+YASMINE_FONCIERE ~75957000 ~
+YASMINE_FONCIERE ~71212000 ~
+YASMINE_FONCIERE ~71190000 ~
+YASMINE_FONCIERE ~712 ~
+YASMINE_FONCIERE ~7121 ~
+YASMINE_FONCIERE ~75962000 ~
+YASMINE_FONCIERE ~75963000 ~
+YASMINE_FONCIERE ~75861000 ~
+YASMINE_FONCIERE ~75862000 ~
+YASMINE_FONCIERE ~75863000 ~
+YASMINE_FONCIERE ~75880000 ~
+YASMINE_FONCIERE ~75980000 ~
+YASMINE_FONCIERE ~759 ~
+YASMINE_FONCIERE ~7591 ~
+YASMINE_FONCIERE ~7594 ~
+YASMINE_FONCIERE ~7585 ~
+YASMINE_FONCIERE ~7586 ~
+YASMINE_FONCIERE ~7595 ~
+YASMINE_FONCIERE ~7596 ~
+YASMINE_FONCIERE ~75812000 ~
+YASMINE_FONCIERE ~24160000 ~
+YASMINE_FONCIERE ~24180000 ~
+YASMINE_FONCIERE ~248 ~
+YASMINE_FONCIERE ~2481 ~
+YASMINE_FONCIERE ~24811000 ~
+YASMINE_FONCIERE ~24813000 ~
+YASMINE_FONCIERE ~24818000 ~
+YASMINE_FONCIERE ~24830000 ~
+YASMINE_FONCIERE ~2486 ~
+YASMINE_FONCIERE ~248600NV ~
+YASMINE_FONCIERE ~24861000 ~
+YASMINE_FONCIERE ~24880000 ~
+YASMINE_FONCIERE ~25 ~
+YASMINE_FONCIERE ~251 ~
+YASMINE_FONCIERE ~25100000 ~
+YASMINE_FONCIERE ~258 ~
+YASMINE_FONCIERE ~25810000 ~
+YASMINE_FONCIERE ~25880000 ~
+YASMINE_FONCIERE ~27 ~
+YASMINE_FONCIERE ~271 ~
+YASMINE_FONCIERE ~27100000 ~
+YASMINE_FONCIERE ~272 ~
+YASMINE_FONCIERE ~27200000 ~
+YASMINE_FONCIERE ~28 ~
+YASMINE_FONCIERE ~281 ~
+YASMINE_FONCIERE ~2811 ~
+YASMINE_FONCIERE ~28111000 ~
+YASMINE_FONCIERE ~28112000 ~
+YASMINE_FONCIERE ~28113000 ~
+YASMINE_FONCIERE ~28114000 ~
+YASMINE_FONCIERE ~34512000 ~
+YASMINE_FONCIERE ~28116000 ~
+YASMINE_FONCIERE ~28117000 ~
+YASMINE_FONCIERE ~28118000 ~
+YASMINE_FONCIERE ~2811700N ~
+YASMINE_FONCIERE ~34513000 ~
+YASMINE_FONCIERE ~28128000 ~
+YASMINE_FONCIERE ~2812 ~
+YASMINE_FONCIERE ~28121000 ~
+YASMINE_FONCIERE ~28125000 ~
+YASMINE_FONCIERE ~28220000 ~
+YASMINE_FONCIERE ~28130000 ~
+YASMINE_FONCIERE ~282 ~
+YASMINE_FONCIERE ~28210000 ~
+YASMINE_FONCIERE ~282800NV ~
+YASMINE_FONCIERE ~28230000 ~
+YASMINE_FONCIERE ~28280000 ~
+YASMINE_FONCIERE ~28281000 ~
+YASMINE_FONCIERE ~283 ~
+YASMINE_FONCIERE ~2831 ~
+YASMINE_FONCIERE ~28311000 ~
+YASMINE_FONCIERE ~28312000 ~
+YASMINE_FONCIERE ~28313000 ~
+YASMINE_FONCIERE ~28314000 ~
+YASMINE_FONCIERE ~28316000 ~
+YASMINE_FONCIERE ~28318000 ~
+YASMINE_FONCIERE ~2832 ~
+YASMINE_FONCIERE ~3455 ~
+YASMINE_FONCIERE ~28323000 ~
+YASMINE_FONCIERE ~28325000 ~
+YASMINE_FONCIERE ~28321400 ~
+YASMINE_FONCIERE ~28328000 ~
+YASMINE_FONCIERE ~2832230N ~
+YASMINE_FONCIERE ~2832341N ~
+YASMINE_FONCIERE ~2832342N ~
+YASMINE_FONCIERE ~28327000 ~
+YASMINE_FONCIERE ~28327NOV ~
+YASMINE_FONCIERE ~283300NV ~
+YASMINE_FONCIERE ~2833 ~
+YASMINE_FONCIERE ~28331000 ~
+YASMINE_FONCIERE ~28332000 ~
+YASMINE_FONCIERE ~28333000 ~
+YASMINE_FONCIERE ~28338000 ~
+YASMINE_FONCIERE ~28332100 ~
+YASMINE_FONCIERE ~2833215N ~
+YASMINE_FONCIERE ~2833218N ~
+YASMINE_FONCIERE ~2833220N ~
+YASMINE_FONCIERE ~11610000 ~
+YASMINE_FONCIERE ~2833222N ~
+YASMINE_FONCIERE ~2833223N ~
+YASMINE_FONCIERE ~28332NOV ~
+YASMINE_FONCIERE ~28338NOV ~
+YASMINE_FONCIERE ~28340000 ~
+YASMINE_FONCIERE ~283480NV ~
+YASMINE_FONCIERE ~2835 ~
+YASMINE_FONCIERE ~28351000 ~
+YASMINE_FONCIERE ~28351NOV ~
+YASMINE_FONCIERE ~28352000 ~
+YASMINE_FONCIERE ~28355000 ~
+YASMINE_FONCIERE ~28355NOV ~
+YASMINE_FONCIERE ~71180000 ~
+YASMINE_FONCIERE ~28356000 ~
+YASMINE_FONCIERE ~28358000 ~
+YASMINE_FONCIERE ~2838 ~
+YASMINE_FONCIERE ~71130000 ~
+YASMINE_FONCIERE ~71110000 ~
+YASMINE_FONCIERE ~28380000 ~
+YASMINE_FONCIERE ~61140000 ~
+YASMINE_FONCIERE ~29 ~
+YASMINE_FONCIERE ~292 ~
+YASMINE_FONCIERE ~29200000 ~
+YASMINE_FONCIERE ~293 ~
+YASMINE_FONCIERE ~29300000 ~
+YASMINE_FONCIERE ~294 ~
+YASMINE_FONCIERE ~29410000 ~
+YASMINE_FONCIERE ~29480000 ~
+YASMINE_FONCIERE ~295 ~
+YASMINE_FONCIERE ~29510000 ~
+YASMINE_FONCIERE ~29580000 ~
+YASMINE_FONCIERE ~31 ~
+YASMINE_FONCIERE ~311 ~
+YASMINE_FONCIERE ~34310004 ~
+YASMINE_FONCIERE ~61714000 ~
+YASMINE_FONCIERE ~31520000 ~
+YASMINE_FONCIERE ~31560000 ~
+YASMINE_FONCIERE ~31580000 ~
+YASMINE_FONCIERE ~31510000 ~
+YASMINE_FONCIERE ~31510010 ~
+YASMINE_FONCIERE ~31510011 ~
+YASMINE_FONCIERE ~92662 ~
+YASMINE_FONCIERE ~31510018 ~
+YASMINE_FONCIERE ~31510021 ~
+YASMINE_FONCIERE ~31311000 ~
+YASMINE_FONCIERE ~31510017 ~
+YASMINE_FONCIERE ~24870000 ~
+YASMINE_FONCIERE ~31510012 ~
+YASMINE_FONCIERE ~31120000 ~
+YASMINE_FONCIERE ~44630020 ~
+YASMINE_FONCIERE ~31160000 ~
+YASMINE_FONCIERE ~31180000 ~
+YASMINE_FONCIERE ~312 ~
+YASMINE_FONCIERE ~3121 ~
+YASMINE_FONCIERE ~51410000 ~
+YASMINE_FONCIERE ~51430000 ~
+YASMINE_FONCIERE ~51460000 ~
+YASMINE_FONCIERE ~31211000 ~
+YASMINE_FONCIERE ~31212000 ~
+YASMINE_FONCIERE ~3122 ~
+YASMINE_FONCIERE ~51480000 ~
+YASMINE_FONCIERE ~31221000 ~
+YASMINE_FONCIERE ~31222000 ~
+YASMINE_FONCIERE ~31223000 ~
+YASMINE_FONCIERE ~31224000 ~
+YASMINE_FONCIERE ~31225000 ~
+YASMINE_FONCIERE ~31226000 ~
+YASMINE_FONCIERE ~31227000 ~
+YASMINE_FONCIERE ~34111000 ~
+YASMINE_FONCIERE ~514 ~
+YASMINE_FONCIERE ~516 ~
+YASMINE_FONCIERE ~5161 ~
+YASMINE_FONCIERE ~511800NV ~
+YASMINE_FONCIERE ~51611000 ~
+YASMINE_FONCIERE ~61769000 ~
+YASMINE_FONCIERE ~516140NV ~
+YASMINE_FONCIERE ~516130NV ~
+YASMINE_FONCIERE ~51613000 ~
+YASMINE_FONCIERE ~51614000 ~
+YASMINE_FONCIERE ~516150NV ~
+YASMINE_FONCIERE ~516160NV ~
+YASMINE_FONCIERE ~51650000 ~
+YASMINE_FONCIERE ~61741000 ~
+YASMINE_FONCIERE ~34552012 ~
+YASMINE_FONCIERE ~34552112 ~
+YASMINE_FONCIERE ~61742000 ~
+YASMINE_FONCIERE ~345514NV ~
+YASMINE_FONCIERE ~61438000 ~
+YASMINE_FONCIERE ~235500NV ~
+YASMINE_FONCIERE ~312110NV ~
+YASMINE_FONCIERE ~312120NV ~
+YASMINE_FONCIERE ~312221NV ~
+YASMINE_FONCIERE ~312223NV ~
+YASMINE_FONCIERE ~312226NV ~
+YASMINE_FONCIERE ~312228NV ~
+YASMINE_FONCIERE ~312229NV ~
+YASMINE_FONCIERE ~312230NV ~
+YASMINE_FONCIERE ~61743000 ~
+YASMINE_FONCIERE ~342700NV ~
+YASMINE_FONCIERE ~343100NV ~
+YASMINE_FONCIERE ~343110NV ~
+YASMINE_FONCIERE ~345510NV ~
+YASMINE_FONCIERE ~345512NV ~
+YASMINE_FONCIERE ~345520NV ~
+YASMINE_FONCIERE ~345523NV ~
+YASMINE_FONCIERE ~345524NV ~
+YASMINE_FONCIERE ~345525NV ~
+YASMINE_FONCIERE ~345526NV ~
+YASMINE_FONCIERE ~345527NV ~
+YASMINE_FONCIERE ~3455CMNV ~
+YASMINE_FONCIERE ~345610NV ~
+YASMINE_FONCIERE ~348800NV ~
+YASMINE_FONCIERE ~394200NV ~
+YASMINE_FONCIERE ~511100NV ~
+YASMINE_FONCIERE ~511120NV ~
+YASMINE_FONCIERE ~511122NV ~
+YASMINE_FONCIERE ~511130NV ~
+YASMINE_FONCIERE ~100000000000000 ~
+YASMINE_FONCIERE ~200000000000000 ~
+YASMINE_FONCIERE ~300000000000000 ~
+YASMINE_FONCIERE ~400000000000000 ~
+YASMINE_FONCIERE ~500000000000000 ~
+YASMINE_FONCIERE ~600000000000000 ~
+YASMINE_FONCIERE ~700000000000000 ~
+YASMINE_FONCIERE ~800000000000000 ~
+YASMINE_FONCIERE ~900000000000000 ~
+YASMINE_FONCIERE ~A00000000000000 ~
+YASMINE_FONCIERE ~21 ~
+YASMINE_FONCIERE ~211 ~
+YASMINE_FONCIERE ~21110000 ~
+YASMINE_FONCIERE ~21120000 ~
+YASMINE_FONCIERE ~21130000 ~
+YASMINE_FONCIERE ~21140000 ~
+YASMINE_FONCIERE ~21160000 ~
+YASMINE_FONCIERE ~21170000 ~
+YASMINE_FONCIERE ~21180000 ~
+YASMINE_FONCIERE ~11110000 ~
+YASMINE_FONCIERE ~511210NV ~
+YASMINE_FONCIERE ~511220NV ~
+YASMINE_FONCIERE ~511230NV ~
+YASMINE_FONCIERE ~511236NV ~
+YASMINE_FONCIERE ~511240NV ~
+YASMINE_FONCIERE ~511241NV ~
+YASMINE_FONCIERE ~511520NV ~
+YASMINE_FONCIERE ~514110NV ~
+YASMINE_FONCIERE ~514120NV ~
+YASMINE_FONCIERE ~514130NV ~
+YASMINE_FONCIERE ~516100NV ~
+YASMINE_FONCIERE ~516120NV ~
+YASMINE_FONCIERE ~311220NV ~
+YASMINE_FONCIERE ~345521NV ~
+YASMINE_FONCIERE ~345600NV ~
+YASMINE_FONCIERE ~349101NV ~
+YASMINE_FONCIERE ~349700NV ~
+YASMINE_FONCIERE ~511500NV ~
+YASMINE_FONCIERE ~511810NV ~
+YASMINE_FONCIERE ~516111NV ~
+YASMINE_FONCIERE ~612113NV ~
+YASMINE_FONCIERE ~241100NV ~
+YASMINE_FONCIERE ~61765000 ~
+YASMINE_FONCIERE ~148110NV ~
+YASMINE_FONCIERE ~61331000 ~
+YASMINE_FONCIERE ~61212200 ~
+YASMINE_FONCIERE ~61212300 ~
+YASMINE_FONCIERE ~61212400 ~
+YASMINE_FONCIERE ~34211000 ~
+YASMINE_FONCIERE ~441721NV ~
+YASMINE_FONCIERE ~441722NV ~
+YASMINE_FONCIERE ~441725NV ~
+YASMINE_FONCIERE ~441726NV ~
+YASMINE_FONCIERE ~441731NV ~
+YASMINE_FONCIERE ~441733NV ~
+YASMINE_FONCIERE ~212 ~
+YASMINE_FONCIERE ~21210000 ~
+YASMINE_FONCIERE ~21250000 ~
+YASMINE_FONCIERE ~441736NV ~
+YASMINE_FONCIERE ~213 ~
+YASMINE_FONCIERE ~21300000 ~
+YASMINE_FONCIERE ~22 ~
+YASMINE_FONCIERE ~221 ~
+YASMINE_FONCIERE ~22100000 ~
+YASMINE_FONCIERE ~222 ~
+YASMINE_FONCIERE ~441737NV ~
+YASMINE_FONCIERE ~441745NV ~
+YASMINE_FONCIERE ~22200002 ~
+YASMINE_FONCIERE ~223 ~
+YASMINE_FONCIERE ~22300000 ~
+YASMINE_FONCIERE ~228 ~
+YASMINE_FONCIERE ~22850000 ~
+YASMINE_FONCIERE ~441790NV ~
+YASMINE_FONCIERE ~442110NV ~
+YASMINE_FONCIERE ~23 ~
+YASMINE_FONCIERE ~231 ~
+YASMINE_FONCIERE ~23110000 ~
+YASMINE_FONCIERE ~23120000 ~
+YASMINE_FONCIERE ~23130000 ~
+YASMINE_FONCIERE ~23140000 ~
+YASMINE_FONCIERE ~23160000 ~
+YASMINE_FONCIERE ~23180000 ~
+YASMINE_FONCIERE ~211700NV ~
+YASMINE_FONCIERE ~232 ~
+YASMINE_FONCIERE ~2321 ~
+YASMINE_FONCIERE ~23211000 ~
+YASMINE_FONCIERE ~21280000 ~
+YASMINE_FONCIERE ~23218000 ~
+YASMINE_FONCIERE ~23230000 ~
+YASMINE_FONCIERE ~23250000 ~
+YASMINE_FONCIERE ~443200NV ~
+YASMINE_FONCIERE ~23280000 ~
+YASMINE_FONCIERE ~443710NV ~
+YASMINE_FONCIERE ~228100NV ~
+YASMINE_FONCIERE ~23130001 ~
+YASMINE_FONCIERE ~23214000 ~
+YASMINE_FONCIERE ~233 ~
+YASMINE_FONCIERE ~23310000 ~
+YASMINE_FONCIERE ~443720NV ~
+YASMINE_FONCIERE ~443730NV ~
+YASMINE_FONCIERE ~443800NV ~
+YASMINE_FONCIERE ~232341NV ~
+YASMINE_FONCIERE ~444100NV ~
+YASMINE_FONCIERE ~4441100V ~
+YASMINE_FONCIERE ~232342NV ~
+YASMINE_FONCIERE ~444300NV ~
+YASMINE_FONCIERE ~2327NOVO ~
+YASMINE_FONCIERE ~444500NV ~
+YASMINE_FONCIERE ~444800NV ~
+YASMINE_FONCIERE ~445210NV ~
+YASMINE_FONCIERE ~445250NV ~
+YASMINE_FONCIERE ~445260NV ~
+YASMINE_FONCIERE ~445261NV ~
+YASMINE_FONCIERE ~445262NV ~
+YASMINE_FONCIERE ~445263NV ~
+YASMINE_FONCIERE ~445264NV ~
+YASMINE_FONCIERE ~445266NV ~
+YASMINE_FONCIERE ~445270NV ~
+YASMINE_FONCIERE ~445510NV ~
+YASMINE_FONCIERE ~445511NV ~
+YASMINE_FONCIERE ~445610NV ~
+YASMINE_FONCIERE ~448700NV ~
+YASMINE_FONCIERE ~449700NV ~
+YASMINE_FONCIERE ~61222200 ~
+YASMINE_FONCIERE ~61222300 ~
+YASMINE_FONCIERE ~61222400 ~
+YASMINE_FONCIERE ~61222500 ~
+YASMINE_FONCIERE ~61222600 ~
+YASMINE_FONCIERE ~61222700 ~
+YASMINE_FONCIERE ~61222800 ~
+YASMINE_FONCIERE ~61241100 ~
+YASMINE_FONCIERE ~61241200 ~
+YASMINE_FONCIERE ~61242100 ~
+YASMINE_FONCIERE ~61242300 ~
+YASMINE_FONCIERE ~61242400 ~
+YASMINE_FONCIERE ~61242500 ~
+YASMINE_FONCIERE ~61242600 ~
+YASMINE_FONCIERE ~61251100 ~
+YASMINE_FONCIERE ~61251200 ~
+YASMINE_FONCIERE ~61252100 ~
+YASMINE_FONCIERE ~61252200 ~
+YASMINE_FONCIERE ~61253200 ~
+YASMINE_FONCIERE ~61253500 ~
+YASMINE_FONCIERE ~61255100 ~
+YASMINE_FONCIERE ~61263200 ~
+YASMINE_FONCIERE ~61263300 ~
+YASMINE_FONCIERE ~61263400 ~
+YASMINE_FONCIERE ~612635NV ~
+YASMINE_FONCIERE ~612862NV ~
+YASMINE_FONCIERE ~613130NV ~
+YASMINE_FONCIERE ~61315100 ~
+YASMINE_FONCIERE ~61315200 ~
+YASMINE_FONCIERE ~61331100 ~
+YASMINE_FONCIERE ~11 ~
+YASMINE_FONCIERE ~111 ~
+YASMINE_FONCIERE ~61332100 ~
+YASMINE_FONCIERE ~11120000 ~
+YASMINE_FONCIERE ~1117 ~
+YASMINE_FONCIERE ~11171000 ~
+YASMINE_FONCIERE ~11175000 ~
+YASMINE_FONCIERE ~11190000 ~
+YASMINE_FONCIERE ~112 ~
+YASMINE_FONCIERE ~11210000 ~
+YASMINE_FONCIERE ~11220000 ~
+YASMINE_FONCIERE ~11230000 ~
+YASMINE_FONCIERE ~113 ~
+YASMINE_FONCIERE ~11300000 ~
+YASMINE_FONCIERE ~114 ~
+YASMINE_FONCIERE ~61335100 ~
+YASMINE_FONCIERE ~115 ~
+YASMINE_FONCIERE ~11510000 ~
+YASMINE_FONCIERE ~11520000 ~
+YASMINE_FONCIERE ~11550000 ~
+YASMINE_FONCIERE ~116 ~
+YASMINE_FONCIERE ~61335200 ~
+YASMINE_FONCIERE ~11690000 ~
+YASMINE_FONCIERE ~118 ~
+YASMINE_FONCIERE ~11810000 ~
+YASMINE_FONCIERE ~61335300 ~
+YASMINE_FONCIERE ~119 ~
+YASMINE_FONCIERE ~11910000 ~
+YASMINE_FONCIERE ~13 ~
+YASMINE_FONCIERE ~131 ~
+YASMINE_FONCIERE ~13110000 ~
+YASMINE_FONCIERE ~13190000 ~
+YASMINE_FONCIERE ~135 ~
+YASMINE_FONCIERE ~13510000 ~
+YASMINE_FONCIERE ~13520000 ~
+YASMINE_FONCIERE ~13540000 ~
+YASMINE_FONCIERE ~13550000 ~
+YASMINE_FONCIERE ~13560000 ~
+YASMINE_FONCIERE ~13580000 ~
+YASMINE_FONCIERE ~14 ~
+YASMINE_FONCIERE ~141 ~
+YASMINE_FONCIERE ~14100000 ~
+YASMINE_FONCIERE ~148 ~
+YASMINE_FONCIERE ~14810000 ~
+YASMINE_FONCIERE ~61335400 ~
+YASMINE_FONCIERE ~613354NV ~
+YASMINE_FONCIERE ~61336100 ~
+YASMINE_FONCIERE ~61336200 ~
+YASMINE_FONCIERE ~61341100 ~
+YASMINE_FONCIERE ~61348100 ~
+YASMINE_FONCIERE ~61352100 ~
+YASMINE_FONCIERE ~61352200 ~
+YASMINE_FONCIERE ~61361100 ~
+YASMINE_FONCIERE ~61361200 ~
+YASMINE_FONCIERE ~61361300 ~
+YASMINE_FONCIERE ~61361400 ~
+YASMINE_FONCIERE ~61361500 ~
+YASMINE_FONCIERE ~61362200 ~
+YASMINE_FONCIERE ~613650NV ~
+YASMINE_FONCIERE ~61365300 ~
+YASMINE_FONCIERE ~613655NV ~
+YASMINE_FONCIERE ~613664NV ~
+YASMINE_FONCIERE ~613665NV ~
+YASMINE_FONCIERE ~61378100 ~
+YASMINE_FONCIERE ~61378200 ~
+YASMINE_FONCIERE ~61378300 ~
+YASMINE_FONCIERE ~613783NV ~
+YASMINE_FONCIERE ~61378400 ~
+YASMINE_FONCIERE ~61378500 ~
+YASMINE_FONCIERE ~61378600 ~
+YASMINE_FONCIERE ~61378700 ~
+YASMINE_FONCIERE ~61378800 ~
+YASMINE_FONCIERE ~61379100 ~
+YASMINE_FONCIERE ~61379200 ~
+YASMINE_FONCIERE ~61379300 ~
+YASMINE_FONCIERE ~61379400 ~
+YASMINE_FONCIERE ~61422100 ~
+YASMINE_FONCIERE ~614310NV ~
+YASMINE_FONCIERE ~61431100 ~
+YASMINE_FONCIERE ~614461NV ~
+YASMINE_FONCIERE ~61448100 ~
+YASMINE_FONCIERE ~61455200 ~
+YASMINE_FONCIERE ~61455300 ~
+YASMINE_FONCIERE ~61473100 ~
+YASMINE_FONCIERE ~61473200 ~
+YASMINE_FONCIERE ~61611100 ~
+YASMINE_FONCIERE ~61615100 ~
+YASMINE_FONCIERE ~61671100 ~
+YASMINE_FONCIERE ~61711100 ~
+YASMINE_FONCIERE ~61711200 ~
+YASMINE_FONCIERE ~61711300 ~
+YASMINE_FONCIERE ~61711400 ~
+YASMINE_FONCIERE ~61711500 ~
+YASMINE_FONCIERE ~617120NV ~
+YASMINE_FONCIERE ~61712100 ~
+YASMINE_FONCIERE ~617121NV ~
+YASMINE_FONCIERE ~617122NV ~
+YASMINE_FONCIERE ~61713100 ~
+YASMINE_FONCIERE ~61713200 ~
+YASMINE_FONCIERE ~61713300 ~
+YASMINE_FONCIERE ~61713400 ~
+YASMINE_FONCIERE ~61741100 ~
+YASMINE_FONCIERE ~61741200 ~
+YASMINE_FONCIERE ~61742100 ~
+YASMINE_FONCIERE ~61743100 ~
+YASMINE_FONCIERE ~61745100 ~
+YASMINE_FONCIERE ~61746100 ~
+YASMINE_FONCIERE ~61746200 ~
+YASMINE_FONCIERE ~61763100 ~
+YASMINE_FONCIERE ~61764100 ~
+YASMINE_FONCIERE ~61765100 ~
+YASMINE_FONCIERE ~617660NV ~
+YASMINE_FONCIERE ~61768100 ~
+YASMINE_FONCIERE ~63111100 ~
+YASMINE_FONCIERE ~63310100 ~
+YASMINE_FONCIERE ~65830100 ~
+YASMINE_FONCIERE ~658310NV ~
+YASMINE_FONCIERE ~611422NV ~
+YASMINE_FONCIERE ~612110NV ~
+YASMINE_FONCIERE ~612111NV ~
+YASMINE_FONCIERE ~711620NV ~
+YASMINE_FONCIERE ~71241100 ~
+YASMINE_FONCIERE ~71241200 ~
+YASMINE_FONCIERE ~71242300 ~
+YASMINE_FONCIERE ~71243100 ~
+YASMINE_FONCIERE ~71244100 ~
+YASMINE_FONCIERE ~22200000 ~
+YASMINE_FONCIERE ~71244200 ~
+YASMINE_FONCIERE ~22200001 ~
+YASMINE_FONCIERE ~22810000 ~
+YASMINE_FONCIERE ~71245100 ~
+YASMINE_FONCIERE ~71245200 ~
+YASMINE_FONCIERE ~712453NV ~
+YASMINE_FONCIERE ~71247100 ~
+YASMINE_FONCIERE ~71247300 ~
+YASMINE_FONCIERE ~712480NV ~
+YASMINE_FONCIERE ~71248100 ~
+YASMINE_FONCIERE ~71249100 ~
+YASMINE_FONCIERE ~71249300 ~
+YASMINE_FONCIERE ~7161110V ~
+YASMINE_FONCIERE ~71974100 ~
+YASMINE_FONCIERE ~75850100 ~
+YASMINE_FONCIERE ~148100NV ~
+YASMINE_FONCIERE ~148101NV ~
+YASMINE_FONCIERE ~445600NV ~
+YASMINE_FONCIERE ~554120NV ~
+YASMINE_FONCIERE ~611220NV ~
+YASMINE_FONCIERE ~612114NV ~
+YASMINE_FONCIERE ~612117NV ~
+YASMINE_FONCIERE ~612120NV ~
+YASMINE_FONCIERE ~612127NV ~
+YASMINE_FONCIERE ~612231NV ~
+YASMINE_FONCIERE ~61232000 ~
+YASMINE_FONCIERE ~61242000 ~
+YASMINE_FONCIERE ~61251201 ~
+YASMINE_FONCIERE ~612542NV ~
+YASMINE_FONCIERE ~612631NV ~
+YASMINE_FONCIERE ~612700NV ~
+YASMINE_FONCIERE ~612870NV ~
+YASMINE_FONCIERE ~613132NV ~
+YASMINE_FONCIERE ~613162NV ~
+YASMINE_FONCIERE ~613482NV ~
+YASMINE_FONCIERE ~55410030 ~
+YASMINE_FONCIERE ~55480000 ~
+YASMINE_FONCIERE ~59 ~
+YASMINE_FONCIERE ~590 ~
+YASMINE_FONCIERE ~59000000 ~
+YASMINE_FONCIERE ~4733110N ~
+YASMINE_FONCIERE ~613797NV ~
+YASMINE_FONCIERE ~614210NV ~
+YASMINE_FONCIERE ~614313NV ~
+YASMINE_FONCIERE ~614410NV ~
+YASMINE_FONCIERE ~614430NV ~
+YASMINE_FONCIERE ~614460NV ~
+YASMINE_FONCIERE ~614486NV ~
+YASMINE_FONCIERE ~44131001 ~
+YASMINE_FONCIERE ~633110NV ~
+YASMINE_FONCIERE ~658210NV ~
+YASMINE_FONCIERE ~658610NV ~
+YASMINE_FONCIERE ~658700NV ~
+YASMINE_FONCIERE ~61321000 ~
+YASMINE_FONCIERE ~61447000 ~
+YASMINE_FONCIERE ~61332000 ~
+YASMINE_FONCIERE ~61263000 ~
+YASMINE_FONCIERE ~61141000 ~
+YASMINE_FONCIERE ~71242200 ~
+YASMINE_FONCIERE ~712425NV ~
+YASMINE_FONCIERE ~712432NV ~
+YASMINE_FONCIERE ~71247400 ~
+YASMINE_FONCIERE ~712477NV ~
+YASMINE_FONCIERE ~712484NV ~
+YASMINE_FONCIERE ~712485NV ~
+YASMINE_FONCIERE ~719600NV ~
+YASMINE_FONCIERE ~733100NV ~
+YASMINE_FONCIERE ~733110NV ~
+YASMINE_FONCIERE ~44211000 ~
+YASMINE_FONCIERE ~71120000 ~
+YASMINE_FONCIERE ~34310003 ~
+YASMINE_FONCIERE ~61 ~
+YASMINE_FONCIERE ~611 ~
+YASMINE_FONCIERE ~71 ~
+YASMINE_FONCIERE ~711 ~
+YASMINE_FONCIERE ~81 ~
+YASMINE_FONCIERE ~810 ~
+YASMINE_FONCIERE ~81000000 ~
+YASMINE_FONCIERE ~811 ~
+YASMINE_FONCIERE ~81100000 ~
+YASMINE_FONCIERE ~814 ~
+YASMINE_FONCIERE ~81400000 ~
+YASMINE_FONCIERE ~817 ~
+YASMINE_FONCIERE ~81710000 ~
+YASMINE_FONCIERE ~81790000 ~
+YASMINE_FONCIERE ~83 ~
+YASMINE_FONCIERE ~830 ~
+YASMINE_FONCIERE ~83000000 ~
+YASMINE_FONCIERE ~84 ~
+YASMINE_FONCIERE ~840 ~
+YASMINE_FONCIERE ~84000000 ~
+YASMINE_FONCIERE ~85 ~
+YASMINE_FONCIERE ~850 ~
+YASMINE_FONCIERE ~85000000 ~
+YASMINE_FONCIERE ~86 ~
+YASMINE_FONCIERE ~860 ~
+YASMINE_FONCIERE ~86000000 ~
+YASMINE_FONCIERE ~88 ~
+YASMINE_FONCIERE ~880 ~
+YASMINE_FONCIERE ~88000000 ~
+YASMINE_FONCIERE ~88888889 ~
+YASMINE_FONCIERE ~88888888 ~

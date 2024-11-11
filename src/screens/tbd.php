@@ -78,7 +78,6 @@ function get_years(){
 
 <script>
   let jsonData = <?php echo $jsonData; ?>;
-  console.log(jsonData)
   document.getElementById('nb-toner').textContent=jsonData.table1[0]["Nombre de Toner"]
   document.getElementById('nb-cartouche').textContent=jsonData.table2[0]["Nombre de Cartouche"]
   document.getElementById('nb-drum').textContent=jsonData.table9[0]["Nombre de Drum"]
@@ -213,7 +212,6 @@ document.getElementById('total-achat').textContent=listSAP.reduce((sum, item) =>
   const chart_ppf = document.getElementById('chart-ppf'); //sortie par utilsiateur
 let ppf_label=[]
 let ppf_data=[]
-console.log(data1)
 for (const key in data1) {
   ppf_label.push(key)
   ppf_data.push(data1[key])

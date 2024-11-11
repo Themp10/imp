@@ -52,13 +52,14 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 
     <!-- <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a> -->
     <?php if($profile =="admin") : ?>
+        <a href="#" onclick="showContent('page-tel')">Télephone</a>
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
         <a href="#" onclick="showContent('page-sap-query')">Requetes SAP</a>
         <a href="#" id="sub-rh">Gestion des sorties</a>
         <a href="#" onclick="showContent('page-decharge')">Décharge Matériel</a>
         <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
-
+        <a href="#" id="sub-comm">Commercial</a>
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
     
@@ -101,7 +102,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-users">    
             <?php include "src/screens/users.php"; ?>
         </div>
-
+        <div class="inner-container" id="page-tel">    
+            <?php include "src/screens/tel.php"; ?>
+        </div>
         <div class="inner-container" id="page-sap-query">    
             <?php include "src/screens/SAPquery.php"; ?>
         </div>
@@ -138,6 +141,12 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         </div>
         <div class="inner-container" id="page-etat">    
             <?php include "src/screens/rh_etat.php"; ?>
+        </div>
+        <div class="inner-container" id="page-import-obj">    
+            <?php include "src/screens/importObj.php"; ?>
+        </div>
+        <div class="inner-container" id="page-edit-obj">    
+            <?php include "src/screens/editObj.php"; ?>
         </div>
     </div>
 
@@ -269,6 +278,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
             $('nav a').hover(
                 function() {
                         $('#sub-nav').empty()
+                        
                         let id = $(this).attr('id');
                         if(id =='sub-stock') {   
                             $('#sub-nav').addClass('hovered');      
@@ -294,9 +304,18 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-validation\')">Validation</a>');                         
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-etat\')">Etat des employés</a>');                         
                         }
+                        if(id =='sub-comm') {   
+                            $('#sub-nav').addClass('hovered');      
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-import-obj\')">Saisie des Objectifs</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-edit-obj\')">Modification des Objectifs</a>');                        
+                        }
+                        const subNavWidth = $('#sub-nav').outerWidth(); // Get width of #sub-nav
+                        const leftPos = event.pageX - subNavWidth/2; // Subtract width from mouse X position
+                        $('#sub-nav').css('left', leftPos<0?0:leftPos + 'px');
                     },
                 function() { 
                     $('#sub-nav').removeClass('hovered');
+                    //$('#sub-nav').css('left', '');
                     //$('#sub-nav').empty();
                 } // Mouse leave
             );

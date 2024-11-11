@@ -118,7 +118,7 @@ body{
 }
 
 .sub-nav{
-  width: 70%;
+  /* width: 70%; */
   height: 0;
   background-color: #ddd;
   position: absolute;
@@ -132,6 +132,9 @@ body{
   opacity: 0;
   overflow: hidden;
   border-top: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sub-nav a {
   color: black;
@@ -1942,6 +1945,106 @@ height: 100%;
 }
 .printer-toner-level{
   margin: 0;
+}
+
+/* ============================ TELEPHONE ============================ */
+
+.tel-img{
+  width: 70px;
+}
+.tel-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.tel-data{
+  width: 100px;
+  padding: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+}
+
+.tel-name{
+  text-align: center;
+}
+.tel-data:hover{background-color: rgb(218, 218, 218);}
+.tel-text{
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  font-size: 17px;
+}
+
+/* ============================ Commercial ============================ */
+.projet-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.btn-projet{
+  width: 100px;
+  background-color: white;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+  border-bottom: 3px solid black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  color: black;
+  font-family: Calibri;
+}
+.btn-projet:hover{
+  background-color: var(--primary-color-hover);
+}
+.btn-projet:focus{
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.td-input-container{
+  padding: 0;
+}
+.td-input{
+width: 100%;
+box-sizing: border-box;
+border: none;
+}
+.td-input:focus{
+  border:none;
+}
+.TableHead tr th{
+  font-family: Calibri !important;
+
+}
+
+.button-val-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.input-error{
+  border: 1px solid #f07c7c;
+}
+.span-message{
+  font-style: italic;
+  color: grey;
+}
+
+.smaller-td{
+  font-size: 12px;
 }
 /* ============================ RESPONSIVE ============================ */
 

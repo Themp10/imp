@@ -55,3 +55,55 @@ All data inserted into temporary table successfully
 0 New rows inserted into call_logs successfully
 Temporary table call_logs_temp cleared successfully
 ============== Fin : 2024/06/19 14:16:00
+============== Début : 2024/06/19 14:20:08
+============== Début : 2024/06/19 14:21:04
+All data inserted into temporary table successfully
+0 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:21:16
+============== Début : 2024/06/19 14:22:33
+All data inserted into temporary table successfully
+0 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:22:44
+============== Début : 2024/06/19 14:24:53
+============== Début : 2024/06/19 14:25:36
+============== Début : 2024/06/19 14:26:04
+All data inserted into temporary table successfully
+0 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:26:15
+============== Début : 2024/06/19 14:29:26
+All data inserted into temporary table successfully
+0 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:29:36
+============== Début : 2024/06/19 14:31:21
+All data inserted into temporary table successfully
+8790 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:31:32
+============== Début : 2024/06/19 14:32:27
+All data inserted into temporary table successfully
+8790 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 14:32:37
+============== Début : 2024/06/19 16:05:36
+All data inserted into temporary table successfully
+0 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 16:05:47
+============== Début : 2024/06/19 16:06:34
+All data inserted into temporary table successfully
+8790 New rows inserted into call_logs successfully
+Temporary table call_logs_temp cleared successfully
+============== Fin : 2024/06/19 16:06:45
+============== Début : 2024/06/20 08:19:35
+8789 rows inserted successfully
+============== Fin : 2024/06/20 08:19:47
+============== Début : 2024/06/20 08:24:29 || ============== Début : 2024/06/20 08:25:58 || 8789 rows inserted successfully || ============== Fin : 2024/06/20 08:26:11
+============== Début : 2024/06/20 08:29:46 || Table call_logs cleared successfully  || 8789 rows inserted successfully || ============== Fin : 2024/06/20 08:29:56
+============== Début : 2024/06/20 08:33:26 || Table call_logs cleared successfully  || 8789 rows inserted successfully || ============== Fin : 2024/06/20 08:33:38
+============== Début : 2024/06/20 08:34:46 || Table call_logs cleared successfully  || 8789 rows inserted successfully || ============== Fin : 2024/06/20 08:34:58
+============== Début : 2024/06/20 08:45:54 || Table call_logs cleared successfully  || 8789 rows inserted successfully || ============== Fin : 2024/06/20 08:46:04
+============== Début : 2024/06/20 14:07:48 || 

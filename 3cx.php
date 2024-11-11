@@ -39,12 +39,12 @@ function get_token_curl($url){
 
     // Set cURL options
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_VERBOSE, false);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_ENCODING, ''); // Automatically handle the response encoding
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($ch, CURLOPT_HEADER, true); // Include headers in the output
-    curl_setopt($ch, CURLOPT_VERBOSE, true); // Enable verbose output
 
     // Send the request and capture the response
     $response = curl_exec($ch);
@@ -84,7 +84,10 @@ function get_data_curl($url,$token){
 
     // Set the URL
     curl_setopt($ch, CURLOPT_URL, $url);
-
+    // Set other necessary options
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    // Disable verbose output
+    curl_setopt($ch, CURLOPT_VERBOSE, false);
     // Set the HTTP method to GET
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
@@ -112,7 +115,6 @@ function get_data_curl($url,$token){
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_ENCODING, ''); // Automatically handle the response encoding
     curl_setopt($ch, CURLOPT_HEADER, true); // Include headers in the output
-    curl_setopt($ch, CURLOPT_VERBOSE, true); // Enable verbose output
 
     // Send the request and capture the response
     $response = curl_exec($ch);
@@ -155,95 +157,75 @@ function insert_data($data){
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
+    clear_table($conn);
+    $rowNumber=0;
     // Insert data into the temporary table
-    foreach ($data as $row) {
+    foreach ($data as $index => $row) {
         $row["TalkingDuration"] = $row["TalkingDuration"] ?? '0';
         $row["RingingDuration"] = gmdate("H:i:s", $seconds = (float) filter_var($row["RingingDuration"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
         $row["TalkingDuration"] = gmdate("H:i:s", $seconds = (float) filter_var($row["TalkingDuration"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
         $row["StartTime"] = date('Y-m-d H:i:s', strtotime($row["StartTime"]));
-
+        $CallDate = date('Y-m-d', strtotime($row["StartTime"]));
+        $CallTime = date('H:i:s', strtotime($row["StartTime"]));
         $timePartsTalk = array_map('intval', explode(':', $row["TalkingDuration"]));
         $totalSecondsTalk = ($timePartsTalk[0] * 3600) + ($timePartsTalk[1] * 60) + $timePartsTalk[2];
         
         $timePartsRing = array_map('intval', explode(':', $row["RingingDuration"]));
-        $totalSecondsRing = ($timePartsRing[0] * 3600) + ($timePartsRing[1] * 60) + $timePartsRing[2];
-        var_dump( $totalSecondsTalk);
+        $totalSecondsRing = ($timePartsRing[0] * 3600) + ($timePartsRing[1] * 60) + $timePartsRing[2];;
         // Insert data into the temporary table
         $stmt = $conn->prepare("
-            INSERT INTO call_logs_temp (
+            INSERT INTO call_logs (
                 CallId, Indent, StartTime, SourceType, SourceDn, SourceCallerId,
                 SourceDisplayName, DestinationType, DestinationDn, DestinationCallerId,
                 DestinationDisplayName, ActionType, ActionDnType, ActionDnDn, ActionDnCallerId,
                 ActionDnDisplayName, RingingDuration, TalkingDuration, CallCost, Answered,
-                RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport,CallDate,CallTime
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
         ");//iisissssisssissssssisiisi
-        $stmt->bind_param("iisissssisssisssiiiisisii",
-            $row["CallId"], $row["Indent"], $row["StartTime"], $row["SourceType"], $row["SourceDn"],
-            $row["SourceCallerId"], $row["SourceDisplayName"], $row["DestinationType"], $row["DestinationDn"],
-            $row["DestinationCallerId"], $row["DestinationDisplayName"], $row["ActionType"], $row["ActionDnType"],
-            $row["ActionDnDn"], $row["ActionDnCallerId"], $row["ActionDnDisplayName"], $totalSecondsRing,
-            $totalSecondsTalk , $row["CallCost"], $row["Answered"], $row["RecordingUrl"],
-            $row["SubrowDescNumber"], $row["Reason"], $row["SegmentId"], $row["QualityReport"]
-        );
-
+        $stmt->bind_param("iisissssisssisssiiiisisiiss",
+        $row["CallId"], $row["Indent"], $row["StartTime"], $row["SourceType"], $row["SourceDn"],
+        $row["SourceCallerId"], $row["SourceDisplayName"], $row["DestinationType"], $row["DestinationDn"],
+        $row["DestinationCallerId"], $row["DestinationDisplayName"], $row["ActionType"], $row["ActionDnType"],
+        $row["ActionDnDn"], $row["ActionDnCallerId"], $row["ActionDnDisplayName"], $totalSecondsRing,
+        $totalSecondsTalk , $row["CallCost"], $row["Answered"], $row["RecordingUrl"],
+        $row["SubrowDescNumber"], $row["Reason"], $row["SegmentId"], $row["QualityReport"],$CallDate,$CallTime
+    );
+    
+    
         if ($stmt->execute()) {
             // echo "New record created successfully in temp table\n";
         } else {
-            logdata("Error: " . $stmt->error . "\n");
+            logdata("Error: " . $stmt->error . " || ");
         }
 
         // Close statement for next iteration
         $stmt->close();
+        $rowNumber=$index;
     }
-    logdata("All data inserted into temporary table successfully\n");
-
-    // Insert new rows from call_logs_temp into call_logs
-    $sql = "
-    INSERT INTO call_logs (
-        CallId, Indent, StartTime, SourceType, SourceDn, SourceCallerId,
-        SourceDisplayName, DestinationType, DestinationDn, DestinationCallerId,
-        DestinationDisplayName, ActionType, ActionDnType, ActionDnDn, ActionDnCallerId,
-        ActionDnDisplayName, RingingDuration, TalkingDuration, CallCost, Answered,
-        RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport
-    )
-    SELECT
-        CallId, Indent, StartTime, SourceType, SourceDn, SourceCallerId,
-        SourceDisplayName, DestinationType, DestinationDn, DestinationCallerId,
-        DestinationDisplayName, ActionType, ActionDnType, ActionDnDn, ActionDnCallerId,
-        ActionDnDisplayName, RingingDuration, TalkingDuration, CallCost, Answered,
-        RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport
-    FROM
-        call_logs_temp
-    WHERE
-        CallId NOT IN (SELECT CallId FROM call_logs)";
-
-        if ($conn->query($sql) === TRUE) {
-            $new_rows_count = $conn->affected_rows;
-            logdata($new_rows_count." New rows inserted into call_logs successfully\n");
-            clear_temp_table($conn);
-        } else {
-            logdata("Error inserting new rows into call_logs: " . $conn->error . "\n");
-        }
+    
+    logdata($rowNumber. " rows inserted successfully || ");
 
     // Close the connection
     $conn->close();
 }
-function clear_temp_table($conn) {
-    $sql = "TRUNCATE TABLE call_logs_temp";
+
+function clear_table($conn) {
+    $sql = "TRUNCATE TABLE call_logs";
     if ($conn->query($sql) === TRUE) {
-        logdata("Temporary table call_logs_temp cleared successfully\n");
+        logdata("Table call_logs cleared successfully  || ");
     } else {
-        logdata("Error clearing temporary table: " . $conn->error . "\n");
+        logdata("Error clearing temporary table: " . $conn->error . " || ");
     }
 }
+
 $date = date('Y/m/d H:i:s');
-logdata("============== Début : ".$date."\n");
+logdata("============== Début : ".$date." || ");
 $token = get_token_curl($login_url);
 // var_dump($token);
 get_data_curl($url, $token);
 $date = date('Y/m/d H:i:s');
 logdata("============== Fin : ".$date."\n");
 echo "Done";
+
+
 ?>

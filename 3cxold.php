@@ -3,6 +3,12 @@ $token="";
 $url = "https://groupe-mfadel.3cx.ma:5001/xapi/v1/ReportCallLogData/Pbx.GetCallLogData(periodFrom=2024-02-27T23%3A00%3A00.000Z,periodTo=2024-06-12T22%3A59%3A59.000Z,sourceType=0,sourceFilter='',destinationType=0,destinationFilter='',callsType=0,callTimeFilterType=0,callTimeFilterFrom='0%3A00%3A0',callTimeFilterTo='0%3A00%3A0',hidePcalls=true)?";
 $login_url='https://groupe-mfadel.3cx.ma:5001/webclient/api/Login/GetAccessToken';
 
+function logdata($txt){
+    $filePath = "outputs/3cxlog.txt";
+    $fp = fopen($filePath, 'a');
+    fwrite($fp, $txt);
+    fclose($fp);
+}
 
 function get_token_curl($url){
     $token="";
@@ -150,90 +156,98 @@ function insert_data($data){
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // SQL to delete the table if it exists
-    $sql = "DROP TABLE IF EXISTS call_logs";
-    if ($conn->query($sql) === TRUE) {
-        echo "Table call_logs deleted successfully\n";
-    } else {
-        echo "Error deleting table: " . $conn->error . "\n";
-    }
-
-    $sql = "
-    CREATE TABLE call_logs (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        CallId INT NOT NULL,
-        Indent INT,
-        StartTime DATETIME,
-        SourceType INT,
-        SourceDn VARCHAR(200),
-        SourceCallerId VARCHAR(200),
-        SourceDisplayName VARCHAR(200),
-        DestinationType INT,
-        DestinationDn VARCHAR(200),
-        DestinationCallerId VARCHAR(200),
-        DestinationDisplayName VARCHAR(200),
-        ActionType INT,
-        ActionDnType INT,
-        ActionDnDn VARCHAR(200),
-        ActionDnCallerId VARCHAR(200),
-        ActionDnDisplayName VARCHAR(200),
-        RingingDuration TIME,
-        TalkingDuration TIME,
-        CallCost INT,
-        Answered BOOLEAN,
-        RecordingUrl VARCHAR(255),
-        SubrowDescNumber INT,
-        Reason VARCHAR(255),
-        SegmentId INT,
-        QualityReport BOOLEAN
-    )";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Table call_logs created successfully\n";
-    } else {
-        echo "Error creating table: " . $conn->error . "\n";
-    }
-        // Convert RingingDuration and TalkingDuration to MySQL TIME format for each row
-    
+    // Insert data into the temporary table
     foreach ($data as $row) {
         $row["TalkingDuration"] = $row["TalkingDuration"] ?? '0';
         $row["RingingDuration"] = gmdate("H:i:s", $seconds = (float) filter_var($row["RingingDuration"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
         $row["TalkingDuration"] = gmdate("H:i:s", $seconds = (float) filter_var($row["TalkingDuration"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION));
         $row["StartTime"] = date('Y-m-d H:i:s', strtotime($row["StartTime"]));
-        // Insert data into the table
+        $CallDate = date('Y-m-d', strtotime($row["StartTime"]));
+        $CallTime = date('H:i:s', strtotime($row["StartTime"]));
+        var_dump($CallDate);
+        var_dump($CallTime);
+        $timePartsTalk = array_map('intval', explode(':', $row["TalkingDuration"]));
+        $totalSecondsTalk = ($timePartsTalk[0] * 3600) + ($timePartsTalk[1] * 60) + $timePartsTalk[2];
+        
+        $timePartsRing = array_map('intval', explode(':', $row["RingingDuration"]));
+        $totalSecondsRing = ($timePartsRing[0] * 3600) + ($timePartsRing[1] * 60) + $timePartsRing[2];;
+        // Insert data into the temporary table
         $stmt = $conn->prepare("
-            INSERT INTO call_logs (
+            INSERT INTO call_logs_temp (
                 CallId, Indent, StartTime, SourceType, SourceDn, SourceCallerId,
                 SourceDisplayName, DestinationType, DestinationDn, DestinationCallerId,
                 DestinationDisplayName, ActionType, ActionDnType, ActionDnDn, ActionDnCallerId,
                 ActionDnDisplayName, RingingDuration, TalkingDuration, CallCost, Answered,
-                RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ");
-        $stmt->bind_param("iisissssisssissssssisiisi",
-            $row["CallId"], $row["Indent"], $row["StartTime"], $row["SourceType"], $row["SourceDn"],
-            $row["SourceCallerId"], $row["SourceDisplayName"], $row["DestinationType"], $row["DestinationDn"],
-            $row["DestinationCallerId"], $row["DestinationDisplayName"], $row["ActionType"], $row["ActionDnType"],
-            $row["ActionDnDn"], $row["ActionDnCallerId"], $row["ActionDnDisplayName"], $row["RingingDuration"],
-            $row["TalkingDuration"], $row["CallCost"], $row["Answered"], $row["RecordingUrl"],
-            $row["SubrowDescNumber"], $row["Reason"], $row["SegmentId"], $row["QualityReport"]
-        );
+                RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport,CallDate,CallTime
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
+        ");//iisissssisssissssssisiisi
+        $stmt->bind_param("iisissssisssisssiiiisisiiss",
+        $row["CallId"], $row["Indent"], $row["StartTime"], $row["SourceType"], $row["SourceDn"],
+        $row["SourceCallerId"], $row["SourceDisplayName"], $row["DestinationType"], $row["DestinationDn"],
+        $row["DestinationCallerId"], $row["DestinationDisplayName"], $row["ActionType"], $row["ActionDnType"],
+        $row["ActionDnDn"], $row["ActionDnCallerId"], $row["ActionDnDisplayName"], $totalSecondsRing,
+        $totalSecondsTalk , $row["CallCost"], $row["Answered"], $row["RecordingUrl"],
+        $row["SubrowDescNumber"], $row["Reason"], $row["SegmentId"], $row["QualityReport"],$CallDate,$CallTime
+    );
+    
+    
 
         if ($stmt->execute()) {
-           // echo "New record created successfully\n";
+            // echo "New record created successfully in temp table\n";
         } else {
-            echo "Error: " . $stmt->error . "\n";
+            logdata("Error: " . $stmt->error . "\n");
         }
 
         // Close statement for next iteration
         $stmt->close();
     }
-    echo "All inserted successfully\n";
+    logdata("All data inserted into temporary table successfully\n");
 
-// Close connections
-$conn->close();
+    // Insert new rows from call_logs_temp into call_logs
+    $sql = "
+    INSERT INTO call_logs (
+        CallId, Indent, StartTime, SourceType, SourceDn, SourceCallerId,
+        SourceDisplayName, DestinationType, DestinationDn, DestinationCallerId,
+        DestinationDisplayName, ActionType, ActionDnType, ActionDnDn, ActionDnCallerId,
+        ActionDnDisplayName, RingingDuration, TalkingDuration, CallCost, Answered,
+        RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport,CallDate,CallTime
+    )
+    SELECT
+        CallId, Indent, StartTime, SourceType, SourceDn, SourceCallerId,
+        SourceDisplayName, DestinationType, DestinationDn, DestinationCallerId,
+        DestinationDisplayName, ActionType, ActionDnType, ActionDnDn, ActionDnCallerId,
+        ActionDnDisplayName, RingingDuration, TalkingDuration, CallCost, Answered,
+        RecordingUrl, SubrowDescNumber, Reason, SegmentId, QualityReport,CallDate,CallTime
+    FROM
+        call_logs_temp
+    WHERE
+        CallId NOT IN (SELECT CallId FROM call_logs)";
+
+        if ($conn->query($sql) === TRUE) {
+            $new_rows_count = $conn->affected_rows;
+            logdata($new_rows_count." New rows inserted into call_logs successfully\n");
+            clear_temp_table($conn);
+        } else {
+            logdata("Error inserting new rows into call_logs: " . $conn->error . "\n");
+        }
+
+    // Close the connection
+    $conn->close();
 }
-$token=get_token_curl($login_url);
+function clear_temp_table($conn) {
+    $sql = "TRUNCATE TABLE call_logs_temp";
+    if ($conn->query($sql) === TRUE) {
+        logdata("Temporary table call_logs_temp cleared successfully\n");
+    } else {
+        logdata("Error clearing temporary table: " . $conn->error . "\n");
+    }
+}
+$date = date('Y/m/d H:i:s');
+logdata("============== Début : ".$date."\n");
+$token = get_token_curl($login_url);
 // var_dump($token);
-get_data_curl($url,$token);
+get_data_curl($url, $token);
+$date = date('Y/m/d H:i:s');
+logdata("============== Fin : ".$date."\n");
+echo "Done";
 ?>

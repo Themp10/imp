@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="A4-format">
     <div class="container-header">
         <div class="h-logo">
-            <img src="./assets/logo.png" alt="Logo" class="h-logo-png">
+            <img src="./assets/MG-logo.png" alt="Logo" class="h-logo-png">
         </div>
         <div class="h-title">
             <h1>Bon de Sortie magasin</h1>

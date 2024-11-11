@@ -86,8 +86,8 @@ function validerDecharge(){
     let user=document.getElementById('decharge-user').value;
     if(user=="")alert("Merci de saisir le Demandeur !")
 
-    let user=document.getElementById('decharge-date').value;
-    if(user=="")alert("Merci de saisir la Date de remise !")
+    // let user=document.getElementById('decharge-date').value;
+    // if(user=="")alert("Merci de saisir la Date de remise !")
 
     let itemsList=document.getElementsByClassName('materiel-container')
     itemsList.forEach(itemRow => {
