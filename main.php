@@ -67,6 +67,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <?php
         include "src/modals/entree_stock.php";
         include "src/modals/bon_sortie.php";
+        include "src/modals/da_toner.php";
     ?>
     <div class="tool-tip" id="tool-tip"></div>
     <div class="container" id="main-container">
@@ -128,7 +129,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-all-DA">    
             <?php include "src/screens/allDA.php"; ?>
         </div>
-
+        <div class="inner-container" id="page-situation">    
+            <?php include "src/screens/situation.php"; ?>
+        </div>
         <!-- Gestion des conges et sortie -->
         <div class="inner-container" id="page-new-leave">    
             <?php include "src/screens/rh_demande.php"; ?>
@@ -295,7 +298,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').addClass('hovered');      
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-DA\')">DA Toner</a>');
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-mes-DA\')">Mes DA</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-all-DA\')">Suvi DA</a>');                         
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-all-DA\')">Suivi DA</a>');                         
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-situation\')">Situation</a>');                         
                         }
                         if(id =='sub-rh') {   
                             $('#sub-nav').addClass('hovered');      

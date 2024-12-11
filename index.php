@@ -41,7 +41,7 @@ function init_login($username,$password){
     //ldap_bind($ad, "{$user}@csi.local", $password) or die('Could not bind to AD.');
       if(ldap_bind($ad, "{$username}@csi.local", $password)) {
             // User is authenticated
-            session_start();
+            //session_start();
             // $arr=str_split($username, 1);
             // $init=$arr[0];
             // array_shift($arr);

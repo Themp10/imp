@@ -47,13 +47,10 @@ function sql_from_Hana_queryStock($sql){
     odbc_close($Hanaconn);
     return $data;
 }
-
-
-
 function generateProjectSelector(){
     global $projects;
     $soc="";
-$projets=["WL", "SH", "KPC", "MNO", "OP", "CP", "BA", "UP", "UPBC","ZT"];
+    $projets=["WL", "SH", "KPC", "MNO", "OP", "CP", "BA", "UP", "UPBC","ZT"];
 
     foreach (array_keys($projects) as $project) {
       switch ($project) {
@@ -94,10 +91,9 @@ $projets=["WL", "SH", "KPC", "MNO", "OP", "CP", "BA", "UP", "UPBC","ZT"];
       echo "<button id='btn-project' class='btn-projet' project='".$project ."'  soc='".$soc ."'>".$project ."</button>";
   }
 }
-
 function generateStockTableContent($projet,$societe){
   global $projects;
-
+  $html="";
   foreach ($projects[$projet] as $typology) {
     $tmp=0;
     $sql='select "StatutBien","U_StatutBien",count(*) as "U",TO_DECIMAL(sum("Price"),18,2) as "CA"   from "V_OITM"
@@ -105,10 +101,13 @@ function generateStockTableContent($projet,$societe){
           group by "StatutBien","U_StatutBien" order by "U_StatutBien"';
     $data=sql_from_Hana_queryStock($sql);
 
-    $sql='select * from  "V_ORDR" 
-          where "DocEntry" in(  select "DocEntry" from  "V_RDR1" where "ItemCode" in(select "ItemCode" from  "V_OITM" where  "U_Projet"='WL' and "U_StatutBien"='2'))
-          and "Societe"='CASA_COLIVING' and "CANCELED"='N'';
-
+    $sql='select "V_OITM"."U_StatutBien",count(*) as "U",TO_DECIMAL(sum("V_ORDR"."DocTotal"),18,2) as "CA" 
+          from "V_ORDR" "V_ORDR" 
+          INNER JOIN "V_RDR1" "V_RDR1" ON "V_ORDR"."DocEntry"="V_RDR1"."DocEntry" and "V_ORDR"."Societe"=\''.$societe.'\'
+          INNER JOIN "V_OITM" "V_OITM" ON "V_RDR1"."ItemCode"="V_OITM"."ItemCode" and "V_OITM"."U_Projet"=\''.$projet.'\' and  "TypeBien"=\''.$typology.'\'
+          where   "V_ORDR"."CANCELED"=\'N\'
+          group by "V_OITM"."U_StatutBien" order by "V_OITM"."U_StatutBien"';
+    $data2=sql_from_Hana_queryStock($sql);
 
     $TU=$TCA=$uL=$caL=$uLO=$caLO=$uR=$caR=$uS=$caS=$uB=$caB=0;  
     foreach ($data as $row) {
@@ -118,15 +117,18 @@ function generateStockTableContent($projet,$societe){
       }elseif ($row["U_StatutBien"]=='1') {
         $uLO=$row["U"];
         $caLO=$row["CA"];
-      }elseif ($row["U_StatutBien"]=='2') {
+      }elseif ($row["U_StatutBien"]=='8') {
+        $uB=$row["U"];
+        $caB=$row["CA"];
+      }
+    }
+    foreach ($data2 as $row) {
+      if($row["U_StatutBien"]=='2'){
         $uR=$row["U"];
         $caR=$row["CA"];
       }elseif ($row["U_StatutBien"]=='6') {
         $uS=$row["U"];
         $caS=$row["CA"];
-      }elseif ($row["U_StatutBien"]=='8') {
-        $uB=$row["U"];
-        $caB=$row["CA"];
       }
     }
     $TU=$uL+$uR+$uS+$uB+$uLO;
@@ -156,6 +158,7 @@ function generateStockTableContent($projet,$societe){
 }
 function generateSaisieTableContent($projet){
   global $projects;
+  $html="";
   $k=0;
   foreach ($projects[$projet] as $typology) {
     $max=sizeof($projects[$projet]);
@@ -219,6 +222,18 @@ function generateSaisieTableContent($projet){
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
   if (isset($_GET["action"])) {
       if ($_GET["action"]=="setproject") {
+        $stock= generateStockTableContent($_GET["projet"],$_GET["societe"]);
+        $saisie= generateSaisieTableContent($_GET["projet"]);
+        $response = array("stock" => $stock,"sasie" => $saisie);
+        echo json_encode($response);
+      }
+      exit();
+  }
+  
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_GET["action"])) {
+      if ($_GET["action"]=="insObj") {
         $stock= generateStockTableContent($_GET["projet"],$_GET["societe"]);
         $saisie= generateSaisieTableContent($_GET["projet"]);
         $response = array("stock" => $stock,"sasie" => $saisie);
@@ -409,7 +424,12 @@ function getApprovalDA(projet,soc){
 
 
 
-
+SELECT "T0"."WddCode", "T0"."DocEntry", "T0"."ObjType", "T0"."DocDate", "T0"."CreateDate", "T0"."CurrStep", "T1"."UserID", "T2"."U_NAME", "T2"."E_Mail" as "Email"
+FROM OWDD "T0"
+INNER JOIN WDD1 "T1" ON "T0"."WddCode"= "T1"."WddCode" AND "T0"."CurrStep"="T1"."StepCode"
+INNER JOIN OUSR "T2" ON "T1"."UserID" = "T2"."USERID"
+LEFT JOIN "dbo"."@Z_APPR_EMAILS" "T3" ON "T3"."U_userid"="T1"."UserID" AND "T3"."U_internalNumber"="T0"."WddCode" AND "T3"."U_ObjType"="T0"."ObjType"
+WHERE "T0"."Status" ='W' AND "T0"."WddCode"=4 AND "T3"."Code" IS NULL
 
 </script>
 
