@@ -49,7 +49,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <?php if($profile =="admin" ||$profile =="achat") : ?>
         <!-- <a href="#" onclick="showContent('page-all-DA')">Suvi DA</a> -->
     <?php endif; ?>
-
+    <?php if($profile =="admin" || $profile =="commercial" || $profile =="directeur") : ?>
+        <a href="#" id="sub-comm">Commercial</a>
+    <?php endif; ?>
     <!-- <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a> -->
     <?php if($profile =="admin") : ?>
         <a href="#" onclick="showContent('page-tel')">Télephone</a>
@@ -59,7 +61,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" id="sub-rh">Gestion des sorties</a>
         <a href="#" onclick="showContent('page-decharge')">Décharge Matériel</a>
         <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
-        <a href="#" id="sub-comm">Commercial</a>
+        <!-- <a href="#" id="sub-comm">Commercial</a> -->
+        <a href="#" onclick="showContent('page-local')">Local Informatique</a>
+
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
     
@@ -150,6 +154,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         </div>
         <div class="inner-container" id="page-edit-obj">    
             <?php include "src/screens/editObj.php"; ?>
+        </div>
+        <div class="inner-container" id="page-local">    
+            <?php include "src/screens/local.php"; ?>
         </div>
     </div>
 

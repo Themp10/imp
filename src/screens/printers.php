@@ -1,6 +1,6 @@
 <?php
 $printerIPs = [
-    '172.28.0.156', 
+   // '172.28.0.156', 
     '172.28.1.156', 
 ];
 $community = 'public'; // Remplacez par votre chaîne communautaire SNMP
