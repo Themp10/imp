@@ -50,9 +50,8 @@ header {
 }
 nav {
     background-color: var(--primary-color);
-    /* overflow: hidden; */
-    /* height: 60px; */
-    /* overflow: auto; */
+    overflow: auto;
+    height: 60px;
     white-space: nowrap;
 }
 
@@ -1577,9 +1576,8 @@ color: white;
 
 .login-body {
   font-family: Arial, sans-serif;
-  background-image: url('https://lh7-us.googleusercontent.com/ucKcniCYb7ohrYYPOEZLeD2bbXKPO6tts-LYoBtORE2NRsNLzSa6KQ2xOXieZFTeHH4F-L-Fi4BpSomDqtThUJBm0Dm-EBwf8PhjM7DgzRlxlLyz7B7fOiZ9KOnQ57Mv8cPiDSnklCtYv8lEb2XynQ=s2048');
-   background-position: 650px 0px;
-  background-repeat: no-repeat;
+  background-image: url('BG.jpg');
+  background-size: cover;
   background-color: white; 
   display: flex;
   flex-direction: column;
@@ -2033,7 +2031,8 @@ border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
+  gap : 50px;
 }
 .input-error{
   border: 1px solid #f07c7c;
@@ -2127,4 +2126,52 @@ border: none;
 }
 .obj-comm{
   width: 100%;
+}
+
+.large-btn{
+  width: 130px;
+}
+
+.table-synthese{
+  font-size: 15px;
+}
+
+.table-synthese tbody tr td{
+  font-size: 12px;
+}
+.table-synthese thead tr th{
+  background-color: var(--primary-color);
+  color: white;
+}
+.synth-header{
+  background-color: var(--primary-color);
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+@media print {
+  .synth-header{
+    background-color: var(--primary-color);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.empty-row{
+  background-color: var(--primary-color);
+}
+
+
+
+.table-obj tbody tr:nth-child(even) {
+  background-color: #5474715d;
+}
+.table-obj tbody input{
+  background-color:transparent
 }

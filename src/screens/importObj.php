@@ -20,6 +20,7 @@ $statuts = [
   "Bloqué" => 8,
   "Loué" =>  5
 ];
+
 function sql_from_Hana_queryStock($sql){
     $dsn = "HANA";
     $username = "SYSTEM";
@@ -61,8 +62,6 @@ function sql_to_Hana_insert($sql) {
   if (!$Hanaconn) {
       die("Error connecting to the database: " . odbc_errormsg());
   }
-  $setCharset = odbc_exec($Hanaconn, "SET NAMES UTF8");
-  $setCharset = odbc_exec($Hanaconn, "SET CHARACTER SET UTF8");
   $setDb = odbc_exec($Hanaconn, "SET SCHEMA SYSTEM");
   if (!$setDb) {
       echo "Error setting schema: " . odbc_errormsg() . "\n";
@@ -196,18 +195,96 @@ function generateStockTableContent($projet,$societe){
   }
   return $html;  
 }
-function generateSaisieTableContent($projet){
+function generateSaisieTableContent($projet,$validation,$prf){
   global $projects;
   $html="";
   $k=0;
+  $v1=$validation[1];
+  $v2=$validation[2];
+  $disable='';
+  if($prf=="directeur" && $v2==1){
+    $disable='disabled';
+  }
+  if($prf=="commercial" && $v1==1){
+    $disable='disabled';
+  }
+
   $sql='select *  from "OBJECTIFS"
           where  "projet"=\''.$projet.'\' and "annee"=2025';
   $data=sql_from_Hana_queryStock($sql);
+  $max=sizeof($projects[$projet]);
+  $html.='<tr>';
+  $html.='<td rowspan="4" id="total-0">Total Projet</td>
+          <td class="smaller-td">Ventes U</td>
+          <td>
+            <div class="td-inputs" type="text" id="T-0" name="T-0" >%vente_u%</div>
+            </td>';
+    $vente_u_cum = 0;
 
+  for ($i=0; $i < 12; $i++) { 
+    $filteredMois = array_values(array_filter($data, function($objectif) use ($i) {return $objectif['mois'] == $i+1 ;}));
+    $vente_u = array_sum(array_column($filteredMois, 'vente_u'))  ;
+    $vente_u_cum+=$vente_u;
+    $html.='<td class="td-input-container">
+              <input disabled class="td-input" type="text" id="T-0-'.$i.'" name="T-0-'.$i.'" max-rows="'.$max.'" placeholder="0" value="'.$vente_u.'">
+            </td>';
+  }
+ $html = str_replace("%vente_u%", $vente_u_cum, $html);
+
+  $html.='</tr>';
+  $html.='<tr>';
+  $html.='<td class="smaller-td">Ventes CA</td>
+          <td>
+            <div class="td-input" type="text" id="T-1" name="T-1">%vente_ca%</div></td>';
+  for ($i=0; $i < 12; $i++) { 
+    $filteredMois = array_values(array_filter($data, function($objectif) use ($i) {return $objectif['mois'] == $i+1 ;}));
+    $vente_ca = array_sum(array_column($filteredMois, 'vente_ca'))  ;
+    $vente_ca_cum+=$vente_ca;
+    $html.='<td class="td-input-container">
+              <input disabled class="td-input" type="text" id="T-1-'.$i.'" name="T-1-'.$i.'" placeholder="0" value="'.(int) $vente_ca.'" >
+            </td>';
+  }          
+  $html = str_replace("%vente_ca%", $vente_ca_cum, $html);
+
+  $html.='</tr>';
+  $html.='<tr>';
+  $html.='<td class="smaller-td">Encaissement</td>
+          <td>
+            <div class="td-input" type="text" id="T-2" name="T-2">
+            %encaissement%
+            </div>
+          </td>';
+  for ($i=0; $i < 12; $i++) { 
+    $filteredMois = array_values(array_filter($data, function($objectif) use ($i) {return $objectif['mois'] == $i+1 ;}));
+    $encaissement = array_sum(array_column($filteredMois, 'encaissement'))  ;
+    $encaissement_cum+=$encaissement;
+    $html.='<td class="td-input-container">
+              <input disabled class="td-input" type="text" id="T-2-'.$i.'" name="T-2-'.$i.'" placeholder="0" value="'.(int) $encaissement.'">
+            </td>';
+  }          
+  $html = str_replace("%encaissement%", $encaissement_cum, $html);
+  $html.='</tr>';
+  $html.='<tr>';
+  $html.='<td class="smaller-td">Recouvrement</td>
+          <td>
+            <div class="td-input" type="text" id="T-3" name="T-3">
+            %recouvrement%
+            </div>
+          </td>';
+  for ($i=0; $i < 12; $i++) { 
+    $filteredMois = array_values(array_filter($data, function($objectif) use ($i) {return $objectif['mois'] == $i+1 ;}));
+    $recouvrement = array_sum(array_column($filteredMois, 'recouvrement'))  ;
+    $recouvrement_cum+=$recouvrement;
+    $html.='<td class="td-input-container">
+              <input disabled class="td-input" type="text" id="T-3-'.$i.'" name="T-3-'.$i.'" placeholder="0" value="'.(int) $recouvrement.'">
+            </td>';
+  }          
+  $html = str_replace("%recouvrement%", $recouvrement_cum, $html);
+  $html.='</tr>';
   foreach ($projects[$projet] as $typology) {
 
     $filteredDatabyTypology = array_values(array_filter($data, function($objectif) use ($typology) {return $objectif['typologie'] == $typology;}));
-    $max=sizeof($projects[$projet]);
+    
     $html.='<tr>';
     $html.='<td rowspan="4" id="type-'.$k.'">'.$typology.'</td>
             <td class="smaller-td">Ventes U</td>
@@ -220,7 +297,7 @@ function generateSaisieTableContent($projet){
     $filteredDatabyTypologybyMonth = array_values(array_filter($filteredDatabyTypology, function($objectif) use ($i) {return $objectif['mois'] == ($i+1);}));
     $vente_u = !empty($filteredDatabyTypologybyMonth) ? $filteredDatabyTypologybyMonth[0]["vente_u"] : 0;
       $html.='<td class="td-input-container">
-                <input class="td-input" type="text" id="'.$k.'-0-'.$i.'" name="'.$k.'-0-'.$i.'" max-rows="'.$max.'" placeholder="0" value="'.$vente_u.'">
+                <input '.$disable.' class="td-input" type="text" id="'.$k.'-0-'.$i.'" name="'.$k.'-0-'.$i.'" max-rows="'.$max.'" placeholder="0" value="'.$vente_u.'">
               </td>';
     }
     $html.='</tr>';
@@ -234,7 +311,7 @@ function generateSaisieTableContent($projet){
       $filteredDatabyTypologybyMonth = array_values(array_filter($filteredDatabyTypology, function($objectif) use ($i) {return $objectif['mois'] == ($i+1);}));
       $vente_ca = !empty($filteredDatabyTypologybyMonth) ? $filteredDatabyTypologybyMonth[0]["vente_ca"] : 0;
       $html.='<td class="td-input-container">
-                <input class="td-input" type="text" id="'.$k.'-1-'.$i.'" name="'.$k.'-1-'.$i.'" placeholder="0" value="'.(int) $vente_ca.'" >
+                <input '.$disable.' class="td-input" type="text" id="'.$k.'-1-'.$i.'" name="'.$k.'-1-'.$i.'" placeholder="0" value="'.(int) $vente_ca.'" >
               </td>';
     }          
     $html.='</tr>';
@@ -248,7 +325,7 @@ function generateSaisieTableContent($projet){
       $filteredDatabyTypologybyMonth = array_values(array_filter($filteredDatabyTypology, function($objectif) use ($i) {return $objectif['mois'] == ($i+1);}));
       $encaissement = !empty($filteredDatabyTypologybyMonth) ? $filteredDatabyTypologybyMonth[0]["encaissement"] : 0;
       $html.='<td class="td-input-container">
-                <input class="td-input" type="text" id="'.$k.'-2-'.$i.'" name="'.$k.'-2-'.$i.'" placeholder="0" value="'.(int) $encaissement.'">
+                <input '.$disable.' class="td-input" type="text" id="'.$k.'-2-'.$i.'" name="'.$k.'-2-'.$i.'" placeholder="0" value="'.(int) $encaissement.'">
               </td>';
     }          
     $html.='</tr>';
@@ -262,7 +339,7 @@ function generateSaisieTableContent($projet){
       $filteredDatabyTypologybyMonth = array_values(array_filter($filteredDatabyTypology, function($objectif) use ($i) {return $objectif['mois'] == ($i+1);}));
       $recouvrement = !empty($filteredDatabyTypologybyMonth) ? $filteredDatabyTypologybyMonth[0]["recouvrement"] : 0;
       $html.='<td class="td-input-container">
-                <input class="td-input" type="text" id="'.$k.'-3-'.$i.'" name="'.$k.'-3-'.$i.'" placeholder="0" value="'.(int) $recouvrement.'">
+                <input '.$disable.' class="td-input" type="text" id="'.$k.'-3-'.$i.'" name="'.$k.'-3-'.$i.'" placeholder="0" value="'.(int) $recouvrement.'">
               </td>';
     }          
     $html.='</tr>';
@@ -325,33 +402,105 @@ function getCommentaire($projet){
 function updatecomm($projet,$annee,$commentaire){
   $mysqli = new mysqli("localhost", "sa", "MG+P@ssw0rd", "PRINTERS");
 
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-  $query = "INSERT INTO objectifs (projet, annee, commentaire)
-            VALUES (?, ?, ?)
-            ON DUPLICATE KEY UPDATE commentaire = ?";
-
-  $stmt = $mysqli->prepare($query);
-  $stmt->bind_param("siss", $projet, $annee, $commentaire, $commentaire);
-  $stmt->execute();
-  $done=false;
-  if ($stmt->affected_rows > 0) {
-    $done= true;
+  if ($mysqli->connect_error) {
+      die("Connection failed: " . $mysqli->connect_error);
   }
+    $query = "INSERT INTO objectifs (projet, annee, commentaire)
+              VALUES (?, ?, ?)
+              ON DUPLICATE KEY UPDATE commentaire = ?";
 
-  $stmt->close();
-  $mysqli->close();
-  return $done;
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param("siss", $projet, $annee, $commentaire, $commentaire);
+    $stmt->execute();
+    $done=false;
+    if ($stmt->affected_rows > 0) {
+      $done= true;
+    }
+
+    $stmt->close();
+    $mysqli->close();
+    return $done;
 
 }
+
+
+function validate($projet,$annee,$type){
+    $mysqli = new mysqli("localhost", "sa", "MG+P@ssw0rd", "PRINTERS");
+    if($type=="v1"){
+      $query = "UPDATE objectifs SET v1 = 1 WHERE projet = ? AND annee = ?";
+    }elseif($type=="v2"){
+      $query = "UPDATE objectifs SET v2 = 1 WHERE projet = ? AND annee = ?";
+    }
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
+    }
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param("si", $projet, $annee);
+    $stmt->execute();
+    $done=false;
+    if ($stmt->affected_rows > 0) {
+      $done= true;
+    }
+    $stmt->close();
+    $mysqli->close();
+    return $done;
+}
+
+function getValidationStatus($projet,$annee){
+    $mysqli = new mysqli("localhost", "sa", "MG+P@ssw0rd", "PRINTERS");
+
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
+    }
+    $query = "SELECT commentaire,v1,v2 FROM objectifs WHERE projet = ? AND annee = ?";
+    $stmt = $mysqli->prepare($query);
+    $stmt->bind_param("si", $projet, $annee);
+    $stmt->execute();
+    $stmt->bind_result($commentaire,$v1,$v2);
+    if (!$stmt->fetch()) {
+      $commentaire = "";
+      $v1 = 0;
+      $v2 = 0;
+  }
+    $stmt->close();
+    $mysqli->close();
+    return array($commentaire,$v1,$v2);
+}
+
+
+
+function generateSectionComm($prf,$commentaire,$v1,$v2){
+  $disable='';
+  if($prf=="directeur" && $v2==1){
+    $disable='disabled';
+  }
+  if($prf=="commercial" && $v1==1){
+    $disable='disabled';
+  }
+  $html='<textarea '.$disable.' id="obj-comm" cols="30" rows="10" class="obj-comm">'.$commentaire.'</textarea>';
+  $html.='<div class="button-val-container">';
+  if ($disable==''){
+  $html.='<button class="btn-switch large-btn" onclick="insertBudget()" >Enregistrer</button>';
+  }
+  if ($prf=="directeur" && $v2==0 && $disable==''){
+    $html.='<button class="btn-switch large-btn" onclick="insertBudget(\'valider\')" >Valider</button>';
+  }
+  if ($prf=='admin' && $v1==1){
+    $html.='<button class="btn-switch large-btn" onclick="insertBudget(\'cloturer\')" >Cloturer</button>';
+  }
+  $html.='</div> ';
+  return $html;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
+  $validation=array("",0,0);
   if (isset($_GET["action"])) {
       if ($_GET["action"]=="setproject") {
+        $validation=getValidationStatus($_GET["projet"],2025);
         $stock= generateStockTableContent($_GET["projet"],$_GET["societe"]);
-        $saisie= generateSaisieTableContent($_GET["projet"]);
-        $commentaire=getCommentaire($_GET["projet"]);
-        $response = array("stock" => $stock,"saisie" => $saisie,"commentaire" => $commentaire);
+        $saisie= generateSaisieTableContent($_GET["projet"],$validation,$_GET["profile"]);
+        $commSection=generateSectionComm($_GET["profile"],$validation[0],$validation[1],$validation[2]);
+        $response = array("stock" => $stock,"saisie" => $saisie,"commenSection" => $commSection,"v1" => $validation[1],"v2" => $validation[2]);
         echo json_encode($response);
       }
       exit();
@@ -361,7 +510,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $data = json_decode(file_get_contents('php://input'), true);
   header('Content-Type: text/html; charset=utf-8');
-
+  $status="failed";
   $objectifs = $data["objectifs"];
   $successCount = 0;
   $errorCount = 0;
@@ -390,25 +539,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $annee=$objectifs[0]["annee"];
     $projet=$objectifs[0]["projet"];
     $ok=updatecomm($projet,$annee,$commentaire);
+    $sql = 'DELETE FROM "OBJECTIFS_TMP" where "RNDID"='.$timestamp;
+    sql_to_Hana_delete($sql);
+    $status="success";
+  }
 
-    if($ok){
-      $sql = 'DELETE FROM "OBJECTIFS_TMP" where "RNDID"='.$timestamp;
-      sql_to_Hana_delete($sql);
-      header('Content-Type: application/json; charset=UTF-8');
-      echo json_encode(array(
-        "status" => "success",
-          "inserted" => $successCount
-      ));
-      exit();
-    }
-
+  if($data["action"]=="valider"){
+    validate($projet,$annee,"v1");
+  }elseif($data["action"]=="cloturer"){
+    validate($projet,$annee,"v2");
   }
 
   header('Content-Type: application/json; charset=UTF-8');
   echo json_encode(array(
-        "status" => "failed",
+        "status" => $status,
+        "COUNT" => sizeof($objectifs),
         "inserted" => $successCount,
-        "failed" => $errorCount
+        "failed" => $ok,
+        "CommUpdated" => $ok,
+        "validation"=> $data["action"]
     ));
   exit();
 }
@@ -422,7 +571,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="projet-container">
         <?php  generateProjectSelector();?> 
 </div>   
-<table border="1"  style="border-collapse:collapse; width: 100%; table-layout: fixed;">
+<table border="1" class="table-obj" style="border-collapse:collapse; width: 100%; table-layout: fixed;">
   <thead class="TableHead">
     <tr>
       <th rowspan="2" colspan="2" width="30%">TYPOLOGIE</th>
@@ -442,29 +591,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </table>
 
 <br>
-<table border="1" style="border-collapse:collapse; width: 100%; table-layout: fixed;">
+<table border="1"  class="table-obj" style="border-collapse:collapse; width: 100%; table-layout: fixed;">
   <thead class="TableHead">
     <tr>
-      <th rowspan="3" colspan="2" width="15%">TYPOLOGIE</th>
-      <th rowspan="3" width="15%">TOTAL BUDGET 2025</th>
+      <th rowspan="2" colspan="2" width="15%">TYPOLOGIE</th>
+      <th rowspan="2" width="15%">TOTAL BUDGET 2025</th>
       <th colspan="12" width="70%">2025</th>
       
     </tr>
-    <tr>
-      <th><input type="checkbox" id="cb-val-1" name="cb-val-1" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-2" name="cb-val-2" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-3" name="cb-val-3" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-4" name="cb-val-4" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-5" name="cb-val-5" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-6" name="cb-val-6" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-7" name="cb-val-7" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-8" name="cb-val-8" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-9" name="cb-val-9" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-10" name="cb-val-10" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-11" name="cb-val-11" class="cb-validation"></th>
-      <th><input type="checkbox" id="cb-val-12" name="cb-val-12" class="cb-validation"></th>
-      
-    </tr> 
+
     <tr>
       <th width="8.25%">Janvier</th>
       <th width="8.25%">Février</th>
@@ -493,10 +628,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="val-container">
     
   </div>
-  <textarea name="" id="obj-comm" cols="30" rows="10" class="obj-comm"></textarea>
-<div class="button-val-container">
-  <button class='btn-switch' onclick="insertBudget()" >Enregistrer</button>
-</div> 
+<div id="section-comm">
+
+</div>
 
 <footer>
         <div id="snackbar">Some text some message..</div>
@@ -504,23 +638,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <script>
+function updateTotal(){
+  let maxTypologie=parseInt(document.getElementById("0-0-0").getAttribute('max-rows'))||0;
+  let moisU=0
+  let moisUCumul=0
+  for (let col = 0; col < 12; col++) {
+    for (let j = 0; j < maxTypologie; j++) {
+    const TragetUId = document.getElementById(`T-0-${col}`);
+    const srcUId = document.getElementById(`${j}-0-${col}`);
+    let NospaceCell=parseFormattedNumber(srcUId.value)
+    if (srcUId && !isNaN(NospaceCell)) {
+      moisU += NospaceCell;
+    }
+    TragetUId.innerHTML = formatNumber(moisU);
+    }
+    moisUCumul=moisUCumul+moisU
+    document.getElementById('T-0').innerHTML = formatNumber(moisUCumul);
+  }
+}
 
 function updateRowSum(rowIndex, section) {
   let sum = 0;
   for (let col = 0; col < 12; col++) {
     const cellId = `${rowIndex}-${section}-${col}`;
     const cell = document.getElementById(cellId);
-
-    if (cell && !isNaN(parseFloat(cell.value))) {
-      sum += parseFloat(cell.value);
+    let NospaceCell=parseFormattedNumber(cell.value)
+    if (cell && !isNaN(NospaceCell)) {
+      sum += NospaceCell;
     }
+
   }
-  console.log("ici")
   // Update the B-rowIndex-section cell with the sum
   const sumCell = document.getElementById(`B-${rowIndex}-${section}`);
   if (sumCell) {
     
-    sumCell.innerHTML = sum;
+    sumCell.innerHTML = formatNumber(sum);
   }
 }
 
@@ -534,10 +686,10 @@ function formatTable(){
           for (let i = 0; i < 12; i++) {
             code="OBJ"+(i+1)+"2025"
             const typologie = document.getElementById(`type-${k}`).innerHTML;
-            const vente_u = parseInt(document.getElementById(`${k}-0-${i}`).value);
-            const vente_ca =parseInt(document.getElementById(`${k}-1-${i}`).value);
-            const encaissement = parseInt(document.getElementById(`${k}-2-${i}`).value);
-            const recouvrement = parseInt(document.getElementById(`${k}-3-${i}`).value);
+            const vente_u = parseInt(document.getElementById(`${k}-0-${i}`).value)||0;
+            const vente_ca =parseFormattedNumber(document.getElementById(`${k}-1-${i}`).value);
+            const encaissement = parseFormattedNumber(document.getElementById(`${k}-2-${i}`).value);
+            const recouvrement = parseFormattedNumber(document.getElementById(`${k}-3-${i}`).value);
             const mois = i+1;
             const annee = 2025;
             const obj = {
@@ -558,21 +710,7 @@ function formatTable(){
   return objectifs   
 }
 
-function init_insert_budget(){
-  const checkboxes = document.querySelectorAll('.cb-validation');
-  const checkedNumbers = [];
-  checkboxes.forEach(checkbox => {
-      if (checkbox.checked) { 
-        const number = checkbox.id.match(/\d+/)[0]; // Match and extract digits
-        checkedNumbers.push(Number(number)); // Convert to number and add to array
-      }
-  });
-  if (checkedNumbers.length==0){
-    alert("Merci de choisir au moins une période")
-    return
-  }
-  return checkedNumbers
-}
+
 
 function validerBudget(){
   if (document.getElementById("objectifs-project").innerHTML=="Société"){
@@ -601,26 +739,28 @@ document.addEventListener('DOMContentLoaded', function () {
     let buttonsSoc = document.querySelectorAll('.btn-projet');
     buttonsSoc.forEach(function(button) {
         button.addEventListener('click', function() {
-            getApprovalDA(this.getAttribute('project'),this.getAttribute('soc'));
+            getData(this.getAttribute('project'),this.getAttribute('soc'));
         });
     }); 
 });
 
-function getApprovalDA(projet,soc){
+function getData(projet,soc){
     document.getElementById("objectifs-project").innerHTML=projet
+    let profile="<?php echo $profile ;?>"
     $.ajax({
         type: 'GET',
         url: './src/screens/importObj.php', 
         data: { 
                 action:"setproject",
                 projet: projet,
-                societe:soc   
+                societe:soc,
+                profile:profile
             },
         success: function(response) {
           let data = JSON.parse(response);
           document.getElementById("stock-projet-container").innerHTML=data.stock
           document.getElementById("saisie-objectif-container").innerHTML=data.saisie
-          document.getElementById("obj-comm").value=data.commentaire
+          document.getElementById("section-comm").innerHTML=data.commenSection
           let maxTypologie=parseInt(document.getElementById("0-0-0").getAttribute('max-rows'))||0;
           for (let i = 0; i < maxTypologie; i++) {
             for (let j = 0; j <= 4; j++) {
@@ -629,6 +769,7 @@ function getApprovalDA(projet,soc){
                 const cell = document.getElementById(cellId);
                 if (cell) {
                   cell.addEventListener('input', function() {
+                    updateTotal();
                     updateRowSum(i, j);
                   });
                   if( j==1){
@@ -642,11 +783,14 @@ function getApprovalDA(projet,soc){
                       }else if(projet=='OP' && typo=='Bureau'){
                         percent=0.2
                       }
-                      
-
+                      else if(projet=='MT'){
+                        percent=0.15
+                      }
                       if (enCell) {
-                        enCell.value = cell.value * percent;
+                        let intVal=parseFormattedNumber(cell.value)
+                        enCell.value = intVal * percent;
                         updateRowSum(i, 2);
+                        document.getElementById(`B-${i}-${j}`).innerHTML=formatNumber(document.getElementById(`B-${i}-${j}`).innerHTML)
                       }
                       
                   });
@@ -656,21 +800,27 @@ function getApprovalDA(projet,soc){
             }
           }
 
-            document.querySelectorAll("td").forEach(td => {
-            const content = parseFloat(td.innerText);
-            if (!isNaN(content)) {  // Check if content is a valid number
-                const formattedNumber = Number.isInteger(content)
-                    ? content.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-                    : content.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");  // Two decimal places for floats
-                td.innerText = formattedNumber;
-            }
-          })
+            document.querySelectorAll(".table-obj td,td input").forEach(td => {
+              const content = parseFloat(td.innerText);
+              if (!isNaN(content)) {  // Check if content is a valid number
+                  const formattedNumber = Number.isInteger(content)
+                      ? content.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                      : content.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");  // Two decimal places for floats
+                  td.innerText = formattedNumber;
+              }
+            })
+          document.querySelectorAll("td input").forEach(input => {
+              const content = parseFloat(input.value);
+              if (!isNaN(content)) {  
+                input.value = formatNumber(content);
+              }
+            }) 
           for (let i = 0; i < maxTypologie; i++) {
             updateRowSum(i, 2)
             updateRowSum(i, 3)
 
-            for (let j = 0; j <= 4; j++) {
-                  updateRowSum(j, i)
+            for (let j = 0; j < 4; j++) {
+                  updateRowSum(i, j)
             }
           }
           
@@ -682,8 +832,13 @@ function getApprovalDA(projet,soc){
     });
 }
 
-
-function insertBudget(){
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+function parseFormattedNumber(formattedNumber) {
+  return parseFloat(formattedNumber.replace(/\s/g, ''))||0;
+}
+function insertBudget(action="insert"){
   
     let x = document.getElementById("snackbar");
 
@@ -694,9 +849,9 @@ function insertBudget(){
     return
   }
   
-    const objectifs = formatTable();  
+      const objectifs = formatTable();  
         const payload = JSON.stringify({
-            action:"insert",
+            action:action,
             objectifs: objectifs
         });
         fetch('./src/screens/importObj.php', {
@@ -716,7 +871,6 @@ function insertBudget(){
         )
         .then(data => {
             if (data["status"]) {
-              console.log("test")
               if (data.status=="success"){
               x.innerHTML="Objectifs enregistrés avec succés!"
               x.className = "show success-message";
@@ -726,7 +880,7 @@ function insertBudget(){
               x.className = "show error-message";
               setTimeout(function(){ x.className = x.className.replace("show error-message", ""); }, 5000);
             }
-           } else {
+          } else {
               x.innerHTML="Erreur lors de l'enregistrement des objectifs, concatctez vos administrateur pour recupérer les données perdues"
               x.className = "show error-message";
               setTimeout(function(){ x.className = x.className.replace("show error-message", ""); }, 5000);
@@ -737,9 +891,9 @@ function insertBudget(){
         .catch(error => {
             console.error('Error sending data:', error);
         });
-
         return "success"
-    }
+}
+
 
 </script>
 

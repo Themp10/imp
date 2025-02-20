@@ -152,8 +152,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-import-obj">    
             <?php include "src/screens/importObj.php"; ?>
         </div>
-        <div class="inner-container" id="page-edit-obj">    
-            <?php include "src/screens/editObj.php"; ?>
+        <div class="inner-container" id="page-synth-obj">    
+            <?php include "src/screens/syntheseObj.php"; ?>
         </div>
         <div class="inner-container" id="page-local">    
             <?php include "src/screens/local.php"; ?>
@@ -317,8 +317,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                         }
                         if(id =='sub-comm') {   
                             $('#sub-nav').addClass('hovered');      
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-import-obj\')">Saisie des Objectifs</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-edit-obj\')">Modification des Objectifs</a>');                        
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-import-obj\')">Objectifs</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-synth-obj\')">Synthèse</a>');                        
                         }
                         const subNavWidth = $('#sub-nav').outerWidth(); // Get width of #sub-nav
                         const leftPos = event.pageX - subNavWidth/2; // Subtract width from mouse X position
@@ -353,6 +353,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                 showContent('page-all-DA')
             }else if(profile =="user") {
                 showContent('page-mes-DA')
+            }else if(profile =="directeur" || profile =="commercial") {
+                showContent('page-import-obj')
             }else if(profile =="admin") {
                 let screenId=localStorage.getItem("screen");
                 if(screenId){

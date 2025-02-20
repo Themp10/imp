@@ -1,0 +1,18 @@
+body { font-family: Arial, sans-serif;}
+table { width: 100%; border: 1; }
+.table-synthese tbody tr td{
+    font-size: 12px;
+  }
+  .table-synthese thead tr th{
+    background-color: var(--primary-color);
+    color: white;
+  }
+  .synth-header{
+    background-color: var(--primary-color);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  th { background-color: #547471; color: red; } 
