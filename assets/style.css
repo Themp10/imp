@@ -428,7 +428,13 @@ thead {
   align-items: center;
   gap: 30px;
   font-size: 20px;
-  font-weight: bold
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: white;
   ;
 }
 .search-button{
@@ -462,14 +468,7 @@ thead {
   background-color: white;
 }
 
-.filter-box{
-  width: 200px;
-  height: 50px;
-  padding: 0;
-  border: 2px solid var(--primary-color);
-  border-radius: 5px;
-  background-color: white;
-}
+
 .select-filter{
   background-color: transparent;
   border: none;
@@ -483,8 +482,7 @@ thead {
 
 .filter-type-title{
   font-size: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto -5px auto;
   color: #5f5f5f;
 }
 
@@ -2035,7 +2033,7 @@ border: none;
   gap : 50px;
 }
 .input-error{
-  border: 1px solid #f07c7c;
+  border: 1px solid #f07c7c !important;
 }
 .span-message{
   font-style: italic;
@@ -2045,6 +2043,142 @@ border: none;
 .smaller-td{
   font-size: 12px;
 }
+
+/* ============================ Add new Item ============================ */
+.item-form{
+  width: 100%;
+  font-size: 18px;
+}
+.item-top-container{
+display: flex;
+justify-content: space-around;
+align-items: center;
+margin-bottom: 30px;
+}
+.item-bottom-container{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+}
+.item-left-container,.item-right-container{
+display: flex;
+flex-direction: column;
+gap: 10px;
+width: 100%;
+align-items: center;
+}
+.item-box label{
+  width: 100px;
+  height: 30px;
+}
+fieldset input{
+  background-color: transparent;
+  border:none;
+  width: 100%;
+  height: 28px;
+  appearance: none;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+fieldset input:focus,fieldset textarea:focus{
+  outline: none ;
+  border: none;
+}
+fieldset textarea{
+  background-color: transparent;
+  border:none;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.item-box{
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  width: 90%;
+  height: auto;
+  padding: 0;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: white;
+  ;
+}
+.item-box-textarea{
+  height: 100%;
+}
+.item-select{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 28px;
+  appearance: none;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.item-box-buttons{
+  height: 100%;
+}
+.page-title{
+  margin: 10px 0;
+}
+.item-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+.item-box-buttons{
+  justify-content: space-around;
+  align-items: center;
+}
+.item-buttons button{
+  width: 150px;
+}
+#qr-code{
+  width: 150px;
+  height: 150px;
+}
+.qr-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error-item{
+  background-color: rgba(233, 150, 150, 0.486);
+}
+/* ============================ list items ============================ */
+
+
+/* ============================ Mvt Items ============================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================ RESPONSIVE ============================ */
 
 @media only screen and (max-width: 800px) {

@@ -65,6 +65,10 @@ function getSql($projet){
     ';
     return $sql;
 }
+
+function getByProjetcs(){
+    
+}
 function synthese() {
     $sql = '
     SELECT 
@@ -90,26 +94,43 @@ function synthese() {
 
     $data = sql_from_Hana_Synthese($sql);
 
-    $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    $months = ['Total','Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
     
     $formattedData = [
-        'Vente U' => array_fill(0, 12, 0),
-        'Vente CA' => array_fill(0, 12, 0),
-        'Encaissement' => array_fill(0, 12, 0),
-        'Recouvrement' => array_fill(0, 12, 0)
+        'Vente U' => array_fill(0, 13, 0),
+        'Vente CA' => array_fill(0, 13, 0),
+        'Encaissement' => array_fill(0, 13, 0),
+        'Recouvrement' => array_fill(0, 13, 0)
     ];
-
+    $Tu=$Tca=$Te=$Tr=0;
     foreach ($data as $row) {
         $type = $row['TYPE'];
-        $mois = (int) $row['mois'] - 1;
+        $mois = (int) $row['mois'];
         $formattedData[$type][$mois] = $row['TOTAL'];
+        if($type == 'Vente U'){
+            $Tu+=$row['TOTAL'];
+        }
+        if($type == 'Vente CA'){
+            $Tca+=$row['TOTAL'];
+        }
+        if($type == 'Encaissement'){
+            $Te+=$row['TOTAL'];
+        }
+        if($type == 'Recouvrement'){
+            $Tr+=$row['TOTAL'];
+        }
     }
+    $formattedData['Vente U'][0]=$Tu;
+    $formattedData['Vente CA'][0]=$Tca;
+    $formattedData['Encaissement'][0]=$Te;
+    $formattedData['Recouvrement'][0]=$Tr;
+
     echo "<div class='synth-page'>";
     echo "<div class='synth-header'>Synthèse des objectifs</div>";
 
     echo "<table class='table-synthese' border='1' cellpadding='5' cellspacing='0'>";
     echo "<thead><tr>";
-    echo "<th colspan='2' width='16%'>Projet</th>";
+    echo "<th colspan='2' width='9%'>Projet</th>";
     foreach ($months as $month) {
         echo "<th width='7%'>$month</th>";
     }
@@ -129,23 +150,40 @@ function synthese() {
         echo "</tr>";
         $k++;
     }
-    echo '<tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+    echo '<tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
     $projets=["SH","OP", "KPC"];
     foreach($projets as $projet){
         $k=0;
+        $Tu=$Tca=$Te=$Tr=0;
         $sql=getSql($projet);
         $data = sql_from_Hana_Synthese($sql);
         $formattedData = [
-            'Vente U' => array_fill(0, 12, 0),
-            'Vente CA' => array_fill(0, 12, 0),
-            'Encaissement' => array_fill(0, 12, 0),
-            'Recouvrement' => array_fill(0, 12, 0)
+            'Vente U' => array_fill(0, 13, 0),
+            'Vente CA' => array_fill(0, 13, 0),
+            'Encaissement' => array_fill(0, 13, 0),
+            'Recouvrement' => array_fill(0, 13, 0)
         ];
         foreach ($data as $row) {
             $type = $row['TYPE'];
-            $mois = (int) $row['mois'] - 1;
+            $mois = (int) $row['mois'] ;
             $formattedData[$type][$mois] = $row['TOTAL'];
+            if($type == 'Vente U'){
+            $Tu+=$row['TOTAL'];
+            }
+            if($type == 'Vente CA'){
+                $Tca+=$row['TOTAL'];
+            }
+            if($type == 'Encaissement'){
+                $Te+=$row['TOTAL'];
+            }
+            if($type == 'Recouvrement'){
+                $Tr+=$row['TOTAL'];
+            }
         }
+    $formattedData['Vente U'][0]=$Tu;
+    $formattedData['Vente CA'][0]=$Tca;
+    $formattedData['Encaissement'][0]=$Te;
+    $formattedData['Recouvrement'][0]=$Tr;
         
         foreach ($formattedData as $type => $values) {
             echo "<tr>";
@@ -171,7 +209,7 @@ function synthese() {
     echo "<div class='synth-page'>";
     echo "<table class='table-synthese' border='1' cellpadding='5' cellspacing='0'>";
     echo "<thead><tr>";
-    echo "<th colspan='2' width='16%'>Projet</th>";
+    echo "<th colspan='2' width='9%'>Projet</th>";
     foreach ($months as $month) {
         echo "<th width='7%'>$month</th>";
     }
@@ -182,20 +220,37 @@ function synthese() {
 
     foreach($projets as $projet){
         $k=0;
+        $Tu=$Tca=$Te=$Tr=0;
         $sql=getSql($projet);
         $data = sql_from_Hana_Synthese($sql);
         $formattedData = [
-            'Vente U' => array_fill(0, 12, 0),
-            'Vente CA' => array_fill(0, 12, 0),
-            'Encaissement' => array_fill(0, 12, 0),
-            'Recouvrement' => array_fill(0, 12, 0)
+            'Vente U' => array_fill(0, 13, 0),
+            'Vente CA' => array_fill(0, 13, 0),
+            'Encaissement' => array_fill(0, 13, 0),
+            'Recouvrement' => array_fill(0, 13, 0)
         ];
         foreach ($data as $row) {
             $type = $row['TYPE'];
-            $mois = (int) $row['mois'] - 1;
+            $mois = (int) $row['mois'];
             $formattedData[$type][$mois] = $row['TOTAL'];
-        }
-        
+            if($type == 'Vente U'){
+                $Tu+=$row['TOTAL'];
+                }
+                if($type == 'Vente CA'){
+                    $Tca+=$row['TOTAL'];
+                }
+                if($type == 'Encaissement'){
+                    $Te+=$row['TOTAL'];
+                }
+                if($type == 'Recouvrement'){
+                    $Tr+=$row['TOTAL'];
+                }
+            }
+        $formattedData['Vente U'][0]=$Tu;
+        $formattedData['Vente CA'][0]=$Tca;
+        $formattedData['Encaissement'][0]=$Te;
+        $formattedData['Recouvrement'][0]=$Tr;
+
         foreach ($formattedData as $type => $values) {
             echo "<tr>";
             if($k == 0){
@@ -218,7 +273,7 @@ function synthese() {
     echo "<div class='synth-page'>";
     echo "<table class='table-synthese' border='1' cellpadding='5' cellspacing='0'>";
     echo "<thead><tr>";
-    echo "<th colspan='2' width='16%'>Projet</th>";
+    echo "<th colspan='2' width='9%'>Projet</th>";
     foreach ($months as $month) {
         echo "<th width='7%'>$month</th>";
     }
@@ -229,19 +284,36 @@ function synthese() {
 
     foreach($projets as $projet){
         $k=0;
+        $Tu=$Tca=$Te=$Tr=0;
         $sql=getSql($projet);
         $data = sql_from_Hana_Synthese($sql);
         $formattedData = [
-            'Vente U' => array_fill(0, 12, 0),
-            'Vente CA' => array_fill(0, 12, 0),
-            'Encaissement' => array_fill(0, 12, 0),
-            'Recouvrement' => array_fill(0, 12, 0)
+            'Vente U' => array_fill(0, 13, 0),
+            'Vente CA' => array_fill(0, 13, 0),
+            'Encaissement' => array_fill(0, 13, 0),
+            'Recouvrement' => array_fill(0, 13, 0)
         ];
         foreach ($data as $row) {
             $type = $row['TYPE'];
-            $mois = (int) $row['mois'] - 1;
+            $mois = (int) $row['mois'];
             $formattedData[$type][$mois] = $row['TOTAL'];
+            if($type == 'Vente U'){
+                $Tu+=$row['TOTAL'];
+                }
+                if($type == 'Vente CA'){
+                    $Tca+=$row['TOTAL'];
+                }
+                if($type == 'Encaissement'){
+                    $Te+=$row['TOTAL'];
+                }
+                if($type == 'Recouvrement'){
+                    $Tr+=$row['TOTAL'];
+                }
         }
+        $formattedData['Vente U'][0]=$Tu;
+        $formattedData['Vente CA'][0]=$Tca;         
+        $formattedData['Encaissement'][0]=$Te;
+        $formattedData['Recouvrement'][0]=$Tr;
         
         foreach ($formattedData as $type => $values) {
             echo "<tr>";

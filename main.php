@@ -24,7 +24,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intranet Groupe Mfadel</title>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="icon" href="assets/icon.png">
+    <link rel="icon" href="assets/sm-logo.png">
 </head>
 
 <body>
@@ -63,6 +63,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
         <!-- <a href="#" id="sub-comm">Commercial</a> -->
         <a href="#" onclick="showContent('page-local')">Local Informatique</a>
+        <a href="#" id="sub-inv" >Inventaire</a>
 
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
@@ -158,8 +159,19 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-local">    
             <?php include "src/screens/local.php"; ?>
         </div>
+        <div class="inner-container" id="page-inv-new">    
+            <?php include "src/inventaire/newStock.php"; ?>
+        </div>
+        <div class="inner-container" id="page-inv-items">    
+            <?php include "src/inventaire/invItems.php"; ?>
+        </div>
+        <div class="inner-container" id="page-inv-mvt">    
+            <?php include "src/inventaire/invMvt.php"; ?>
+        </div>
     </div>
-
+<footer>
+        <div id="snackbar">Some text some message..</div>
+</footer>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js"></script> -->
 <script src="src/static/dragula.js"></script>
 <script src="src/static/jquery-3.6.4.min.js"></script>
@@ -319,6 +331,12 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').addClass('hovered');      
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-import-obj\')">Objectifs</a>');
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-synth-obj\')">Synthèse</a>');                        
+                        }
+                        if(id =='sub-inv') {   
+                            $('#sub-nav').addClass('hovered');      
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-new\')">Nouvelle Entrée</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-items\')">Matériels</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-mvt\')">Mouvements Stock</a>');                        
                         }
                         const subNavWidth = $('#sub-nav').outerWidth(); // Get width of #sub-nav
                         const leftPos = event.pageX - subNavWidth/2; // Subtract width from mouse X position

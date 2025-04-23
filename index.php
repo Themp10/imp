@@ -77,15 +77,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gestionnaire de Stock de toner</title>
+<title>Intranet Groupe Mfadel</title>
 <link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="assets/icon.png">
+<link rel="icon" href="assets/sm-logo.png">
 <style>
 
 </style>
 </head>
 <div class="login-body">
-    <img src="assets/MG-logo.png" alt="Girl in a jacket" width="500" height="200"> 
+    <!-- <img src="assets/MG-logo.png" alt="Girl in a jacket" width="500" height="200">  -->
   <div class="login-container">
     <h2>Connexion à votre compte</h2>
     <form action="index.php" method="post">

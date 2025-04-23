@@ -632,9 +632,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </div>
 
-<footer>
-        <div id="snackbar">Some text some message..</div>
-  </footer>
+
 
 
 <script>
