@@ -139,9 +139,12 @@ function synthese() {
 
     $k=0;
     foreach ($formattedData as $type => $values) {
+        if($type=='Recouvrement'){
+            continue;
+        }
         echo "<tr>";
         if($k == 0){
-            echo "<td rowspan='4' width='8%'><strong>Groupe Mfadel</strong></td>";
+            echo "<td rowspan='3' width='8%'><strong>Groupe Mfadel</strong></td>";
         }
         echo "<td><strong>$type</strong></td>";
         foreach ($values as $value) {
@@ -151,7 +154,7 @@ function synthese() {
         $k++;
     }
     echo '<tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
-    $projets=["SH","OP", "KPC"];
+    $projets=["SH","OP", "KPC","CP"];
     foreach($projets as $projet){
         $k=0;
         $Tu=$Tca=$Te=$Tr=0;
@@ -180,19 +183,29 @@ function synthese() {
                 $Tr+=$row['TOTAL'];
             }
         }
-    $formattedData['Vente U'][0]=$Tu;
-    $formattedData['Vente CA'][0]=$Tca;
-    $formattedData['Encaissement'][0]=$Te;
-    $formattedData['Recouvrement'][0]=$Tr;
-        
+        $formattedData['Vente U'][0]=$Tu;
+        $formattedData['Vente CA'][0]=$Tca;
+        $formattedData['Encaissement'][0]=$Te;
+        $formattedData['Recouvrement'][0]=$Tr;
+        if ($Tu == 0 && $Tca == 0 && $Te == 0 && $Tr == 0) {
+            continue;
+        }
         foreach ($formattedData as $type => $values) {
+            if($type=='Recouvrement'){
+                continue;
+            }
+            if($type=='Vente U'){
+                $highligh='class="bold-text"';
+            }else{
+                $highligh='';
+            }
             echo "<tr>";
             if($k == 0){
-                echo "<td rowspan='4'><strong>$projet</strong></td>";
+                echo "<td rowspan='3'><strong>$projet</strong></td>";
             }
-            echo "<td><strong>$type</strong></td>";
+            echo "<td ".$highligh."><strong>$type</strong></td>";
             foreach ($values as $value) {
-                echo "<td>" .$value . "</td>";
+                echo "<td ".$highligh.">" .$value . "</td>";
             }
             echo "</tr>";
             $k++;
@@ -216,7 +229,7 @@ function synthese() {
     echo "</tr></thead>";
     echo "<tbody>";
 
-    $projets=["CP","ZT","MNO","MT"];
+    $projets=["ZT","MNO","MT","BA"];
 
     foreach($projets as $projet){
         $k=0;
@@ -246,19 +259,30 @@ function synthese() {
                     $Tr+=$row['TOTAL'];
                 }
             }
+        if ($Tu == 0 && $Tca == 0 && $Te == 0 && $Tr == 0) {
+            continue;
+        }    
         $formattedData['Vente U'][0]=$Tu;
         $formattedData['Vente CA'][0]=$Tca;
         $formattedData['Encaissement'][0]=$Te;
         $formattedData['Recouvrement'][0]=$Tr;
 
         foreach ($formattedData as $type => $values) {
+            if($type=='Recouvrement'){
+                continue;
+            }
+            if($type=='Vente U'){
+                $highligh='class="bold-text"';
+            }else{
+                $highligh='';
+            }
             echo "<tr>";
             if($k == 0){
-                echo "<td rowspan='4' width='8%'><strong>$projet</strong></td>";
+                echo "<td rowspan='3' width='8%'><strong>$projet</strong></td>";
             }
-            echo "<td><strong>$type</strong></td>";
+            echo "<td ".$highligh."><strong>$type</strong></td>";
             foreach ($values as $value) {
-                echo "<td>" .$value . "</td>";
+                echo "<td ".$highligh.">" .$value . "</td>";
             }
             echo "</tr>";
             $k++;
@@ -269,7 +293,10 @@ function synthese() {
     echo "</tbody>";
     echo "</table>";
     echo "</div>";
+    $skip=false;
+    if ($skip){
 
+    
     echo "<div class='synth-page'>";
     echo "<table class='table-synthese' border='1' cellpadding='5' cellspacing='0'>";
     echo "<thead><tr>";
@@ -280,7 +307,7 @@ function synthese() {
     echo "</tr></thead>";
     echo "<tbody>";
 
-    $projets=["WL", "BA", "UP", "UPBC"];
+    $projets=["WL", "UP", "UPBC"];
 
     foreach($projets as $projet){
         $k=0;
@@ -314,15 +341,25 @@ function synthese() {
         $formattedData['Vente CA'][0]=$Tca;         
         $formattedData['Encaissement'][0]=$Te;
         $formattedData['Recouvrement'][0]=$Tr;
-        
+        if ($Tu == 0 && $Tca == 0 && $Te == 0 && $Tr == 0) {
+            continue;
+        }
         foreach ($formattedData as $type => $values) {
+            if($type=='Recouvrement'){
+                continue;
+            }
+            if($type=='Vente U'){
+                $highligh='class="bold-text"';
+            }else{
+                $highligh='';
+            }
             echo "<tr>";
             if($k == 0){
-                echo "<td rowspan='4' width='8%'><strong>$projet</strong></td>";
+                echo "<td rowspan='3' width='8%'><strong>$projet</strong></td>";
             }
-            echo "<td><strong>$type</strong></td>";
+            echo "<td ".$highligh."><strong>$type</strong></td>";
             foreach ($values as $value) {
-                echo "<td>" .$value . "</td>";
+                echo "<td ".$highligh.">" .$value . "</td>";
             }
             echo "</tr>";
             $k++;
@@ -333,6 +370,7 @@ function synthese() {
     echo "</tbody>";
     echo "</table>";
     echo "</div>";
+    }
 }
 ?>
 
@@ -393,6 +431,10 @@ function synthese() {
             .empty-row{
                     print-color-adjust: exact;
                 background-color: var(--primary-color);
+            }
+            .bold-text{
+                font-weight: bold;
+                background-color: var(--secondary-color-hover);
             }
           </style>
         </head>

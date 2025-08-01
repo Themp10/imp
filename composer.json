@@ -1,13 +1,6 @@
 {
-    "autoload": {
-        "classmap": [
-            "path/to/classes"
-        ],
-        "psr-4": {
-            "Namespace\\": "path/to/namespace"
-        }
-    },
-    "require": {
-        "phpoffice/phpspreadsheet": "^2.0"
+  "require": {
+        "phpoffice/phpspreadsheet": "^2.0",
+        "phpmailer/phpmailer": "^6.10"
     }
 }

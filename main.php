@@ -43,9 +43,12 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <nav>
     <?php if($profile =="admin") : ?>
         <a href="#" id="sub-stock">Gestion de stock</a>
+        <a href="#" id="sub-inv" >Inventaire</a>
         <a href="#" id="sub-da">Gestion des DA</a>
     <?php endif; ?>
-
+    <?php if($profile =="rh") : ?>
+        <a href="#" onclick="showContent('page-inv-dech')">Décharge</a>
+    <?php endif; ?>
     <?php if($profile =="admin" ||$profile =="achat") : ?>
         <!-- <a href="#" onclick="showContent('page-all-DA')">Suvi DA</a> -->
     <?php endif; ?>
@@ -63,7 +66,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
         <!-- <a href="#" id="sub-comm">Commercial</a> -->
         <a href="#" onclick="showContent('page-local')">Local Informatique</a>
-        <a href="#" id="sub-inv" >Inventaire</a>
+        
 
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('add-to-stock')">Entrée Stock</a> -->
@@ -163,10 +166,16 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
             <?php include "src/inventaire/newStock.php"; ?>
         </div>
         <div class="inner-container" id="page-inv-items">    
-            <?php include "src/inventaire/invItems.php"; ?>
+            <?php include "src/inventaire/reaffectation.php"; ?>
+        </div>
+        <div class="inner-container" id="page-inv-list">    
+            <?php include "src/inventaire/invList.php"; ?>
         </div>
         <div class="inner-container" id="page-inv-mvt">    
             <?php include "src/inventaire/invMvt.php"; ?>
+        </div>
+        <div class="inner-container" id="page-inv-dech">    
+            <?php include "src/inventaire/decharge.php"; ?>
         </div>
     </div>
 <footer>
@@ -335,8 +344,10 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                         if(id =='sub-inv') {   
                             $('#sub-nav').addClass('hovered');      
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-new\')">Nouvelle Entrée</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-items\')">Matériels</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-items\')">Réaffectation</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-list\')">Liste article</a>');                        
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-mvt\')">Mouvements Stock</a>');                        
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-dech\')">Décharge Matériel</a>');                        
                         }
                         const subNavWidth = $('#sub-nav').outerWidth(); // Get width of #sub-nav
                         const leftPos = event.pageX - subNavWidth/2; // Subtract width from mouse X position

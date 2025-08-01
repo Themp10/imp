@@ -69,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <option value="user">Utilisateur</option>
                     <option value="achat">Achat</option>
                     <option value="admin">Admin</option>
+                    <option value="rh">RH</option>
                 </select>
             </fieldset>
             <button type="submit"  class="users-btn">Enregistrer</button>

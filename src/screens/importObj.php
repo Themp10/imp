@@ -142,8 +142,8 @@ function generateStockTableContent($projet,$societe){
 
       $sql='select "V_OITM"."U_StatutBien",count(*) as "U",TO_DECIMAL(sum("V_ORDR"."DocTotal"),18,2) as "CA" 
             from "V_ORDR" "V_ORDR" 
-            INNER JOIN "V_RDR1" "V_RDR1" ON "V_ORDR"."DocEntry"="V_RDR1"."DocEntry" and "V_ORDR"."Societe"=\''.$societe.'\'
-            INNER JOIN "V_OITM" "V_OITM" ON "V_RDR1"."ItemCode"="V_OITM"."ItemCode"  and "V_RDR1"."LineNum"=\'0\' and "V_OITM"."U_Projet"=\''.$projet.'\' and  "TypeBien"=\''.$typology.'\'
+            LEFT OUTER JOIN  "V_RDR1" "V_RDR1" ON "V_ORDR"."DocEntry"="V_RDR1"."DocEntry" and "V_ORDR"."Societe"=\''.$societe.'\'
+            LEFT OUTER JOIN  "V_OITM" "V_OITM" ON "V_RDR1"."ItemCode"="V_OITM"."ItemCode"  and "V_RDR1"."LineNum"=\'0\' and "V_OITM"."U_Projet"=\''.$projet.'\' and  "TypeBien"=\''.$typology.'\'
             where   "V_ORDR"."CANCELED"=\'N\'
             group by "V_OITM"."U_StatutBien" order by "V_OITM"."U_StatutBien"';
     $data2=sql_from_Hana_queryStock($sql);
@@ -159,14 +159,16 @@ function generateStockTableContent($projet,$societe){
       }elseif ($row["U_StatutBien"]=='8') {
         $uB=$row["U"];
         $caB=$row["CA"];
+      }elseif($row["U_StatutBien"]=='2'){
+        $uR=$row["U"];
+      }elseif ($row["U_StatutBien"]=='6') {
+        $uS=$row["U"];
       }
     }
     foreach ($data2 as $row) {
       if($row["U_StatutBien"]=='2'){
-        $uR=$row["U"];
         $caR=$row["CA"];
       }elseif ($row["U_StatutBien"]=='6') {
-        $uS=$row["U"];
         $caS=$row["CA"];
       }
     }

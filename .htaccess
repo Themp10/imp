@@ -1,4 +1,2 @@
 RewriteEngine On
-RewriteBase /imp/
-RewriteRule ^item/([A-Z0-9]+)$ item.php?code=$1 [L]
-
+RewriteRule ^item/([A-Za-z0-9]+)$ item.php?code=$1 [L]

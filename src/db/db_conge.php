@@ -5,7 +5,7 @@
 // $dbname = "PRINTERS";
 $servername = "172.28.0.22";
 $username = "sa";
-$password = "MG+P@ssw0rd";-
+$password = "MG+P@ssw0rd";
 $dbname = "RH";
 // Create connection
 

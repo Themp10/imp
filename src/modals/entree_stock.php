@@ -391,5 +391,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if (event.target === modalBS) {
             closeBSModal();
         }
+        var modalSearch = document.getElementById('search-modal');
+        if (event.target === modalSearch) {
+            closeSearchModal();
+        }
+        var modalRea = document.getElementById('reaffectation-modal');
+        if (event.target === modalRea) {
+            closeReafModal();
+        }
     };
 </script>

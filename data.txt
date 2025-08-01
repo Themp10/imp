@@ -1,0 +1,233 @@
+type	code	Désignation 	Numéro de série	marque	Modèle	Date d'acquisition 	Date D'affectation 	statut	etat	Utilisateur	Poste 	Direction 	Site	Emplacement 	valeur	commentaire	Département	actif
+IT	IT000001	Ordinateur portable	12MCN0CV04B921483	ASUS	Zenbook 14X- UX5401E			Attribué	Neuf	Afaf Chabini	DOSI	DOSI	SIEGE	Plateau Direction	0		-	1
+IT	IT000002	Ecran	CN-0XXCGP-TV200-1BQ-1L1V-A02	DELL	SE2722H			Attribué	Neuf	Afaf Chabini	DOSI	DOSI	SIEGE	Plateau Direction	0		-	1
+IT	IT000003	Ordinateur de bureau 	32PQYJ2	DELL	Optiplex 3040			Attribué	Neuf	Aicha Jiraoui	Assistante de Direction 	DG	SIEGE	Plateau Direction	0		-	1
+IT	IT000004	Ecran	CN-07CXPR-FCC00-047-D96D-A10	DELL	E1916HV			Attribué	Neuf	Aicha Jiraoui	Assistante de Direction 	DG	SIEGE	Plateau Direction	0		-	1
+IT	IT000005	Ordinateur de bureau 	4CH551C8CK	HP	All In One 			Attribué	Neuf	Aicha Jiraoui	Assistante de Direction 	DG	SIEGE	Plateau Direction	0		-	1
+IT	IT000009	Ordinateur de bureau 	9PX94K3	DELL	Optiplex 3090			Attribué	Neuf	Meryem Farahi	Proprety Manager	BU FO	SIEGE	Plateau Direction	0		-	1
+IT	IT000011	Ecran	CN-01M2XX-74261-61N-4F6L-A0190-120	DELL	E2016H			Attribué	Neuf	Meryem Farahi	Proprety Manager	BU FO	SIEGE	Plateau Direction	0		-	1
+IT	IT000012	Ordinateur portable	M1N0CX01X58401H	ASUS	X515J	08/03/2024	08/03/2024	Attribué	Neuf	Zainab ELKHALIFI	Opératrice CRC	BU PI	SIEGE	Plateau Direction	0		Centre de relations Clients 	1
+IT	IT000018	Ordinateur de bureau 	HN17MJ2	DELL	Optiplex 3050			Attribué	Neuf	Soumiya	Opératrice CRC	BU PI	SIEGE	Plateau Direction	0		Centre de relations Clients 	1
+IT	IT000017	Ecran	CN-01M2XX-74261-6CR-7G1U-A01	DELL	E2016H			Attribué	Neuf	Soumiya	Opératrice CRC	BU PI	SIEGE	Plateau Direction	0		Centre de relations Clients 	1
+IT	IT000024	Ecran	CN-011PWC-WSL00-122-FPFB-A04	DELL	S2721HN			Attribué	Neuf	Halima Lamkinsi	Responsable Programmes	BU PI	SIEGE	Plateau Direction	0		-	1
+IT	IT000029	Imprimante 	3389423547	XEROX	WorkCentre 3345			Attribué	Neuf	Plateau Direction 	Plateau Direction	DG	SIEGE	Plateau Direction	0		-	1
+IT	IT000030	Imprimante 	VNBRP9D3V6	HP	Color Laser Jet Pro MFP M282nw			Attribué	Neuf	Imad Rida	Directeur BU FO	BU FO	SIEGE	Plateau Direction	0		-	1
+IT	IT000032	Ordinateur portable	MCN0CX24M012515	ASUS	F571L			Attribué	Neuf	Yassine Lahlimi	Agent Administratif Projets	DT	SIEGE	Plateau Direction	0		-	1
+IT	IT000037	Ordinateur de bureau 	32KLYJ2	DELL	Optiplex 3040			Attribué	Neuf	Oumkeltoum Boukhress	Acheteur		SIEGE	Plateau Support	0			1
+IT	IT000038	Ecran	V5496366	LENOVO	Lenovo			Attribué	Neuf	Oumkeltoum Boukhress	Acheteur		SIEGE	Plateau Support	0			1
+IT	IT000041	Imprimante 	CNB3PBT01Q	HP	Laser 207w			Attribué	Neuf	Soufiane Sifouh	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000042	Ordinateur de bureau 	32BJYJ2	DELL	optiplex 3040			Attribué	Neuf	Ibtissam oukkas	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000043	Ecran	CN-07CXPR-FCC00-056-DAKB-A10	DELL	E1916HV			Attribué	Neuf	Ibtissam oukkas	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000044	Imprimante 	CNC2564647	HP	LaserJet 1020			Attribué	Neuf	Ibtissam oukkas	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000045	Ordinateur de bureau 	32KSJ2	DELL	optiplex 3040			Attribué	Neuf	Houda Bamaarouf	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000046	Ecran	CN-01M2XX-74261-6C5-7J9U-A01	DELL	E2016H			Attribué	Neuf	Houda Bamaarouf	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000047	Imprimante 	CNB3PBT00H	HP	Laser 207w			Attribué	Neuf	Houda Bamaarouf	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000048	Ordinateur de bureau 	HFT94K3	DELL	Optiplex 3090			Attribué	Neuf	Taoufik sirai	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000049	Ecran	CN-00WF0V-72872-638-AUPB-A01	DELL	E1916He			Attribué	Neuf	Taoufik sirai	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000050	Ordinateur de bureau 	BN5XQX2	DELL	Vostro 3670			Attribué	Neuf	Jihad Reddadi	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000051	Ecran	CN-02RM36-QDC00-99Q-156L-A07	DELL	E2417H			Attribué	Neuf	Jihad Reddadi	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000052	Imprimante 	CNC2520538	HP	LaserJet 1020			Attribué	Neuf	Jihad Reddadi	Comptable	DAF	SIEGE	Plateau Support	0		-	1
+IT	IT000057	Ordinateur portable	CND84909X4	HP	3168NGW			Attribué	Neuf	Samira Lakhlifi	Assurrance	DAF	SIEGE	Plateau Support	0			1
+IT	IT000058	Ecran	CN-0MXCJR-WSL00-25I-642W-A01	DELL	E2222H			Attribué	Neuf	Samira Lakhlifi	Assurrance	DAF	SIEGE	Plateau Support	0			1
+IT	IT000059	Ordinateur portable						Attribué	Neuf	Mounir Sahir	Contrôleur de Gestion 	DAF	SIEGE	Plateau Support	0			1
+IT	IT000060	Ecran	CN-011PWC-WSL00-11T-077B-A04	DELL	S2721HN			Attribué	Neuf	Mounir Sahir	Contrôleur de Gestion 	DAF	SIEGE	Plateau Support	0			1
+IT	IT000062	Docking	5CG128XZ0H	HP	HP 			Attribué	Neuf	Mounir Sahir	Contrôleur de Gestion 	DAF	SIEGE	Plateau Support	0			1
+IT	IT000064	Ecran	CN-0XXCGP-TV200-1BQ-23FV-A02	DELL	SE2722H			Attribué	Neuf	Hanane Soussy	ADV	BU PI	SIEGE	Plateau Support	0			1
+IT	IT000065	Imprimante 	VNBRP320RK	HP	Color LaserJet Pro MFP M282nw			Attribué	Neuf	Hanane Soussy	ADV	BU PI	SIEGE	Plateau Support	0			1
+IT	IT000066	Ordinateur portable	5CG22715VN	HP	Elitebook			Attribué	Neuf	Asmaa Moulhsine	ADV	BU PI	AUDA	Bureau de vente UPTOWN	0			1
+IT	IT000068	Ecran	CN-08Y3JV-74261-5A8-3D9U-A00-B0-120	DELL	E2016H			Attribué	Neuf	Khadija Barka	ADV	BU PI	SIEGE	Plateau Support	0			1
+IT	IT000069		KLAC15344	CANON	Lide 220			Attribué	Neuf	Khadija Barka	ADV	BU PI	SIEGE	Plateau Support	0			1
+IT	IT000070	Ordinateur de bureau 	1X17MJ2	DELL	Optiplex 3050			Attribué	Neuf	Ghizlane Saidi	Assistante RH	RH&MG	SIEGE	Plateau Support	0			1
+IT	IT000071	Ecran	CN-01M2XX-74261-6C5-7J5U-A01	DELL	E2016H			Attribué	Neuf	Ghizlane Saidi	Assistante RH	RH&MG	SIEGE	Plateau Support	0			1
+IT	IT000072	Imprimante 	VNF6J20870	HP	HP			Attribué	Neuf	khadija Barka	Assistante RH	RH&MG	SIEGE	Plateau Support	0			1
+IT	IT000073	Ordinateur de bureau 	TRF339022T	HP	HP PRO			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000074	Ecran	CNC326QDYM	HP	W2072a			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000075	Ordinateur portable	MCN0CV042124489	ASUS	Notebook			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000076	Ecran	CN-0PNKKT-QDC00-22L-33FL-A03	DELL	P2422H			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000077	Imprimante 	CN63F2J1ZQ	HP	DeskJet Ink Advantage 3835			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000078		X2VX010131	EPSON	DS-1630			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000079	Imprimante 	WUC91554	CANON	I-SENSYS MF633Cdw			Attribué	Neuf	Wafae Benaddi	RAF	DAF	SIEGE	Acceuil 	0			1
+IT	IT000084	Imprimante 		HP	OfficeJet Pro 7740			Attribué	Neuf	Souhail Benarrou	DT	DT	SIEGE	Acceuil 	0			1
+IT	IT000085	Vidéo projecteur	X8AE2300275	EPSON	EB-FA52			Attribué	Neuf	Salle de réunion FEDALA		RH&MG	SIEGE	Acceuil 	0			1
+IT	IT000086	Vidéo projecteur	X4YG8Y00278	EPSON	EB-S39			Attribué	Neuf	Salle de réunion MOHAMMEDIA		RH&MG	SIEGE	Acceuil 	0			1
+IT	IT000087	Ordinateur de bureau 	22BZRJ2	DELL	Optiplex 3050			Attribué	Neuf	Zineb Yassine 			SIEGE	Acceuil 	0			1
+IT	IT000088	Ecran	7CQ428P021	HP	W2072a			Attribué	Neuf	Zineb Yassine 			SIEGE	Acceuil 	0			1
+IT	IT000091	Ordinateur de bureau 	3YYNCD2	DELL	Optiplex 3040			Attribué	Neuf	Service Achats			SIEGE	Plateau Support	0			1
+IT	IT000092	Ecran	CN-01M2XX-QDC00-787-1CVI-A02	DELL	E2016H			Attribué	Neuf	Service Achats			SIEGE	Plateau Support	0			1
+IT	IT000093	Ordinateur portable	M1N0CX01X552017	ASUS	X515J			Attribué	Neuf	Amine Nafis	Commercial	BU PI	ZENATA	Bureau de vente ZENATA	0		Commercial	1
+IT	IT000094	Imprimante 	VNF3C49141	HP	Laser Jet Pro MFP M130 nw			Attribué	Neuf	Bureau de vente Zenata	-	BU PI	ZENATA	Bureau de vente ZENATA	0		Commercial	1
+IT	IT000095	Ordinateur portable	M6N0CX19X611253	ASUS	X515J			Attribué	Neuf	Imane Yagou	Commercial	BU PI	ZENATA	Bureau de vente ZENATA	0		Commercial	1
+IT	IT000096	Télé	0C5P3SCM401549V	SAMSUNG	UE50NU7090U			Attribué	Neuf	Bureau de vente Zenata	-	BU PI	ZENATA	Bureau de vente ZENATA	0		Commercial	1
+IT	IT000105	Ordinateur de bureau 	F8GMH53	DELL	Optiplex 3070			Attribué	Neuf	Keltoum Oulhouss			CP	Bureau de vente CP	0			1
+IT	IT000106	Ecran	D7X01AA	HP	w2271d			Attribué	Neuf	Keltoum Oulhouss			CP	Bureau de vente CP	0			1
+IT	IT000107	Imprimante 	CNB7H2FGX9	HP	LaserJet Pro MFP M125nw			Attribué	Neuf	Keltoum Oulhouss			CP	Bureau de vente CP	0			1
+IT	IT000108	Imprimante 	VNF4J28586	HP	LaserJet P1102			Attribué	Neuf	Keltoum Oulhouss			CP	Bureau de vente CP	0			1
+IT	IT000109	Ordinateur portable	M1N0CX01X561016	ASUS	X515J			Attribué	Neuf	Khadija Machkour	Commercial		CP	Bureau de vente CP	0			1
+IT	IT000111	Ordinateur portable	M1N0CX01X60201D	ASUS	X515J			Attribué	Neuf	Wafa Labrini	Commercial		KPC	Bureau de vente KPC	0			1
+IT	IT000112	Ordinateur portable	M1N0CX01X54401B	ASUS	X515J			Attribué	Neuf	Ismail Chahbane	Commercial		KPC	Bureau de vente KPC	0			1
+IT	IT000113	Ordinateur portable	M1N0CX01X556011	ASUS	X515J			Attribué	Neuf	Meryem Sidki	Commercial		CP	Bureau de vente CP	0			1
+IT	IT000114	Docking	5CG243ZHYX	HP	HP			Attribué	Neuf	Afaf Chabini	DOSI	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000116	Docking		HP	HP			Attribué	Neuf	Stock IT	-	DOSI	SIEGE	Plateau Direction	0		IT	1
+IT	IT000117	Imprimante 	VNC3B78052	HP	HP LaserJet Pro M102a			Attribué	Neuf	Chanaz Tahir	Chargé MG	RH&MG	SIEGE 	Plateau Support	0		RH & MG	1
+IT	IT000118	Imprimante 	VNFNB14911	HP	HP LaserJet P1102			Attribué	Neuf	Laila Sadir			Ecole	Plateau Direction	0	Connexion Cable		1
+IT	IT000119	Ecran	V1NZH36	LENOVO	Lenovo 			Attribué	Neuf	Laila Sadir			Ecole	Plateau Direction	0			1
+IT	IT000120	Imprimante 	VNC3P28879	HP	Color LaserJet Pro MFP M181fw			Attribué	Neuf	Laila Sadir			Ecole	Plateau Direction	0			1
+IT	IT000124	Ordinateur de bureau 	9FHY35J	DELL	Vostro 260s			Attribué	Neuf	Laila Sadir			Ecole	Plateau Direction	0			1
+IT	IT000122	Ecran	CN-07CXPR-FCC00-056-DC1B-A10	DELL	E1916HV			Attribué	Neuf	Imane Bendada			Ecole	Plateau Direction	0	Connexion Wifi		1
+IT	IT000123	Ordinateur de bureau 		DELL	VOSTRO 260s			Attribué	Neuf	Imane Bendada			Ecole	Plateau Direction	0			1
+IT	IT000121	Ordinateur de bureau 	5VG7DP2	DELL	OptiPlex 3050			Attribué	Neuf	Meriem menquar			Ecole	Plateau Direction	0			1
+IT	IT000127	Ordinateur portable	PF3KVM6S	LENOVO	V15 G1  			Attribué	Neuf	Youness	Commercial	BU PI	AUDA	Bureau de vente UPTOWN	0		Commercial	1
+IT	IT000133	Routeur	S210Y24001807	HUAWEI	Lte B2368-66			Attribué	Neuf	Bureau de vente	-	BU PI	AUDA	Bureau de vente UPTOWN	0		Commercial	1
+IT	IT000135	Ecran		DELL	E1916HV			Attribué	Neuf	Meriem menquar			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000136		CN87CA1036	HP	ScanJet Pro 2500 f1			Attribué	Neuf	Meriem menquar			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000137	Ordinateur de bureau 	2D987Y1	DELL	D03S			Attribué	Neuf	Sbiry			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000138	Ecran	3418TFT20	HP	EliteDisplay E201			Attribué	Neuf	Sbiry			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000139	Imprimante 	VNF3B02117	HP	LaserJet M211d			Attribué	Neuf	Sbiry			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000140		3E01FBDPAZW1669	ALUA	alua			Attribué	Neuf	Sbiry			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000141	Ecran		SAMSUNG	Samsung			Attribué	Neuf	Sbiry			Ecole 	Plateau Direction	0	Connexion Cable		1
+IT	IT000142	Ordinateur de bureau 	8GHY35J	DELL	 Vostro 260 s			Attribué	Neuf	Salle des Profs 			Ecole 		0	Connexion Cable		1
+IT	IT000143	Ecran	CN-07CXPR-FCC00-047-AWFD-A10	DELL	E1916HV			Attribué	Neuf	Salle des Profs 			Ecole 		0	Connexion Cable		1
+IT	IT000144	Ordinateur de bureau 	CCZT35J	DELL	Vostro 260 s			Attribué	Neuf	Imane Louafi			Ecole 		0			1
+IT	IT000145	Ecran	V1NZH42	LENOVO	Lenovo			Attribué	Neuf	Imane Louafi			Ecole 		0			1
+IT	IT000146	Ordinateur de bureau 		HP	Compaq			Attribué	Neuf	Hanane			Ecole 		0			1
+IT	IT000147	Ecran	CNC502P6FV	HP	W2072a			Attribué	Neuf	Hanane			Ecole 		0			1
+IT	IT000148	Ordinateur de bureau 	CZC103HJC6	HP	Compaq			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000149	Ecran	CNK51909PF	HP	ProDisplay P19A			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000150	Ordinateur de bureau 	CZC34625BB	HP	Compaq			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000151	Ecran	CNK5200PJR	HP	ProDisplay P19A			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000152	Ordinateur de bureau 	1B229010010269	HP	Medion 			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000153	Ordinateur de bureau 	HZLM8D2	DELL	OptiPlex 7040			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000154	Ecran	CNK5200N1C	HP	ProDisplay P19A			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000155	Ordinateur de bureau 	CNX9040XLC	HP	Compaq 			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000156	Ecran	GP536A	HP	L1908w			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000157	Ordinateur de bureau 	1CS40D2	DELL	OptiPlex 7040			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000158	Ecran	CN-07CXPR-FCC00-047-AWYD-A10	DELL	E1916HV			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000159	Ordinateur de bureau 	3JHY35J	DELL	Vostro 260 s			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000160	Ecran	CN-07CXPR-FCC00-056-DAUB-A10	DELL	E1916HV			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000161	Ordinateur de bureau 	ZC1035GMN	HP	Compaq 8100 Elite			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000162	Ecran	CNK51909C5	HP	ProDisplay P19A			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000163	Ordinateur de bureau 	CZC2232PVD	HP	Compaq 8200 Elite			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000164	Ecran	CN-07CXPR-FCC00-056-DATB-A10	DELL	E1916HV 			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000165	Vidéo projecteur	XBF42902977	EPSON	HA86B			Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0	Pas connecte		1
+IT	IT000166	Ordinateur de bureau 	1B229010010164	MEDION	Medion 			Attribué	Neuf	Zhour el amri			Ecole 	Ecole Collège	0	Connexion wifi		1
+IT	IT000167	Ordinateur de bureau 	CZC240BG6D	HP	Compaq 			Attribué	Neuf	Houda Bentajar			Ecole 	Ecole Lycée	0	Connexion cable		1
+IT	IT000168	Ecran	CNK5200NHK	HP	ProDisplay P19A			Attribué	Neuf	Houda Bentajar			Ecole 	Ecole Lycée	0			1
+IT	IT000170	Ordinateur de bureau 	AUD21604W0	DELL	optiplex			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000171	Ecran	MY19HMFS105600R	SAMSUNG	Samsung 943N			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000172	Ordinateur de bureau 	CZC3467BJ0	HP	Compaq Pro 6300			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000173	Ecran	V1MCT35	LENOVO	Lenovo			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000174	Ordinateur de bureau 	CZC41515S1	HP	Compaq Pro 6300			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000175	Ecran	V1NRM93	LENOVO	Lenovo			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000176	Ordinateur de bureau 	CZC01544GB	HP	Compaq Pro 8100			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000177	Ecran	V1NLG25	LENOVO	Lenovo			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000178	Ordinateur de bureau 	AUD216054N	HP	Compaq 8200 Elite			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000179	Ecran	MY19HMDS316689Y	SAMSUNG	Samsung 943N			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000180	Ordinateur de bureau 	CZC109BB7P	HP	Compaq 8100 Elite			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000181	Ecran	CNK519086Y	HP	ProDisplay P19A			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000182	Ordinateur de bureau 	CZC41515T7	HP	Compaq Pro 6300			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000183	Ecran	CNK5190877	HP	ProDisplay P19A			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000184	Vidéo projecteur	Q71P735AAAAAC0538	OPTOMA	Optoma 			Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000185	Vidéo projecteur	X8A21901079	EPSON	EB-X51			Attribué	Neuf				Ecole 	Ecole Lycée	0			1
+IT	IT000186	Vidéo projecteur	XBF42902877	EPSON	CO-W01			Attribué	Neuf				Ecole 	Ecole Lycée	0			1
+IT	IT000187	Ordinateur de bureau 	1B229010010101	MEDION	Medion 			Attribué	Neuf	Nezha Madid			Ecole 	Acceuil 	0	Connexion Cable		1
+IT	IT000188	DVR		AlUA	Alua			Attribué	Neuf				Ecole 	Ecole Lycée	0			1
+IT	IT000189	Ordinateur de bureau 	FHHY35J	DELL	Optiplex			Attribué	Neuf	Salle Technique 			Ecole 	Ecole Lycée	0			1
+IT	IT000190	Ecran	V1NLG33	LENOVO	Lenovo			Attribué	Neuf	Salle Technique 			Ecole 	Ecole Lycée	0			1
+IT	IT000191	Switch	E1275017416000247	Tenda 	Tenda 			Attribué	Neuf	Salle Technique 			Ecole 	Ecole Lycée	0			1
+IT	IT000192	Switch	E1275017416000249	Tenda 	Tenda 			Attribué	Neuf	Salle Technique 			Ecole 	Ecole Lycée	0			1
+IT	IT000193	Imprimante 	PHC5Q01007	HP	LaserJet Pro 4003dn	14/04/2023	14/04/2023	Attribué	Neuf	Meryem			Ecole 	Ecole Lycée	0			1
+IT	IT000194	Imprimante 	PHC5P02285	HP	LaserJet Pro 4003dn	14/04/2023	14/04/2023	Attribué	Neuf	Laila			Ecole 	Ecole Lycée	0			1
+IT	IT000195	Imprimante 	PHC5Q01037	HP	LaserJet Pro 4003dn	18/04/2023	18/04/2023	Attribué	Neuf	Houda			Ecole 	Ecole Lycée	0			1
+IT	IT000169	Imprimante 	VNC3T51678	HP	LaserJet Pro M102a	20/04/2023	20/04/2023	Attribué	Neuf	Taoufik Sirai	Comptable 	DAF	SIEGE	Plateau Support	0		Finance	1
+IT	IT000022	Ecran	CN-0XXCGP-TV200-1BQ-1SDV-A02	DELL	SE2722H	20/04/2023	20/04/2023	Attribué	Neuf	Nizar Mezzouari	Responsable Commercial	BU PI	SIEGE	Bureau de vente KPC	0		Commercial	1
+IT	IT000196	Ordinateur portable						Attribué	Neuf	Stock			SIEGE	Plateau Support	0			1
+IT	IT000197	Ordinateur portable	CYPR1T3	DELL	Latitude 5430	26/04/2023	26/04/2023	Attribué	Neuf	Omar Kassaoui	Contrôleur de Gestion 		SIEGE	Plateau Support	0			1
+IT	IT000199	Ordinateur portable	4JF23T3	DELL	Latitude 5430	28/04/2023	28/04/2023	Attribué	Neuf	Hamza BOUHLAL		DOSI	SIEGE	Plateau Support	0			1
+IT	IT000200	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Amine Bellanaya	Commercial	BU PI	AUDA	Bureau de vente UPTOWN	0		Commercial	1
+IT	IT000201	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Ismail Chahbane 	Commercial	BU PI	KPC	Bureau de vente KPC	0		Commercial	1
+IT	IT000202	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Ilham Elmoubaraki	Responsable CRC	BU PI	SIEGE	Plateau Direction	0		CRC	1
+IT	IT000203	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Machkour Khadija	Responsable commercial tertiaire	BU PI	CP	Bureau de vente CP	0		Commercial	1
+IT	IT000204	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Amine Nafis	Commercial	BU PI	ZENATA	Bureau de vente ZENATA	0		Commercial	1
+IT	IT000205	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Imane Yagou	Commercial	BU PI	ZENATA	Bureau de vente ZENATA	0		Commercial	1
+IT	IT000207	Tablette 		SAMSUNG	Galaxy Tab A8 64GB	06/06/2023	06/06/2023	Attribué	Neuf	Nizar Mezzouari	Responsable commercial	BU PI	KPC	Bureau de vente KPC	0		Commercial	1
+IT	IT000208	Tablette 				07/06/2023	07/06/2023	Attribué	Neuf	Wafae Labrini			KPC	Bureau de vente KPC	0			1
+IT	IT000215	Ordinateur portable	10GQDX3	DELL	Latitude 5540	01/10/2023	01/10/2023	Attribué	Neuf	Aboujaafar Oussama	Responsable IT	DOSI	SIEGE	Plateau Support	0			1
+IT	IT000216	Ordinateur de bureau 	35PWNT3	DELL	OptiPlex 3000	10/10/2023	10/10/2023	Attribué	Neuf	Leila SADIR			Ecole 	Ecole Primaire	0			1
+IT	IT000217	Ordinateur de bureau 	4ZV1QT3	DELL	OptiPlex 3000	10/10/2023	10/10/2023	Attribué	Neuf	Salle des professeurs			Ecole 	Ecole Collège	0			1
+IT	IT000218	Ordinateur de bureau 	JYV1QT3	DELL	OptiPlex 3000	10/10/2023	10/10/2023	Attribué	Neuf	Salle des professeurs			Ecole 	Ecole Primaire	0			1
+IT	IT000219	Ordinateur de bureau 	3ZV1QT3	DELL	OptiPlex 3000	10/10/2023	10/10/2023	Attribué	Neuf	M. Lafdi	assistant collège-lycée		Ecole 	Ecole Lycée	0			1
+IT	IT000220	Vidéo projecteur	X8AE3301513	EPSON	EB-FH52	10/10/2023	10/10/2023	Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0			1
+IT	IT000221	Vidéo projecteur	X8AE3301069	EPSON	EB-FH52	10/10/2023	10/10/2023	Attribué	Neuf	Salle d'informatique 1			Ecole 	Ecole Primaire	0			1
+IT	IT000222	Vidéo projecteur	X8AE3301274	EPSON	EB-FH52	10/10/2023	10/10/2023	Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Collège	0			1
+IT	IT000223	Vidéo projecteur	X8DS350739L	EPSON	EB-FH52	10/10/2023	10/10/2023	Attribué	Neuf	Salle d'informatique 2			Ecole 	Ecole Lycée	0			1
+IT	IT000224	Ecran	CN-0WHDJ8-WSL00-33L-294W	DELL	E2222H 	10/10/2023	10/10/2023	Attribué	Neuf	Leila SADIR			Ecole 	Ecole Primaire	0			1
+IT	IT000225	Ecran	CN-0WHDJ8-WSL00-33L-251W	DELL	E2222H 	10/10/2023	10/10/2023	Attribué	Neuf	Salles de professeurs			Ecole 	Ecole Collège	0			1
+IT	IT000226	Ecran	CN-0WHDJ8-WSL00-33L-278W	DELL	E2222H 	10/10/2023	10/10/2023	Attribué	Neuf	M. Lafdi	assistant collège-lycée		Ecole 	Ecole Collège	0			1
+IT	IT000227	Ecran	CN-0WHDJ8-WSL00-33L-361W	DELL	E2222H 	10/10/2023	10/10/2023	Attribué	Neuf	Salles de professeurs			Ecole 	Ecole Primaire	0			1
+IT	IT000229	Switch	CN74GXW399	HP	HPE OfficeConnect 1420 Series	03/11/2023	03/11/2023	Attribué	Neuf				Ecole 	Ecole Primaire	0			1
+IT	IT000230	Switch	LNZQ8J0348042	3COM	Baseline Switch 2024	03/11/2023	03/11/2023	Attribué	Neuf				Ecole 	Ecole Collège	0			1
+IT	IT000231	Ecran	CN-00XCGP-TV200-35T-04CV	DELL	SE2722H	30/06/2023	30/06/2023	Attribué	Neuf	Aboujaafar Oussama	Responsable IT	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000232	Ecran	CN-00XCGP-TV200-35T-0J9V	DELL	SE2722H	06/05/2024	06/05/2024	Attribué	Neuf	Camelia Sherry Senhaji 		DT	SIEGE	Plateau Direction	0			1
+IT	IT000234	Ordinateur portable	4HN1WT3	DELL	Latitude 5430	20/11/2023	20/11/2023	Attribué	Neuf	Abdou BELAOUD	Contrôleur de Gestion 	DAF	SIEGE	Plateau Direction	0			1
+IT	IT000235	Routeur	3,23735E+11	ZTE	4G MF293N	07/12/2023	07/12/2023	Attribué	Neuf	Bureau Chantier 	-	DT	ZENATA	Chantier	0		Technique	1
+IT	IT000236	Imprimante 	CN261AP074	HP	ScanJet Pro 2600 f1	29/12/2023	29/12/2023	Attribué	Neuf	Khadija BARKA		DT	SIEGE	Plateau Support	0			1
+IT	IT000237	Ordinateur portable	D0D6GY3	DELL	Latitude 5440	24/01/2024	24/01/2024	Attribué	Neuf	Hanane SOUSSY	ADV		SIEGE	Plateau Support	0			1
+IT	IT000239	Imprimante 	CNBRR395FJ	HP	Color Laser Jet Pro MFP M283fdw	08/02/2024	08/02/2024	Attribué	Neuf	Afaf Chabini	DOSI	DOSI	SIEGE	Plateau Direction	0		-	1
+IT	IT000241	Ordinateur portable	R9NRKD008525376	ASUS	FX507VU4	14/02/2024	14/02/2024	Attribué	Neuf	Camélia Sherry Senhagi	Responsable Programme	DT	SIEGE	Plateau Direction	0		-	1
+IT	IT000242	Micro Logitech Rally plus	2318LZ50X4Y8	LOGITECH	Rally Mic Pod	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000243	Micro Logitech Rally plus	2318LZ50X388	LOGITECH	Rally Mic Pod	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000244	Haut parleur Logitech Rally Plus	2306GGR01R28	LOGITECH	Rally Speaker	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000245	Haut parleur Logitech Rally Plus	2306GGL01TN8	LOGITECH	Rally Speaker	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000246	Camera Rally Logitech Plus	860000569	LOGITECH	Rally Camera	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000247	Hub Rally Logitech Plus	839000539	LOGITECH	Rally Display Hub	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000248	Hub Rally Logitech Plus	839000540	LOGITECH	Rally Table Hub	15/02/2024	15/02/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000249	Clavie logitech	2336SC10JQ08	LOGITECH	MK220	05/03/2024	05/03/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000250	souris sans fil logitech 	CCAI13LP0700T8	LOGITECH	MK220	05/03/2024	05/03/2024	Attribué	Neuf	Salle de Conseil	Salle de Conseil	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000251	Déchiqueteuse Fellowes Powershred			79Ci	06/03/2024	06/03/2024	Attribué	Neuf	OpenSpace 1	OpenSpace 1	DOSI	SIEGE	Plateau Support	0			1
+IT	IT000257	Imprimante 	CNBRR3939Q	HP	Color LaserJet Pro M283fdw 	11/03/2024	11/03/2024	Attribué	Neuf	Aicha JERAOUI	Assistante de Direction 	DG	SIEGE	Plateau Direction	0			1
+IT	IT000258	Imprimante 	CN35VBHJSQ	HP	OfficeJet Pro 7740 	20/03/2024	20/03/2024	Attribué	Neuf	Camelia + halima 	Responsable Programmes	BU PI	SIEGE	Plateau Direction	0			1
+IT	IT000259	Casque 	00348479677	JABRA	Evolve 2 40 SE	29/03/2024	29/03/2024	Attribué	Neuf	Zainab ELKHALIFI	Opératrice CRC                	BU PI	SIEGE	Plateau Support	0		Centre de relations Clients	1
+IT	IT000260	Casque 	00348297804	JABRA	Evolve 2 40 SE	29/03/2024	29/03/2024	Attribué	Neuf	Nourimane LAHRIDI	Opératrice CRC                	BU PI	SIEGE	Plateau Support	0		Centre de relations Clients	1
+IT	IT000261	Casque 	00348745053	JABRA	Evolve 2 40 SE	29/03/2024	29/03/2024	Attribué	Neuf	Soumaya FARDOUSSI	Opératrice CRC                	BU PI	SIEGE	Plateau Support	0		Centre de relations Clients	1
+IT	IT000262	Casque 	00348303175	JABRA	Evolve 2 40 SE	29/03/2024	29/03/2024	Attribué	Neuf	Ferial Tenzifet	Opératrice CRC                	BU PI	SIEGE	Plateau Support	0		Centre de relations Clients	1
+IT	IT000263	Casque 	00348744535	JABRA	Evolve 2 40 SE	29/03/2024	29/03/2024	Attribué	Neuf	Salma Chnitar	Opératrice CRC                	BU PI	SIEGE	Plateau Support	0		Centre de relations Clients	1
+IT	IT000067	Ordinateur de bureau 	P75F001	DELL	Inc OptiPlix 3020	08/05/2024	08/05/2024	Attribué	Neuf	Mourad RAHMOUNI	    	BU PI	SAV	Bureau de vente KPC	0			1
+IT	IT000264	Ordinateur portable	7LQCP04	DELL	INC Latitude 3540	24/06/2024	24/06/2024	Attribué	Neuf	SAV	SAV		SAV	Bureau de vente KPC	0			1
+IT	IT000028	Ecran	CN-09PR6R-WSL00-9AL-BF1L-A08	DELL	P2719H	15/07/2024	15/07/2024	Attribué	Neuf	SABRI Najlae	Directrice Juridique.	DG	SIEGE	Plateau Direction	0		-	1
+IT	IT000006	Imprimante 	VNC5Y05795	HP	Color Laser Jet Pro MFP M181fw	17/07/2024	17/07/2024	Attribué	Neuf	SAV ZENATA	SAV		SIEGE	Chantier	0		-	1
+IT	IT000240	Imprimante 	CNBRR3954S	HP	Color Laser Jet Pro MFP M283fdw	06/08/2024	06/08/2024	Attribué	Neuf	SABRI Najlae	Directrice Juridique.	DG	SIEGE	Plateau Direction	0		-	1
+IT	IT000021	Ordinateur portable	MANRKD04581342C	ASUS	FX516P 330	16/08/2024	16/08/2024	Attribué	Neuf	Rida BADAOUI	Responsable projet		SEIGE	Plateau Direction	0			1
+IT	IT000266	Imprimante 	CNBRR68482	HP	Color Laser Jet Pro MFP M283fdw	08/10/2024	08/10/2024	Attribué	Neuf	ZINEB YASSINE			SEIGE	Acceuil 	0			1
+IT	IT000267	Ecran	CN-0XXCGP	DELL	SE2722H	1/12/2024	1/12/2024	Attribué	Neuf	SARA GHALIMI			SEIGE	Plateau Direction	0			1
+IT	IT000198	Ordinateur portable	9Y9R1T3	DELL	Latitude 5430	13/01/2025	13/01/2025	Attribué	Neuf	Siham MACHRAOUI	Responsable commercial sohaus		SIEGE	Plateau Direction	0			1
+IT	IT000268	Ordinateur portable	8FF2K24	DELL	Latitude 5540	13/12/2024	13/12/2024	Attribué	Neuf	SOUFIANE SIFOUH	 Chef comptable	DAF	SIEGE	Plateau Direction	0			1
+IT	IT000269	Ordinateur portable	NWCN17WW	LENOVO	yoga 7 14IML9 B3DJ	27/01/2025	27/01/2025	Attribué	Neuf	SABRI NAJLAE 	DIRECTRICE JURIDIQUE	DG	SIEGE	Plateau Direction	0			1
+IT	IT000035	Ordinateur de bureau 	328KYJ2	DELL	Optiplex 3040	28/01/2025	28/01/2025	Attribué	Neuf	SOULHI IKRAM 	Marketing		SIEGE	Plateau Direction	0			1
+IT	IT000233	Ecran	CN-0XXCGP	DELL	SE2722H	28/01/2025	28/01/2025	Attribué	Neuf	SOULHI IKRAM 	Marketing		SIEGE	Plateau Direction	0			1
+IT	IT000270	Ecran	CN-0N6M8T-TV200-47M-12QT	DELL	SE2725H	10/02/2025	10/02/2025	Attribué	Neuf	BELAOUD Abdou	Contrôleur de Gestion 		SIEGE	Plateau Direction	0			1
+IT	IT000271	Ecran	CN-0N6M8T-TV200-47M-12NT	DELL	SE2725H	10/02/2025	10/02/2025	Attribué	Neuf	Kassaoui Omar	Contrôleur de Gestion 		SIEGE	Plateau Direction	0			1
+IT	IT000063	Ordinateur de bureau 	328RYJ2	DELL	Optiplex 3040	12/02/2025	12/02/2025	Attribué	Neuf	MENQUAR Meriem 	Aide comptable		SIEGE	Ecole Lycée	0			1
+IT	IT000272	Ordinateur portable	8GC6GY3	DELL	LATITUDE 5440	25/02/2025	25/02/2025	Attribué	Neuf	MFADEL Tarik		DG	SIEGE	Plateau Direction	0			1
+IT	IT000273	Docking	SN2300202440883	UGREEN	Hub USB c UGREEN 10 en 1	20/03/2025	20/03/2025	Attribué	Neuf	MFADEL Tarik		DG	SIEGE	Plateau Direction	0			1
+IT	IT000274	Docking	SN2300202440796	UGREEN	Hub USB c UGREEN 10 en 1	20/03/2025	20/03/2025	Attribué	Neuf	AFaf Chabini	DOSI	DOSI	SIEGE	Plateau Direction	0			1
+IT	IT000265	Ordinateur portable	S3NRKD009480129	ASUS	ASUS FX507VV.325	30/09/2025	30/09/2025	Attribué	Neuf	Oussama MEDIOUNU	Chef de projet		SEIGE	Chantier	0			1
+IT	IT000080	Ordinateur portable	K7N0CV14K49230	ASUS	ASUS Zenbook UX434F	14/03/2025	14/03/2025	Attribué	Neuf	Youssef HALIM	DAF	DAF	SEIGE	Plateau Direction	0			1
+IT	IT000007	Ordinateur de bureau 	NA		Unité Gamer	14/03/2025	14/03/2025	Attribué	Neuf	Naima ELBRYMY 	Infographiste	BU PI	SIEGE	Plateau Direction	0		Communication et Marketing	1
+IT	IT000008	Ecran	BZEQH4ZN700528L	SAMSUNG	Samsung S24D332HSX/ZN	14/03/2025	14/03/2025	Attribué	Neuf	Naima ELBRYMY 	Infographiste	BU PI	SIEGE	Plateau Direction	0		Communication et Marketing	1
+IT	IT000276	Ordinateur portable	SCNRKD021720516	ASUS	TUF GAMING F15 FX507VV_FX507VV	10/04/2025	10/04/2025	Attribué	Neuf	Othmane BEN CHEKROUN	Directeur projet	BU PI	SEIGE	Plateau Direction	0			1
+IT	IT000277	Haut parleur		JABRA	speaker jabra 510 	10/04/2025	10/04/2025	Attribué	Neuf	Imad RIDA	Directeur BU FO	BU PI	SEIGE	Plateau Direction	0			1
+IT	IT000278	Ordinateur portable	5CD4503L2H	HP	Spectre x360 2-in-1 Laptop 14	14/04/2025	14/04/2025	Attribué	Neuf	Imad RIDA	Directeur BU FO	BU PI	SEIGE	Plateau Direction	0			1
+IT	IT000279	Ordinateur portable	5CD450303L34	HP	Spectre x360 2-in-1 Laptop 14	17/04/2025	17/04/2025	Attribué	Neuf	MFADEL Tarik	Directeur BU FO	DG	SEIGE	Plateau Direction	0			1
+IT	IT000126	Ordinateur portable	M1N0CX01X595017	ASUS	X515J	24/04/2025	24/04/2025	Attribué	Neuf	Nezha BARAKA	Commercial	BU PI	AUDA	Bureau de vente UPTOWN	0		Commercial	1
+IT	IT000036	Ecran	CN-07CXPR-FCC00-056-DCCB-A10	DELL	E1916HV	26/03/2025	26/03/2025	Attribué	Neuf	Houda BEN TAJAR			Ecole 	Ecole Collège	0			1
+IT	IT000206	Tablette 	R8YW30VQ9TX	SAMSUNG	Galaxy TAB A8	16/04/2025	16/04/2025	Attribué	Neuf	Maria ERRITOUNI	SAV		SEIGE	Chantier	0			1
+IT	IT000280	Ordinateur portable	YX0D8WN8	LENOVO	yoga 7 14IML9 B3DJ	07/05/2025	07/05/2025	Attribué	Neuf	Halima LAMKINSI	Responsable Programmes	BU FO	SEIGE	Plateau Direction	0			1
+IT	IT000280	Ordinateur portable	5CG0269MWD	HP	EliteBook 840 G6	20/05/2025	20/05/2025	Attribué	Neuf	Safa GOUGHRABOU	Assistante Commercial	BU FO	SEIGE	Bureau de vente UPTOWN	0			1
+IT	IT000281	Ecran	CN-05PMN4-FCC00-4AT-AD7X	DELL	SE2725H	22/05/2025	22/05/2025	Attribué	Neuf	Ghizlane SAIDI	Chargee RH	BU PI	SEIGE	Plateau Support	0			1
+IT	IT000033	Ordinateur portable	M1N0CX01X586018	ASUS	VivoBOOK _X515JA	28/05/2025	28/05/2025	Attribué	Neuf	Ikram SOULHI	Marketing 		SEIGE	Plateau Support	0			1
+IT	IT000282	Ordinateur portable	5C2D194	DELL	Latitude 5450	28/05/2025	28/05/2025	Attribué	Neuf	Ahmed EDDAFEE	Marketing 		SEIGE	Plateau Support	0			1
+IT	IT000283	Ordinateur portable	H52D194	DELL	Latitude 5450	11/06/2025	11/06/2025	Attribué	Neuf	Tahir CHANAZ 	Acheteur		SEIGE	Plateau Support	0			1
+IT	IT000090	Ordinateur portable	KAN0CV16Z467448	ASUS	UX410UAR	12/06/2025	12/06/2025	Attribué	Neuf	Ghizlane SAIDI	RH		SEIGE	Plateau Support	0			1
+IT	IT000284	Imprimante 	CN34AFWMHX	HP	Deskjet 2720	12/06/2025	12/06/2025	Attribué	Neuf	Ghizlane SAIDI	RH		SEIGE	Plateau Support	0			1
+IT	IT000285	Ordinateur portable	282D194	DELL	Latitude 5450	16/06/2025	16/06/2025	Attribué	Neuf	El Mostafa HACHACHE	Chef de Chantier		SEIGE	Plateau Support	0			1
+IT	IT000286	Ordinateur portable	SCNRKD02171551A	ASUS	Asus TUF GAMING F15 FX507VV_FX507VV	19/06/2025	19/06/2025	Attribué	Neuf	Omar ROCHDI	Chef de projet		SEIGE	Plateau Support	0			1

@@ -19,7 +19,6 @@ if (isset($_GET['action']) ) {
                 $filtredData = json_encode($filtredDataArray);
                 echo $filtredData;
             } 
-             
         }
     }
     

@@ -145,3 +145,14 @@
 2025/03/17 10:39:30 ---  --- YASMINE_FONCIERE
 2025/03/17 10:39:44 ---  --- HOLDING_TARIK
 2025/03/17 10:39:47 ---  --- M_PROPERTIES
+2025/05/27 11:28:18 --- o.aboujaafar --- AM_PROINVEST
+2025/05/27 11:28:24 --- o.aboujaafar --- HOLDING_TARIK
+2025/07/24 14:18:30 --- o.aboujaafar --- ANFA_REALISATION
+2025/07/24 14:18:33 --- o.aboujaafar --- CASA_COLIVING
+2025/07/24 14:18:34 --- o.aboujaafar --- HOLDING_TARIK
+2025/07/24 14:18:35 --- o.aboujaafar --- M_PROPERTIES
+2025/07/24 14:18:35 --- o.aboujaafar --- PROBAT_INVEST
+2025/07/24 14:18:42 --- o.aboujaafar --- ANFA_19
+2025/07/24 14:18:43 --- o.aboujaafar --- AM_PROINVEST
+2025/07/24 14:18:44 --- o.aboujaafar --- YASMINE_FONCIERE
+2025/07/24 14:18:46 --- o.aboujaafar --- RMM_BUILDING
