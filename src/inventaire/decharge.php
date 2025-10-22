@@ -37,6 +37,8 @@ $soclist = $listconn->query($sql);
         <form class="form-dech" id="dech-container-form">
                 <input type="text" name="did" id="did" hidden>
                 <input type="text" name="dtype" id="dtype" hidden>
+                <input type="text" name="dserie" id="dserie" hidden>
+                <input type="text" name="detat" id="detat" hidden>
                 <div class="user-container">
                     <fieldset class="item-box">
                         <legend class="filter-type-title">Code</legend>
@@ -76,251 +78,296 @@ $soclist = $listconn->query($sql);
                 </fieldset> 
         </form>
 <button class="btn-switch" type="button" onclick="validerDecharge()" id="val-dech-btn" hidden>Valider</button>
-<button class="btn-switch" type="button" onclick="imprimerDecharge()" id="print-dech-btn" hidden>Imprimer</button>
+<button class="btn-switch" type="button" onclick="printDecharge()" id="print-dech-btn" hidden>Imprimer</button>
 
     </div>                    
 
 </div>
 
-<button class="btn-switch" type="button" onclick="imprimerDecharge()" >Imprimer</button>
+<button class="btn-switch" type="button" onclick="printDecharge()" >Imprimer</button>
 
 
 <script>
-function imprimerDecharge() {
-const doc = new docx.Document({
-    styles: {
-        default: {
-            document: {
-                run: {
-                    font: "Garamond",
-                    size: 24, // 12pt
-                },
-                paragraph: {
-                    spacing: {
-                        after: 120,
+async function printDecharge(){
+    let x = document.getElementById("snackbar");
+    let id=document.getElementById("did").value
+    let code=document.getElementById("dcode").value
+    let data=[]
+    data.push({
+        id,
+        code
+        });
+    const payload = JSON.stringify({
+        key: "printDecharge",
+        data: data
+    });
+    try {
+        const response = await fetch('./src/inventaire/items.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: payload
+        }).then(response => response.json())
+        .then(data => {
+            const decharge = {
+                societe: document.getElementById("dsoc").options[document.getElementById("dsoc").selectedIndex].text,
+                socAdresse: document.getElementById("dsoc").options[document.getElementById("dsoc").selectedIndex].getAttribute('adresse'),
+                socVille: document.getElementById("dsoc").options[document.getElementById("dsoc").selectedIndex].getAttribute('ville'),
+                user: document.getElementById('duser').value,
+                userPoste: document.getElementById('dposte').value,
+                userAdresse: document.getElementById('dadresse').value,
+                materiel: document.getElementById('dmateriel').value,
+                code: document.getElementById('dcode').value,
+                serie: document.getElementById('dserie').value,
+                etat: document.getElementById('detat').value,
+                description: document.getElementById('ddescription').value,
+                date: data.html
+            };
+            imprimerDecharge(decharge)
+            x.innerHTML="Décharge imprimée avec succés!"
+            x.className = "show success-message";
+            setTimeout(function(){ x.className = x.className.replace("show success-message", ""); }, 3000);
+        })
+    } catch (error) {
+        console.error('Search failed:', error);
+    }
+}
+function imprimerDecharge(decharge) {
+    const doc = new docx.Document({
+        styles: {
+            default: {
+                document: {
+                    run: {
+                        font: "Garamond",
+                        size: 24, // 12pt
+                    },
+                    paragraph: {
+                        spacing: {
+                            after: 120,
+                        },
                     },
                 },
             },
         },
-    },
-    sections: [
-        {
-            children: [
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "Objet : Lettre de décharge pour la remise du matériel professionnel",
-                            bold: true,
-                            underline: { type: "single" },
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "YASMINE FONCIERE",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "23, RUE 5 LOT SIHAM 3EME ETAGE",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "CASABLANCA",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph("À l'attention de :"),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "M.AHMED EDDAFEE",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "CHEF DE PROJET",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "ADRESSE UTILISATEUR",
-                            bold: true,
-                        }),
-                    ],
-                }),                
-                new docx.Paragraph(""),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun("Par la présente, nous vous confirmons la remise du matériel professionnel mis à votre disposition dans le cadre de votre contrat de travail au sein de "),
-                        new docx.TextRun({
-                            text: "YASMINE FONCIERE",
-                            bold: true,
-                        }),
-                        new docx.TextRun("."),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "Matériel remis : ",
-                            bold: true,
-                        }),
-                        new docx.TextRun("Ordinateur portable DELL Latitude 5450"),
-                    ],
-                }),
-                new docx.Paragraph({
-                    bullet: { level: 0 },
-                    children: [
-                        new docx.TextRun({
-                            text: "N° Inventaire : ",
-                            bold: true,
-                        }),
-                        new docx.TextRun("000282"),
-                    ],
-                }),
-                new docx.Paragraph({
-                    bullet: { level: 0 },
-                    children: [
-                        new docx.TextRun({
-                            text: "N° Série : ",
-                            bold: true,
-                        }),
-                        new docx.TextRun("5C2D194"),
-                    ],
-                }),
-                new docx.Paragraph({
-                    bullet: { level: 0 },
-                    children: [
-                        new docx.TextRun({
-                            text: "Etat  : ",
-                            bold: true,
-                        }),
-                        new docx.TextRun("Neuf"),
-                    ],
-                }),
-                new docx.Paragraph({
-                    bullet: { level: 0 },
-                    children: [
-                        new docx.TextRun({
-                            text: "Description  : ",
-                            bold: true,
-                        }),
-                        new docx.TextRun("Processeur i5 - 8Go Ram - 512 SSD "),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun("(le « "),
-                        new docx.TextRun({
-                            text: "Bien",
-                            bold: true,
-                        }),
-                        new docx.TextRun(" »)"),
-                    ],
-                }),
-                new docx.Paragraph({
-                    alignment: docx.AlignmentType.JUSTIFIED,
-                    children: [
-                        new docx.TextRun("Vous êtes responsable de ce matériel pendant toute la durée de votre emploi au sein de "),
-                        new docx.TextRun({
-                            text: "YASMINE FONCIERE",
-                            bold: true,
-                        }),
-                        new docx.TextRun(". Il doit être utilisé dans le cadre strict de vos fonctions professionnelles. En cas de perte, vol, ou dommage, nous vous demandons de nous en informer immédiatement. Tout manquement pourrait entraîner une facturation ou une retenue sur votre solde de tout compte, conformément à notre politique interne."),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun("En signant cette lettre de décharge, vous reconnaissez avoir reçu le Bien cité ci-dessus de la part de "),
-                        new docx.TextRun({
-                            text: "service IT ",
-                            bold: true,
-                        }),
-                        new docx.TextRun("Le "),
-                        new docx.TextRun({
-                            text: "30/05/2025.",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph("Veuillez agréer, Madame, l'expression de nos salutations distinguées."),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "Service IT",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph("[Signature]"),
-                new docx.Paragraph(""),
-                new docx.Paragraph(""),
-                new docx.Paragraph(""),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "Accusé de réception du salarié :",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun("Je soussigné(e), "),
-                        new docx.TextRun({
-                            text: "M.AHMED EDDAFEE ",
-                            bold: true,
-                        }),
-                        new docx.TextRun(", atteste avoir reçu l’ensemble du matériel listé ci-dessus de "), 
-                        new docx.TextRun({
-                            text: "service IT",
-                            bold: true,
-                        }),
-                        new docx.TextRun(" en date du "), 
-                        new docx.TextRun({
-                            text: "30/05/2025.",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph({
-                    children: [
-                        new docx.TextRun({
-                            text: "M. M.AHMED EDDAFEE",
-                            bold: true,
-                        }),
-                    ],
-                }),
-                new docx.Paragraph("[Signature du salarié]"),
-            ],
-        },
-    ],
-});
+        sections: [
+            {
+                children: [
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: "Objet : Lettre de décharge pour la remise du matériel professionnel",
+                                bold: true,
+                                underline: { type: "single" },
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.societe,
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.socAdresse,
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.socVille,
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph("À l'attention de :"),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.user.toUpperCase(),
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.userPoste.toUpperCase(),
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.userAdresse.toUpperCase(),
+                                bold: true,
+                            }),
+                        ],
+                    }),                
+                    new docx.Paragraph(""),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun("Par la présente, nous vous confirmons la remise du matériel professionnel mis à votre disposition dans le cadre de votre contrat de travail au sein de "),
+                            new docx.TextRun({
+                                text: decharge.societe,
+                                bold: true,
+                            }),
+                            new docx.TextRun("."),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: "Matériel remis : ",
+                                bold: true,
+                            }),
+                            new docx.TextRun(decharge.materiel),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        bullet: { level: 0 },
+                        children: [
+                            new docx.TextRun({
+                                text: "N° Inventaire : ",
+                                bold: true,
+                            }),
+                            new docx.TextRun(decharge.code),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        bullet: { level: 0 },
+                        children: [
+                            new docx.TextRun({
+                                text: "N° Série : ",
+                                bold: true,
+                            }),
+                            new docx.TextRun(decharge.serie),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        bullet: { level: 0 },
+                        children: [
+                            new docx.TextRun({
+                                text: "Etat  : ",
+                                bold: true,
+                            }),
+                            new docx.TextRun(decharge.etat),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        bullet: { level: 0 },
+                        children: [
+                            new docx.TextRun({
+                                text: "Description  : ",
+                                bold: true,
+                            }),
+                            new docx.TextRun(decharge.description),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun("(le « "),
+                            new docx.TextRun({
+                                text: "Bien",
+                                bold: true,
+                            }),
+                            new docx.TextRun(" »)"),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        alignment: docx.AlignmentType.JUSTIFIED,
+                        children: [
+                            new docx.TextRun("Vous êtes responsable de ce matériel pendant toute la durée de votre emploi au sein de "),
+                            new docx.TextRun({
+                                text: decharge.societe,
+                                bold: true,
+                            }),
+                            new docx.TextRun(". Il doit être utilisé dans le cadre strict de vos fonctions professionnelles. En cas de perte, vol, ou dommage, nous vous demandons de nous en informer immédiatement. Tout manquement pourrait entraîner une facturation ou une retenue sur votre solde de tout compte, conformément à notre politique interne."),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun("En signant cette lettre de décharge, vous reconnaissez avoir reçu le Bien cité ci-dessus de la part de "),
+                            new docx.TextRun({
+                                text: "service IT ",
+                                bold: true,
+                            }),
+                            new docx.TextRun("Le "),
+                            new docx.TextRun({
+                                text: decharge.date+".",
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph("Veuillez agréer, Madame, l'expression de nos salutations distinguées."),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: "Service IT",
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph("[Signature]"),
+                    new docx.Paragraph(""),
+                    new docx.Paragraph(""),
+                    new docx.Paragraph(""),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: "Accusé de réception du salarié :",
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun("Je soussigné(e), "),
+                            new docx.TextRun({
+                                text: decharge.user,
+                                bold: true,
+                            }),
+                            new docx.TextRun(" , atteste avoir reçu l’ensemble du matériel listé ci-dessus de "), 
+                            new docx.TextRun({
+                                text: "service IT",
+                                bold: true,
+                            }),
+                            new docx.TextRun(" en date du "), 
+                            new docx.TextRun({
+                                text: decharge.date+".",
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph({
+                        children: [
+                            new docx.TextRun({
+                                text: decharge.user,
+                                bold: true,
+                            }),
+                        ],
+                    }),
+                    new docx.Paragraph("[Signature du salarié]"),
+                ],
+            },
+        ],
+    });
 
 
     docx.Packer.toBlob(doc).then((blob) => {
         console.log(blob);
-        saveAs(blob, "example.docx");
+        saveAs(blob, decharge.user+" "+decharge.materiel+".docx");
         console.log("Document created successfully");
     });
 }
-
+//dadza
 async function getDecharges(){
     const payload = JSON.stringify({
         key: "getDecharge",
@@ -397,6 +444,8 @@ function setDechargeData(data){
     document.getElementById("duser").value=data.user
     document.getElementById("dposte").value=data.poste_user
     document.getElementById("dadresse").value=data.adresse_user
+    document.getElementById("dserie").value=data.numero_serie
+    document.getElementById("detat").value=data.etat
 }
 
 async function validerDecharge(){

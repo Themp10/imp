@@ -1,6 +1,7 @@
 <?php
 define('BASEDIR', __DIR__);
 require "src". DIRECTORY_SEPARATOR ."db".DIRECTORY_SEPARATOR ."db_connection.php";
+
 session_start();
 $hidden=false;
 $profile=$_SESSION['profile'];
@@ -52,7 +53,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <?php if($profile =="admin" ||$profile =="achat") : ?>
         <!-- <a href="#" onclick="showContent('page-all-DA')">Suvi DA</a> -->
     <?php endif; ?>
-    <?php if($profile =="admin" || $profile =="commercial" || $profile =="directeur") : ?>
+    <?php if($profile =="admin" || $profile =="commercial" || $profile =="directeur" ) : ?>
         <a href="#" id="sub-comm">Commercial</a>
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a> -->
@@ -60,7 +61,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-tel')">Télephone</a>
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
-        <a href="#" onclick="showContent('page-sap-query')">Requetes SAP</a>
+        <a href="#" id="sub-sap">SAP</a>
         <a href="#" id="sub-rh">Gestion des sorties</a>
         <a href="#" onclick="showContent('page-decharge')">Décharge Matériel</a>
         <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
@@ -159,6 +160,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-synth-obj">    
             <?php include "src/screens/syntheseObj.php"; ?>
         </div>
+        <div class="inner-container" id="page-adv">    
+            <?php include "src/screens/adv.php"; ?>
+        </div>
         <div class="inner-container" id="page-local">    
             <?php include "src/screens/local.php"; ?>
         </div>
@@ -176,6 +180,12 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         </div>
         <div class="inner-container" id="page-inv-dech">    
             <?php include "src/inventaire/decharge.php"; ?>
+        </div>
+        <div class="inner-container" id="page-sap-frs">    
+            <?php include "src/screens/sapFrs.php"; ?>
+        </div>
+        <div class="inner-container" id="page-sap-items">    
+            <?php include "src/screens/sapItems.php"; ?>
         </div>
     </div>
 <footer>
@@ -340,6 +350,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').addClass('hovered');      
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-import-obj\')">Objectifs</a>');
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-synth-obj\')">Synthèse</a>');                        
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-adv\')">ADV</a>');                        
                         }
                         if(id =='sub-inv') {   
                             $('#sub-nav').addClass('hovered');      
@@ -348,6 +359,12 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-list\')">Liste article</a>');                        
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-mvt\')">Mouvements Stock</a>');                        
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-inv-dech\')">Décharge Matériel</a>');                        
+                        }
+                        if(id =='sub-sap') {   
+                            $('#sub-nav').addClass('hovered');      
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-sap-query\')">Requeteur</a>');
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-sap-frs\')">Fournisseurs</a>');                        
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-sap-items\')">Articles</a>');                        
                         }
                         const subNavWidth = $('#sub-nav').outerWidth(); // Get width of #sub-nav
                         const leftPos = event.pageX - subNavWidth/2; // Subtract width from mouse X position
@@ -384,6 +401,8 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                 showContent('page-mes-DA')
             }else if(profile =="directeur" || profile =="commercial") {
                 showContent('page-import-obj')
+            }else if(profile =="adv") {
+                showContent('page-adv')
             }else if(profile =="admin") {
                 let screenId=localStorage.getItem("screen");
                 if(screenId){

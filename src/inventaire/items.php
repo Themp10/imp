@@ -1,5 +1,11 @@
 <?php
 session_start();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+$admin='admin@groupemfadel.com';
+$adminPass='wnga gixg tdbg wnrx';
+require __DIR__ . '/../../vendor/autoload.php';
+
 $servername = "172.28.0.22";
 $username = "sa";
 $password = "MG+P@ssw0rd";
@@ -15,6 +21,11 @@ if ($Invconn->connect_error) {
 
 $payload = json_decode(file_get_contents('php://input'), true);
 
+function send_mail($data){
+    global $admin;
+    global $adminPass;
+    $mail = new PHPMailer(true);
+}
 function get_compteur($type){
     global $Invconn; 
     $sql="SELECT compteur FROM compteurs where type='".$type."'"; 
@@ -105,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ";
             if ($stmt = $Invconn->prepare($insertSql)) {
                 $stmt->bind_param(
-                    'ssssssssssssdsssss',
+                    'ssssssssssssdssss',
                     $code, $type, $designation, $numero_serie, $marque, $modele,
                     $date_acquisition,$date_affectation, $statut, $etat, $utilisateur, $emplacement,
                     $valeur, $commentaire, $direction, $poste, $site
@@ -317,7 +328,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
             
     }elseif ($payload['key'] == 'getDechargeDetail') {
-            $sql='SELECT d.id,i.code,CONCAT(i.designation," ",i.marque," ",i.modele) AS "materiel",d.description,coalesce(d.user,i.utilisateur) as "user",d.societe,d.poste_user,d.adresse_user,d.date_decharge  
+            $sql='SELECT d.id,i.code,CONCAT(i.designation," ",i.marque," ",i.modele) AS "materiel",i.numero_serie ,i.etat,d.description,coalesce(d.user,i.utilisateur) as "user",d.societe,d.poste_user,d.adresse_user,d.date_decharge  
                 FROM decharges d
                 LEFT JOIN items i ON d.code=i.code
                 WHERE d.id=?';
@@ -354,6 +365,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $adresse_user=$item['adresse_user'];
             $societe=$item['societe'];
             $user=$item['user'];
+            $date = date('Y/m/d H:i:s');
             $query = "UPDATE decharges SET poste_user = ?, adresse_user = ?, societe = ?, user = ?, rh_statut = 1 WHERE id = ?";
             if ($stmt = $Invconn->prepare($query)) {
                 $stmt->bind_param('ssisi', $poste_user,$adresse_user,$societe, $user, $id);
@@ -362,6 +374,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     exit;
                 }else{
                     $status="update success";
+                }
+            }
+            $stmt->close();
+    }elseif ($payload['key'] == 'printDecharge') {
+            $id = $item['id'];
+            $code=$item['code'];        
+            $date = date('Y/m/d');
+            $query = "UPDATE decharges SET date_decharge = ?, printed = 1 WHERE id = ?";
+            if ($stmt = $Invconn->prepare($query)) {
+                $stmt->bind_param('si', $date, $id);
+                if (!$stmt->execute()) {
+                    echo json_encode(['status' => 'error', 'message' => 'Validation Query execution failed: ' . $stmt->error]);
+                    exit;
+                }else{
+                    $status="update success";
+                    $html=date('d/m/Y');
                 }
             }
             $stmt->close();

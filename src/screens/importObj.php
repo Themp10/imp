@@ -710,8 +710,6 @@ function formatTable(){
   return objectifs   
 }
 
-
-
 function validerBudget(){
   if (document.getElementById("objectifs-project").innerHTML=="Société"){
     alert("Merci de choisir un projet")
@@ -875,13 +873,14 @@ function insertBudget(action="insert"){
               x.innerHTML="Objectifs enregistrés avec succés!"
               x.className = "show success-message";
               setTimeout(function(){ x.className = x.className.replace("show success-message", ""); }, 3000);
+              location.reload()
             }else{
-              x.innerHTML="Erreur lors de l'enregistrement des objectifs, concatctez vos administrateur pour recupérer les données perdues"
+              x.innerHTML="Erreur lors de l'enregistrement des objectifs, concatctez l'administrateur pour recupérer les données perdues"
               x.className = "show error-message";
               setTimeout(function(){ x.className = x.className.replace("show error-message", ""); }, 5000);
             }
           } else {
-              x.innerHTML="Erreur lors de l'enregistrement des objectifs, concatctez vos administrateur pour recupérer les données perdues"
+              x.innerHTML="Erreur lors de l'enregistrement des objectifs, concatctez l'administrateur pour recupérer les données perdues"
               x.className = "show error-message";
               setTimeout(function(){ x.className = x.className.replace("show error-message", ""); }, 5000);
             }
