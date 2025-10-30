@@ -126,25 +126,25 @@ function getPerPageOptions(){
         <div class="filters-data">
             <fieldset class="filter-box">
                 <legend class="filter-type-title">Toner</legend>
-                <select id="filter-name" class="select-filter" name="name" onchange="handleSelectChange()">
+                <select id="filter-name" class="select-filter" name="name" onchange="ThandleSelectChange()">
                     <?php echo searchList('name');?>
                 </select>
             </fieldset>
             <fieldset class="filter-box">
                 <legend class="filter-type-title">Utilisateur</legend>
-                <select id="filter-users" class="select-filter" name="users" onchange="handleSelectChange()">
+                <select id="filter-users" class="select-filter" name="users" onchange="ThandleSelectChange()">
                     <?php echo searchList('users');?>
                 </select>
             </fieldset>
             <fieldset class="filter-box">
                 <legend class="filter-type-title">Couleur</legend>
-                <select id="filter-color" class="select-filter" name="color" onchange="handleSelectChange()">
+                <select id="filter-color" class="select-filter" name="color" onchange="ThandleSelectChange()">
                     <?php echo searchList('color');?>
                 </select>
             </fieldset>
             <fieldset class="filter-box">
                 <legend class="filter-type-title">Type</legend>
-                <select id="filter-type" class="select-filter" name="type" onchange="handleSelectChange()">
+                <select id="filter-type" class="select-filter" name="type" onchange="ThandleSelectChange()">
                     <option value="none">-</option>
                     <option value="e">Entrée</option>
                     <option value="s">Sortie</option>
@@ -152,11 +152,11 @@ function getPerPageOptions(){
             </fieldset>
             <fieldset class="filter-box">
                 <legend class="filter-type-title">Du</legend>
-                <input type="date" class="select-filter" id="filter-date-from" value="2020-01-01" name="dateFrom" onchange="handleSelectChange()">
+                <input type="date" class="select-filter" id="filter-date-from" value="2020-01-01" name="dateFrom" onchange="ThandleSelectChange()">
             </fieldset>
             <fieldset class="filter-box">
                 <legend class="filter-type-title">Au</legend>
-                <input type="date" class="select-filter" id="filter-date-to" value="2024-01-01" name="dateTo" onchange="handleSelectChange()">
+                <input type="date" class="select-filter" id="filter-date-to" value="2024-01-01" name="dateTo" onchange="ThandleSelectChange()">
             </fieldset>
             <button class="filter-cancel"><i class="fa-regular fa-circle-xmark fa-xl cancel-filter" style="color: #f07575;" onclick="supprimerFiltre()"></i></button>
         </div>
@@ -167,7 +167,7 @@ function getPerPageOptions(){
         <fieldset class="filter-box">
             <legend class="filter-type-title">Page</legend>
             <!-- <div class="list-pages" id="pagination-pages"></div> -->
-            <select id="filter-page" class="select-filter" name="name" onchange="handleSelectChange()">
+            <select id="filter-page" class="select-filter" name="name" onchange="ThandleSelectChange()">
             <?php for ($i = 1; $i < $totalPages+1; $i++) { ?>
                 <option value="<?= $i ?>" <?php //echo ($page == $i) ? 'selected' : ''; ?>>
                     <?= $i ?>
@@ -180,7 +180,7 @@ function getPerPageOptions(){
         <!-- <button class="btn-arrow" id="nextPage"><span class="nav-text"></span> →</button> -->
         <fieldset class="filter-box">
                 <legend class="filter-type-title">Eléments par page</legend>
-                <select id="filter-per-page" class="select-filter" name="name" onchange="handleSelectChange()">
+                <select id="filter-per-page" class="select-filter" name="name" onchange="ThandleSelectChange()">
                     <?php foreach (getPerPageOptions() as $row): ?>
                         <option value="<?= $row?>" <?php echo ($perPage == $row) ? 'selected' : ''; ?> ><?= $row?></option>
                     <?php endforeach; ?>
@@ -232,9 +232,9 @@ function getPerPageOptions(){
         let currentDate = new Date();
         let formattedDate = currentDate.toISOString().split('T')[0];
         document.getElementById("filter-date-to").value=formattedDate
-        handleSelectChange()
+        ThandleSelectChange()
     }   
-    function handleSelectChange(){
+    function ThandleSelectChange(){
         let filters={
             name:document.getElementById("filter-name").value,
             color:document.getElementById("filter-color").value,
@@ -243,9 +243,9 @@ function getPerPageOptions(){
             dateFrom:document.getElementById("filter-date-from").value,
             dateTo:document.getElementById("filter-date-to").value
         }
-        getData("setFilters",filters) 
+        getDataML("setFilters",filters) 
     }
-    function getData(action,filters) {
+    function getDataML(action,filters) {
         $.ajax({
             type: 'GET',
             url: './src/screens/ml.php',

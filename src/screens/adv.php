@@ -393,9 +393,10 @@ function importBaseCommerciale($fileToImport,$table){
     $reader = new Xlsx();
     $reader->setReadDataOnly(true);
     $spreadsheet = $reader->load($fileToImport);
-    $sheet = $spreadsheet->getSheetByName('BASE');
-    if (!$sheet) {
-        die('Sheet "BASE" not found.');
+    if($table=="base_kpc"){
+        $sheet = $spreadsheet->getSheetByName('ETAT GENERAL KPC');
+    }else{
+        $sheet = $spreadsheet->getSheetByName('BASE');
     }
 
     // Get highest row/column to limit iteration
@@ -421,15 +422,48 @@ function importBaseCommerciale($fileToImport,$table){
         }
         // Skip empty rows
         if (count(array_filter($rowData)) === 0) continue;
-
-        $bien = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
-        $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
-        $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
-        $pv = isset($rowData[array_search('PRIX DE VENTE', $headers)]) ? $rowData[array_search('PRIX DE VENTE', $headers)] : 0;
-        $av_en = isset($rowData[array_search('AVANCES ENCAISSEES', $headers)]) ? $rowData[array_search('AVANCES ENCAISSEES', $headers)] : 0;
-        $chez_notaires = isset($rowData[array_search('REGLEMENT ENTRE LES MAINS DES NOTAIRES', $headers)]) ? $rowData[array_search('REGLEMENT ENTRE LES MAINS DES NOTAIRES', $headers)] : 0;
-
-        $sql = "INSERT INTO ".$table." (projet, bien, statut, immeuble,prix_vente,avances_encaissees,chez_notaires) VALUES ('UP','$bien','$statut','$immeuble','$pv','$av_en','$chez_notaires')";
+        if($table=="base_uptown"){
+            $bien = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $pv = isset($rowData[array_search('PRIX DE VENTE', $headers)]) ? $rowData[array_search('PRIX DE VENTE', $headers)] : 0;
+            $av_en = isset($rowData[array_search('AVANCES ENCAISSEES', $headers)]) ? $rowData[array_search('AVANCES ENCAISSEES', $headers)] : 0;
+            $chez_notaires = isset($rowData[array_search('REGLEMENT ENTRE LES MAINS DES NOTAIRES', $headers)]) ? $rowData[array_search('REGLEMENT ENTRE LES MAINS DES NOTAIRES', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, bien, statut, immeuble,prix_vente,avances_encaissees,chez_notaires) VALUES ('UP','$bien','$statut','$immeuble','$pv','$av_en','$chez_notaires')";
+        }elseif ($table=="base_kpc") {
+            $codesap = isset($rowData[array_search('CodeSAP', $headers)]) ? $rowData[array_search('CodeSAP', $headers)] : '';
+            $numero = isset($rowData[array_search('N°', $headers)]) ? $rowData[array_search('N°', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $tranche = isset($rowData[array_search('TRANCHE', $headers)]) ? $rowData[array_search('TRANCHE', $headers)] : '';
+            $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
+            $typologie = isset($rowData[array_search('TYPOLOGIE', $headers)]) ? $rowData[array_search('TYPOLOGIE', $headers)] : '';
+            $pv = isset($rowData[array_search('PRIX DE VENTE REMISE', $headers)]) ? $rowData[array_search('PRIX DE VENTE REMISE', $headers)] : 0;
+            $avances = isset($rowData[array_search('TOTAL AVANCES', $headers)]) ? $rowData[array_search('TOTAL AVANCES', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,tranche,etage,typologie,prix_vente,avances_encaissees) 
+            VALUES ('KPC','$codesap','$numero','$statut','$immeuble','$tranche','$etage','$typologie','$pv','$avances')";
+        }elseif ($table=="base_mno") {
+            $codesap = isset($rowData[array_search('SAP', $headers)]) ? $rowData[array_search('SAP', $headers)] : '';
+            $numero = isset($rowData[array_search('N°', $headers)]) ? $rowData[array_search('N°', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
+            $typologie = isset($rowData[array_search('TYPE', $headers)]) ? $rowData[array_search('TYPE', $headers)] : '';
+            $pv = isset($rowData[array_search('PRIX DE VENTE DEF', $headers)]) ? $rowData[array_search('PRIX DE VENTE DEF', $headers)] : 0;
+            $avances = isset($rowData[array_search('TOTAL AVANCE', $headers)]) ? $rowData[array_search('TOTAL AVANCE', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,etage,typologie,prix_vente,avances_encaissees) 
+            VALUES ('MNO','$codesap','$numero','$statut','$immeuble','$etage','$typologie','$pv','$avances')";
+        }elseif ($table=="base_mt") {
+            $codesap = isset($rowData[array_search('Code SAP', $headers)]) ? $rowData[array_search('Code SAP', $headers)] : '';
+            $numero = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $etage = isset($rowData[array_search('Etage', $headers)]) ? $rowData[array_search('Etage', $headers)] : '';
+            $typologie = isset($rowData[array_search('Typologie', $headers)]) ? $rowData[array_search('Typologie', $headers)] : '';
+            $pv = isset($rowData[array_search('PRIX DE VENTE DEF', $headers)]) ? $rowData[array_search('PRIX DE VENTE DEF', $headers)] : 0;
+            $avances = isset($rowData[array_search('TOTAL AVANCES', $headers)]) ? $rowData[array_search('TOTAL AVANCES', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut,etage,typologie,prix_vente,avances_encaissees) 
+            VALUES ('MT','$codesap','$numero','$statut','$etage','$typologie','$pv','$avances')";
+        }
         $ADVconn->query($sql);
         $total+=1;
     }
@@ -620,7 +654,7 @@ function generateTable($projet){
     if ($projet=='UP') {
         $html='<div id="table-recouvrement">'.uptownHeader().calculateUptown().'</div>';
         $html.='<div id="table-noatires">'.uptownNotaireHeader().calculateUptownNotaire().'</div>';
-    }elseif ($projet=='SH') {
+    }else {
         $html='No data found';
     }
     return $html;

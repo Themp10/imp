@@ -43,7 +43,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
 
     <nav>
     <?php if($profile =="admin") : ?>
-        <a href="#" id="sub-stock">Gestion de stock</a>
+        <a href="#" id="sub-stock">Gestion des toners</a>
         <a href="#" id="sub-inv" >Inventaire</a>
         <a href="#" id="sub-da">Gestion des DA</a>
     <?php endif; ?>
@@ -55,6 +55,7 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
     <?php endif; ?>
     <?php if($profile =="admin" || $profile =="commercial" || $profile =="directeur" ) : ?>
         <a href="#" id="sub-comm">Commercial</a>
+        <a href="#" id="sub-vente">Ventes</a>
     <?php endif; ?>
     <!-- <a href="#" onclick="showContent('page-mes-DA')">Mes DA</a> -->
     <?php if($profile =="admin") : ?>
@@ -62,7 +63,6 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <a href="#" onclick="showContent('page-printers')">Imprimantes</a>
         <a href="#" onclick="showContent('page-users')">Utilisateurs</a>
         <a href="#" id="sub-sap">SAP</a>
-        <a href="#" id="sub-rh">Gestion des sorties</a>
         <a href="#" onclick="showContent('page-decharge')">Décharge Matériel</a>
         <a href="#" onclick="showContent('page-switch')">Etat des switchs</a>
         <!-- <a href="#" id="sub-comm">Commercial</a> -->
@@ -141,19 +141,6 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         <div class="inner-container" id="page-situation">    
             <?php include "src/screens/situation.php"; ?>
         </div>
-        <!-- Gestion des conges et sortie -->
-        <div class="inner-container" id="page-new-leave">    
-            <?php include "src/screens/rh_demande.php"; ?>
-        </div>
-        <div class="inner-container" id="page-my-leaves">    
-            <?php include "src/screens/rh_leaves.php"; ?>
-        </div>
-        <div class="inner-container" id="page-validation">    
-            <?php include "src/screens/rh_validation.php"; ?>
-        </div>
-        <div class="inner-container" id="page-etat">    
-            <?php include "src/screens/rh_etat.php"; ?>
-        </div>
         <div class="inner-container" id="page-import-obj">    
             <?php include "src/screens/importObj.php"; ?>
         </div>
@@ -162,6 +149,9 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
         </div>
         <div class="inner-container" id="page-adv">    
             <?php include "src/screens/adv.php"; ?>
+        </div>
+        <div class="inner-container" id="page-ava">    
+            <?php include "src/screens/avancement.php"; ?>
         </div>
         <div class="inner-container" id="page-local">    
             <?php include "src/screens/local.php"; ?>
@@ -339,18 +329,15 @@ if (!isset($_SESSION['connected']) || $_SESSION['connected'] !== true) {
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-all-DA\')">Suivi DA</a>');                         
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-situation\')">Situation</a>');                         
                         }
-                        if(id =='sub-rh') {   
-                            $('#sub-nav').addClass('hovered');      
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-new-leave\')">Nouvelle demande</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-my-leaves\')">Mes demandes</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-validation\')">Validation</a>');                         
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-etat\')">Etat des employés</a>');                         
-                        }
                         if(id =='sub-comm') {   
                             $('#sub-nav').addClass('hovered');      
                             $('#sub-nav').append('<a href="#" onclick="showContent(\'page-import-obj\')">Objectifs</a>');
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-synth-obj\')">Synthèse</a>');                        
-                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-adv\')">ADV</a>');                        
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-synth-obj\')">Synthèse</a>');                                           
+                        }
+                        if(id =='sub-vente') {   
+                            $('#sub-nav').addClass('hovered');                            
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-adv\')">Recouvrement</a>');                        
+                            $('#sub-nav').append('<a href="#" onclick="showContent(\'page-ava\')">Reporting</a>');                        
                         }
                         if(id =='sub-inv') {   
                             $('#sub-nav').addClass('hovered');      

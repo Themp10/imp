@@ -1858,6 +1858,134 @@ color: white;
 .large-box{
   width: 50%;
 }
+/* ============================ Avancement  ============================ */
+
+.projects-list button {
+  background-color: white;
+  font-size: 15px;
+  border:none;
+  border-radius:5px;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding:2px 10px;
+  border: 2px solid var(--primary-color);
+  font-size: 13px;
+}
+.projects-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+  .projects-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    margin: 5px;
+  }
+  .filter-type-title{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--primary-color);
+    padding: 0 10px;
+  }
+
+.date-from-to-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 5px;
+}
+.date-from-to-container label{
+  color: var(--primary-color);
+  font-size: 15px;
+}
+.fromto-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--primary-color);
+}
+.select-filter{
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  appearance: none;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.selectedProject {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: 2px solid black;
+}
+.critere-search{
+  color: var(--secondary-color);
+  font-size: 12px;
+}
+#selected-pro,#selected-date{
+  font-weight: 800;
+}
+.first-row{
+  display: flex;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+#table-programme{
+  width: 500px;
+  font-size: 15px;
+}
+#table-stck{
+  width: 600px;
+  font-size: 15px;
+
+}
+.second-row{
+  margin-top: 40px;
+}
+/* table styling BEGIN*/
+.table-total-row td{
+  background-color: var(--secondary-color-hover);
+  font-weight: bold;
+  color: black !important;
+}
+.table-row-header{
+  text-align: left !important;
+  color: black !important;
+
+}
+#table-programme tbody td,#table-stck tbody td,#table-synth tbody td{
+  text-align: right;
+  font-size: 15px;
+  padding-right: 5px;
+}
+#table-stck tbody td{
+  color: var(--primary-color);
+}
+#table-programme thead,#table-stck thead,#table-synth thead{
+  background-color: var(--primary-color);
+  color: white;
+}
+#graphe1,#graphe2,#graphe3{
+  width: 300px;
+  height: 300px;
+}
+
+.third-row{
+  display: flex;
+  justify-content: space-evenly;
+}
+/* table styling END*/
 /* ============================ DECHARGE  ============================ */
 
 .dech-header{

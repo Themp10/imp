@@ -22,8 +22,7 @@ function insertStockInDatabase($name, $model, $selectedColors, $stock, $stock_mi
     } 
     return 'success';
 }
-function updateStockInDatabase($id, $currentStock, $addedStock)
-{
+function updateStockInDatabase($id, $currentStock, $addedStock){
     global $conn;
     $id = mysqli_real_escape_string($conn, $id);
     $newStock = $currentStock+ $addedStock;
