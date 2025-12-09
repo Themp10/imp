@@ -1,0 +1,54 @@
+base ~UserCode ~Action ~ActionBy ~ClientIP ~Date ~Time ~ClientName ~ProcessID ~SessionID ~ReasonID ~ReasonDesc ~WinSessnID ~WinUsrName ~ProcName ~AliveDurtn ~LogoutTime ~Source ~
+AM_PROINVEST ~o.kassaoui ~I ~o.kassaoui ~10.10.5.52 ~2026-02-03 00:00:00.000000000 ~114349 ~PY002-048 ~19956 ~357323 ~ ~ ~4 ~okassao ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+AM_PROINVEST ~o.kassaoui ~I ~o.kassaoui ~10.10.5.52 ~2026-02-03 00:00:00.000000000 ~114331 ~PY002-048 ~23524 ~357153 ~ ~ ~4 ~okassao ~SAP Business One.exe ~0 ~114350 ~SBO_Client ~
+AM_PROINVEST ~o.kassaoui ~O ~o.kassaoui ~10.10.5.52 ~2026-02-03 00:00:00.000000000 ~114350 ~PY002-048 ~23524 ~357153 ~ ~ ~4 ~okassao ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+AM_PROINVEST ~m.sahir ~I ~m.sahir ~10.10.5.52 ~2026-02-03 00:00:00.000000000 ~114451 ~PY002-048 ~13244 ~357516 ~ ~ ~4 ~okassao ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+AM_PROINVEST ~m.sahir ~I ~m.sahir ~10.10.5.52 ~2026-02-03 00:00:00.000000000 ~114437 ~PY002-048 ~23524 ~357153 ~ ~ ~4 ~okassao ~SAP Business One.exe ~5 ~115030 ~SBO_Client ~
+AM_PROINVEST ~m.sahir ~O ~m.sahir ~10.10.5.52 ~2026-02-03 00:00:00.000000000 ~115030 ~PY002-048 ~23524 ~357153 ~ ~ ~4 ~okassao ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+AM_PROINVEST ~t.sirai ~O ~t.sirai ~10.10.2.6 ~2026-02-03 00:00:00.000000000 ~123611 ~CY002-020 ~13192 ~305184 ~ ~ ~5 ~tsirai ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+AM_PROINVEST ~o.aboujaafar ~O ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~125249 ~SERVSAPB1 ~14520 ~305165 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+ANFA_19 ~manager ~I ~manager ~10.10.5.62 ~2026-02-03 00:00:00.000000000 ~112504 ~PY002-215 ~23776 ~355674 ~ ~ ~1 ~oaboujaafar ~BP insert.exe ~0 ~ ~SBO_DI_API ~
+ANFA_19 ~manager ~O ~manager ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~125223 ~SERVSAPB1 ~10828 ~305176 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+ANFA_REALISATION ~b.kpc ~I ~b.kpc ~10.10.6.11 ~2026-02-03 00:00:00.000000000 ~123421 ~CY002-053 ~11584 ~361680 ~ ~ ~2 ~kbarka ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+ANFA_REALISATION ~b.kpc ~I ~b.kpc ~10.10.6.11 ~2026-02-03 00:00:00.000000000 ~123403 ~CY002-053 ~2528 ~361510 ~ ~ ~2 ~kbarka ~SAP Business One.exe ~-112281 ~ ~SBO_Client ~
+HOLDING_KAMAL ~o.aboujaafar ~O ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~125222 ~SERVSAPB1 ~19492 ~305195 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+M_PROPERTIES ~s.sifouh ~I ~s.sifouh ~172.28.0.15 ~2026-02-02 00:00:00.000000000 ~182841 ~SERVTSPLUS ~10900 ~356220 ~ ~ ~-1 ~ssifouh ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+M_PROPERTIES ~s.sifouh ~I ~s.sifouh ~172.28.0.15 ~2026-02-02 00:00:00.000000000 ~182831 ~SERVTSPLUS ~8592 ~356089 ~ ~ ~-1 ~ssifouh ~SAP Business One.exe ~44 ~ ~SBO_Client ~
+M_PROPERTIES ~s.sifouh ~I ~s.sifouh ~172.28.0.15 ~2026-02-02 00:00:00.000000000 ~192823 ~SERVTSPLUS ~4936 ~360143 ~ ~ ~-1 ~ssifouh ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+M_PROPERTIES ~s.sifouh ~I ~s.sifouh ~172.28.0.15 ~2026-02-02 00:00:00.000000000 ~192816 ~SERVTSPLUS ~9308 ~360006 ~ ~ ~-1 ~ssifouh ~SAP Business One.exe ~91 ~ ~SBO_Client ~
+M_PROPERTIES ~s.sifouh ~I ~s.sifouh ~10.10.2.7 ~2026-02-03 00:00:00.000000000 ~111126 ~PY002-268 ~25292 ~354643 ~ ~ ~1 ~ssifouh ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+M_PROPERTIES ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~115146 ~PY002-283 ~18964 ~358105 ~ ~ ~6 ~ctahir ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+M_PROPERTIES ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~115130 ~PY002-283 ~10192 ~357864 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~14 ~120648 ~SBO_Client ~
+M_PROPERTIES ~c.tahir ~O ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~120648 ~PY002-283 ~10192 ~357864 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+M_PROPERTIES ~o.aboujaafar ~I ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~122507 ~SERVSAPB1 ~5972 ~360910 ~ ~ ~2 ~oaboujaafar ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+M_PROPERTIES ~o.aboujaafar ~I ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~122458 ~SERVSAPB1 ~20580 ~360753 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~25 ~125154 ~SBO_Client ~
+M_PROPERTIES ~o.aboujaafar ~O ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~125154 ~SERVSAPB1 ~20580 ~360753 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+M_PROPERTIES ~o.aboujaafar ~I ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~131049 ~SERVSAPB1 ~16316 ~364490 ~ ~ ~2 ~oaboujaafar ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+M_PROPERTIES ~o.aboujaafar ~I ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~131035 ~SERVSAPB1 ~13408 ~363582 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~9 ~132209 ~SBO_Client ~
+M_PROPERTIES ~o.aboujaafar ~O ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~132209 ~SERVSAPB1 ~13408 ~363582 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+M_PROPERTIES ~s.sifouh ~I ~s.sifouh ~10.10.2.7 ~2026-02-03 00:00:00.000000000 ~111112 ~PY002-268 ~23740 ~354493 ~ ~ ~1 ~ssifouh ~SAP Business One.exe ~-111915 ~175702 ~SBO_Client ~
+PROBAT_INVEST ~t.sirai ~F ~t.sirai ~10.10.2.6 ~2026-02-03 00:00:00.000000000 ~123924 ~10.10.2.6 ~0 ~0 ~ ~ ~-1 ~ ~ ~0 ~ ~ ~
+PROBAT_INVEST ~t.sirai ~F ~t.sirai ~10.10.2.6 ~2026-02-03 00:00:00.000000000 ~123931 ~10.10.2.6 ~0 ~0 ~ ~ ~-1 ~ ~ ~0 ~ ~ ~
+PROBAT_INVEST ~t.sirai ~I ~t.sirai ~10.10.2.6 ~2026-02-03 00:00:00.000000000 ~124726 ~CY002-020 ~18652 ~362923 ~ ~ ~5 ~tsirai ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+PROBAT_INVEST ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~132001 ~PY002-283 ~29852 ~365133 ~ ~ ~6 ~ctahir ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+PROBAT_INVEST ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~131943 ~PY002-283 ~30688 ~364906 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~4 ~132540 ~SBO_Client ~
+PROBAT_INVEST ~c.tahir ~O ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~132540 ~PY002-283 ~30688 ~364906 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+PROBAT_INVEST ~t.sirai ~I ~t.sirai ~10.10.2.6 ~2026-02-03 00:00:00.000000000 ~124709 ~CY002-020 ~13192 ~362283 ~ ~ ~5 ~tsirai ~SAP Business One.exe ~-112421 ~111005 ~SBO_Client ~
+PROBAT_INVEST ~a.belaoud ~I ~a.belaoud ~10.10.5.43 ~2026-02-03 00:00:00.000000000 ~121042 ~PY002-083 ~35180 ~359428 ~ ~ ~1 ~abelaoud ~SAP Business One.exe ~-112355 ~ ~SBO_Client ~
+RMM_BUILDING ~i.ouakkas ~I ~i.ouakkas ~10.10.2.5 ~2026-02-03 00:00:00.000000000 ~113830 ~CY002-012 ~11008 ~356754 ~ ~ ~26 ~ioukkas ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+RMM_BUILDING ~c.tahir ~F ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~120647 ~10.10.5.50 ~0 ~0 ~ ~ ~-1 ~ ~ ~0 ~ ~ ~
+RMM_BUILDING ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~121212 ~PY002-283 ~26148 ~359805 ~ ~ ~6 ~ctahir ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+RMM_BUILDING ~s.sifouh ~F ~s.sifouh ~10.10.2.7 ~2026-02-03 00:00:00.000000000 ~131452 ~10.10.2.7 ~0 ~0 ~ ~ ~-1 ~ ~ ~0 ~ ~ ~
+RMM_BUILDING ~s.sifouh ~I ~s.sifouh ~10.10.2.7 ~2026-02-03 00:00:00.000000000 ~131541 ~PY002-268 ~23544 ~364836 ~ ~ ~1 ~ssifouh ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+RMM_BUILDING ~c.tahir ~O ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~132555 ~PY002-283 ~10192 ~359103 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+RMM_BUILDING ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~121151 ~PY002-283 ~10192 ~359103 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~74 ~132555 ~SBO_Client ~
+RMM_BUILDING ~i.ouakkas ~I ~i.ouakkas ~10.10.2.5 ~2026-02-03 00:00:00.000000000 ~113812 ~CY002-012 ~14576 ~356587 ~ ~ ~26 ~ioukkas ~SAP Business One.exe ~104 ~132742 ~SBO_Client ~
+RMM_BUILDING ~i.ouakkas ~O ~i.ouakkas ~10.10.2.5 ~2026-02-03 00:00:00.000000000 ~132742 ~CY002-012 ~14576 ~356587 ~ ~ ~26 ~ioukkas ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+RMM_BUILDING ~s.sifouh ~I ~s.sifouh ~10.10.2.7 ~2026-02-03 00:00:00.000000000 ~131530 ~PY002-268 ~5200 ~364697 ~ ~ ~1 ~ssifouh ~SAP Business One.exe ~-112445 ~111051 ~SBO_Client ~
+STE_AGRO_ABDELLAH_YASSINE ~o.aboujaafar ~O ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~125228 ~SERVSAPB1 ~14616 ~305163 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+YASMINE_FONCIERE ~h.bamaarouf ~I ~h.bamaarouf ~10.10.2.2 ~2026-02-03 00:00:00.000000000 ~111756 ~PY002-011 ~11520 ~355152 ~ ~ ~7 ~hbamaaro ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+YASMINE_FONCIERE ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~113050 ~PY002-283 ~6184 ~356186 ~ ~ ~6 ~ctahir ~BOY_USABILITY.exe ~0 ~ ~SBO_DI_API ~
+YASMINE_FONCIERE ~o.aboujaafar ~O ~o.aboujaafar ~172.28.0.11 ~2026-02-03 00:00:00.000000000 ~125220 ~SERVSAPB1 ~15872 ~305186 ~ ~ ~2 ~oaboujaafar ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+YASMINE_FONCIERE ~h.bamaarouf ~I ~h.bamaarouf ~10.10.2.2 ~2026-02-03 00:00:00.000000000 ~111739 ~PY002-011 ~3844 ~354955 ~ ~ ~7 ~hbamaaro ~SAP Business One.exe ~124 ~132445 ~SBO_Client ~
+YASMINE_FONCIERE ~h.bamaarouf ~O ~h.bamaarouf ~10.10.2.2 ~2026-02-03 00:00:00.000000000 ~132445 ~PY002-011 ~3844 ~354955 ~ ~ ~7 ~hbamaaro ~SAP Business One.exe ~0 ~ ~SBO_Client ~
+YASMINE_FONCIERE ~c.tahir ~I ~c.tahir ~10.10.5.50 ~2026-02-03 00:00:00.000000000 ~113032 ~PY002-283 ~23304 ~355846 ~ ~ ~6 ~ctahir ~SAP Business One.exe ~-112414 ~95720 ~SBO_Client ~

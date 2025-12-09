@@ -204,7 +204,7 @@ function calculateUptown(){
 
     $table_stock=sql('SELECT immeuble,COUNT(*) AS "U",SUM(prix_vente) AS "CA" FROM base_uptown GROUP BY immeuble ORDER BY immeuble');
     $table_Stock_CA_Imm=sql('SELECT immeuble,statut,COUNT(*) AS "U",SUM(prix_vente) AS "CA" FROM base_uptown GROUP BY immeuble,statut ORDER BY immeuble');
-    $table_avances_encaissees=sql('SELECT immeuble,SUM(avances_encaissees) AS "avances_encaissees" FROM base_uptown GROUP BY immeuble ORDER BY immeuble');
+    $table_avances_encaissees=sql('SELECT immeuble,SUM(avances) AS "avances_encaissees" FROM base_uptown GROUP BY immeuble ORDER BY immeuble');
     $table_chez_notaire_reserve=sql('SELECT immeuble,SUM(chez_notaires) AS "chez_notaires" FROM base_uptown WHERE statut="RESERVE" GROUP BY immeuble ORDER BY immeuble');
 
     $table_mlv=sql('SELECT immeuble,SUM(chez_notaires) AS "chez_notaires",SUM(mlv_payees) AS "mlv_payees",SUM(mlv_a_payer) AS "mlv_a_payer", SUM(encaisse_anfa_rea) AS "encaisse_anfa_rea",SUM(verse)  AS "verse" FROM situation_uptown GROUP BY immeuble ORDER BY immeuble');
@@ -385,6 +385,7 @@ function generate_project_list() {
 }
 function importBaseCommerciale($fileToImport,$table){
     ini_set('memory_limit', '4G');
+
     global $ADVconn;
     if ($ADVconn->connect_error) {
         die("Connection failed: " . $ADVconn->connect_error);
@@ -392,17 +393,21 @@ function importBaseCommerciale($fileToImport,$table){
 
     $reader = new Xlsx();
     $reader->setReadDataOnly(true);
+    $reader->setIncludeCharts(false); 
+    $reader->setReadEmptyCells(false);
+    $sheetNames = $reader->listWorksheetNames($fileToImport);
     $spreadsheet = $reader->load($fileToImport);
+
     if($table=="base_kpc"){
         $sheet = $spreadsheet->getSheetByName('ETAT GENERAL KPC');
     }else{
         $sheet = $spreadsheet->getSheetByName('BASE');
     }
-
     // Get highest row/column to limit iteration
     $highestRow = $sheet->getHighestRow();
     $highestColumn = $sheet->getHighestColumn();
     $highestColumnIndex = Coordinate::columnIndexFromString($highestColumn);
+
 
     // Read header row
     $headers = [];
@@ -410,6 +415,7 @@ function importBaseCommerciale($fileToImport,$table){
         $colLetter = Coordinate::stringFromColumnIndex($col);
         $headers[] = $sheet->getCell($colLetter . '1')->getValue();
     }
+
     $total=0;
     // Loop through each data row
     for ($row = 2; $row <= $highestRow; $row++) {
@@ -423,13 +429,29 @@ function importBaseCommerciale($fileToImport,$table){
         // Skip empty rows
         if (count(array_filter($rowData)) === 0) continue;
         if($table=="base_uptown"){
-            $bien = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
+            $codesap = isset($rowData[array_search('CODE SAP', $headers)]) ? $rowData[array_search('CODE SAP', $headers)] : '';
+            $numero = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
             $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
             $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
+            if($immeuble=="D"){
+                $typologie="Bureau";
+                $prix_au_m2= isset($rowData[array_search('PRIX / M²', $headers)]) ? $rowData[array_search('PRIX / M²', $headers)] : 0;
+            }else{
+                $typologie="Appartement";
+                $prix_au_m2= isset($rowData[array_search('PRIX / m²', $headers)]) ? $rowData[array_search('PRIX / m²', $headers)] : 0;
+            }
             $pv = isset($rowData[array_search('PRIX DE VENTE', $headers)]) ? $rowData[array_search('PRIX DE VENTE', $headers)] : 0;
             $av_en = isset($rowData[array_search('AVANCES ENCAISSEES', $headers)]) ? $rowData[array_search('AVANCES ENCAISSEES', $headers)] : 0;
+            $etat_mlv = isset($rowData[array_search('ETAT MLV', $headers)]) ? $rowData[array_search('ETAT MLV', $headers)] : 0;
+            $rest_du_encai = isset($rowData[array_search('RESTE Dû ENCAISSE', $headers)]) ? $rowData[array_search('RESTE Dû ENCAISSE', $headers)] : 0;
             $chez_notaires = isset($rowData[array_search('REGLEMENT ENTRE LES MAINS DES NOTAIRES', $headers)]) ? $rowData[array_search('REGLEMENT ENTRE LES MAINS DES NOTAIRES', $headers)] : 0;
-            $sql = "INSERT INTO ".$table." (projet, bien, statut, immeuble,prix_vente,avances_encaissees,chez_notaires) VALUES ('UP','$bien','$statut','$immeuble','$pv','$av_en','$chez_notaires')";
+            $date = isset($rowData[array_search('DATE DE RESERVATION', $headers)]) ? $rowData[array_search('DATE DE RESERVATION', $headers)] : 1000000;
+            $newDate=convertDate($date);
+            $av=$av_en+$etat_mlv+$rest_du_encai;
+            
+            $sql = "INSERT INTO ".$table." (projet, code_sap, numero, statut, immeuble,etage,typologie,prix_vente,avances,avances_encaissees,chez_notaires,date_res,prix_au_m2) 
+            VALUES ('UP','$codesap','$numero','$statut','$immeuble','$etage','$typologie','$pv','$av_en','$av','$chez_notaires','$newDate','$prix_au_m2')";
         }elseif ($table=="base_kpc") {
             $codesap = isset($rowData[array_search('CodeSAP', $headers)]) ? $rowData[array_search('CodeSAP', $headers)] : '';
             $numero = isset($rowData[array_search('N°', $headers)]) ? $rowData[array_search('N°', $headers)] : '';
@@ -437,11 +459,21 @@ function importBaseCommerciale($fileToImport,$table){
             $tranche = isset($rowData[array_search('TRANCHE', $headers)]) ? $rowData[array_search('TRANCHE', $headers)] : '';
             $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
             $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
-            $typologie = isset($rowData[array_search('TYPOLOGIE', $headers)]) ? $rowData[array_search('TYPOLOGIE', $headers)] : '';
+            $typologie = isset($rowData[array_search('TYPE', $headers)]) ? $rowData[array_search('TYPE', $headers)] : '';
+            if($typologie=="MAG"){
+                $typologie="Magasin";
+            }elseif($typologie=="BUR"){
+                $typologie="Bureau";
+            }elseif($typologie=="APPT"){
+                $typologie="Appartement";
+            }
             $pv = isset($rowData[array_search('PRIX DE VENTE REMISE', $headers)]) ? $rowData[array_search('PRIX DE VENTE REMISE', $headers)] : 0;
             $avances = isset($rowData[array_search('TOTAL AVANCES', $headers)]) ? $rowData[array_search('TOTAL AVANCES', $headers)] : 0;
-            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,tranche,etage,typologie,prix_vente,avances_encaissees) 
-            VALUES ('KPC','$codesap','$numero','$statut','$immeuble','$tranche','$etage','$typologie','$pv','$avances')";
+            $date = isset($rowData[array_search('DATE COMPROMIS DE VENTE', $headers)]) ? $rowData[array_search('DATE COMPROMIS DE VENTE', $headers)] : 1000000;
+            $newDate=convertDate($date);
+            $prix_au_m2= isset($rowData[array_search('PRIX REMISE /m²', $headers)]) ? $rowData[array_search('PRIX REMISE /m²', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,tranche,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+            VALUES ('KPC','$codesap','$numero','$statut','$immeuble','$tranche','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
         }elseif ($table=="base_mno") {
             $codesap = isset($rowData[array_search('SAP', $headers)]) ? $rowData[array_search('SAP', $headers)] : '';
             $numero = isset($rowData[array_search('N°', $headers)]) ? $rowData[array_search('N°', $headers)] : '';
@@ -449,10 +481,18 @@ function importBaseCommerciale($fileToImport,$table){
             $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
             $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
             $typologie = isset($rowData[array_search('TYPE', $headers)]) ? $rowData[array_search('TYPE', $headers)] : '';
+            if($typologie=="MAG"){
+                $typologie="Magasin";
+            }elseif($typologie=="BUR"){
+                $typologie="Bureau";
+            }
             $pv = isset($rowData[array_search('PRIX DE VENTE DEF', $headers)]) ? $rowData[array_search('PRIX DE VENTE DEF', $headers)] : 0;
             $avances = isset($rowData[array_search('TOTAL AVANCE', $headers)]) ? $rowData[array_search('TOTAL AVANCE', $headers)] : 0;
-            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,etage,typologie,prix_vente,avances_encaissees) 
-            VALUES ('MNO','$codesap','$numero','$statut','$immeuble','$etage','$typologie','$pv','$avances')";
+            $date = isset($rowData[array_search('DATE DE RESERVATION', $headers)]) ? $rowData[array_search('DATE DE RESERVATION', $headers)] : 1000000;
+            $newDate=convertDate($date);
+            $prix_au_m2= isset($rowData[array_search('PRIX/M² DEF', $headers)]) ? $rowData[array_search('PRIX/M² DEF', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+            VALUES ('MNO','$codesap','$numero','$statut','$immeuble','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
         }elseif ($table=="base_mt") {
             $codesap = isset($rowData[array_search('Code SAP', $headers)]) ? $rowData[array_search('Code SAP', $headers)] : '';
             $numero = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
@@ -460,16 +500,126 @@ function importBaseCommerciale($fileToImport,$table){
             $etage = isset($rowData[array_search('Etage', $headers)]) ? $rowData[array_search('Etage', $headers)] : '';
             $typologie = isset($rowData[array_search('Typologie', $headers)]) ? $rowData[array_search('Typologie', $headers)] : '';
             $pv = isset($rowData[array_search('PRIX DE VENTE DEF', $headers)]) ? $rowData[array_search('PRIX DE VENTE DEF', $headers)] : 0;
+            $avances = isset($rowData[array_search('AVANCES', $headers)]) ? $rowData[array_search('AVANCES', $headers)] : 0;
+            $date = isset($rowData[array_search('DATE DE RESERVATION', $headers)]) ? $rowData[array_search('DATE DE RESERVATION', $headers)] : 1000000;
+            $newDate=convertDate($date);
+            $prix_au_m2= isset($rowData[array_search('Prix/M² DEF', $headers)]) ? $rowData[array_search('Prix/M² DEF', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+            VALUES ('MT','$codesap','$numero','$statut','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
+        }elseif ($table=="base_op") {
+            $codesap = isset($rowData[array_search('SAP', $headers)]) ? $rowData[array_search('SAP', $headers)] : '';
+            $numero = isset($rowData[array_search('NUMEROTATION COMMERCIALE', $headers)]) ? $rowData[array_search('NUMEROTATION COMMERCIALE', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $tranche = isset($rowData[array_search('TRANCHE', $headers)]) ? $rowData[array_search('TRANCHE', $headers)] : '';
+            $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $etage = isset($rowData[array_search('NIVEAU', $headers)]) ? $rowData[array_search('NIVEAU', $headers)] : '';
+            $typologie = isset($rowData[array_search('TYPE', $headers)]) ? $rowData[array_search('TYPE', $headers)] : '';
+            if($typologie=="APPT"){
+                $typologie="Appartement";
+            }elseif($typologie=="BURE"){
+                $typologie="Bureau";
+            }elseif($typologie=="MAG"){
+                $typologie="Magasin";
+            }
+            $pv = isset($rowData[array_search('PRIX TOPO DEF', $headers)]) ? $rowData[array_search('PRIX TOPO DEF', $headers)] : 0;
             $avances = isset($rowData[array_search('TOTAL AVANCES', $headers)]) ? $rowData[array_search('TOTAL AVANCES', $headers)] : 0;
-            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut,etage,typologie,prix_vente,avances_encaissees) 
-            VALUES ('MT','$codesap','$numero','$statut','$etage','$typologie','$pv','$avances')";
+            $date = isset($rowData[array_search('DATE DE RESERVATIONS', $headers)]) ? $rowData[array_search('DATE DE RESERVATIONS', $headers)] :1000000;
+            $newDate=convertDate($date);
+            $prix_au_m2= isset($rowData[array_search('PRIX / m² DEF', $headers)]) ? $rowData[array_search('PRIX / m² DEF', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,tranche,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+            VALUES ('OP','$codesap','$numero','$statut','$immeuble','$tranche','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
+        }elseif ($table=="base_sh") {
+                $codesap = isset($rowData[array_search('CodeSAP', $headers)]) ? $rowData[array_search('CodeSAP', $headers)] : '';
+                $numero = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
+                $date = isset($rowData[array_search('DATE DE RESERVATION', $headers)]) ? $rowData[array_search('DATE DE RESERVATION', $headers)] :1000000;
+                $newDate=convertDate($date);
+                
+            if($fileToImport=="/mnt/adv/Bases Commerciales/SOHAUS/BASE COMMERCIALE SOHAUS source.xlsx"){
+                $bloc = isset($rowData[array_search('Bloc', $headers)]) ? $rowData[array_search('Bloc', $headers)] : '';
+                $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+                $etage = isset($rowData[array_search('Etage', $headers)]) ? $rowData[array_search('Etage', $headers)] : '';
+                $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+                $typologie = "Appartement";
+                $pv = isset($rowData[array_search('PRIX DEF', $headers)]) ? $rowData[array_search('PRIX DEF', $headers)] : 0;
+                $avances = isset($rowData[array_search('AVANCES', $headers)]) ? $rowData[array_search('AVANCES', $headers)] : 0;
+                $prix_au_m2= isset($rowData[array_search('Prix/m² DEF', $headers)]) ? $rowData[array_search('Prix/m² DEF', $headers)] : 0;
+                $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,bloc,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+                VALUES ('SH','$codesap','$numero','$statut','$immeuble','$bloc','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
+            }else{
+                $pv = isset($rowData[array_search('PRIX DE VENTE DEF', $headers)]) ? $rowData[array_search('PRIX DE VENTE DEF', $headers)] : 0;
+                $avances = isset($rowData[array_search('AVANCE', $headers)]) ? $rowData[array_search('AVANCE', $headers)] : 0;
+                $statut = isset($rowData[array_search('Etat', $headers)]) ? $rowData[array_search('Etat', $headers)] : '';
+                $typologie = "TownHaus";
+                $bloc = "";
+                $prix_au_m2= isset($rowData[array_search('PRIX/m² DEF', $headers)]) ? $rowData[array_search('PRIX/m² DEF', $headers)] : 0;
+                $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+                VALUES ('SH','$codesap','$numero','$statut','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
+            }
+            if($bloc=="D") continue;
+        }elseif ($table=="base_wl") {
+            $codesap = isset($rowData[array_search('CODE SAP', $headers)]) ? $rowData[array_search('CODE SAP', $headers)] : '';
+            $numero = isset($rowData[array_search('N° BIEN', $headers)]) ? $rowData[array_search('N° BIEN', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
+            $pv = isset($rowData[array_search('PRIX DE VENTE', $headers)]) ? $rowData[array_search('PRIX DE VENTE', $headers)] : 0;
+            $avances = isset($rowData[array_search('AVANCE', $headers)]) ? $rowData[array_search('AVANCE', $headers)] : 0;
+            $date = isset($rowData[array_search('DATE DE RESERVATION', $headers)]) ? $rowData[array_search('DATE DE RESERVATION', $headers)] :1000000;
+            $newDate=convertDate($date);
+            $prix_au_m2= isset($rowData[array_search('PRIX / M²', $headers)]) ? $rowData[array_search('PRIX / M²', $headers)] : 0;
+            if($fileToImport=="/mnt/adv/Bases Commerciales/WELIVE/BASE COMMERCIALE COLIVING source.xlsx"){
+                $typologie = "Coliving";
+            }else{
+                $typologie = "Conventionne";
+            }
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+            VALUES ('WL','$codesap','$numero','$statut','$immeuble','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
+        }elseif ($table=="base_zt") {
+            $codesap = isset($rowData[array_search('SAP', $headers)]) ? $rowData[array_search('SAP', $headers)] : '';
+            $numero = isset($rowData[array_search('N°', $headers)]) ? $rowData[array_search('N°', $headers)] : '';
+            $statut = isset($rowData[array_search('ETAT', $headers)]) ? $rowData[array_search('ETAT', $headers)] : '';
+            $tranche = isset($rowData[array_search('TR', $headers)]) ? $rowData[array_search('TR', $headers)] : '';
+            $immeuble = isset($rowData[array_search('IMM', $headers)]) ? $rowData[array_search('IMM', $headers)] : '';
+            $etage = isset($rowData[array_search('ETAGE', $headers)]) ? $rowData[array_search('ETAGE', $headers)] : '';
+            $typologie = isset($rowData[array_search('TYPO', $headers)]) ? $rowData[array_search('TYPO', $headers)] : '';
+            if($typologie=="APPT"){
+                $typologie="Appartement";
+            }elseif($typologie=="MAG"){
+                $typologie="Magasin";
+            }
+            $pv = isset($rowData[array_search('PRIX DEFINITIF AVEC PARK', $headers)]) ? $rowData[array_search('PRIX DEFINITIF AVEC PARK', $headers)] : 0;
+            $avances = isset($rowData[array_search('TOTAL AVANCES', $headers)]) ? $rowData[array_search('TOTAL AVANCES', $headers)] : 0;
+            $date = isset($rowData[array_search('DATE COMPROMIS DE VENTE', $headers)]) ? $rowData[array_search('DATE COMPROMIS DE VENTE', $headers)] :1000000;
+            $newDate=convertDate($date);
+            $prix_au_m2= isset($rowData[array_search('PRIX/m² 30/09/22', $headers)]) ? $rowData[array_search('PRIX/m² 30/09/22', $headers)] : 0;
+            $sql = "INSERT INTO ".$table." (projet, code_sap,numero, statut, immeuble,tranche,etage,typologie,prix_vente,avances_encaissees,date_res,prix_au_m2) 
+            VALUES ('ZT','$codesap','$numero','$statut','$immeuble','$tranche','$etage','$typologie','$pv','$avances','$newDate','$prix_au_m2')";
         }
+        
         $ADVconn->query($sql);
         $total+=1;
     }
 
-    return $total;
+    return $fileToImport;
 }
+function convertDate($dateValue){
+    if (is_numeric($dateValue)) {
+        // Excel base date is 1900-01-01
+        $unix_date = ($dateValue - 25569) * 86400; // convert to UNIX timestamp
+        $date = gmdate("Y-m-d", $unix_date);
+    } else {
+        // If already string, try parsing it
+        $date = date("Y-m-d", strtotime($dateValue));
+    }
+    return $date;
+}
+function logMessage($message) {
+    $logFile = '/var/log/imp/app.log';
+    $timestamp = date('Y-m-d H:i:s');
+    $logEntry = "[$timestamp] $message" . PHP_EOL;
+    file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
+}
+
 function importSituation($fileToImport,$table){
     ini_set('memory_limit', '4G');
     global $ADVconn;
@@ -665,6 +815,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["action"])) {
         $result = [];
         if ($_GET["action"]=="import") {
+            
             $projet=$_GET["projet"];
             $nom_projet=getProjectName($projet);
             $result = import_data($projet);
@@ -700,6 +851,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 <h1>Situation recouverement à date</h1>
 <div class="adv-header-container">
+    <button class ="sync-btn all-projects" onclick="refreshALL()">Actualiser Tous les projets</button>
+
     <div class="adv-projects">
         <fieldset class="item-box">
             <legend class="filter-type-title">Projet</legend>
@@ -722,9 +875,85 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     </div>
 </div>
-
+<div class="refresh-overlay" id="refresh-overlay">
+    <div class="ref-pro-list">
+        <div class="projet-refresh"><img src="./assets/loading.gif" alt="spinner"><span>Projet 1</span></div>
+        <div class="projet-refresh"><img src="./assets/check.png" alt="spinner"><span>Projet 2</span></div>
+        <div class="projet-refresh"><img src="./assets/no.png" alt="spinner"><span>Projet 3</span></div>
+    </div>
+    <button class ="sync-btn all-projects" onclick="closeRefreshOverlay()">Fermer</button>
+</div>
 
 <script>
+function closeRefreshOverlay(){
+    document.getElementById('refresh-overlay').style.display="none"
+}
+function refreshALL() {
+    document.getElementById('refresh-overlay').style.display = "flex";
+
+    const select = document.getElementById('adv-project');
+    const container = document.querySelector('.ref-pro-list');
+    container.innerHTML = '';
+
+    // 1️⃣ First loop — create loading divs
+    for (let i = 1; i < select.options.length; i++) {
+        const option = select.options[i];
+
+        const div = document.createElement('div');
+        div.className = 'projet-refresh';
+
+        const img = document.createElement('img');
+        img.src = './assets/loading.gif';
+        img.alt = 'spinner';
+
+        const span = document.createElement('span');
+        span.textContent = option.text;
+
+        div.appendChild(img);
+        div.appendChild(span);
+
+        div.dataset.projetValue = option.value;
+        container.appendChild(div);
+    }
+
+    // 2️⃣ Sequential AJAX requests
+    async function processProjectsSequentially() {
+        for (let i = 1; i < select.options.length; i++) {
+            const option = select.options[i];
+            const projetValue = option.value;
+            const projetDiv = container.querySelector(`[data-projet-value="${projetValue}"]`);
+            const img = projetDiv.querySelector('img');
+
+            try {
+                const response = await $.ajax({
+                    type: 'GET',
+                    url: './src/screens/adv.php',
+                    dataType: 'json',
+                    headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+                    data: { 
+                        action: "import",
+                        projet: projetValue
+                    }
+                });
+
+                img.src = './assets/check.png'; // ✅ success
+                document.getElementById('syncDate').textContent = response.lastUpdate;   
+                option.setAttribute('last-sync', response.lastUpdate);
+                document.getElementById("update-container").innerHTML = response.filesDate;
+
+            } catch (error) {
+                img.src = './assets/no.png'; // ❌ error
+                console.error('AJAX Error:', error);
+            }
+        }
+
+        // 3️⃣ When all done
+        //document.getElementById('refresh-overlay').style.display = "none";
+    }
+
+    processProjectsSequentially();
+}
+
 function refreshData(){
     const select = document.getElementById('adv-project');
     const selectedOption = select.options[select.selectedIndex]; 

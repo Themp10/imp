@@ -100,16 +100,22 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <div class="sql-container">
     <div class="base-group">
         <label for="AM_PROINVEST"><input type="checkbox" id="AM_PROINVEST" name="AM_PROINVEST" value="AM_PROINVEST"> AM_PROINVEST</label>
-        <label for="AM_PROINVEST_TEST"><input type="checkbox" id="AM_PROINVEST_TEST" name="AM_PROINVEST_TEST" value="AM_PROINVEST_TEST"> AM_PROINVEST_TEST</label>
         <label for="ANFA_19"><input type="checkbox" id="ANFA_19" name="ANFA_19" value="ANFA_19"> ANFA_19</label>
         <label for="ANFA_69"><input type="checkbox" id="ANFA_69" name="ANFA_69" value="ANFA_69"> ANFA_69</label>
         <label for="ANFA_REALISATION"><input type="checkbox" id="ANFA_REALISATION" name="ANFA_REALISATION" value="ANFA_REALISATION"> ANFA_REALISATION</label>
         <label for="CASA_COLIVING"><input type="checkbox" id="CASA_COLIVING" name="CASA_COLIVING" value="CASA_COLIVING"> CASA_COLIVING</label>
+        <label for="HOLDING_KAMAL"><input type="checkbox" id="HOLDING_KAMAL" name="HOLDING_KAMAL" value="HOLDING_KAMAL"> HOLDING_KAMAL</label>
+        <label for="HOLDING_TARIK"><input type="checkbox" id="HOLDING_TARIK" name="HOLDING_TARIK" value="HOLDING_TARIK"> HOLDING_TARIK</label>
         <label for="M_PROPERTIES"><input type="checkbox" id="M_PROPERTIES" name="M_PROPERTIES" value="M_PROPERTIES"> M_PROPERTIES</label>
         <label for="NAVIS_PROPERTY"><input type="checkbox" id="NAVIS_PROPERTY" name="NAVIS_PROPERTY" value="NAVIS_PROPERTY"> NAVIS_PROPERTY</label>
         <label for="PROBAT_INVEST"><input type="checkbox" id="PROBAT_INVEST" name="PROBAT_INVEST" value="PROBAT_INVEST"> PROBAT_INVEST</label>
         <label for="RMM_BUILDING"><input type="checkbox" id="RMM_BUILDING" name="RMM_BUILDING" value="RMM_BUILDING"> RMM_BUILDING</label>
-        <label for="RMM_BUILDING"><input type="checkbox" id="RMM_BUILDING" name="SHARP_TOWER" value="SHARP_TOWER"> SHARP_TOWER</label>
+        <label for="SHARP_TOWER"><input type="checkbox" id="SHARP_TOWER" name="SHARP_TOWER" value="SHARP_TOWER"> SHARP_TOWER</label>
+        <label for="STE_AGRO_ABDELLAH_YASSINE"><input type="checkbox" id="STE_AGRO_ABDELLAH_YASSINE" name="STE_AGRO_ABDELLAH_YASSINE" value="STE_AGRO_ABDELLAH_YASSINE"> STE_AGRO_ABDELLAH_YASSINE</label>
+        <label for="STE_MATRAMEX"><input type="checkbox" id="STE_MATRAMEX" name="STE_MATRAMEX" value="STE_MATRAMEX"> STE_MATRAMEX</label>
+        <label for="STE_MAYTY"><input type="checkbox" id="STE_MAYTY" name="STE_MAYTY" value="STE_MAYTY"> STE_MAYTY</label>
+        <label for="STE_POLY_FONCIERE"><input type="checkbox" id="STE_POLY_FONCIERE" name="STE_POLY_FONCIERE" value="STE_POLY_FONCIERE"> STE_POLY_FONCIERE</label>
+        <label for="STE_ZENATA_LIVING"><input type="checkbox" id="STE_ZENATA_LIVING" name="STE_ZENATA_LIVING" value="STE_ZENATA_LIVING"> STE_ZENATA_LIVING</label>
         <label for="YASMINE_FONCIERE"><input type="checkbox" id="YASMINE_FONCIERE" name="YASMINE_FONCIERE" value="YASMINE_FONCIERE"> YASMINE_FONCIERE</label>
     </div>
     <textarea name="sql-query" id="sql-query" cols="30" rows="10"></textarea>

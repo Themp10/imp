@@ -1985,7 +1985,97 @@ color: white;
   display: flex;
   justify-content: space-evenly;
 }
+#title_periode-1{
+  background-color: #d7e8f7;
+  color: black;
+}
+.title_periode-10{
+  background-color: #b4dcfc;
+   font-size: 13px;
+  color: black;
+}
+.title_periode-1{
+  background-color: #d7e8f7;
+  font-size: 13px;
+  color: black;
+}
+.title_periode{
+  background-color: var(--primary-color);
+  font-size: 13px;
+}
+.title_periode1{
+  background-color: #c8e1f5;
+  font-size: 13px;
+  color: black;
+}
+.title_encaisse{
+  background-color: #0149a7;
+}
+.bleu-highlight{
+  color: #0f60ca;
+}
+.neg-value{
+  color: #e73c3c;
+}
+.pos-value{
+  color: #2dcf7e;
+}
+.input-stock-livre{
+  border: none;
+  color: var(--primary-color);
+  text-align: right;
+}
+#stock-livre-total{
+  border: none;
+  font-weight: bold;
+  text-align: right;
+  background-color: transparent;
+}
 /* table styling END*/
+.orverlay-reporting{
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.329);
+  backdrop-filter: blur(5px);
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.orverlay-reporting h2{
+  color: var(--primary-color);
+  text-align: center;
+}
+.typeselector{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-type-selector {
+  background-color: white;
+  font-size: 15px;
+  border:none;
+  cursor: pointer;
+  color: var(--primary-color);
+  padding:2px 10px;
+  border: 2px solid var(--primary-color);
+  font-size: 15px;
+}
+.btn-type-selector:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+}
+.btn-type-selector:nth-child(3) {
+  border-radius: 0 5px 5px 0;
+}
+.selectedType {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
 /* ============================ DECHARGE  ============================ */
 
 .dech-header{
@@ -2427,6 +2517,47 @@ border: none;
 }
 #adv-table-2{
   margin-top: 25px;
+}
+.all-projects{
+  height: 31px;
+  color: var(--primary-color);
+}
+.all-projects:hover{
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+.refresh-overlay{
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+}
+.projet-refresh{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:10px;
+  font-size: 15px;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+.ref-pro-list{
+  width: 100%;
+}
+.projet-refresh span{
+
+  font-size: 20px;
 }
 /* ============================ Add new Item ============================ */
 .item-form{
